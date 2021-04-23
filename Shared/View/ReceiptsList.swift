@@ -10,7 +10,7 @@ import SwiftUI
 struct ReceiptsList: View {
     var body: some View {
         ScrollView{
-            Text("hej")
+            Text("You have no receipts.")
         }
         .navigationTitle("My Receipts")
     }

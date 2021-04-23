@@ -20,15 +20,26 @@ struct Home: View {
             .navigationBarItems(leading:
                                     HStack{
                                         Button(action:{
-                                            
+                                            withAnimation{
+                                                viewModel.showMenuBar.toggle()
+                                            }
                                         }){
                                             Image(systemName: "line.horizontal.3")
                                                 .font(.title2)
                                                 .foregroundColor(Color("Blue"))
                                         }
+                                        .disabled(viewModel.showMenuBar)
                                     }
             )
         }
+        .offset(x: viewModel.showMenuBar ? 170 : 0)
+        .overlay(
+            ZStack{
+                MenuBar()
+                    .offset(x: viewModel.showMenuBar ? 0 : -170)
+                    .environmentObject(viewModel)
+            }
+        )
     }
 }
 
