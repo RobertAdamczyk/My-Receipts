@@ -13,4 +13,7 @@ class HomeViewModel: ObservableObject {
     @Published var showingMenu = false
     @Published var widthMenu: CGFloat = 180
     @Published var showActionSheet = false
+    
+    @Published var showImagePicker = false
+    @Published var showCamera = false
 }

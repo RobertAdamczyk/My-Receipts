@@ -15,10 +15,12 @@ struct Home: View {
             ZStack{
                 if viewModel.view == .list {
                     ReceiptsList()
-                }
-                if viewModel.view == .settings {
+                }else if viewModel.view == .settings {
                     Settings()
+                }else if viewModel.view == .add {
+                    AddReceipt(showPicker: $viewModel.showImagePicker, showCamera: $viewModel.showCamera)
                 }
+                
             }
             .navigationBarItems(leading:
                                     HStack{
@@ -52,8 +54,14 @@ struct Home: View {
         }
         .actionSheet(isPresented: $viewModel.showActionSheet) {
             ActionSheet(title: Text("New Receipt"), buttons: [
-                .default(Text("Take a photo")) {  },
-                .default(Text("Use existing")) {  },
+                .default(Text("Take a photo")) {
+                    viewModel.showImagePicker = false
+                    viewModel.showCamera = true
+                },
+                .default(Text("Use existing")) {
+                    viewModel.showImagePicker = true
+                    viewModel.showCamera = false
+                },
                 .cancel()
             ])
         }

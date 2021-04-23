@@ -25,6 +25,8 @@ struct MenuBar: View {
                 }
                 
                 Button(action:{
+                    viewModel.view = .add
+                    offMenu()
                     viewModel.showActionSheet.toggle()
                 }){
                     HStack{

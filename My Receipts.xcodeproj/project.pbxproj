@@ -25,6 +25,9 @@
 		E180DF762633582C00CC5CC8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF752633582C00CC5CC8 /* Settings.swift */; };
 		E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF7926335AE100CC5CC8 /* Receipts+CoreDataClass.swift */; };
 		E180DF7C26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF7A26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift */; };
+		E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */; };
+		E180DF84263361F100CC5CC8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF83263361F100CC5CC8 /* ImagePicker.swift */; };
+		E180DF882633622300CC5CC8 /* AddReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF872633622300CC5CC8 /* AddReceipt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		E180DF752633582C00CC5CC8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E180DF7926335AE100CC5CC8 /* Receipts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipts+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E180DF7A26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipts+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceiptViewModel.swift; sourceTree = "<group>"; };
+		E180DF83263361F100CC5CC8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		E180DF872633622300CC5CC8 /* AddReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceipt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				E180DF532632FBD800CC5CC8 /* Home.swift */,
+				E180DF872633622300CC5CC8 /* AddReceipt.swift */,
 				E180DF592633003A00CC5CC8 /* ReceiptsList.swift */,
 				E180DF68263302D700CC5CC8 /* MenuBar.swift */,
 				E180DF752633582C00CC5CC8 /* Settings.swift */,
+				E180DF83263361F100CC5CC8 /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				E180DF642633010500CC5CC8 /* HomeViewModel.swift */,
+				E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -262,11 +271,14 @@
 				E180DF5A2633003A00CC5CC8 /* ReceiptsList.swift in Sources */,
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
 				E180DF7C26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift in Sources */,
+				E180DF84263361F100CC5CC8 /* ImagePicker.swift in Sources */,
 				E180DF412632F9C600CC5CC8 /* Persistence.swift in Sources */,
+				E180DF882633622300CC5CC8 /* AddReceipt.swift in Sources */,
 				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
 				E180DF762633582C00CC5CC8 /* Settings.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
+				E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
 				E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
