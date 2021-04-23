@@ -16,6 +16,9 @@ struct Home: View {
                 if viewModel.view == .list {
                     ReceiptsList()
                 }
+                if viewModel.view == .settings {
+                    Settings()
+                }
             }
             .navigationBarItems(leading:
                                     HStack{

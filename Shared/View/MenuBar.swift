@@ -13,7 +13,8 @@ struct MenuBar: View {
         HStack{
             VStack(alignment: .leading ,spacing: 40){
                 Button(action:{
-                    
+                    viewModel.view = .list
+                    offMenu()
                 }){
                     HStack{
                         Image(systemName: "scroll.fill")
@@ -34,7 +35,8 @@ struct MenuBar: View {
                     }
                 }
                 Button(action:{
-                    
+                    viewModel.view = .settings
+                    offMenu()
                 }){
                     HStack{
                         Image(systemName: "gearshape.fill")
@@ -60,13 +62,17 @@ struct MenuBar: View {
                 .contentShape(Rectangle())
                 .onTapGesture {
                     if viewModel.showingMenu {
-                        withAnimation{
-                            viewModel.showMenuBar = false
-                        }
+                        offMenu()
                     }
                 }
         }
         .ignoresSafeArea()
+    }
+    
+    func offMenu(){
+        withAnimation{
+            viewModel.showMenuBar = false
+        }
     }
 }
 

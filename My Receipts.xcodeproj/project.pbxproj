@@ -22,6 +22,7 @@
 		E180DF5F2633005300CC5CC8 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF5E2633005300CC5CC8 /* Views.swift */; };
 		E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF642633010500CC5CC8 /* HomeViewModel.swift */; };
 		E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF68263302D700CC5CC8 /* MenuBar.swift */; };
+		E180DF762633582C00CC5CC8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF752633582C00CC5CC8 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E180DF5E2633005300CC5CC8 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		E180DF642633010500CC5CC8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E180DF68263302D700CC5CC8 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		E180DF752633582C00CC5CC8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				E180DF532632FBD800CC5CC8 /* Home.swift */,
 				E180DF592633003A00CC5CC8 /* ReceiptsList.swift */,
 				E180DF68263302D700CC5CC8 /* MenuBar.swift */,
+				E180DF752633582C00CC5CC8 /* Settings.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
 				E180DF412632F9C600CC5CC8 /* Persistence.swift in Sources */,
 				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
+				E180DF762633582C00CC5CC8 /* Settings.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
