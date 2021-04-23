@@ -12,7 +12,8 @@ struct ContentView: View {
 
     var body: some View {
         ZStack{
-            Text("Hallo world!")
+            Home()
         }
+        .ignoresSafeArea()
     }
 }

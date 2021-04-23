@@ -17,6 +17,10 @@
 		E180DF422632F9C600CC5CC8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF292632F9C400CC5CC8 /* Persistence.swift */; };
 		E180DF432632F9C600CC5CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */; };
 		E180DF442632F9C600CC5CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */; };
+		E180DF542632FBD800CC5CC8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF532632FBD800CC5CC8 /* Home.swift */; };
+		E180DF5A2633003A00CC5CC8 /* ReceiptsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF592633003A00CC5CC8 /* ReceiptsList.swift */; };
+		E180DF5F2633005300CC5CC8 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF5E2633005300CC5CC8 /* Views.swift */; };
+		E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF642633010500CC5CC8 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		E180DF372632F9C600CC5CC8 /* My Receipts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Receipts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E180DF392632F9C600CC5CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E180DF3A2632F9C600CC5CC8 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		E180DF532632FBD800CC5CC8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		E180DF592633003A00CC5CC8 /* ReceiptsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsList.swift; sourceTree = "<group>"; };
+		E180DF5E2633005300CC5CC8 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		E180DF642633010500CC5CC8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 		E180DF242632F9C400CC5CC8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E180DF5D2633004400CC5CC8 /* Enum */,
+				E180DF512632FBBB00CC5CC8 /* Model */,
+				E180DF502632FBB400CC5CC8 /* ViewModel */,
+				E180DF4F2632FBAE00CC5CC8 /* View */,
 				E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */,
 				E180DF282632F9C400CC5CC8 /* ContentView.swift */,
 				E180DF292632F9C400CC5CC8 /* Persistence.swift */,
@@ -96,6 +108,46 @@
 				E180DF3A2632F9C600CC5CC8 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		E180DF4F2632FBAE00CC5CC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E180DF532632FBD800CC5CC8 /* Home.swift */,
+				E180DF592633003A00CC5CC8 /* ReceiptsList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E180DF502632FBB400CC5CC8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E180DF642633010500CC5CC8 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E180DF512632FBBB00CC5CC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E180DF522632FBBF00CC5CC8 /* CoreData */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E180DF522632FBBF00CC5CC8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		E180DF5D2633004400CC5CC8 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				E180DF5E2633005300CC5CC8 /* Views.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E180DF5A2633003A00CC5CC8 /* ReceiptsList.swift in Sources */,
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
 				E180DF412632F9C600CC5CC8 /* Persistence.swift in Sources */,
+				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
+				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
+				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E180DF3F2632F9C600CC5CC8 /* ContentView.swift in Sources */,
 			);
