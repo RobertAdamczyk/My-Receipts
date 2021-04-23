@@ -47,6 +47,13 @@ struct Home: View {
                 }
             }
         }
+        .actionSheet(isPresented: $viewModel.showActionSheet) {
+            ActionSheet(title: Text("New Receipt"), buttons: [
+                .default(Text("Take a photo")) {  },
+                .default(Text("Use existing")) {  },
+                .cancel()
+            ])
+        }
     }
 }
 

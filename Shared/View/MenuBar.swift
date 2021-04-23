@@ -24,7 +24,7 @@ struct MenuBar: View {
                 }
                 
                 Button(action:{
-                    
+                    viewModel.showActionSheet.toggle()
                 }){
                     HStack{
                         Image(systemName: "plus.app.fill")
@@ -48,6 +48,7 @@ struct MenuBar: View {
             .font(.title3)
             .padding(.top, 100)
             .padding(.horizontal)
+            .frame(width: viewModel.widthMenu)
             .background(Color("Light"))
             .overlay(HStack{
                 Spacer()
@@ -73,5 +74,6 @@ struct MenuBar_Previews: PreviewProvider {
     static var previews: some View {
         MenuBar()
             .preferredColorScheme(.light)
+            .environmentObject(HomeViewModel())
     }
 }
