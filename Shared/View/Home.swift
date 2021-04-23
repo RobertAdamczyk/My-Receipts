@@ -32,14 +32,21 @@ struct Home: View {
                                     }
             )
         }
-        .offset(x: viewModel.showMenuBar ? 170 : 0)
+        .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
         .overlay(
             ZStack{
                 MenuBar()
-                    .offset(x: viewModel.showMenuBar ? 0 : -170)
+                    .offset(x: viewModel.showMenuBar ? 0 : -viewModel.widthMenu)
                     .environmentObject(viewModel)
             }
         )
+        .onChange(of: viewModel.showMenuBar) { new in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                withAnimation{
+                    viewModel.showingMenu = new
+                }
+            }
+        }
     }
 }
 

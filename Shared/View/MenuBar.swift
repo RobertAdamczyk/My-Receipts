@@ -58,8 +58,10 @@ struct MenuBar: View {
             Color.clear
                 .contentShape(Rectangle())
                 .onTapGesture {
-                    withAnimation{
-                        viewModel.showMenuBar = false
+                    if viewModel.showingMenu {
+                        withAnimation{
+                            viewModel.showMenuBar = false
+                        }
                     }
                 }
         }

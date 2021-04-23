@@ -9,4 +9,6 @@ import Foundation
 
 enum Views {
     case list
+    case add
+    case settings
 }
