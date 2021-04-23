@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 
 class AddReceiptViewModel: ObservableObject {
-    @Published var image: Image?
     @Published var inputImage: UIImage?
+    @Published var newReceipt = NewReceipt()
     
     func save(viewContext: NSManagedObjectContext) {
         let pickedImage = inputImage?.jpegData(compressionQuality: 1.0)
@@ -31,6 +31,6 @@ class AddReceiptViewModel: ObservableObject {
         guard let inputImage = inputImage else {
             return
         }
-        image = Image(uiImage: inputImage)
+        newReceipt.image = Image(uiImage: inputImage)
     }
 }
