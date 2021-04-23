@@ -23,6 +23,8 @@
 		E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF642633010500CC5CC8 /* HomeViewModel.swift */; };
 		E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF68263302D700CC5CC8 /* MenuBar.swift */; };
 		E180DF762633582C00CC5CC8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF752633582C00CC5CC8 /* Settings.swift */; };
+		E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF7926335AE100CC5CC8 /* Receipts+CoreDataClass.swift */; };
+		E180DF7C26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF7A26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		E180DF642633010500CC5CC8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E180DF68263302D700CC5CC8 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		E180DF752633582C00CC5CC8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		E180DF7926335AE100CC5CC8 /* Receipts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipts+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E180DF7A26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipts+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 		E180DF522632FBBF00CC5CC8 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				E180DF7926335AE100CC5CC8 /* Receipts+CoreDataClass.swift */,
+				E180DF7A26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -255,12 +261,14 @@
 			files = (
 				E180DF5A2633003A00CC5CC8 /* ReceiptsList.swift in Sources */,
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
+				E180DF7C26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift in Sources */,
 				E180DF412632F9C600CC5CC8 /* Persistence.swift in Sources */,
 				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
 				E180DF762633582C00CC5CC8 /* Settings.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
+				E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E180DF3F2632F9C600CC5CC8 /* ContentView.swift in Sources */,
 			);
