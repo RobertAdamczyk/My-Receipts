@@ -31,6 +31,7 @@
 		E180DF8C2633799600CC5CC8 /* NewReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF8B2633799600CC5CC8 /* NewReceipt.swift */; };
 		E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF902633844900CC5CC8 /* FormFrame.swift */; };
 		E180DF9726338FA500CC5CC8 /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */; };
+		E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF9C2633946000CC5CC8 /* ShowComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		E180DF8B2633799600CC5CC8 /* NewReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReceipt.swift; sourceTree = "<group>"; };
 		E180DF902633844900CC5CC8 /* FormFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFrame.swift; sourceTree = "<group>"; };
 		E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
+		E180DF9C2633946000CC5CC8 /* ShowComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				E180DF5E2633005300CC5CC8 /* Views.swift */,
+				E180DF9C2633946000CC5CC8 /* ShowComponents.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
 				E180DF9726338FA500CC5CC8 /* MyDatePicker.swift in Sources */,
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
+				E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */,
 				E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
 				E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */,

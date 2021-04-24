@@ -30,7 +30,12 @@ struct AddReceipt: View {
                     }
                 }
                 .frame(width: 220, height: 352)
-                .background(Color("Light").cornerRadius(25))
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                                .stroke(lineWidth: 1)
+                                .foregroundColor(Color("Grey"))
+                        .background(RoundedRectangle(cornerRadius: 15).foregroundColor(Color("Light")))
+                )
                 
                 VStack(spacing: 20){
                     TextField("", text: $viewModel.newReceipt.title)
@@ -42,7 +47,7 @@ struct AddReceipt: View {
                         .formLook
                     
                     Button(action:{
-                        
+                        viewModel.showComponent(value: .start)
                     }){
                         HStack{
                             Text("Date of Purchase")
@@ -56,7 +61,7 @@ struct AddReceipt: View {
                     }
                     
                     Button(action:{
-                        
+                        viewModel.showComponent(value: .end)
                     }){
                         HStack{
                             Text("End of Warranty")
@@ -89,6 +94,11 @@ struct AddReceipt: View {
             if showCamera {
                 Color.blue.ignoresSafeArea()
             }
+            
+            MyDatePicker(date: $viewModel.newReceipt.dateOfPurchase)
+                .offset(x: viewModel.showComponent == .start ? 0 : -400, y:-150)
+            MyDatePicker(date: $viewModel.newReceipt.endOfWarranty)
+                .offset(x: viewModel.showComponent == .end ? 0 : -400, y:-150)
         }
         .navigationTitle("New Receipt")
         .sheet(isPresented: $showPicker, onDismiss: viewModel.loadImage) {

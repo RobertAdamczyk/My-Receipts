@@ -11,6 +11,7 @@ import CoreData
 class AddReceiptViewModel: ObservableObject {
     @Published var inputImage: UIImage?
     @Published var newReceipt = NewReceipt()
+    @Published var showComponent: ShowComponents?
     
     func save(viewContext: NSManagedObjectContext) {
         let pickedImage = inputImage?.jpegData(compressionQuality: 1.0)
@@ -32,5 +33,11 @@ class AddReceiptViewModel: ObservableObject {
             return
         }
         newReceipt.image = Image(uiImage: inputImage)
+    }
+    
+    func showComponent(value: ShowComponents) {
+        withAnimation{
+            showComponent = value == showComponent ? nil : value
+        }
     }
 }
