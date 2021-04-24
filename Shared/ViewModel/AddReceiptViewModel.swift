@@ -18,7 +18,9 @@ class AddReceiptViewModel: ObservableObject {
         
         let newData = Receipts(context: viewContext)
         newData.image = pickedImage
-        newData.title = "test"
+        newData.title = newReceipt.title
+        newData.dateOfPurchase = newReceipt.dateOfPurchase
+        newData.endOfWarranty = newReceipt.endOfWarranty
         
         do {
             try viewContext.save()
@@ -27,6 +29,8 @@ class AddReceiptViewModel: ObservableObject {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func checkTitleAndImage() -> Bool { return newReceipt.title.count > 2 && newReceipt.image != nil }
     
     func loadImage() {
         guard let inputImage = inputImage else {

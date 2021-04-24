@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ReceiptsList: View {
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var receipts: FetchedResults<Receipts>
+    
     var body: some View {
         ScrollView{
-            Text("You have no receipts.")
+            ForEach(receipts) { receipt in
+                Text("\(receipt.title!)")
+            }
+            if receipts.isEmpty {
+                Text("You have no receipts.")
+            }
         }
         .navigationTitle("My Receipts")
     }

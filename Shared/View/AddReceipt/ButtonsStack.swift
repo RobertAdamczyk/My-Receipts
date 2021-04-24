@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ButtonsStack: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var viewModel: AddReceiptViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     var body: some View {
         Button(action:{
             viewModel.showComponent(value: .start)
@@ -38,7 +40,10 @@ struct ButtonsStack: View {
             .formLook
         }
         Button(action:{
-            
+            if viewModel.checkTitleAndImage() {
+                viewModel.save(viewContext: viewContext)
+                homeViewModel.view = .list
+            }
         }){
             HStack{
                 Spacer()
