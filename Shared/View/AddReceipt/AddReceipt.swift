@@ -12,38 +12,41 @@ struct AddReceipt: View {
     @Binding var showPicker: Bool
     @Binding var showCamera: Bool
     var body: some View {
-        ZStack{
-            Color.clear
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    viewModel.showComponent(value: nil)
-                }
-            
-            VStack(spacing: 40){
-                ImageRow()
+        ScrollView{
+            ZStack{
+                Color.clear
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        viewModel.showComponent(value: nil)
+                    }
                 
-                VStack(spacing: 20){
-                    TextFieldRow()
+                VStack(spacing: 40){
+                    ImageRow()
                     
-                    ButtonsStack()
+                    VStack(spacing: 20){
+                        TextFieldRow()
+                        
+                        ButtonsStack()
+                    }
+                    Spacer()
                 }
-                Spacer()
+                .environmentObject(viewModel)
+                
+                if showCamera {
+                    Color.blue.ignoresSafeArea()
+                }
+                
+                MyDatePicker(date: $viewModel.newReceipt.dateOfPurchase)
+                    .offset(x: viewModel.showComponent == .start ? 0 : -400, y:-130)
+                MyDatePicker(date: $viewModel.newReceipt.endOfWarranty)
+                    .offset(x: viewModel.showComponent == .end ? 0 : -400, y:-130)
             }
-            .environmentObject(viewModel)
-            
-            if showCamera {
-                Color.blue.ignoresSafeArea()
+            .navigationTitle("New Receipt")
+            .sheet(isPresented: $showPicker, onDismiss: viewModel.loadImage) {
+                ImagePicker(image: $viewModel.inputImage)
             }
-            
-            MyDatePicker(date: $viewModel.newReceipt.dateOfPurchase)
-                .offset(x: viewModel.showComponent == .start ? 0 : -400, y:-150)
-            MyDatePicker(date: $viewModel.newReceipt.endOfWarranty)
-                .offset(x: viewModel.showComponent == .end ? 0 : -400, y:-150)
         }
-        .navigationTitle("New Receipt")
-        .sheet(isPresented: $showPicker, onDismiss: viewModel.loadImage) {
-            ImagePicker(image: $viewModel.inputImage)
-        }
+        
         
     }
 }
