@@ -13,6 +13,12 @@ struct AddReceipt: View {
     @Binding var showCamera: Bool
     var body: some View {
         ZStack{
+            Color.clear
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    viewModel.showComponent(value: nil)
+                }
+            
             VStack(spacing: 40){
                 ImageRow()
                 

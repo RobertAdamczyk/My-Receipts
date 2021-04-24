@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ImageRow: View {
     @EnvironmentObject var viewModel: AddReceiptViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     var body: some View {
         ZStack{
             if viewModel.newReceipt.image != nil {
@@ -27,6 +28,9 @@ struct ImageRow: View {
         }
         .frame(width: 220, height: 352)
         .roundedBackgroundWithBorder
+        .onTapGesture {
+            homeViewModel.showActionSheet.toggle()
+        }
     }
 }
 

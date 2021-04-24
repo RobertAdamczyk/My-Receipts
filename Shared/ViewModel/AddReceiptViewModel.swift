@@ -35,7 +35,7 @@ class AddReceiptViewModel: ObservableObject {
         newReceipt.image = Image(uiImage: inputImage)
     }
     
-    func showComponent(value: ShowComponents) {
+    func showComponent(value: ShowComponents?) {
         withAnimation{
             showComponent = value == showComponent ? nil : value
         }

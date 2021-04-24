@@ -19,6 +19,7 @@ struct Home: View {
                     Settings()
                 }else if viewModel.view == .add {
                     AddReceipt(showPicker: $viewModel.showImagePicker, showCamera: $viewModel.showCamera)
+                        .environmentObject(viewModel)
                 }
                 
             }

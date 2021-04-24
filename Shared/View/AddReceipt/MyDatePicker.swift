@@ -13,6 +13,7 @@ struct MyDatePicker: View {
     var body: some View {
         DatePicker("", selection: $date, displayedComponents: .date)
             .datePickerStyle(GraphicalDatePickerStyle())
+            .frame(height: 350)
             .roundedBackgroundWithBorder
             .padding()
     }
