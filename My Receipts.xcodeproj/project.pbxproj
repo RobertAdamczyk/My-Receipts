@@ -32,6 +32,10 @@
 		E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF902633844900CC5CC8 /* FormFrame.swift */; };
 		E180DF9726338FA500CC5CC8 /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */; };
 		E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF9C2633946000CC5CC8 /* ShowComponents.swift */; };
+		E19CA3F626339860006EC2E5 /* RoundedBackgroundWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F526339860006EC2E5 /* RoundedBackgroundWithBorder.swift */; };
+		E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F926339904006EC2E5 /* ImageRow.swift */; };
+		E19CA3FE26339966006EC2E5 /* ButtonsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3FD26339966006EC2E5 /* ButtonsStack.swift */; };
+		E19CA402263399F8006EC2E5 /* TextFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA401263399F8006EC2E5 /* TextFieldRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		E180DF902633844900CC5CC8 /* FormFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFrame.swift; sourceTree = "<group>"; };
 		E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
 		E180DF9C2633946000CC5CC8 /* ShowComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowComponents.swift; sourceTree = "<group>"; };
+		E19CA3F526339860006EC2E5 /* RoundedBackgroundWithBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundWithBorder.swift; sourceTree = "<group>"; };
+		E19CA3F926339904006EC2E5 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		E19CA3FD26339966006EC2E5 /* ButtonsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStack.swift; sourceTree = "<group>"; };
+		E19CA401263399F8006EC2E5 /* TextFieldRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,13 +144,12 @@
 		E180DF4F2632FBAE00CC5CC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E19CA3F2263397CF006EC2E5 /* AddReceipt */,
 				E180DF532632FBD800CC5CC8 /* Home.swift */,
-				E180DF872633622300CC5CC8 /* AddReceipt.swift */,
 				E180DF592633003A00CC5CC8 /* ReceiptsList.swift */,
 				E180DF68263302D700CC5CC8 /* MenuBar.swift */,
 				E180DF752633582C00CC5CC8 /* Settings.swift */,
 				E180DF83263361F100CC5CC8 /* ImagePicker.swift */,
-				E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,8 +194,21 @@
 			isa = PBXGroup;
 			children = (
 				E180DF902633844900CC5CC8 /* FormFrame.swift */,
+				E19CA3F526339860006EC2E5 /* RoundedBackgroundWithBorder.swift */,
 			);
 			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		E19CA3F2263397CF006EC2E5 /* AddReceipt */ = {
+			isa = PBXGroup;
+			children = (
+				E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */,
+				E180DF872633622300CC5CC8 /* AddReceipt.swift */,
+				E19CA3F926339904006EC2E5 /* ImageRow.swift */,
+				E19CA3FD26339966006EC2E5 /* ButtonsStack.swift */,
+				E19CA401263399F8006EC2E5 /* TextFieldRow.swift */,
+			);
+			path = AddReceipt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +309,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E180DF5A2633003A00CC5CC8 /* ReceiptsList.swift in Sources */,
+				E19CA3F626339860006EC2E5 /* RoundedBackgroundWithBorder.swift in Sources */,
+				E19CA3FE26339966006EC2E5 /* ButtonsStack.swift in Sources */,
 				E180DF8C2633799600CC5CC8 /* NewReceipt.swift in Sources */,
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
 				E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */,
@@ -301,9 +323,11 @@
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
 				E180DF9726338FA500CC5CC8 /* MyDatePicker.swift in Sources */,
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
+				E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */,
 				E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */,
 				E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
+				E19CA402263399F8006EC2E5 /* TextFieldRow.swift in Sources */,
 				E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E180DF3F2632F9C600CC5CC8 /* ContentView.swift in Sources */,
