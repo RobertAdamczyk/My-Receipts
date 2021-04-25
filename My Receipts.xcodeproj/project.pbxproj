@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E17FC17926341ADA00082D55 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17FC17826341ADA00082D55 /* CloudKit.framework */; };
+		E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17FC17C26345E5400082D55 /* ReceiptRow.swift */; };
+		E17FC181263572CF00082D55 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17FC180263572CF00082D55 /* ReceiptViewModel.swift */; };
 		E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */; };
 		E180DF3C2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */; };
 		E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		E17FC17426341AD400082D55 /* My Receipts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Receipts.entitlements"; sourceTree = "<group>"; };
 		E17FC17826341ADA00082D55 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		E17FC17C26345E5400082D55 /* ReceiptRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRow.swift; sourceTree = "<group>"; };
+		E17FC180263572CF00082D55 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
 		E180DF262632F9C400CC5CC8 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ReceiptsApp.swift; sourceTree = "<group>"; };
 		E180DF282632F9C400CC5CC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 				E17FC17826341ADA00082D55 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E17FC1842635733500082D55 /* Receipts */ = {
+			isa = PBXGroup;
+			children = (
+				E17FC17C26345E5400082D55 /* ReceiptRow.swift */,
+				E180DF592633003A00CC5CC8 /* ReceiptsList.swift */,
+			);
+			path = Receipts;
 			sourceTree = "<group>";
 		};
 		E180DF1F2632F9C400CC5CC8 = {
@@ -158,9 +171,9 @@
 		E180DF4F2632FBAE00CC5CC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E17FC1842635733500082D55 /* Receipts */,
 				E19CA3F2263397CF006EC2E5 /* AddReceipt */,
 				E180DF532632FBD800CC5CC8 /* Home.swift */,
-				E180DF592633003A00CC5CC8 /* ReceiptsList.swift */,
 				E180DF68263302D700CC5CC8 /* MenuBar.swift */,
 				E180DF752633582C00CC5CC8 /* Settings.swift */,
 				E180DF83263361F100CC5CC8 /* ImagePicker.swift */,
@@ -173,6 +186,7 @@
 			children = (
 				E180DF642633010500CC5CC8 /* HomeViewModel.swift */,
 				E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */,
+				E17FC180263572CF00082D55 /* ReceiptViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -337,8 +351,10 @@
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
 				E180DF9726338FA500CC5CC8 /* MyDatePicker.swift in Sources */,
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
+				E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */,
 				E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */,
 				E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */,
+				E17FC181263572CF00082D55 /* ReceiptViewModel.swift in Sources */,
 				E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
 				E19CA402263399F8006EC2E5 /* TextFieldRow.swift in Sources */,
