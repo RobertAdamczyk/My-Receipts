@@ -31,9 +31,10 @@ struct ReceiptsList: View {
             }
            
         }
-        
+        .environmentObject(viewModel)
         .listStyle(PlainListStyle())
         .navigationTitle("My Receipts")
+        
     }
     
     func removeReceipt(at offsets: IndexSet) {

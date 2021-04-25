@@ -35,6 +35,7 @@
 		E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF902633844900CC5CC8 /* FormFrame.swift */; };
 		E180DF9726338FA500CC5CC8 /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */; };
 		E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF9C2633946000CC5CC8 /* ShowComponents.swift */; };
+		E190CDA12635B0C1002E4343 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E190CDA02635B0C1002E4343 /* ImagePreview.swift */; };
 		E19CA3F626339860006EC2E5 /* RoundedBackgroundWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F526339860006EC2E5 /* RoundedBackgroundWithBorder.swift */; };
 		E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F926339904006EC2E5 /* ImageRow.swift */; };
 		E19CA3FE26339966006EC2E5 /* ButtonsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3FD26339966006EC2E5 /* ButtonsStack.swift */; };
@@ -71,6 +72,7 @@
 		E180DF902633844900CC5CC8 /* FormFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFrame.swift; sourceTree = "<group>"; };
 		E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
 		E180DF9C2633946000CC5CC8 /* ShowComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowComponents.swift; sourceTree = "<group>"; };
+		E190CDA02635B0C1002E4343 /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreview.swift; sourceTree = "<group>"; };
 		E19CA3F526339860006EC2E5 /* RoundedBackgroundWithBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundWithBorder.swift; sourceTree = "<group>"; };
 		E19CA3F926339904006EC2E5 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
 		E19CA3FD26339966006EC2E5 /* ButtonsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStack.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				E180DF68263302D700CC5CC8 /* MenuBar.swift */,
 				E180DF752633582C00CC5CC8 /* Settings.swift */,
 				E180DF83263361F100CC5CC8 /* ImagePicker.swift */,
+				E190CDA02635B0C1002E4343 /* ImagePreview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				E180DF84263361F100CC5CC8 /* ImagePicker.swift in Sources */,
 				E180DF412632F9C600CC5CC8 /* Persistence.swift in Sources */,
 				E180DF882633622300CC5CC8 /* AddReceipt.swift in Sources */,
+				E190CDA12635B0C1002E4343 /* ImagePreview.swift in Sources */,
 				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
 				E180DF762633582C00CC5CC8 /* Settings.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,

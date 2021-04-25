@@ -15,6 +15,7 @@ struct Home: View {
             ZStack{
                 if viewModel.view == .list {
                     ReceiptsList()
+                        .environmentObject(viewModel)
                 }else if viewModel.view == .settings {
                     Settings()
                 }else if viewModel.view == .add {
@@ -39,6 +40,9 @@ struct Home: View {
             )
         }
         .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
+        .overlay(
+            ImagePreview(selectedImage: $viewModel.selectedImage)
+        )
         .overlay(
             ZStack{
                 MenuBar()

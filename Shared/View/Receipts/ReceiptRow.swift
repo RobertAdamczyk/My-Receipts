@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ReceiptRow: View {
+    @EnvironmentObject var viewModel: ReceiptViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     var receipt: Receipts
     var body: some View {
         HStack{
@@ -21,6 +23,11 @@ struct ReceiptRow: View {
                             .resizable()
                             .frame(width: 50, height: 80)
                             .cornerRadius(5)
+                            .onTapGesture{
+                                withAnimation{
+                                    homeViewModel.selectedImage = Image(uiImage: uiimage)
+                                }
+                            }
                     }
                 }
             }
