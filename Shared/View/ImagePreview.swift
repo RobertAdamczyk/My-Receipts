@@ -14,6 +14,19 @@ struct ImagePreview: View {
         ZStack{
             if let image = selectedImage {
                 Color("Layout").opacity( 1 - Double(abs(offset.height) / 700))
+                    .overlay(HStack{
+                        Button(action:{
+                            
+                        }){
+                            Image(systemName: "checkmark")
+                            Text("Save in Photos")
+                        }
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(Color("Blue"))
+                        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                        .padding(.leading, 10)
+                        .opacity(offset.height == 0 ? 1 : 0)
+                    },alignment: .topLeading)
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
