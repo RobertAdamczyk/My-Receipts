@@ -1,8 +1,8 @@
 //
 //  Receipts+CoreDataProperties.swift
-//  My Receipts (iOS)
+//  My Receipts
 //
-//  Created by Robert Adamczyk on 23.04.21.
+//  Created by Robert Adamczyk on 26.04.21.
 //
 //
 
@@ -16,13 +16,9 @@ extension Receipts {
         return NSFetchRequest<Receipts>(entityName: "Receipts")
     }
 
-    @NSManaged public var image: Data?
-    @NSManaged public var title: String?
     @NSManaged public var dateOfPurchase: Date?
     @NSManaged public var endOfWarranty: Date?
-
-}
-
-extension Receipts : Identifiable {
+    @NSManaged public var image: Data?
+    @NSManaged public var title: String?
 
 }

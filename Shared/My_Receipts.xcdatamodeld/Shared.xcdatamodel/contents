@@ -3,7 +3,7 @@
     <entity name="Receipts" representedClassName="Receipts" syncable="YES">
         <attribute name="dateOfPurchase" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="endOfWarranty" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>

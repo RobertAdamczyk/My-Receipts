@@ -10,6 +10,8 @@ import SwiftUI
 struct ReceiptRow: View {
     @EnvironmentObject var viewModel: ReceiptViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
+    @State var image : Image?
+    @State var uiimage: UIImage?
     var receipt: Receipts
     var body: some View {
         HStack{
@@ -17,17 +19,22 @@ struct ReceiptRow: View {
                 Color("Light")
                     .frame(width: 50, height: 80)
                     .cornerRadius(5)
-                if let dataImage = receipt.image {
-                    if let uiimage = UIImage(data: dataImage) {
-                        Image(uiImage: uiimage)
-                            .resizable()
-                            .frame(width: 50, height: 67)
-                            .cornerRadius(5)
-                            .onTapGesture{
-                                withAnimation{
-                                    homeViewModel.selectedImage = uiimage
-                                }
+                if let unwarppedImage = image {
+                    unwarppedImage
+                        .resizable()
+                        .frame(width: 50, height: 67)
+                        .cornerRadius(5)
+                        .onTapGesture{
+                            withAnimation{
+                                homeViewModel.selectedImage = uiimage
                             }
+                        }
+                }
+            }.onAppear(){
+                if let dataImage = receipt.image {
+                    if let unwrappedUiImage = UIImage(data: dataImage) {
+                        image = Image(uiImage: unwrappedUiImage)
+                        uiimage = unwrappedUiImage
                     }
                 }
             }
