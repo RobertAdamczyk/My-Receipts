@@ -25,7 +25,7 @@ struct ReceiptRow: View {
                             .cornerRadius(5)
                             .onTapGesture{
                                 withAnimation{
-                                    homeViewModel.selectedImage = Image(uiImage: uiimage)
+                                    homeViewModel.selectedImage = uiimage
                                 }
                             }
                     }

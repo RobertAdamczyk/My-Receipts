@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ImagePreview: View {
     @State private var offset = CGSize.zero
-    @Binding var selectedImage: Image?
+    @Binding var selectedImage: UIImage?
     var body: some View {
         ZStack{
             if let image = selectedImage {
                 Color("Layout").opacity( 1 - Double(abs(offset.height) / 700))
                     .overlay(HStack{
                         Button(action:{
-                            
+                            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
                         }){
                             Image(systemName: "checkmark")
                             Text("Save in Photos")
@@ -27,7 +27,7 @@ struct ImagePreview: View {
                         .padding(.leading, 10)
                         .opacity(offset.height == 0 ? 1 : 0)
                     },alignment: .topLeading)
-                image
+                Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .offset(y: offset.height)
@@ -59,6 +59,6 @@ struct ImagePreview: View {
 
 struct ImagePreview_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePreview(selectedImage: .constant(Image(systemName: "person")))
+        ImagePreview(selectedImage: .constant(UIImage(systemName: "person")))
     }
 }
