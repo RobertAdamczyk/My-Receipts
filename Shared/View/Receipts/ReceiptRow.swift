@@ -34,11 +34,17 @@ struct ReceiptRow: View {
             
                 
             VStack(alignment: .leading, spacing: 5) {
-                Text("\(receipt.title!)")
-                    .font(.title3)
-                    .fontWeight(.medium)
-                Text("Purchase: \(receipt.dateOfPurchase!, style: .date)")
-                Text("Warranty to: \(receipt.endOfWarranty!, style: .date)")
+                if let title = receipt.title {
+                    Text("\(title)")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                }
+                if let purchase = receipt.dateOfPurchase {
+                    Text("Purchase: \(purchase, style: .date)")
+                }
+                if let warranty = receipt.endOfWarranty {
+                    Text("Warranty to: \(warranty, style: .date)")
+                }
             }
         }
     }

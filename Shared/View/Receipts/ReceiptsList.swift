@@ -17,7 +17,7 @@ struct ReceiptsList: View {
     
     var body: some View {
         List{
-            ForEach(receipts) { receipt in
+            ForEach(receipts, id: \.self) { receipt in
                 ReceiptRow(receipt: receipt)
             }
             .onDelete(perform: removeReceipt)
