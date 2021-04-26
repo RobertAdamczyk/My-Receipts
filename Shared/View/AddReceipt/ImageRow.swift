@@ -26,7 +26,7 @@ struct ImageRow: View {
                 }
             }
         }
-        .frame(width: 220, height: 352)
+        .frame(width: 202, height: 269)
         .roundedBackgroundWithBorder
         .onTapGesture {
             homeViewModel.showActionSheet.toggle()

@@ -21,7 +21,7 @@ struct ReceiptRow: View {
                     if let uiimage = UIImage(data: dataImage) {
                         Image(uiImage: uiimage)
                             .resizable()
-                            .frame(width: 50, height: 80)
+                            .frame(width: 50, height: 67)
                             .cornerRadius(5)
                             .onTapGesture{
                                 withAnimation{

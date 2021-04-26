@@ -60,11 +60,11 @@ struct MenuBar: View {
                     .frame(width: 2)
                     .foregroundColor(Color("Blue"))
             })
-            if viewModel.showingMenu {
+            if viewModel.showMenuBar {
                 Color.clear
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        if viewModel.showingMenu {
+                        if viewModel.showMenuBar {
                             offMenu()
                         }
                     }
