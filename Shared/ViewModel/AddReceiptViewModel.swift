@@ -21,6 +21,7 @@ class AddReceiptViewModel: ObservableObject {
         newData.title = newReceipt.title
         newData.dateOfPurchase = newReceipt.dateOfPurchase
         newData.endOfWarranty = newReceipt.endOfWarranty
+        newData.id = UUID()
         
         do {
             try viewContext.save()

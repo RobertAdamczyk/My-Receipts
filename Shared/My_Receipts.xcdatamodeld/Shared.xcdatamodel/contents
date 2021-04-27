@@ -3,10 +3,11 @@
     <entity name="Receipts" representedClassName="Receipts" syncable="YES">
         <attribute name="dateOfPurchase" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="endOfWarranty" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Receipts" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Receipts" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>
