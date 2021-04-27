@@ -12,6 +12,7 @@ class AddReceiptViewModel: ObservableObject {
     @Published var inputImage: UIImage?
     @Published var newReceipt = NewReceipt()
     @Published var showComponent: ShowComponents?
+    @AppStorage("daysNotification") var daysNotification = 7
     
     func save(viewContext: NSManagedObjectContext) {
         let pickedImage = inputImage?.jpegData(compressionQuality: 1.0)
@@ -23,12 +24,43 @@ class AddReceiptViewModel: ObservableObject {
         newData.endOfWarranty = newReceipt.endOfWarranty
         newData.id = UUID()
         
+        if let id = newData.id {
+            createNotification(id: id)
+        }
+        
         do {
             try viewContext.save()
         }
         catch {
             fatalError(error.localizedDescription)
         }
+    }
+    
+    func createNotification(id: UUID){
+        let content = UNMutableNotificationContent()
+        content.title = newReceipt.title
+        content.subtitle = "Za X dni skończy się gwaracja."
+        content.sound = UNNotificationSound.default
+
+        // show this notification five seconds from now
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        
+        let dateNotification = newReceipt.endOfWarranty.addingTimeInterval(TimeInterval(daysNotification * 3600 * -24))
+
+        dateComponents.day = Calendar.current.component(.day, from: dateNotification)
+        dateComponents.month = Calendar.current.component(.month, from: dateNotification)
+        dateComponents.year = Calendar.current.component(.year, from: dateNotification)
+        dateComponents.hour = 22
+        dateComponents.minute = 0
+        // Create the trigger as a repeating event.
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+
+        // choose a random identifier
+        let request = UNNotificationRequest(identifier: id.uuidString, content: content, trigger: trigger)
+
+        // add our notification request
+        UNUserNotificationCenter.current().add(request)
     }
     
     func checkTitleAndImage() -> Bool { return newReceipt.title.count > 2 && newReceipt.image != nil }

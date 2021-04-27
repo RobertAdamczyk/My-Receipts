@@ -29,6 +29,16 @@ struct ReceiptsList: View {
                 }
                     
             }
+            Button(action:{
+                UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
+
+                    for notification in notifications {
+                        print(notification)
+                    }
+                }
+            }){
+                Text("Test")
+            }
            
         }
         .environmentObject(viewModel)
@@ -41,6 +51,10 @@ struct ReceiptsList: View {
         for index in offsets {
             let receipt = receipts[index]
             viewContext.delete(receipt)
+            if let id = receipt.id {
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id.uuidString])
+            }
+            
             viewModel.saveContext(viewContext: viewContext)
         }
     }

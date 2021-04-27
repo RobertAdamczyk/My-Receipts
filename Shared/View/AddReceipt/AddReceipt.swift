@@ -37,9 +37,9 @@ struct AddReceipt: View {
                 }
                 
                 MyDatePicker(date: $viewModel.newReceipt.dateOfPurchase)
-                    .offset(x: viewModel.showComponent == .start ? 0 : -400, y:-130)
+                    .offset(x: viewModel.showComponent == .start ? 0 : -400, y:-50)
                 MyDatePicker(date: $viewModel.newReceipt.endOfWarranty)
-                    .offset(x: viewModel.showComponent == .end ? 0 : -400, y:-130)
+                    .offset(x: viewModel.showComponent == .end ? 0 : -400, y:-50)
             }
             .navigationTitle("New Receipt")
             .sheet(isPresented: $showPicker, onDismiss: viewModel.loadImage) {

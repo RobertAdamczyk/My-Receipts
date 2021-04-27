@@ -50,6 +50,9 @@ struct Home: View {
                     .environmentObject(viewModel)
             }
         )
+        .onAppear(){
+            viewModel.requestNotification()
+        }
         .onChange(of: viewModel.showMenuBar) { new in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 withAnimation{
