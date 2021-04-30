@@ -18,4 +18,16 @@ class HomeViewModel: ObservableObject {
     
     @Published var showImagePicker = false
     @Published var showCamera = false
+    
+    func changeView(newView: Views) {
+        withAnimation{
+            view = newView
+        }
+    }
+    
+    func offMenu(){
+        withAnimation{
+            showMenuBar = false
+        }
+    }
 }

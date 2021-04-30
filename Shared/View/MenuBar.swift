@@ -13,8 +13,8 @@ struct MenuBar: View {
         HStack{
             VStack(alignment: .leading ,spacing: 40){
                 Button(action:{
-                    viewModel.view = .list
-                    offMenu()
+                    viewModel.changeView(newView: .list)
+                    viewModel.offMenu()
                 }){
                     HStack{
                         Image(systemName: "scroll.fill")
@@ -25,8 +25,8 @@ struct MenuBar: View {
                 }
                 
                 Button(action:{
-                    viewModel.view = .add
-                    offMenu()
+                    viewModel.changeView(newView: .add)
+                    viewModel.offMenu()
                     viewModel.showActionSheet.toggle()
                 }){
                     HStack{
@@ -37,8 +37,8 @@ struct MenuBar: View {
                     }
                 }
                 Button(action:{
-                    viewModel.view = .settings
-                    offMenu()
+                    viewModel.changeView(newView: .settings)
+                    viewModel.offMenu()
                 }){
                     HStack{
                         Image(systemName: "gearshape.fill")
@@ -65,7 +65,7 @@ struct MenuBar: View {
                     .contentShape(Rectangle())
                     .onTapGesture {
                         if viewModel.showMenuBar {
-                            offMenu()
+                            viewModel.offMenu()
                         }
                     }
             }else {
@@ -74,12 +74,6 @@ struct MenuBar: View {
             
         }
         .ignoresSafeArea()
-    }
-    
-    func offMenu(){
-        withAnimation{
-            viewModel.showMenuBar = false
-        }
     }
 }
 
