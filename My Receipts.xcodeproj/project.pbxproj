@@ -41,6 +41,7 @@
 		E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F926339904006EC2E5 /* ImageRow.swift */; };
 		E19CA3FE26339966006EC2E5 /* ButtonsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3FD26339966006EC2E5 /* ButtonsStack.swift */; };
 		E19CA402263399F8006EC2E5 /* TextFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA401263399F8006EC2E5 /* TextFieldRow.swift */; };
+		E19D91892639B73A0091D9E1 /* NotificationsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		E19CA3F926339904006EC2E5 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
 		E19CA3FD26339966006EC2E5 /* ButtonsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStack.swift; sourceTree = "<group>"; };
 		E19CA401263399F8006EC2E5 /* TextFieldRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRow.swift; sourceTree = "<group>"; };
+		E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,11 +177,11 @@
 		E180DF4F2632FBAE00CC5CC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1FAF80A2639B58300891744 /* Settings */,
 				E17FC1842635733500082D55 /* Receipts */,
 				E19CA3F2263397CF006EC2E5 /* AddReceipt */,
 				E180DF532632FBD800CC5CC8 /* Home.swift */,
 				E180DF68263302D700CC5CC8 /* MenuBar.swift */,
-				E180DF752633582C00CC5CC8 /* Settings.swift */,
 				E180DF83263361F100CC5CC8 /* ImagePicker.swift */,
 				E190CDA02635B0C1002E4343 /* ImagePreview.swift */,
 			);
@@ -243,6 +245,15 @@
 				E19CA401263399F8006EC2E5 /* TextFieldRow.swift */,
 			);
 			path = AddReceipt;
+			sourceTree = "<group>";
+		};
+		E1FAF80A2639B58300891744 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E180DF752633582C00CC5CC8 /* Settings.swift */,
+				E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 				E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */,
 				E17FC181263572CF00082D55 /* ReceiptViewModel.swift in Sources */,
 				E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */,
+				E19D91892639B73A0091D9E1 /* NotificationsSettings.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
 				E19CA402263399F8006EC2E5 /* TextFieldRow.swift in Sources */,
 				E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */,

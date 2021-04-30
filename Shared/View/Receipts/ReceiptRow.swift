@@ -17,7 +17,7 @@ struct ReceiptRow: View {
         HStack{
             ZStack{
                 Color("Light")
-                    .frame(width: 50, height: 80)
+                    .frame(width: 50, height: 67)
                     .cornerRadius(5)
                 if let unwarppedImage = image {
                     unwarppedImage

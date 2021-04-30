@@ -29,6 +29,7 @@ struct ReceiptsList: View {
                 }
                     
             }
+            
             Button(action:{
                 UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
 

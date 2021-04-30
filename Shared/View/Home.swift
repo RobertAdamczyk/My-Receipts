@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     @StateObject var viewModel = HomeViewModel()
+    @StateObject var settingsViewModel = SettingsViewModel()
     
     var body: some View {
         NavigationView {
@@ -18,6 +19,7 @@ struct Home: View {
                         .environmentObject(viewModel)
                 }else if viewModel.view == .settings {
                     Settings()
+                        .environmentObject(settingsViewModel)
                 }else if viewModel.view == .add {
                     AddReceipt(showPicker: $viewModel.showImagePicker, showCamera: $viewModel.showCamera)
                         .environmentObject(viewModel)
@@ -51,7 +53,7 @@ struct Home: View {
             }
         )
         .onAppear(){
-            viewModel.requestNotification()
+            settingsViewModel.notificationRequest()
         }
         .onChange(of: viewModel.showMenuBar) { new in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
