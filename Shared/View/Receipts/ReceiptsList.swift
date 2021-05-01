@@ -34,16 +34,6 @@ struct ReceiptsList: View {
                     
             }
             
-            Button(action:{
-                UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
-
-                    for notification in notifications {
-                        print(notification)
-                    }
-                }
-            }){
-                Text("\(settingsViewModel.notificationAllowed.description)")
-            }
            
         }
         .environmentObject(viewModel)
