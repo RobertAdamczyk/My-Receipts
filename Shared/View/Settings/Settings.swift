@@ -12,8 +12,9 @@ struct Settings: View {
     
     var body: some View {
         Form{
-            Section{
-                NavigationLink(destination: NotificationsSettings()) {
+            Section(header: Text("General")){
+                NavigationLink(destination: NotificationsSettings()
+                                                .environmentObject(viewModel)) {
                     HStack(spacing: 15){
                         Image(systemName: "globe")
                             .foregroundColor(.white)
@@ -24,10 +25,11 @@ struct Settings: View {
                     }
                     
                 }
+                
             }
         }
         .navigationTitle("Settings")
-        .environmentObject(viewModel)
+        
     }
 }
 
