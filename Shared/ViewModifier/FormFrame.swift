@@ -13,10 +13,13 @@ extension View {
             .padding(.horizontal)
             .padding(.vertical, 5)
             .background(Color("Light"))
-            .overlay(VStack{
-                Rectangle().frame(height:1)
-                Spacer()
-                Rectangle().frame(height:1)
-            }.foregroundColor(Color("Grey")))
+            .overlay(
+                VStack{
+                    Rectangle().frame(height:1)
+                    Spacer()
+                    Rectangle().frame(height:1)
+                }
+                .foregroundColor(Color("Grey"))
+            )
     }
 }

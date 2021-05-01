@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ReceiptsList: View {
     @StateObject var viewModel = ReceiptViewModel()
+    @EnvironmentObject var settingsViewModel: SettingsViewModel
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [],
@@ -45,6 +46,9 @@ struct ReceiptsList: View {
         .environmentObject(viewModel)
         .listStyle(PlainListStyle())
         .navigationTitle("My Receipts")
+        .onAppear(){
+            settingsViewModel.notificationRequest(array: receipts)
+        }
         
     }
     

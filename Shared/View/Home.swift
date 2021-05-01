@@ -16,16 +16,15 @@ struct Home: View {
             ZStack{
                 if viewModel.view == .list {
                     ReceiptsList()
-                        .environmentObject(viewModel)
                 }else if viewModel.view == .settings {
                     Settings()
-                        .environmentObject(settingsViewModel)
                 }else if viewModel.view == .add {
                     AddReceipt(showPicker: $viewModel.showImagePicker, showCamera: $viewModel.showCamera)
-                        .environmentObject(viewModel)
                 }
                 
             }
+            .environmentObject(viewModel)
+            .environmentObject(settingsViewModel)
             .navigationBarItems(leading:
                                     HStack{
                                         Button(action:{
@@ -52,9 +51,6 @@ struct Home: View {
                     .environmentObject(viewModel)
             }
         )
-        .onAppear(){
-            settingsViewModel.notificationRequest()
-        }
         .onChange(of: viewModel.showMenuBar) { new in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 withAnimation{
