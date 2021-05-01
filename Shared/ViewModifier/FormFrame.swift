@@ -19,7 +19,7 @@ extension View {
                     Spacer()
                     Rectangle().frame(height:1)
                 }
-                .foregroundColor(Color("Grey"))
+                .foregroundColor(Color("BorderColor"))
             )
     }
 }
