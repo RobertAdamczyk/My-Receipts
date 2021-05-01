@@ -20,6 +20,9 @@ struct ReceiptsList: View {
         List{
             ForEach(receipts, id: \.self) { receipt in
                 ReceiptRow(receipt: receipt)
+                    .onAppear(){
+                        settingsViewModel.checkNotifications(array: receipts)
+                    }
             }
             .onDelete(perform: removeReceipt)
             if receipts.isEmpty {
@@ -39,7 +42,7 @@ struct ReceiptsList: View {
                     }
                 }
             }){
-                Text("Test")
+                Text("\(settingsViewModel.notificationAllowed.description)")
             }
            
         }
@@ -47,7 +50,12 @@ struct ReceiptsList: View {
         .listStyle(PlainListStyle())
         .navigationTitle("My Receipts")
         .onAppear(){
-            settingsViewModel.notificationRequest(array: receipts)
+            settingsViewModel.notificationRequest()
+        }
+        .onChange(of: settingsViewModel.notificationAllowed) { value in
+            if value {
+                settingsViewModel.checkNotifications(array: receipts)
+            }
         }
         
     }

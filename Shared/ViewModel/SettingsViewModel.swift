@@ -11,12 +11,11 @@ class SettingsViewModel: ObservableObject {
     @Published var notificationAllowed = false
     @AppStorage("daysNotification") var daysNotification = 7
     
-    func notificationRequest(array: FetchedResults<Receipts>) {
+    func notificationRequest() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             
             DispatchQueue.main.async {
                 self.notificationAllowed = success
-                self.checkNotifications(array: array)
             }
             
             if let error = error {
@@ -30,6 +29,7 @@ class SettingsViewModel: ObservableObject {
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
 
             if notifications.count == array.count {
+                print("Notifications OK !!!")
                 return
             }else {
                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
