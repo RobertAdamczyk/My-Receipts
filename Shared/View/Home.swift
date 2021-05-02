@@ -46,7 +46,11 @@ struct Home: View {
             cameraViewModel.check()
         }
         .overlay(
-            CameraFullView(cameraViewModel: cameraViewModel)
+            ZStack{
+                if viewModel.showCamera {
+                    CameraFullView(cameraViewModel: cameraViewModel, showCamera: $viewModel.showCamera)
+                }
+            }
         )
         .overlay(
             ImagePreview(selectedImage: $viewModel.selectedImage)

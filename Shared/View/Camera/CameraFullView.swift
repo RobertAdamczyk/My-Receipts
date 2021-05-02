@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CameraFullView: View {
     @ObservedObject var cameraViewModel: CameraViewModel
+    @Binding var showCamera: Bool
     
     var body: some View {
         ZStack{
@@ -17,21 +18,23 @@ struct CameraFullView: View {
             VStack{
                 if cameraViewModel.isTaken {
                     HStack{
+                        Button(action:{
+                            showCamera.toggle()
+                        }){
+                            Image(systemName: "arrowshape.turn.up.left.fill")
+                                .circleBackground
+                        }
                         Spacer()
                         Button(action:{
-                            
+                            cameraViewModel.isTaken.toggle()
                         }){
                             Image(systemName: "camera.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 20)
-                                .foregroundColor(.primary)
-                                .background(Circle()
-                                                .foregroundColor(Color("Light"))
-                                                .frame(width: 45, height: 45))
+                                .circleBackground
                         }
-                        .padding()
+                        
                     }
+                    .padding()
+                    .padding(.horizontal, 10)
                     Spacer()
                     HStack{
                         Button(action:{
@@ -48,6 +51,17 @@ struct CameraFullView: View {
                         Spacer()
                     }
                 }else {
+                    HStack{
+                        Button(action:{
+                            showCamera.toggle()
+                        }){
+                            Image(systemName: "arrowshape.turn.up.left.fill")
+                                .circleBackground
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                    .padding(.horizontal, 10)
                     Spacer()
                     Button(action:{
                         cameraViewModel.isTaken.toggle()
@@ -71,6 +85,6 @@ struct CameraFullView: View {
 
 struct CameraFullView_Previews: PreviewProvider {
     static var previews: some View {
-        CameraFullView(cameraViewModel: CameraViewModel())
+        CameraFullView(cameraViewModel: CameraViewModel(), showCamera: .constant(true))
     }
 }

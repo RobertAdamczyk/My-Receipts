@@ -45,6 +45,7 @@
 		E19CA402263399F8006EC2E5 /* TextFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA401263399F8006EC2E5 /* TextFieldRow.swift */; };
 		E19D91892639B73A0091D9E1 /* NotificationsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */; };
 		E1BB595D263ED22100D3D2DB /* CameraFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB595C263ED22100D3D2DB /* CameraFullView.swift */; };
+		E1BB5961263EE10D00D3D2DB /* CameraModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB5960263EE10D00D3D2DB /* CameraModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		E19CA401263399F8006EC2E5 /* TextFieldRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRow.swift; sourceTree = "<group>"; };
 		E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettings.swift; sourceTree = "<group>"; };
 		E1BB595C263ED22100D3D2DB /* CameraFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFullView.swift; sourceTree = "<group>"; };
+		E1BB5960263EE10D00D3D2DB /* CameraModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 			children = (
 				E180DF902633844900CC5CC8 /* FormFrame.swift */,
 				E19CA3F526339860006EC2E5 /* RoundedBackgroundWithBorder.swift */,
+				E1BB5960263EE10D00D3D2DB /* CameraModifiers.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
 				E19CA402263399F8006EC2E5 /* TextFieldRow.swift in Sources */,
 				E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */,
+				E1BB5961263EE10D00D3D2DB /* CameraModifiers.swift in Sources */,
 				E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E180DF3F2632F9C600CC5CC8 /* ContentView.swift in Sources */,
