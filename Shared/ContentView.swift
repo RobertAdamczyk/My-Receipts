@@ -14,6 +14,5 @@ struct ContentView: View {
         ZStack{
             Home()
         }
-        .ignoresSafeArea()
     }
 }

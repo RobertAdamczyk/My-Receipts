@@ -46,7 +46,7 @@ struct Home: View {
             cameraViewModel.check()
         }
         .overlay(
-            CameraPreview(camera: cameraViewModel)
+            CameraFullView(cameraViewModel: cameraViewModel)
         )
         .overlay(
             ImagePreview(selectedImage: $viewModel.selectedImage)
