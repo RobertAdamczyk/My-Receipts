@@ -10,6 +10,7 @@ import SwiftUI
 struct Home: View {
     @StateObject var viewModel = HomeViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
+    @ObservedObject var cameraViewModel = CameraViewModel()
     
     var body: some View {
         NavigationView {
@@ -41,6 +42,12 @@ struct Home: View {
             )
         }
         .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
+        .onAppear(){
+            cameraViewModel.check()
+        }
+        .overlay(
+            CameraPreview(camera: cameraViewModel)
+        )
         .overlay(
             ImagePreview(selectedImage: $viewModel.selectedImage)
         )
