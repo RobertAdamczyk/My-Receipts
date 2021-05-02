@@ -19,7 +19,7 @@ struct Home: View {
                 }else if viewModel.view == .settings {
                     Settings()
                 }else if viewModel.view == .add {
-                    AddReceipt(showPicker: $viewModel.showImagePicker, showCamera: $viewModel.showCamera)
+                    AddReceipt(showPicker: $viewModel.showImagePicker)
                 }
                 
             }
@@ -45,11 +45,9 @@ struct Home: View {
             ImagePreview(selectedImage: $viewModel.selectedImage)
         )
         .overlay(
-            ZStack{
-                MenuBar()
-                    .offset(x: viewModel.showMenuBar ? 0 : -viewModel.widthMenu)
-                    .environmentObject(viewModel)
-            }
+            MenuBar()
+                .offset(x: viewModel.showMenuBar ? 0 : -viewModel.widthMenu)
+                .environmentObject(viewModel)
         )
         .onChange(of: viewModel.showMenuBar) { new in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {

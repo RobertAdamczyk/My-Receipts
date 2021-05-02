@@ -10,7 +10,6 @@ import SwiftUI
 struct AddReceipt: View {
     @StateObject var viewModel = AddReceiptViewModel()
     @Binding var showPicker: Bool
-    @Binding var showCamera: Bool
     var body: some View {
         ScrollView{
             ZStack{
@@ -33,10 +32,6 @@ struct AddReceipt: View {
                 }
                 .environmentObject(viewModel)
                 
-                if showCamera {
-                    Color.blue.ignoresSafeArea()
-                }
-                
                 MyDatePicker(date: $viewModel.newReceipt.dateOfPurchase)
                     .offset(x: viewModel.showComponent == .start ? 0 : -400, y:-170)
                 MyDatePicker(date: $viewModel.newReceipt.endOfWarranty)
@@ -53,6 +48,6 @@ struct AddReceipt: View {
 
 struct AddReceipt_Previews: PreviewProvider {
     static var previews: some View {
-        AddReceipt(showPicker: .constant(false), showCamera: .constant(false))
+        AddReceipt(showPicker: .constant(false))
     }
 }
