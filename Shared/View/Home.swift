@@ -10,7 +10,7 @@ import SwiftUI
 struct Home: View {
     @StateObject var viewModel = HomeViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
-    @ObservedObject var cameraViewModel = CameraViewModel()
+    
     
     var body: some View {
         NavigationView {
@@ -42,9 +42,6 @@ struct Home: View {
             )
         }
         .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
-        .onAppear(){
-            cameraViewModel.check()
-        }
         .overlay(
             ImagePreview(selectedImage: $viewModel.selectedImage)
         )
@@ -56,7 +53,7 @@ struct Home: View {
         .overlay(
             ZStack{
                 if viewModel.showCamera {
-                    CameraFullView(cameraViewModel: cameraViewModel, showCamera: $viewModel.showCamera)
+                    CameraFullView(showCamera: $viewModel.showCamera)
                 }
             }
         )

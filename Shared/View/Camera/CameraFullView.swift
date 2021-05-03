@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CameraFullView: View {
-    @ObservedObject var cameraViewModel: CameraViewModel
+    @ObservedObject var cameraViewModel = CameraViewModel()
     @Binding var showCamera: Bool
     
     var body: some View {
@@ -81,11 +81,14 @@ struct CameraFullView: View {
             }
             .contentShape(Rectangle())
         }
+        .onAppear(){
+            cameraViewModel.check()
+        }
     }
 }
 
 struct CameraFullView_Previews: PreviewProvider {
     static var previews: some View {
-        CameraFullView(cameraViewModel: CameraViewModel(), showCamera: .constant(true))
+        CameraFullView(showCamera: .constant(true))
     }
 }
