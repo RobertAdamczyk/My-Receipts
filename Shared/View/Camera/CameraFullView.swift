@@ -79,6 +79,7 @@ struct CameraFullView: View {
                     }
                 }
             }
+            .contentShape(Rectangle())
         }
     }
 }

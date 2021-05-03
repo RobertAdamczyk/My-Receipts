@@ -46,19 +46,19 @@ struct Home: View {
             cameraViewModel.check()
         }
         .overlay(
-            ZStack{
-                if viewModel.showCamera {
-                    CameraFullView(cameraViewModel: cameraViewModel, showCamera: $viewModel.showCamera)
-                }
-            }
-        )
-        .overlay(
             ImagePreview(selectedImage: $viewModel.selectedImage)
         )
         .overlay(
             MenuBar()
                 .offset(x: viewModel.showMenuBar ? 0 : -viewModel.widthMenu)
                 .environmentObject(viewModel)
+        )
+        .overlay(
+            ZStack{
+                if viewModel.showCamera {
+                    CameraFullView(cameraViewModel: cameraViewModel, showCamera: $viewModel.showCamera)
+                }
+            }
         )
         .onChange(of: viewModel.showMenuBar) { new in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
