@@ -26,7 +26,7 @@ struct CameraLiveUI: View {
             .padding(.horizontal, 10)
             Spacer()
             Button(action:{
-                cameraViewModel.isTaken.toggle()
+                cameraViewModel.takePic()
             }){
                 Circle()
                     .frame(width: 60, height: 60)

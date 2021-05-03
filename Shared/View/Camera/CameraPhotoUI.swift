@@ -22,7 +22,7 @@ struct CameraPhotoUI: View {
                 }
                 Spacer()
                 Button(action:{
-                    cameraViewModel.isTaken.toggle()
+                    cameraViewModel.reTake()
                 }){
                     Image(systemName: "camera.fill")
                         .circleBackground

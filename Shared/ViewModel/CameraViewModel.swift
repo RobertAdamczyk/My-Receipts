@@ -8,13 +8,14 @@
 import SwiftUI
 import AVFoundation
 
-class CameraViewModel: ObservableObject {
+class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
     @Published var isTaken = false
     @Published var session = AVCaptureSession()
     @Published var showAlert = false
     @Published var isDetermining = false
     @Published var output = AVCapturePhotoOutput()
     @Published var preview: AVCaptureVideoPreviewLayer!
+    @Published var picData = Data(count: 0)
     
     func check() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
@@ -62,4 +63,43 @@ class CameraViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
+    
+    func takePic() {
+        DispatchQueue.global(qos: .background).async {
+            self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+            self.session.stopRunning()
+            
+            DispatchQueue.main.async {
+                withAnimation{
+                    self.isTaken.toggle()
+                }
+            }
+        }
+    }
+    
+    func reTake() {
+        DispatchQueue.global(qos: .background).async {
+            self.session.startRunning()
+            
+            DispatchQueue.main.async {
+                withAnimation{
+                    self.isTaken.toggle()
+                }
+            }
+        }
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if error != nil {
+            return
+        }
+        
+        print("pic taken...")
+        
+        guard let imageData = photo.fileDataRepresentation() else { return }
+        
+        self.picData = imageData
+    }
+    
+    
 }
