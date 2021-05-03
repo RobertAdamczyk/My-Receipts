@@ -12,6 +12,7 @@ class CameraViewModel: ObservableObject {
     @Published var isTaken = false
     @Published var session = AVCaptureSession()
     @Published var showAlert = false
+    @Published var isDetermining = false
     @Published var output = AVCapturePhotoOutput()
     @Published var preview: AVCaptureVideoPreviewLayer!
     
@@ -21,13 +22,18 @@ class CameraViewModel: ObservableObject {
             setUp()
             return
         case .notDetermined:
+            isDetermining = true
             AVCaptureDevice.requestAccess(for: .video) { (status) in
                 if status {
                     self.setUp()
                 }
+                DispatchQueue.main.async {
+                    self.isDetermining = false
+                    self.showAlert = true
+                }
             }
         case .denied:
-            showAlert.toggle()
+            showAlert = true
             return
         default:
             return
