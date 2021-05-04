@@ -15,6 +15,8 @@ struct ImageRow: View {
             if viewModel.newReceipt.image != nil {
                 viewModel.newReceipt.image!
                     .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: UIScreen.main.bounds.width*0.6)
                     .cornerRadius(15)
                     
             }else{
@@ -22,11 +24,12 @@ struct ImageRow: View {
                     Image(systemName: "photo.fill")
                         .resizable()
                         .frame(width: 40, height: 30)
+                        .padding(.horizontal, 60)
                     Text("Load Image")
                 }
+                .padding(.vertical, 100)
             }
         }
-        .frame(width: 202, height: 269)
         .roundedBackgroundWithBorder
         .onTapGesture {
             homeViewModel.showActionSheet.toggle()
