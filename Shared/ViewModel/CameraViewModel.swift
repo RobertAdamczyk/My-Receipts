@@ -44,7 +44,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
     func setUp() {
         do {
             session.beginConfiguration()
-            let device = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back)
+            let device = AVCaptureDevice.default(for: .video)
             if let dev = device {
                 let input = try AVCaptureDeviceInput(device: dev)
                 
@@ -65,16 +65,8 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
     }
     
     func takePic() {
-        DispatchQueue.global(qos: .background).async {
-            self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
-            self.session.stopRunning()
-            
-            DispatchQueue.main.async {
-                withAnimation{
-                    self.isTaken.toggle()
-                }
-            }
-        }
+        self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+        
     }
     
     func reTake() {
@@ -84,6 +76,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
             DispatchQueue.main.async {
                 withAnimation{
                     self.isTaken.toggle()
+                    self.picData = Data(count: 0)
                 }
             }
         }
@@ -96,9 +89,19 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
         
         print("pic taken...")
         
-        guard let imageData = photo.fileDataRepresentation() else { return }
+        guard let imageData = photo.fileDataRepresentation() else {
+            print("nil")
+            return }
         
         self.picData = imageData
+        
+        self.session.stopRunning()
+        
+        DispatchQueue.main.async {
+            withAnimation{
+                self.isTaken.toggle()
+            }
+        }
     }
     
     

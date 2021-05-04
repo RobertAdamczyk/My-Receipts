@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CameraPhotoUI: View {
     @EnvironmentObject var cameraViewModel: CameraViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     @Binding var showCamera: Bool
     
     var body: some View {
@@ -34,7 +35,8 @@ struct CameraPhotoUI: View {
             Spacer()
             HStack{
                 Button(action:{
-                    
+                    homeViewModel.takedPhotoData = cameraViewModel.picData
+                    showCamera.toggle()
                 }){
                     Text("USE THIS PHOTO")
                         .bold()

@@ -10,6 +10,7 @@ import SwiftUI
 struct AddReceipt: View {
     @StateObject var viewModel = AddReceiptViewModel()
     @Binding var showPicker: Bool
+    @Binding var takedPhotoData: Data?
     var body: some View {
         ScrollView{
             ZStack{
@@ -38,6 +39,12 @@ struct AddReceipt: View {
                     .offset(x: viewModel.showComponent == .end ? 0 : -400, y:-170)
             }
         }
+        .onChange(of: takedPhotoData){ _ in
+            if let taked = takedPhotoData {
+                viewModel.inputImage = UIImage(data: taked)
+                viewModel.loadImage()
+            }
+        }
         .navigationTitle("New Receipt")
         .sheet(isPresented: $showPicker, onDismiss: viewModel.loadImage) {
             ImagePicker(image: $viewModel.inputImage)
@@ -48,6 +55,6 @@ struct AddReceipt: View {
 
 struct AddReceipt_Previews: PreviewProvider {
     static var previews: some View {
-        AddReceipt(showPicker: .constant(false))
+        AddReceipt(showPicker: .constant(false), takedPhotoData: .constant(Data(count: 0)))
     }
 }

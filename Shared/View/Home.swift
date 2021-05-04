@@ -11,7 +11,6 @@ struct Home: View {
     @StateObject var viewModel = HomeViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
     
-    
     var body: some View {
         NavigationView {
             ZStack{
@@ -20,7 +19,7 @@ struct Home: View {
                 }else if viewModel.view == .settings {
                     Settings()
                 }else if viewModel.view == .add {
-                    AddReceipt(showPicker: $viewModel.showImagePicker)
+                    AddReceipt(showPicker: $viewModel.showImagePicker, takedPhotoData: $viewModel.takedPhotoData)
                 }
                 
             }
@@ -54,6 +53,7 @@ struct Home: View {
             ZStack{
                 if viewModel.showCamera {
                     CameraFullView(showCamera: $viewModel.showCamera)
+                        .environmentObject(viewModel)
                 }
             }
         )

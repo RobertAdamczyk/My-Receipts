@@ -16,6 +16,8 @@ class HomeViewModel: ObservableObject {
     
     @Published var selectedImage: UIImage?
     
+    @Published var takedPhotoData : Data?
+    
     @Published var showImagePicker = false
     @Published var showCamera = false
     
