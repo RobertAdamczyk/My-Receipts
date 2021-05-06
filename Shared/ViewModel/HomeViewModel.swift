@@ -22,9 +22,7 @@ class HomeViewModel: ObservableObject {
     @Published var showCamera = false
     
     func changeView(newView: Views) {
-        withAnimation{
-            view = newView
-        }
+        view = newView
     }
     
     func offMenu(){
