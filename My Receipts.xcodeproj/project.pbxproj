@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BA264467570017BD29 /* CoreDataMenager.swift */; };
+		E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */; };
 		E16B7C30264074BD0099BB15 /* CameraPhotoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */; };
 		E16B7C342640755F0099BB15 /* CameraLiveUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C332640755F0099BB15 /* CameraLiveUI.swift */; };
 		E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C6A83263ECC710023B2EC /* CameraViewModel.swift */; };
 		E17C6A88263ECCC70023B2EC /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C6A87263ECCC70023B2EC /* CameraPreview.swift */; };
 		E17FC17926341ADA00082D55 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17FC17826341ADA00082D55 /* CloudKit.framework */; };
 		E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17FC17C26345E5400082D55 /* ReceiptRow.swift */; };
-		E17FC181263572CF00082D55 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17FC180263572CF00082D55 /* ReceiptViewModel.swift */; };
 		E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */; };
 		E180DF3C2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */; };
 		E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */; };
@@ -51,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E112D2BA264467570017BD29 /* CoreDataMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMenager.swift; sourceTree = "<group>"; };
+		E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPhotoUI.swift; sourceTree = "<group>"; };
 		E16B7C332640755F0099BB15 /* CameraLiveUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLiveUI.swift; sourceTree = "<group>"; };
 		E17C6A83263ECC710023B2EC /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -58,7 +61,6 @@
 		E17FC17426341AD400082D55 /* My Receipts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Receipts.entitlements"; sourceTree = "<group>"; };
 		E17FC17826341ADA00082D55 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		E17FC17C26345E5400082D55 /* ReceiptRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRow.swift; sourceTree = "<group>"; };
-		E17FC180263572CF00082D55 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
 		E180DF262632F9C400CC5CC8 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ReceiptsApp.swift; sourceTree = "<group>"; };
 		E180DF282632F9C400CC5CC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -217,9 +219,9 @@
 			children = (
 				E180DF642633010500CC5CC8 /* HomeViewModel.swift */,
 				E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */,
-				E17FC180263572CF00082D55 /* ReceiptViewModel.swift */,
 				E19A09F226389A710079FB93 /* SettingsViewModel.swift */,
 				E17C6A83263ECC710023B2EC /* CameraViewModel.swift */,
+				E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -229,6 +231,7 @@
 			children = (
 				E180DF522632FBBF00CC5CC8 /* CoreData */,
 				E180DF8B2633799600CC5CC8 /* NewReceipt.swift */,
+				E112D2BA264467570017BD29 /* CoreDataMenager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,10 +383,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E180DF5A2633003A00CC5CC8 /* ReceiptsList.swift in Sources */,
+				E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */,
 				E19CA3F626339860006EC2E5 /* RoundedBackgroundWithBorder.swift in Sources */,
 				E19CA3FE26339966006EC2E5 /* ButtonsStack.swift in Sources */,
 				E180DF8C2633799600CC5CC8 /* NewReceipt.swift in Sources */,
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
+				E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */,
 				E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */,
 				E180DF7C26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift in Sources */,
 				E1BB595D263ED22100D3D2DB /* CameraFullView.swift in Sources */,
@@ -401,7 +406,6 @@
 				E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */,
 				E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */,
 				E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */,
-				E17FC181263572CF00082D55 /* ReceiptViewModel.swift in Sources */,
 				E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */,
 				E19D91892639B73A0091D9E1 /* NotificationsSettings.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,

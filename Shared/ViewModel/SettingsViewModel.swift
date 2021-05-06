@@ -25,7 +25,7 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    func checkNotifications(array: FetchedResults<Receipts>) {
+    func checkNotifications(array: [Receipts]) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
 
             if notifications.count == array.count {

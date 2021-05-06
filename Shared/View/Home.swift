@@ -10,6 +10,7 @@ import SwiftUI
 struct Home: View {
     @StateObject var viewModel = HomeViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
+    @StateObject var coreDataViewModel = CoreDataViewModel()
     
     var body: some View {
         NavigationView {
@@ -25,6 +26,7 @@ struct Home: View {
             }
             .environmentObject(viewModel)
             .environmentObject(settingsViewModel)
+            .environmentObject(coreDataViewModel)
             .navigationBarItems(leading:
                                     HStack{
                                         Button(action:{

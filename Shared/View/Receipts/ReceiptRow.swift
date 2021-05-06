@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ReceiptRow: View {
-    @EnvironmentObject var viewModel: ReceiptViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
     @State var image : Image?
     @State var uiimage: UIImage?

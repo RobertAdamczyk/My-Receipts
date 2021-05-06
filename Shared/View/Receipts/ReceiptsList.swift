@@ -8,24 +8,19 @@
 import SwiftUI
 
 struct ReceiptsList: View {
-    @StateObject var viewModel = ReceiptViewModel()
     @EnvironmentObject var settingsViewModel: SettingsViewModel
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(
-        sortDescriptors: [],
-        animation: .default)
-    private var receipts: FetchedResults<Receipts>
+    @EnvironmentObject var coreData: CoreDataViewModel
     
     var body: some View {
         List{
-            ForEach(receipts, id: \.self) { receipt in
+            ForEach(coreData.receipts, id: \.self) { receipt in
                 ReceiptRow(receipt: receipt)
                     .onAppear(){
-                        settingsViewModel.checkNotifications(array: receipts)
+                        settingsViewModel.checkNotifications(array: coreData.receipts)
                     }
             }
-            .onDelete(perform: removeReceipt)
-            if receipts.isEmpty {
+            .onDelete(perform: coreData.removeReceipt)
+            if coreData.receipts.isEmpty {
                 HStack{
                     Spacer()
                     Text("You have no receipts.")
@@ -36,7 +31,6 @@ struct ReceiptsList: View {
             
            
         }
-        .environmentObject(viewModel)
         .listStyle(PlainListStyle())
         .navigationTitle("My Receipts")
         .onAppear(){
@@ -44,22 +38,10 @@ struct ReceiptsList: View {
         }
         .onChange(of: settingsViewModel.notificationAllowed) { value in
             if value {
-                settingsViewModel.checkNotifications(array: receipts)
+                settingsViewModel.checkNotifications(array: coreData.receipts)
             }
         }
         
-    }
-    
-    func removeReceipt(at offsets: IndexSet) {
-        for index in offsets {
-            let receipt = receipts[index]
-            viewContext.delete(receipt)
-            if let id = receipt.id {
-                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id.uuidString])
-            }
-            
-            viewModel.saveContext(viewContext: viewContext)
-        }
     }
 }
 

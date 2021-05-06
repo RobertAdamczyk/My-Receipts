@@ -9,11 +9,8 @@ import SwiftUI
 
 struct NotificationsSettings: View {
     @EnvironmentObject var viewModel: SettingsViewModel
+    @EnvironmentObject var coreData: CoreDataViewModel
     @AppStorage("daysNotification") var daysNotification = 7
-    @FetchRequest(
-        sortDescriptors: [],
-        animation: .default)
-    private var receipts: FetchedResults<Receipts>
     
     var body: some View {
         Form{
@@ -46,7 +43,7 @@ struct NotificationsSettings: View {
         .navigationBarTitle("Notifications", displayMode: .inline)
         .onChange(of: daysNotification) { _ in
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-            viewModel.checkNotifications(array: receipts)
+            viewModel.checkNotifications(array: coreData.receipts)
         }
     }
 }
