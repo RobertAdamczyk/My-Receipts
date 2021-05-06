@@ -27,10 +27,13 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
             AVCaptureDevice.requestAccess(for: .video) { (status) in
                 if status {
                     self.setUp()
+                }else {
+                    DispatchQueue.main.async {
+                        self.showAlert = true
+                    }
                 }
                 DispatchQueue.main.async {
                     self.isDetermining = false
-                    self.showAlert = true
                 }
             }
         case .denied:
