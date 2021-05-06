@@ -21,8 +21,6 @@
 		E180DF3E2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */; };
 		E180DF3F2632F9C600CC5CC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF282632F9C400CC5CC8 /* ContentView.swift */; };
 		E180DF402632F9C600CC5CC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF282632F9C400CC5CC8 /* ContentView.swift */; };
-		E180DF412632F9C600CC5CC8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF292632F9C400CC5CC8 /* Persistence.swift */; };
-		E180DF422632F9C600CC5CC8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF292632F9C400CC5CC8 /* Persistence.swift */; };
 		E180DF432632F9C600CC5CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */; };
 		E180DF442632F9C600CC5CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */; };
 		E180DF542632FBD800CC5CC8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF532632FBD800CC5CC8 /* Home.swift */; };
@@ -64,7 +62,6 @@
 		E180DF262632F9C400CC5CC8 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ReceiptsApp.swift; sourceTree = "<group>"; };
 		E180DF282632F9C400CC5CC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E180DF292632F9C400CC5CC8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E180DF2F2632F9C500CC5CC8 /* My Receipts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Receipts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E180DF322632F9C600CC5CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,7 +163,6 @@
 				E180DF4F2632FBAE00CC5CC8 /* View */,
 				E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */,
 				E180DF282632F9C400CC5CC8 /* ContentView.swift */,
-				E180DF292632F9C400CC5CC8 /* Persistence.swift */,
 				E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */,
 				E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */,
 			);
@@ -394,7 +390,6 @@
 				E1BB595D263ED22100D3D2DB /* CameraFullView.swift in Sources */,
 				E16B7C30264074BD0099BB15 /* CameraPhotoUI.swift in Sources */,
 				E180DF84263361F100CC5CC8 /* ImagePicker.swift in Sources */,
-				E180DF412632F9C600CC5CC8 /* Persistence.swift in Sources */,
 				E180DF882633622300CC5CC8 /* AddReceipt.swift in Sources */,
 				E190CDA12635B0C1002E4343 /* ImagePreview.swift in Sources */,
 				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
@@ -425,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E180DF3E2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
-				E180DF422632F9C600CC5CC8 /* Persistence.swift in Sources */,
 				E180DF3C2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E180DF402632F9C600CC5CC8 /* ContentView.swift in Sources */,
 			);

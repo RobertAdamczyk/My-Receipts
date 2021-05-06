@@ -35,6 +35,7 @@ struct ReceiptsList: View {
         .navigationTitle("My Receipts")
         .onAppear(){
             settingsViewModel.notificationRequest()
+            coreData.fetchReceipts()
         }
         .onChange(of: settingsViewModel.notificationAllowed) { value in
             if value {

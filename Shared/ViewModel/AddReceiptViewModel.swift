@@ -14,10 +14,10 @@ class AddReceiptViewModel: ObservableObject {
     @Published var showComponent: ShowComponents?
     @AppStorage("daysNotification") var daysNotification = 7
     
-    func save(viewContext: NSManagedObjectContext) {
+    func save() {
         let pickedImage = inputImage?.jpegData(compressionQuality: 1.0)
         
-        let newData = Receipts(context: viewContext)
+        let newData = Receipts(context: CoreDataMenager.instance.context)
         newData.image = pickedImage
         newData.title = newReceipt.title
         newData.dateOfPurchase = newReceipt.dateOfPurchase
@@ -28,12 +28,7 @@ class AddReceiptViewModel: ObservableObject {
             createNotification(id: id)
         }
         
-        do {
-            try viewContext.save()
-        }
-        catch {
-            fatalError(error.localizedDescription)
-        }
+        CoreDataMenager.instance.save()
     }
     
     func createNotification(id: UUID){

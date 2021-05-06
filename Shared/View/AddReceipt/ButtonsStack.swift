@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ButtonsStack: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var viewModel: AddReceiptViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
     var body: some View {
@@ -41,7 +40,7 @@ struct ButtonsStack: View {
         }
         Button(action:{
             if viewModel.checkTitleAndImage() {
-                viewModel.save(viewContext: viewContext)
+                viewModel.save()
                 homeViewModel.view = .list
             }
         }){
