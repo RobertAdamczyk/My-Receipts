@@ -18,6 +18,7 @@ class CoreDataViewModel: ObservableObject {
     
     func fetchReceipts(){
         let request = NSFetchRequest<Receipts>(entityName: "Receipts")
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         do {
             receipts = try coreDataMenager.context.fetch(request)
         }catch let error {
