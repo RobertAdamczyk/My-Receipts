@@ -13,7 +13,7 @@ struct AddReceipt: View {
     @Binding var showPicker: Bool
     @Binding var takedPhotoData: Data?
     var body: some View {
-        ScrollView{
+        ScrollView(showsIndicators: false){
             ZStack{
                 Color.clear
                     .frame(height: UIScreen.main.bounds.height)

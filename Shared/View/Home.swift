@@ -27,20 +27,17 @@ struct Home: View {
             .environmentObject(viewModel)
             .environmentObject(settingsViewModel)
             .environmentObject(coreDataViewModel)
-            .navigationBarItems(leading:
-                                    HStack{
-                                        Button(action:{
-                                            withAnimation{
-                                                viewModel.showMenuBar.toggle()
-                                            }
-                                        }){
-                                            Image(systemName: "line.horizontal.3")
-                                                .font(.title2)
-                                                .foregroundColor(Color("Blue"))
-                                        }
-                                        .disabled(viewModel.showMenuBar)
-                                    }
-            )
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button(action:{
+                        withAnimation{
+                            viewModel.showMenuBar.toggle()
+                        }
+                    }){
+                        Image(systemName: "line.horizontal.3")
+                    }
+                }
+            }
         }
         .accentColor(Color("Blue"))
         .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
