@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonsStack: View {
     @EnvironmentObject var viewModel: AddReceiptViewModel
-    @EnvironmentObject var homeViewModel: HomeViewModel
+    
     var body: some View {
         Button(action:{
             viewModel.showComponent(value: .start)
@@ -35,21 +35,6 @@ struct ButtonsStack: View {
                 Text("\(viewModel.newReceipt.endOfWarranty, style: .date)")
                     .fontWeight(.semibold)
                     .foregroundColor(Color("Blue"))
-            }
-            .formLook
-        }
-        Button(action:{
-            if viewModel.checkTitleAndImage() {
-                viewModel.save()
-                homeViewModel.view = .list
-            }
-        }){
-            HStack{
-                Spacer()
-                Text("Done")
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("Blue"))
-                Spacer()
             }
             .formLook
         }

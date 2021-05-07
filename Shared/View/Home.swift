@@ -42,6 +42,7 @@ struct Home: View {
                                     }
             )
         }
+        .accentColor(Color("Blue"))
         .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
         .overlay(
             ImagePreview(selectedImage: $viewModel.selectedImage)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddReceipt: View {
     @StateObject var viewModel = AddReceiptViewModel()
+    @EnvironmentObject var homeViewModel: HomeViewModel
     @Binding var showPicker: Bool
     @Binding var takedPhotoData: Data?
     var body: some View {
@@ -37,6 +38,16 @@ struct AddReceipt: View {
                     .offset(x: viewModel.showComponent == .start ? 0 : -400, y:-170)
                 MyDatePicker(date: $viewModel.newReceipt.endOfWarranty)
                     .offset(x: viewModel.showComponent == .end ? 0 : -400, y:-170)
+            }
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button("Done") {
+                    if viewModel.checkTitleAndImage() {
+                        viewModel.save()
+                        homeViewModel.view = .list
+                    }
+                }
             }
         }
         .onChange(of: takedPhotoData){ _ in
