@@ -15,9 +15,9 @@ extension View {
             .background(Color("Light"))
             .overlay(
                 VStack{
-                    Rectangle().frame(height:1)
+                    Rectangle().frame(height:0.7)
                     Spacer()
-                    Rectangle().frame(height:1)
+                    Rectangle().frame(height:0.7)
                 }
                 .foregroundColor(Color("BorderColor"))
             )
