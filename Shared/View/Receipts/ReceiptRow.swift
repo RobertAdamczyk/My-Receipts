@@ -32,12 +32,17 @@ struct ReceiptRow: View {
                         .cornerRadius(5)
                 }
             }.onAppear(){
-                if let dataImage = receipt.image {
-                    if let unwrappedUiImage = UIImage(data: dataImage) {
-                        image = Image(uiImage: unwrappedUiImage)
-                        uiimage = unwrappedUiImage
-                    }
+                if let im = CacheImage.shared.get(forKey: receipt.id?.uuidString ?? ""){
+                    image = Image(uiImage: im)
+                    uiimage = im
+                    return
                 }
+                guard let dataImage = receipt.image else { return }
+                guard let unwrappedUIImage = UIImage(data: dataImage) else { return }
+                
+                CacheImage.shared.set(forKey: receipt.id?.uuidString ?? "", image: unwrappedUIImage)
+                image = Image(uiImage: unwrappedUIImage)
+                uiimage = unwrappedUIImage
             }
             
                 
