@@ -7,25 +7,6 @@
 
 import SwiftUI
 
-class ImagePreviewViewModel: NSObject, ObservableObject {
-    @Published var offset = CGSize.zero
-    @Published var showAlert = false
-    
-    func writeToPhotoAlbum(image: UIImage) {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
-    }
-
-    @objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            print("Error saving image. \(error)")
-            showAlert.toggle()
-            return
-        }
-        
-        print("Saved !")
-    }
-}
-
 struct ImagePreview: View {
     @ObservedObject var viewModel = ImagePreviewViewModel()
     @Binding var selectedImage: UIImage?
@@ -55,7 +36,25 @@ struct ImagePreview: View {
                         .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
                         .padding(.leading, 10)
                         .opacity(viewModel.offset.height == 0 ? 1 : 0)
+                        .opacity(viewModel.saved ? 0 : 1)
                     },alignment: .topLeading)
+                    .overlay(
+                        VStack(spacing: 20){
+                            Image(systemName: "checkmark")
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                            Text("Saved")
+                        }
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(.gray)
+                        .frame(width: 170, height: 170)
+                        .background(Color.black
+                                        .opacity(0.7)
+                                        .cornerRadius(20))
+                        .opacity(viewModel.saved ? 1 : 0)
+                        .animation(Animation.default)
+                        .opacity(viewModel.offset.height == 0 ? 1 : 0)
+                    )
             }
         }
         .gesture(

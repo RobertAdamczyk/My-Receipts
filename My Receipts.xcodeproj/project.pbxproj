@@ -39,6 +39,7 @@
 		E180DF9726338FA500CC5CC8 /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */; };
 		E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF9C2633946000CC5CC8 /* ShowComponents.swift */; };
 		E18430772645F8B900026A43 /* CacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18430762645F8B900026A43 /* CacheImage.swift */; };
+		E18430792646902300026A43 /* ImagePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18430782646902300026A43 /* ImagePreviewViewModel.swift */; };
 		E190CDA12635B0C1002E4343 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E190CDA02635B0C1002E4343 /* ImagePreview.swift */; };
 		E19A09F326389A710079FB93 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A09F226389A710079FB93 /* SettingsViewModel.swift */; };
 		E19CA3F626339860006EC2E5 /* RoundedBackgroundWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F526339860006EC2E5 /* RoundedBackgroundWithBorder.swift */; };
@@ -85,6 +86,7 @@
 		E180DF9626338FA500CC5CC8 /* MyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
 		E180DF9C2633946000CC5CC8 /* ShowComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowComponents.swift; sourceTree = "<group>"; };
 		E18430762645F8B900026A43 /* CacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImage.swift; sourceTree = "<group>"; };
+		E18430782646902300026A43 /* ImagePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewModel.swift; sourceTree = "<group>"; };
 		E190CDA02635B0C1002E4343 /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreview.swift; sourceTree = "<group>"; };
 		E19A09F226389A710079FB93 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E19CA3F526339860006EC2E5 /* RoundedBackgroundWithBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundWithBorder.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				E19A09F226389A710079FB93 /* SettingsViewModel.swift */,
 				E17C6A83263ECC710023B2EC /* CameraViewModel.swift */,
 				E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */,
+				E18430782646902300026A43 /* ImagePreviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				E180DF84263361F100CC5CC8 /* ImagePicker.swift in Sources */,
 				E180DF882633622300CC5CC8 /* AddReceipt.swift in Sources */,
 				E190CDA12635B0C1002E4343 /* ImagePreview.swift in Sources */,
+				E18430792646902300026A43 /* ImagePreviewViewModel.swift in Sources */,
 				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
 				E180DF762633582C00CC5CC8 /* Settings.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
