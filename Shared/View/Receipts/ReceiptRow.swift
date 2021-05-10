@@ -11,7 +11,7 @@ struct ReceiptRow: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     @State var image : Image?
     @State var uiimage: UIImage?
-    var receipt: Receipts
+    var receipt: Receipt
     var body: some View {
         HStack(spacing: 10){
             ZStack{

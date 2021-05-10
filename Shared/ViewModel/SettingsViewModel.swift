@@ -25,7 +25,7 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    func checkNotifications(array: [Receipts]) {
+    func checkNotifications(array: [Receipt]) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
 
             if notifications.count == array.count {
@@ -40,7 +40,7 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    func addNotification(receipt: Receipts){
+    func addNotification(receipt: Receipt){
         let content = UNMutableNotificationContent()
         guard let title = receipt.title else {
             print("Title error")

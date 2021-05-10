@@ -10,6 +10,8 @@
 		E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BA264467570017BD29 /* CoreDataMenager.swift */; };
 		E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */; };
 		E1690B172649846300A964E0 /* CategoriesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B162649846300A964E0 /* CategoriesSettings.swift */; };
+		E1690B1A2649865000A964E0 /* Receipt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */; };
+		E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */; };
 		E16B7C30264074BD0099BB15 /* CameraPhotoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */; };
 		E16B7C342640755F0099BB15 /* CameraLiveUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C332640755F0099BB15 /* CameraLiveUI.swift */; };
 		E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C6A83263ECC710023B2EC /* CameraViewModel.swift */; };
@@ -30,8 +32,6 @@
 		E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF642633010500CC5CC8 /* HomeViewModel.swift */; };
 		E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF68263302D700CC5CC8 /* MenuBar.swift */; };
 		E180DF762633582C00CC5CC8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF752633582C00CC5CC8 /* Settings.swift */; };
-		E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF7926335AE100CC5CC8 /* Receipts+CoreDataClass.swift */; };
-		E180DF7C26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF7A26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift */; };
 		E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */; };
 		E180DF84263361F100CC5CC8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF83263361F100CC5CC8 /* ImagePicker.swift */; };
 		E180DF882633622300CC5CC8 /* AddReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF872633622300CC5CC8 /* AddReceipt.swift */; };
@@ -55,6 +55,8 @@
 		E112D2BA264467570017BD29 /* CoreDataMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMenager.swift; sourceTree = "<group>"; };
 		E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		E1690B162649846300A964E0 /* CategoriesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSettings.swift; sourceTree = "<group>"; };
+		E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPhotoUI.swift; sourceTree = "<group>"; };
 		E16B7C332640755F0099BB15 /* CameraLiveUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLiveUI.swift; sourceTree = "<group>"; };
 		E17C6A83263ECC710023B2EC /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -77,8 +79,6 @@
 		E180DF642633010500CC5CC8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E180DF68263302D700CC5CC8 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		E180DF752633582C00CC5CC8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		E180DF7926335AE100CC5CC8 /* Receipts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipts+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E180DF7A26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipts+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceiptViewModel.swift; sourceTree = "<group>"; };
 		E180DF83263361F100CC5CC8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E180DF872633622300CC5CC8 /* AddReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceipt.swift; sourceTree = "<group>"; };
@@ -241,8 +241,8 @@
 		E180DF522632FBBF00CC5CC8 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				E180DF7926335AE100CC5CC8 /* Receipts+CoreDataClass.swift */,
-				E180DF7A26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift */,
+				E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */,
+				E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -391,12 +391,12 @@
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
 				E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */,
 				E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */,
-				E180DF7C26335AE100CC5CC8 /* Receipts+CoreDataProperties.swift in Sources */,
 				E1BB595D263ED22100D3D2DB /* CameraFullView.swift in Sources */,
 				E18430772645F8B900026A43 /* CacheImage.swift in Sources */,
 				E16B7C30264074BD0099BB15 /* CameraPhotoUI.swift in Sources */,
 				E180DF84263361F100CC5CC8 /* ImagePicker.swift in Sources */,
 				E180DF882633622300CC5CC8 /* AddReceipt.swift in Sources */,
+				E1690B1A2649865000A964E0 /* Receipt+CoreDataClass.swift in Sources */,
 				E190CDA12635B0C1002E4343 /* ImagePreview.swift in Sources */,
 				E18430792646902300026A43 /* ImagePreviewViewModel.swift in Sources */,
 				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
@@ -407,6 +407,7 @@
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
 				E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */,
 				E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */,
+				E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */,
 				E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */,
 				E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */,
 				E19D91892639B73A0091D9E1 /* NotificationsSettings.swift in Sources */,
@@ -416,7 +417,6 @@
 				E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */,
 				E1690B172649846300A964E0 /* CategoriesSettings.swift in Sources */,
 				E1BB5961263EE10D00D3D2DB /* CameraModifiers.swift in Sources */,
-				E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E180DF3F2632F9C600CC5CC8 /* ContentView.swift in Sources */,
 				E19A09F326389A710079FB93 /* SettingsViewModel.swift in Sources */,

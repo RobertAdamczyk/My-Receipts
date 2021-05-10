@@ -10,14 +10,14 @@ import CoreData
 
 class CoreDataViewModel: ObservableObject {
     let coreDataMenager = CoreDataMenager.instance
-    @Published var receipts: [Receipts] = []
+    @Published var receipts: [Receipt] = []
     
     init() {
         fetchReceipts()
     }
     
     func fetchReceipts(){
-        let request = NSFetchRequest<Receipts>(entityName: "Receipts")
+        let request = NSFetchRequest<Receipt>(entityName: "Receipt")
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         do {
             receipts = try coreDataMenager.context.fetch(request)

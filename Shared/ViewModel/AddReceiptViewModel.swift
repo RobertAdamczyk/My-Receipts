@@ -17,7 +17,7 @@ class AddReceiptViewModel: ObservableObject {
     func save() {
         let pickedImage = inputImage?.jpegData(compressionQuality: 1.0)
         
-        let newData = Receipts(context: CoreDataMenager.instance.context)
+        let newData = Receipt(context: CoreDataMenager.instance.context)
         newData.image = pickedImage
         newData.title = newReceipt.title
         newData.dateOfPurchase = newReceipt.dateOfPurchase
