@@ -21,6 +21,7 @@ extension Receipt {
     @NSManaged public var id: UUID?
     @NSManaged public var image: Data?
     @NSManaged public var title: String?
+    @NSManaged public var categorie: Categorie?
 
 }
 
