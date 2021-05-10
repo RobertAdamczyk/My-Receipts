@@ -15,11 +15,15 @@ struct CategoriesSettings: View {
             if coreDataViewModel.categories.isEmpty {
                 Text("You have no categories.")
                     .frame(maxWidth: .infinity, alignment: .center)
+            }else {
+                Section(header: Text("Categories")) {
+                    ForEach(coreDataViewModel.categories) { categorie in
+                        Text(categorie.title ?? "No name")
+                    }
+                    .onDelete(perform: coreDataViewModel.removeCategorie)
+                }
             }
-            ForEach(coreDataViewModel.categories) { categorie in
-                Text(categorie.title ?? "No name")
-            }
-            .onDelete(perform: coreDataViewModel.removeCategorie)
+           
         }
         
         
@@ -30,7 +34,8 @@ struct CategoriesSettings: View {
             }
         }
         .sheet(isPresented: $viewModel.addingCategorie){
-            Text("TEST")
+            AddCategorieView(showSheet: $viewModel.addingCategorie)
+                .environmentObject(coreDataViewModel)
         }
     }
 }

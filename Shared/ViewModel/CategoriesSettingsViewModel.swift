@@ -9,5 +9,4 @@ import Foundation
 
 class CategoriesSettingsViewModel: ObservableObject {
     @Published var addingCategorie = false
-    @Published var title = ""
 }
