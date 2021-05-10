@@ -32,7 +32,7 @@ struct Settings: View {
                 NavigationLink(destination: CategoriesSettings()
                                                 .environmentObject(viewModel)) {
                     HStack(spacing: 15){
-                        Image(systemName: "list.bullet")
+                        Image(systemName: "text.book.closed.fill")
                             .foregroundColor(.white)
                             .font(.title3)
                             .padding(5)

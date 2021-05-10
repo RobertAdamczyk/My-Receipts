@@ -11,44 +11,34 @@ struct CategoriesSettings: View {
     @ObservedObject var coreDataViewModel = CoreDataViewModel()
     @ObservedObject var viewModel = CategoriesSettingsViewModel()
     var body: some View {
-        VStack{
-            List{
-                if coreDataViewModel.categories.isEmpty {
-                    Text("You have no categories.")
-                        .frame(maxWidth: .infinity, alignment: .center)
-                }
-                ForEach(coreDataViewModel.categories) { categorie in
-                    Text(categorie.title ?? "")
-                }
-                .onDelete(perform: coreDataViewModel.removeCategorie)
+        Form{
+            if coreDataViewModel.categories.isEmpty {
+                Text("You have no categories.")
+                    .frame(maxWidth: .infinity, alignment: .center)
             }
-            .listStyle(PlainListStyle())
-            Spacer()
-            if viewModel.addingCategorie {
-                TextField("Title", text: $viewModel.title)
-                    .overlay(
-                        Button("Save") {
-                            coreDataViewModel.addCategorie(title: viewModel.title)
-                        }
-                        ,alignment: .trailing)
+            ForEach(coreDataViewModel.categories) { categorie in
+                Text(categorie.title ?? "No name")
             }
+            .onDelete(perform: coreDataViewModel.removeCategorie)
         }
         
-        .navigationTitle("Categories")
+        
+        .navigationBarTitle("Categories", displayMode: .inline)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button("Add") {
-                    withAnimation{
-                        viewModel.addingCategorie.toggle()
-                    }
-                }
+                Button("Add") { viewModel.addingCategorie.toggle() }
             }
+        }
+        .sheet(isPresented: $viewModel.addingCategorie){
+            Text("TEST")
         }
     }
 }
 
 struct CategoriesSettings_Previews: PreviewProvider {
     static var previews: some View {
-        CategoriesSettings()
+        Group {
+            CategoriesSettings()
+        }
     }
 }
