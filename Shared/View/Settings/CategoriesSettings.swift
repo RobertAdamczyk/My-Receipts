@@ -8,14 +8,39 @@
 import SwiftUI
 
 struct CategoriesSettings: View {
+    @ObservedObject var coreDataViewModel = CoreDataViewModel()
+    @ObservedObject var viewModel = CategoriesSettingsViewModel()
     var body: some View {
-        List{
-            
+        VStack{
+            List{
+                if coreDataViewModel.categories.isEmpty {
+                    Text("You have no categories.")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
+                ForEach(coreDataViewModel.categories) { categorie in
+                    Text(categorie.title ?? "")
+                }
+                .onDelete(perform: coreDataViewModel.removeCategorie)
+            }
+            .listStyle(PlainListStyle())
+            Spacer()
+            if viewModel.addingCategorie {
+                TextField("Title", text: $viewModel.title)
+                    .overlay(
+                        Button("Save") {
+                            coreDataViewModel.addCategorie(title: viewModel.title)
+                        }
+                        ,alignment: .trailing)
+            }
         }
-        .navigationBarTitle("Categories", displayMode: .inline)
+        
+        .navigationTitle("Categories")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button("Add") {
+                    withAnimation{
+                        viewModel.addingCategorie.toggle()
+                    }
                 }
             }
         }

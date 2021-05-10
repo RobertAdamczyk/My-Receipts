@@ -11,8 +11,10 @@ import CoreData
 class CoreDataViewModel: ObservableObject {
     let coreDataMenager = CoreDataMenager.instance
     @Published var receipts: [Receipt] = []
+    @Published var categories: [Categorie] = []
     
     init() {
+        fetchCategories()
         fetchReceipts()
     }
     
@@ -26,8 +28,19 @@ class CoreDataViewModel: ObservableObject {
         }
     }
     
+    func fetchCategories(){
+        let request = NSFetchRequest<Categorie>(entityName: "Categorie")
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        do {
+            categories = try coreDataMenager.context.fetch(request)
+        }catch let error {
+            print("Error fetching Core Data. \(error)")
+        }
+    }
+    
     func save() {
         coreDataMenager.save()
+        fetchCategories()
         fetchReceipts()
     }
     
@@ -41,6 +54,22 @@ class CoreDataViewModel: ObservableObject {
             
             save()
         }
+    }
+    
+    func removeCategorie(at offsets: IndexSet) {
+        for index in offsets {
+            let categorie = categories[index]
+            coreDataMenager.context.delete(categorie)
+            
+            save()
+        }
+    }
+    
+    func addCategorie(title: String){
+        let newCategorie = Categorie(context: CoreDataMenager.instance.context)
+        newCategorie.title = title
+        
+        save()
     }
     
 }
