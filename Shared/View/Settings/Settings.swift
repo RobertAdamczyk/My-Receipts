@@ -27,6 +27,22 @@ struct Settings: View {
                 }
                 
             }
+            
+            Section(header: Text("Receipts")){
+                NavigationLink(destination: CategoriesSettings()
+                                                .environmentObject(viewModel)) {
+                    HStack(spacing: 15){
+                        Image(systemName: "list.bullet")
+                            .foregroundColor(.white)
+                            .font(.title3)
+                            .padding(5)
+                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(Color("Blue")))
+                        Text("Categories")
+                    }
+                    
+                }
+                
+            }
         }
         .navigationTitle("Settings")
         

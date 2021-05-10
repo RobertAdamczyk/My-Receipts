@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BA264467570017BD29 /* CoreDataMenager.swift */; };
 		E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */; };
+		E1690B172649846300A964E0 /* CategoriesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B162649846300A964E0 /* CategoriesSettings.swift */; };
 		E16B7C30264074BD0099BB15 /* CameraPhotoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */; };
 		E16B7C342640755F0099BB15 /* CameraLiveUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C332640755F0099BB15 /* CameraLiveUI.swift */; };
 		E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C6A83263ECC710023B2EC /* CameraViewModel.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		E112D2BA264467570017BD29 /* CoreDataMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMenager.swift; sourceTree = "<group>"; };
 		E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		E1690B162649846300A964E0 /* CategoriesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSettings.swift; sourceTree = "<group>"; };
 		E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPhotoUI.swift; sourceTree = "<group>"; };
 		E16B7C332640755F0099BB15 /* CameraLiveUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLiveUI.swift; sourceTree = "<group>"; };
 		E17C6A83263ECC710023B2EC /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				E180DF752633582C00CC5CC8 /* Settings.swift */,
 				E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */,
+				E1690B162649846300A964E0 /* CategoriesSettings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				E16B7C342640755F0099BB15 /* CameraLiveUI.swift in Sources */,
 				E19CA402263399F8006EC2E5 /* TextFieldRow.swift in Sources */,
 				E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */,
+				E1690B172649846300A964E0 /* CategoriesSettings.swift in Sources */,
 				E1BB5961263EE10D00D3D2DB /* CameraModifiers.swift in Sources */,
 				E180DF7B26335AE100CC5CC8 /* Receipts+CoreDataClass.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
