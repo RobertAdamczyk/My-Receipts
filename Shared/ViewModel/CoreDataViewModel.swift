@@ -24,7 +24,6 @@ class CoreDataViewModel: ObservableObject {
         }catch let error {
             print("Error fetching Core Data. \(error)")
         }
-        
     }
     
     func save() {

@@ -59,6 +59,8 @@
 		E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPhotoUI.swift; sourceTree = "<group>"; };
 		E16B7C332640755F0099BB15 /* CameraLiveUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLiveUI.swift; sourceTree = "<group>"; };
+		E172DA8126498BB200023FDC /* Categorie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categorie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E172DA8226498BB200023FDC /* Categorie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categorie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E17C6A83263ECC710023B2EC /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		E17C6A87263ECCC70023B2EC /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		E17FC17426341AD400082D55 /* My Receipts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Receipts.entitlements"; sourceTree = "<group>"; };
@@ -241,6 +243,8 @@
 		E180DF522632FBBF00CC5CC8 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				E172DA8126498BB200023FDC /* Categorie+CoreDataClass.swift */,
+				E172DA8226498BB200023FDC /* Categorie+CoreDataProperties.swift */,
 				E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */,
 				E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */,
 			);

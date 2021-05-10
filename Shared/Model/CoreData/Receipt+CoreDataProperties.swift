@@ -1,6 +1,6 @@
 //
 //  Receipt+CoreDataProperties.swift
-//  My Receipts (iOS)
+//  My Receipts
 //
 //  Created by Robert Adamczyk on 10.05.21.
 //
@@ -22,9 +22,5 @@ extension Receipt {
     @NSManaged public var image: Data?
     @NSManaged public var title: String?
     @NSManaged public var categorie: Categorie?
-
-}
-
-extension Receipt : Identifiable {
 
 }
