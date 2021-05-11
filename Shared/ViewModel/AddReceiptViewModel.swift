@@ -23,6 +23,7 @@ class AddReceiptViewModel: ObservableObject {
         newData.dateOfPurchase = newReceipt.dateOfPurchase
         newData.endOfWarranty = newReceipt.endOfWarranty
         newData.id = UUID()
+        newData.categorie = newReceipt.categorie
         
         if let id = newData.id {
             createNotification(id: id)
