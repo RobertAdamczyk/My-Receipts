@@ -12,6 +12,7 @@ struct NewReceipt {
     var title: String
     var dateOfPurchase: Date
     var endOfWarranty: Date
+    var categorie: Categorie?
     
     init(){
         title = ""
