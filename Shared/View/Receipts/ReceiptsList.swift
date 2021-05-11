@@ -20,9 +20,9 @@ struct ReceiptsList: View {
                             VStack{
                                 Text(categorie.title ?? "")
                                     .font(.title3)
-                                    .fontWeight(.semibold)
+                                    .fontWeight(.medium)
                             }
-                            .padding(.vertical, 10)
+                            .padding(.vertical, 7)
                         }
                     }
                     
