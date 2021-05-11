@@ -11,6 +11,7 @@
 		E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */; };
 		E124AA1226498FB6009CE167 /* CategoriesSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */; };
 		E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorieView.swift */; };
+		E167BBD2264AD62100AA6CA2 /* ReceiptsCategorieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD1264AD62100AA6CA2 /* ReceiptsCategorieList.swift */; };
 		E1690B172649846300A964E0 /* CategoriesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B162649846300A964E0 /* CategoriesSettings.swift */; };
 		E1690B1A2649865000A964E0 /* Receipt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */; };
 		E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */; };
@@ -58,6 +59,7 @@
 		E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSettingsViewModel.swift; sourceTree = "<group>"; };
 		E124AA182649C3F3009CE167 /* AddCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategorieView.swift; sourceTree = "<group>"; };
+		E167BBD1264AD62100AA6CA2 /* ReceiptsCategorieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsCategorieList.swift; sourceTree = "<group>"; };
 		E1690B162649846300A964E0 /* CategoriesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSettings.swift; sourceTree = "<group>"; };
 		E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				E17FC17C26345E5400082D55 /* ReceiptRow.swift */,
 				E180DF592633003A00CC5CC8 /* ReceiptsList.swift */,
+				E167BBD1264AD62100AA6CA2 /* ReceiptsCategorieList.swift */,
 			);
 			path = Receipts;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
 				E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */,
 				E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */,
+				E167BBD2264AD62100AA6CA2 /* ReceiptsCategorieList.swift in Sources */,
 				E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */,
 				E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */,
 				E180DF9D2633946000CC5CC8 /* ShowComponents.swift in Sources */,

@@ -16,7 +16,7 @@ struct ReceiptsList: View {
             if !coreData.categories.isEmpty {
                 Section(header: Text("Categories")){
                     ForEach(coreData.categories, id: \.self) { categorie in
-                        NavigationLink(destination: Text("123")) {
+                        NavigationLink(destination: ReceiptsCategorieList(categorie: categorie).environmentObject(coreData)) {
                             VStack{
                                 Text(categorie.title ?? "")
                                     .font(.title3)
