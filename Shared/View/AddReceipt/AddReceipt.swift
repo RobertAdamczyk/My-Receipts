@@ -26,7 +26,7 @@ struct AddReceipt: View {
             }
             Section(header: Text("Info")){
                 TextField("Title", text: $viewModel.newReceipt.title)
-                if let first = coreData.categories.first {
+                if !coreData.categories.isEmpty {
                     NavigationLink(destination:
                                     ChooseCategorieView(categories: coreData.categories)
                                         .environmentObject(viewModel)
@@ -36,11 +36,6 @@ struct AddReceipt: View {
                             Spacer()
                             Text(viewModel.newReceipt.categorie?.title ?? "")
                                 .foregroundColor(Color(UIColor.systemGray))
-                        }
-                    }
-                    .onAppear() {
-                        if viewModel.newReceipt.categorie == nil {
-                            viewModel.newReceipt.categorie = first
                         }
                     }
                     

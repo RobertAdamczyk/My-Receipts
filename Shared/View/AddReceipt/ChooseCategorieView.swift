@@ -14,7 +14,7 @@ struct ChooseCategorieView: View {
         List{
             ForEach(categories, id: \.self) { categorie in
                 Button(action: {
-                    viewModel.newReceipt.categorie = categorie
+                    viewModel.newReceipt.categorie = viewModel.newReceipt.categorie != categorie ? categorie : nil
                 }){
                     HStack{
                         Text(categorie.title ?? "")
