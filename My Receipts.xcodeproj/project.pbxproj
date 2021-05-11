@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BA264467570017BD29 /* CoreDataMenager.swift */; };
 		E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */; };
 		E124AA1226498FB6009CE167 /* CategoriesSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */; };
-		E124AA152649B757009CE167 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = E124AA142649B757009CE167 /* PartialSheet */; };
 		E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorieView.swift */; };
 		E1690B172649846300A964E0 /* CategoriesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B162649846300A964E0 /* CategoriesSettings.swift */; };
 		E1690B1A2649865000A964E0 /* Receipt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */; };
@@ -110,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E124AA152649B757009CE167 /* PartialSheet in Frameworks */,
 				E17FC17926341ADA00082D55 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +314,6 @@
 			);
 			name = "My Receipts (iOS)";
 			packageProductDependencies = (
-				E124AA142649B757009CE167 /* PartialSheet */,
 			);
 			productName = "My Receipts (iOS)";
 			productReference = E180DF2F2632F9C500CC5CC8 /* My Receipts.app */;
@@ -366,7 +363,6 @@
 			);
 			mainGroup = E180DF1F2632F9C400CC5CC8;
 			packageReferences = (
-				E124AA132649B757009CE167 /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = E180DF302632F9C500CC5CC8 /* Products */;
 			projectDirPath = "";
@@ -695,25 +691,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E124AA132649B757009CE167 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.11;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E124AA142649B757009CE167 /* PartialSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E124AA132649B757009CE167 /* XCRemoteSwiftPackageReference "PartialSheet" */;
-			productName = PartialSheet;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */ = {
