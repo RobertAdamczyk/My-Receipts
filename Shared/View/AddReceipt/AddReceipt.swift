@@ -10,7 +10,7 @@ import SwiftUI
 struct AddReceipt: View {
     @StateObject var viewModel = AddReceiptViewModel()
     @EnvironmentObject var homeViewModel: HomeViewModel
-    @ObservedObject var coreData = CoreDataViewModel()
+    @StateObject var coreData = CoreDataViewModel()
     @Binding var showPicker: Bool
     @Binding var takedPhotoData: Data?
     var body: some View {
