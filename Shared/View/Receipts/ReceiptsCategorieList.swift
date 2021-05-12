@@ -17,11 +17,15 @@ struct ReceiptsCategorieList: View {
                     ForEach(receipts, id: \.self) { receipt in
                         ReceiptRow(receipt: receipt)
                     }
-                    .onDelete(perform: coreData.removeReceipt)
-                }else {
-                    Text("You have no receipts.")
-                        .frame(maxWidth: .infinity)
+                    .onDelete { i in
+                        coreData.removeReceiptInCategorie(at: i, categorie: categorie)
+                    }
+                    if receipts.isEmpty{
+                        Text("You have no receipts here.")
+                            .frame(maxWidth: .infinity)
+                    }
                 }
+                
             }
         }
         .listStyle(GroupedListStyle())

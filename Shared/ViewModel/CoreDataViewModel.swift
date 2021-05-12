@@ -56,6 +56,20 @@ class CoreDataViewModel: ObservableObject {
         }
     }
     
+    func removeReceiptInCategorie(at offsets: IndexSet, categorie: Categorie) {
+        guard let receipts = categorie.receipts?.allObjects as? [Receipt] else { return }
+        
+        for index in offsets {
+            let receipt = receipts[index]
+            coreDataMenager.context.delete(receipt)
+            if let id = receipt.id {
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id.uuidString])
+            }
+            
+            save()
+        }
+    }
+    
     func removeCategorie(at offsets: IndexSet) {
         for index in offsets {
             let categorie = categories[index]
