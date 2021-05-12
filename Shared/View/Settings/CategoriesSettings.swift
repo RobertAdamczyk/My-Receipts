@@ -11,7 +11,7 @@ struct CategoriesSettings: View {
     @ObservedObject var coreDataViewModel = CoreDataViewModel()
     @ObservedObject var viewModel = CategoriesSettingsViewModel()
     var body: some View {
-        Form{
+        List{
             if coreDataViewModel.categories.isEmpty {
                 Text("You have no categories.")
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -25,7 +25,7 @@ struct CategoriesSettings: View {
             }
            
         }
-        
+        .listStyle(GroupedListStyle())
         
         .navigationBarTitle("Categories", displayMode: .inline)
         .toolbar {

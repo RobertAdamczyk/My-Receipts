@@ -13,7 +13,7 @@ struct NotificationsSettings: View {
     @AppStorage("daysNotification") var daysNotification = 7
     
     var body: some View {
-        Form{
+        List{
             if !viewModel.notificationAllowed {
                 Section(header: Text("Info")){
                     VStack(spacing: 10){
@@ -40,6 +40,7 @@ struct NotificationsSettings: View {
         
             
         }
+        .listStyle(GroupedListStyle())
         .navigationBarTitle("Notifications", displayMode: .inline)
         .onChange(of: daysNotification) { _ in
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
