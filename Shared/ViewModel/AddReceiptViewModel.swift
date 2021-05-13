@@ -11,7 +11,6 @@ import CoreData
 class AddReceiptViewModel: ObservableObject {
     @Published var inputImage: UIImage?
     @Published var newReceipt = NewReceipt()
-    @Published var showComponent: ShowComponents?
     @AppStorage("daysNotification") var daysNotification = 7
     
     func save() {
@@ -66,11 +65,5 @@ class AddReceiptViewModel: ObservableObject {
             return
         }
         newReceipt.image = Image(uiImage: inputImage)
-    }
-    
-    func showComponent(value: ShowComponents?) {
-        withAnimation{
-            showComponent = value == showComponent ? nil : value
-        }
     }
 }
