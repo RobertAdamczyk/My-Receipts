@@ -32,9 +32,6 @@ struct CategoriesSettings: View {
                 Button("Add") { viewModel.addingCategorie.toggle() }
             }
         }
-        .onAppear(){
-            coreDataViewModel.fetchCategories()
-        }
         .sheet(isPresented: $viewModel.addingCategorie){
             AddCategorieView(showSheet: $viewModel.addingCategorie)
                 .environmentObject(coreDataViewModel)
