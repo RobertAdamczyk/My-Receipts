@@ -12,17 +12,21 @@ class CoreDataViewModel: ObservableObject {
     let coreDataMenager = CoreDataMenager.instance
     @Published var receipts: [Receipt] = []
     @Published var categories: [Categorie] = []
+    @Published var filteredReceipts: [Receipt] = []
     
     func fetchReceipts(){
         let request = NSFetchRequest<Receipt>(entityName: "Receipt")
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         do {
             receipts = try coreDataMenager.context.fetch(request)
+            filterReceipts()
         }catch let error {
             print("Error fetching Core Data. \(error)")
         }
-        
-        receipts = receipts.filter({ $0.categorie == nil })
+    }
+    
+    func filterReceipts(){
+        filteredReceipts = receipts.filter({ $0.categorie == nil })
     }
     
     func fetchCategories(){

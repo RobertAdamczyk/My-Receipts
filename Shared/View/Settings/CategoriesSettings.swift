@@ -26,12 +26,14 @@ struct CategoriesSettings: View {
            
         }
         .listStyle(GroupedListStyle())
-        
         .navigationBarTitle("Categories", displayMode: .inline)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button("Add") { viewModel.addingCategorie.toggle() }
             }
+        }
+        .onAppear(){
+            coreDataViewModel.fetchCategories()
         }
         .sheet(isPresented: $viewModel.addingCategorie){
             AddCategorieView(showSheet: $viewModel.addingCategorie)

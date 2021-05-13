@@ -10,13 +10,16 @@ import SwiftUI
 struct ReceiptsList: View {
     @EnvironmentObject var settingsViewModel: SettingsViewModel
     @EnvironmentObject var coreData: CoreDataViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
         List{
             if !coreData.categories.isEmpty {
                 Section(header: Text("Categories")){
                     ForEach(coreData.categories, id: \.self) { categorie in
-                        NavigationLink(destination: ReceiptsCategorieList(categorie: categorie).environmentObject(coreData)) {
+                        NavigationLink(destination: ReceiptsCategorieList(categorie: categorie)
+                                        .environmentObject(coreData)
+                                        .environmentObject(homeViewModel)) {
                             VStack{
                                 Text(categorie.title ?? "")
                                     .font(.title3)
@@ -30,7 +33,7 @@ struct ReceiptsList: View {
             }
             
             Section(header: Text("Receipts")) {
-                ForEach(coreData.receipts, id: \.self) { receipt in
+                ForEach(coreData.filteredReceipts, id: \.self) { receipt in
                     ReceiptRow(receipt: receipt)
                         .onAppear(){
                             settingsViewModel.checkNotifications(array: coreData.receipts)
