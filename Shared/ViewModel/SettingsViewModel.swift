@@ -10,6 +10,7 @@ import SwiftUI
 class SettingsViewModel: ObservableObject {
     @Published var notificationAllowed = false
     @AppStorage("daysNotification") var daysNotification = 7
+    @AppStorage("notificationAllowedInApp") var notificationAllowedInApp = true
     
     func notificationRequest() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
@@ -26,6 +27,11 @@ class SettingsViewModel: ObservableObject {
     }
     
     func checkNotifications(array: [Receipt]) {
+        if !notificationAllowedInApp {
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            return
+        }
+        
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
 
             if notifications.count == array.count {
@@ -41,6 +47,8 @@ class SettingsViewModel: ObservableObject {
     }
     
     func addNotification(receipt: Receipt){
+        if !notificationAllowedInApp { return }
+        
         let content = UNMutableNotificationContent()
         guard let title = receipt.title else {
             print("Title error")

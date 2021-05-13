@@ -31,6 +31,7 @@ struct NotificationsSettings: View {
             }
             
             Section(header: Text("Notification"), footer: Text("The alert will come \(daysNotification) days before the warranty expires.")){
+                Toggle("Allow Notifications", isOn: $viewModel.notificationAllowedInApp)
                 Picker("Number of days", selection: $daysNotification) {
                     ForEach(0..<51) { i in
                         Text("\(i)")
@@ -44,6 +45,9 @@ struct NotificationsSettings: View {
         .navigationBarTitle("Notifications", displayMode: .inline)
         .onChange(of: daysNotification) { _ in
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            viewModel.checkNotifications(array: coreData.receipts)
+        }
+        .onChange(of: viewModel.notificationAllowedInApp) { _ in
             viewModel.checkNotifications(array: coreData.receipts)
         }
     }
