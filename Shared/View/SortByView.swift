@@ -23,7 +23,7 @@ struct SortByView: View {
                     }
                 }
             
-            VStack(spacing: 0){
+            VStack(spacing: -0.5){
                 Text("Sort by:")
                     .font(.title3)
                     .fontWeight(.semibold)
@@ -31,7 +31,9 @@ struct SortByView: View {
                     .padding()
                     .background(CustomRectangle(radius: 20)
                                     .foregroundColor(Color("Layout")))
-                Divider()
+                Rectangle()
+                    .frame(height: 0.8)
+                    .foregroundColor(.secondary)
                 List{
                     ForEach(SortBy.allCases, id: \.self) { item in
                         Text("\(item.info.name)")
