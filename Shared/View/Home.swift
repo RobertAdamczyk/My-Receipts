@@ -57,6 +57,18 @@ struct Home: View {
                 }
             }
         )
+        .overlay(
+            ZStack{
+                if viewModel.showSortBy {
+                    SortByView(showSort: $viewModel.showSortBy, sortBy: $coreDataViewModel.sortBy)
+                        .onChange(of: coreDataViewModel.sortBy) { _ in
+                            coreDataViewModel.fetchReceipts()
+                        }
+                        .transition(.move(edge: .bottom))
+                }
+            }
+            
+        )
         .onChange(of: viewModel.showMenuBar) { new in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 withAnimation{

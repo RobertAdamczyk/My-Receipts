@@ -52,6 +52,18 @@ struct ReceiptsList: View {
         }
         .listStyle(GroupedListStyle())
         .navigationTitle("My Receipts")
+        .toolbar{
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button(action:{
+                    withAnimation{
+                        homeViewModel.showSortBy.toggle()
+                    }
+                    
+                }){
+                    Text("Sort")
+                }
+            }
+        }
         .onAppear(){
             settingsViewModel.notificationRequest()
             coreData.fetchCategories()

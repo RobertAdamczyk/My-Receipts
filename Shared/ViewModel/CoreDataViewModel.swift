@@ -14,6 +14,8 @@ class CoreDataViewModel: ObservableObject {
     @Published var categories: [Categorie] = []
     @Published var filteredReceipts: [Receipt] = []
     
+    @Published var sortBy: SortBy = SortBy.titleAscending
+    
     init(){
         fetchCategories()
         fetchReceipts()
@@ -21,7 +23,7 @@ class CoreDataViewModel: ObservableObject {
     
     func fetchReceipts(){
         let request = NSFetchRequest<Receipt>(entityName: "Receipt")
-        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: sortBy.info.coreDataName, ascending: sortBy.info.ascending)]
         do {
             receipts = try coreDataMenager.context.fetch(request)
             filterReceipts()

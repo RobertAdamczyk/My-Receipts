@@ -21,6 +21,8 @@ class HomeViewModel: ObservableObject {
     @Published var showImagePicker = false
     @Published var showCamera = false
     
+    @Published var showSortBy = false
+    
     func changeView(newView: Views) {
         view = newView
     }
