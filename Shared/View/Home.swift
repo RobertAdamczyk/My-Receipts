@@ -62,7 +62,10 @@ struct Home: View {
                 if viewModel.showSortBy {
                     SortByView(showSort: $viewModel.showSortBy, sortBy: $coreDataViewModel.sortBy)
                         .onChange(of: coreDataViewModel.sortBy) { _ in
-                            coreDataViewModel.fetchReceipts()
+                            withAnimation{
+                                coreDataViewModel.fetchReceipts()
+                            }
+                            
                         }
                         .transition(.move(edge: .bottom))
                 }

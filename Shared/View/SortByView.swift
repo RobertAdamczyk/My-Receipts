@@ -37,7 +37,9 @@ struct SortByView: View {
                 List{
                     ForEach(SortBy.allCases, id: \.self) { item in
                         Text("\(item.info.name)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.vertical, 10)
+                            .contentShape(Rectangle())
                             .onTapGesture {
                                 animation = false
                                 sortBy = item
@@ -47,13 +49,12 @@ struct SortByView: View {
                             }
                     }
                 }
-                
             }
             .frame(height: 350)
         }
         .ignoresSafeArea()
         .onAppear(){
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 withAnimation{
                     animation = true
                 }
