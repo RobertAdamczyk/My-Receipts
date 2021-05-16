@@ -27,17 +27,21 @@ class SettingsViewModel: ObservableObject {
     }
     
     func checkNotifications(array: [Receipt]) {
-        if !notificationAllowedInApp {
+        if !notificationAllowedInApp{
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             return
         }
         
+        if !notificationAllowed { return }
+        
+        let receiptsWithWarranty = array.filter({ $0.endOfWarranty != nil })
+        
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
-
-            if notifications.count == array.count {
+            if notifications.count == receiptsWithWarranty.count {
                 print("Notifications OK !!!")
                 return
             }else {
+                print("NOTIFICATION NOT OK")
                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                 for receipt in array {
                     self.addNotification(receipt: receipt)

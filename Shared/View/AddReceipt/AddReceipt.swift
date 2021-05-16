@@ -40,11 +40,19 @@ struct AddReceipt: View {
                     }
                     
                 }
+                NavigationLink(destination: WarrantyView()
+                                .environmentObject(viewModel)){
+                    HStack{
+                        Text("Warranty")
+                        Spacer()
+                        Text(viewModel.warranty ? "\(viewModel.newReceipt.endOfWarranty, style: .date)" : "")
+                            .foregroundColor(Color(UIColor.systemGray))
+                    }
+                }
             }
             
-            Section(header: Text("Dates")){
+            Section(header: Text("Purchase")){
                 DatePicker("Date of Purchase", selection: $viewModel.newReceipt.dateOfPurchase, displayedComponents: .date)
-                DatePicker("End Of Warranty", selection: $viewModel.newReceipt.endOfWarranty, displayedComponents: .date)
             }
             
                         

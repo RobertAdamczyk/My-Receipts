@@ -12,6 +12,7 @@ class AddReceiptViewModel: ObservableObject {
     @Published var inputImage: UIImage?
     @Published var newReceipt = NewReceipt()
     @AppStorage("daysNotification") var daysNotification = 7
+    @Published var warranty = false
     
     func save() {
         let pickedImage = inputImage?.jpegData(compressionQuality: 1.0)
@@ -20,7 +21,7 @@ class AddReceiptViewModel: ObservableObject {
         newData.image = pickedImage
         newData.title = newReceipt.title
         newData.dateOfPurchase = newReceipt.dateOfPurchase
-        newData.endOfWarranty = newReceipt.endOfWarranty
+        newData.endOfWarranty = warranty ? newReceipt.endOfWarranty : nil
         newData.id = UUID()
         newData.categorie = newReceipt.categorie
         
