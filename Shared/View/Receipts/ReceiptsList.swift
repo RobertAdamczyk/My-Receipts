@@ -60,7 +60,7 @@ struct ReceiptsList: View {
                     }
                     
                 }){
-                    Text("Sort")
+                    Image(systemName: "ellipsis")
                 }
             }
         }

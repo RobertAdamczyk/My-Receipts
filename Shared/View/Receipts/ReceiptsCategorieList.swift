@@ -38,7 +38,7 @@ struct ReceiptsCategorieList: View {
                     }
                     
                 }){
-                    Text("Sort")
+                    Image(systemName: "ellipsis")
                 }
             }
         }
