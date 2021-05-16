@@ -39,6 +39,7 @@ struct Home: View {
                 }
             }
         }
+        .blur(radius: viewModel.showSortBy ? 5 : 0)
         .accentColor(Color("Blue"))
         .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
         .overlay(

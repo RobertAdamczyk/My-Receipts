@@ -15,7 +15,7 @@ struct SortByView: View {
     var body: some View {
         ZStack(alignment: .bottom){
             Color.black
-                .opacity(animation ? 0.2 : 0)
+                .opacity(animation ? 0.05 : 0)
                 .onTapGesture {
                     animation = false
                     withAnimation{

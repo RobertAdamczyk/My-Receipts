@@ -19,6 +19,7 @@ struct ChooseCategorieView: View {
                     HStack{
                         Text(categorie.title ?? "")
                             .foregroundColor(.primary)
+                            .lineLimit(1)
                         Spacer()
                         if viewModel.newReceipt.categorie == categorie {
                             Text(Image(systemName: "checkmark"))
