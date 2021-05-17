@@ -33,7 +33,7 @@ struct ImagePreview: View {
                         .padding(.horizontal, 3)
                         .background(RoundedRectangle(cornerRadius: 5)
                                         .foregroundColor(Color("Light")))
-                        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                        .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 20)
                         .padding(.leading, 10)
                         .opacity(viewModel.offset.height == 0 ? 1 : 0)
                         .opacity(viewModel.saved ? 0 : 1)
@@ -57,6 +57,7 @@ struct ImagePreview: View {
                     )
             }
         }
+        .ignoresSafeArea()
         .gesture(
             DragGesture()
                 .onChanged { gesture in
@@ -78,7 +79,7 @@ struct ImagePreview: View {
                 }
         )
         .alert(isPresented: $viewModel.showAlert) {
-            Alert(title: Text("You haven't allowed this app to save photos."), message: Text("You can enable this functionality in IPhone Settings."), dismissButton: .default(Text("OK")))
+            Alert(title: Text("You haven't allowed this app to save photos."), message: Text("You can enable this functionality in phone Settings."), dismissButton: .default(Text("OK")))
                 }
     }
 }

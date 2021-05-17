@@ -32,7 +32,7 @@ struct CameraFullView: View {
             cameraViewModel.check()
         }
         .alert(isPresented: $cameraViewModel.showAlert) {
-            Alert(title: Text("You haven't allowed this app to use camera."), message: Text("You can enable this functionality in IPhone Settings."), dismissButton: .default(Text("OK"), action: {
+            Alert(title: Text("You haven't allowed this app to use camera."), message: Text("You can enable this functionality in phone Settings."), dismissButton: .default(Text("OK"), action: {
                 showCamera = false
             }))
                 }

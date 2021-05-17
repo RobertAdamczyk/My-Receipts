@@ -73,5 +73,15 @@
 "Title (Z-A)" = "Tytuł (Z-A)";
 "Date of Purchase (Ascending)" = "Data zakupu (Od najstarszego)";
 "Date of Purchase (Descending)" = "Data zakupu (Od najnowszego)";
-"End of Warranty (Ascending)" = "Koniec gwarancji (Rosnąco)";
-"End of Warranty (Descending)" = "Koniec gwarancji (Malejąco)";
+"End of Warranty (Ascending)" = "Koniec gwarancji (Od najstarszego)";
+"End of Warranty (Descending)" = "Koniec gwarancji (Od najnowszego)";
+
+//Files: Camera
+"You haven't allowed this app to use camera." = "Nie zezwolieś aplikacji do korzystania z kamery.";
+"You can enable this functionality in phone Settings." = "Możesz włączyć tą funkcje w ustawieniach telefonu.";
+"USE THIS PHOTO" = "UŻYJ TO ZDJĘCIE";
+
+//File: ImagePreview
+"You haven't allowed this app to save photos." = "Nie zezwoliłeś aplikacji do zapisywania zdjęć.";
+"Save in Photos" = "Zapisz w galerii";
+"Saved" = "Zapisano";
