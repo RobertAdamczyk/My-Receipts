@@ -30,8 +30,11 @@ struct NotificationsSettings: View {
                 }
             }
             
-            Section(header: Text("Notification"), footer: Text("The alert will come \(daysNotification) days before the warranty expires.")){
+            Section(header: Text("Enable Notifications")){
                 Toggle("Allow Notifications", isOn: $viewModel.notificationAllowedInApp)
+            }
+            
+            Section(header: Text("Notification Options"), footer: Text("The alert will come \(daysNotification) days before the warranty expires.")){
                 Picker("Notify me before", selection: $daysNotification) {
                     ForEach(0..<51) { i in
                         Text("\(i)")

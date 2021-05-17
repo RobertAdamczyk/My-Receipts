@@ -1,0 +1,77 @@
+/* 
+  Localizable.strings
+  My Receipts
+
+  Created by Robert Adamczyk on 17.05.21.
+  
+*/
+
+// File: ReceiptList
+"My Receipts" = "Moje rachunki";
+"You have no receipts." = "Nie masz paragonów. Dodaj nowy paragon w menu.";
+"Categories" = "Kategorie";
+"Receipts" = "Paragony";
+
+// File: ReceiptRow
+"Purchase: %@" = "Kupiono: %@";
+"Warranty to: %@" = "Gwarancja do: %@";
+
+// File: ReceiptCategorieList
+"You have no receipts here." = "Nie masz tutaj paragonów.";
+
+// File: AddReceipt
+"Title" = "Tytuł";
+"Categorie" = "Kategoria";
+"Warranty" = "Gwarancja";
+"Purchase" = "Zakup";
+"Date of Purchase" = "Data zakupu";
+"Done" = "Zapisz";
+"New Receipt" = "Nowy Paragon";
+
+// File: ImageRow
+"Load Image" = "Wczytaj zdjęcie";
+
+// File: WarrantyView
+"Is there a guarantee for the receipt?" = "Czy jest gwarancja do paragonu?";
+"End of Warranty" = "Koniec gwarancji";
+
+//File: Home
+"Take a photo" = "Zrób zdjęcie";
+"Use existing" = "Wczytaj z galerii";
+
+//File: MenuBar
+"Add Receipt" = "Dodaj";
+"Settings" = "Ustawienia";
+
+//File: Settings
+"Notifications" = "Powiadomienia";
+"General" = "Ogólne";
+
+//File: NotificationSettings
+"You haven't allowed this app to show notifications." = "Nie zezwolieś aplikacji do pokazywania powiadomień.";
+"You can enable this functionality in phone:" = "Możesz włączyć tą funkcję w telefonie:";
+"Settings → My Receipts → Notifications → Allow" = "Ustawienia → Moje Paragony → Powiadomienia → Zezwól";
+"Enable Notifications" = "Aktywuj powiadomienia";
+"Allow Notifications" = "Zezwól na powiadomienia";
+"Notification Options" = "Opcje Powiadomień";
+"The alert will come %lld days before the warranty expires." = "Powiadomienie przyjdzie %lld dni przed końcem gwarancji.";
+"Notify me before" = "Powiadom mnie przed";
+
+//File: CategorieSettings
+"You have no categories." = "Nie masz kategorii.";
+"Add" = "Dodaj";
+
+//File: AddCategorieView
+"Enter..." = "Wprowadź...";
+"New Categorie" = "Nowa Kategoria";
+
+//File: SortBy
+"Sort by:" = "Sortuj według:";
+
+// File: SortBy (enum)
+"Title (A-Z)" = "Tytuł (A-Z)";
+"Title (Z-A)" = "Tytuł (Z-A)";
+"Date of Purchase (Ascending)" = "Data zakupu (Od najstarszego)";
+"Date of Purchase (Descending)" = "Data zakupu (Od najnowszego)";
+"End of Warranty (Ascending)" = "Koniec gwarancji (Rosnąco)";
+"End of Warranty (Descending)" = "Koniec gwarancji (Malejąco)";

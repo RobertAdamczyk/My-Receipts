@@ -21,7 +21,7 @@ struct Settings: View {
                             .font(.title3)
                             .padding(5)
                             .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.red))
-                        Text("Notification")
+                        Text("Notifications")
                     }
                     
                 }

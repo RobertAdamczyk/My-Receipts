@@ -18,17 +18,17 @@ enum SortBy: CaseIterable {
     var info: (name: String, ascending: Bool, coreDataName: String) {
         switch self {
         case .titleAscending:
-            return ("Title (A-Z)", true, "title")
+            return ("Title (A-Z)".localized(), true, "title")
         case .titleDescending:
-            return ("Title (Z-A)", false, "title")
+            return ("Title (Z-A)".localized(), false, "title")
         case .purchaseAscending:
-            return ("Date of Purchase (Ascending)", true, "dateOfPurchase")
+            return ("Date of Purchase (Ascending)".localized(), true, "dateOfPurchase")
         case .purchaseDescending:
-            return ("Date of Purchase (Descending)", false, "dateOfPurchase")
+            return ("Date of Purchase (Descending)".localized(), false, "dateOfPurchase")
         case .warrantyAscending:
-            return ("End of Warranty (Ascending)", true, "endOfWarranty")
+            return ("End of Warranty (Ascending)".localized(), true, "endOfWarranty")
         case .warrantyDescending:
-            return ("End of Warranty (Descending)", false, "endOfWarranty")
+            return ("End of Warranty (Descending)".localized(), false, "endOfWarranty")
         }
     }
 }

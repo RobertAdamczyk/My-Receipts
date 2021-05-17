@@ -18,7 +18,7 @@ struct CategoriesSettings: View {
             }else {
                 Section(header: Text("Categories")) {
                     ForEach(coreDataViewModel.categories) { categorie in
-                        Text(categorie.title ?? "No name")
+                        Text(categorie.title ?? "###")
                     }
                     .onDelete(perform: coreDataViewModel.removeCategorie)
                 }
