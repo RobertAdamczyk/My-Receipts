@@ -13,13 +13,13 @@ struct ReceiptRow: View {
     @State var uiimage: UIImage?
     var receipt: Receipt
     var body: some View {
-        HStack(spacing: 10){
+        HStack{
             ZStack{
                 if let unwarppedImage = image {
                     unwarppedImage
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 50)
+                        .frame(maxWidth: 75, maxHeight: 75)
                         .cornerRadius(5)
                         .onTapGesture{
                             withAnimation{
@@ -31,7 +31,9 @@ struct ReceiptRow: View {
                         .frame(width: 50, height: 67)
                         .cornerRadius(5)
                 }
-            }.onAppear(){
+            }
+            .padding(.horizontal, 10)
+            .onAppear(){
                 if let im = CacheImage.shared.get(forKey: receipt.id?.uuidString ?? ""){
                     image = Image(uiImage: im)
                     uiimage = im
@@ -44,27 +46,107 @@ struct ReceiptRow: View {
                 image = Image(uiImage: unwrappedUIImage)
                 uiimage = unwrappedUIImage
             }
-            
-                
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 8){
                 if let title = receipt.title {
-                    Text("\(title)")
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.7)
+                    Text(title)
+                        .font(.custom("Roboto Medium", size: 16))
+                        .fontWeight(.semibold)
                 }
                 if let purchase = receipt.dateOfPurchase {
                     Text("Purchase: \(purchase, style: .date)")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                        .font(.custom("Roboto Medium", size: 12))
+                        .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
                 }
                 if let warranty = receipt.endOfWarranty {
-                    Text("Warranty to: \(warranty, style: .date)")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                    Text("Guarantee: \(warranty, style: .date)")
+                        .font(.custom("Roboto Medium", size: 12))
+                        .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
                 }
+                
             }
+            Spacer()
         }
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2048044233)), radius:8, x:0, y:0)
+        )
+        .overlay(
+            Button(action:{
+                
+            }){
+                Text("Show")
+                    .font(.custom("Roboto Medium", size: 14))
+                    .fontWeight(.semibold)
+                    .padding(6)
+                    .background(
+                        RoundedRectangle(cornerRadius: 9)
+                            .fill(Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)))
+                    )
+            }
+            .padding(10)
+            , alignment: .bottomTrailing
+        )
+        .overlay(Image(systemName: "ellipsis")
+                    .font(.title2)
+                    .rotationEffect(.init(degrees: 90))
+                    .foregroundColor(.secondary)
+                    .padding(.top, 20)
+                    .padding(.trailing, 5), alignment: .topTrailing)
+//        HStack(spacing: 10){
+//            ZStack{
+//                if let unwarppedImage = image {
+//                    unwarppedImage
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 50)
+//                        .cornerRadius(5)
+//                        .onTapGesture{
+//                            withAnimation{
+//                                homeViewModel.selectedImage = uiimage
+//                            }
+//                        }
+//                }else {
+//                    Color("Light")
+//                        .frame(width: 50, height: 67)
+//                        .cornerRadius(5)
+//                }
+//            }.onAppear(){
+//                if let im = CacheImage.shared.get(forKey: receipt.id?.uuidString ?? ""){
+//                    image = Image(uiImage: im)
+//                    uiimage = im
+//                    return
+//                }
+//                guard let dataImage = receipt.image else { return }
+//                guard let unwrappedUIImage = UIImage(data: dataImage) else { return }
+//
+//                CacheImage.shared.set(forKey: receipt.id?.uuidString ?? "", image: unwrappedUIImage)
+//                image = Image(uiImage: unwrappedUIImage)
+//                uiimage = unwrappedUIImage
+//            }
+//
+//
+//            VStack(alignment: .leading, spacing: 5) {
+//                if let title = receipt.title {
+//                    Text("\(title)")
+//                        .font(.title3)
+//                        .fontWeight(.medium)
+//                        .lineLimit(1)
+//                        .minimumScaleFactor(0.7)
+//                }
+//                if let purchase = receipt.dateOfPurchase {
+//                    Text("Purchase: \(purchase, style: .date)")
+//                        .font(.caption)
+//                        .foregroundColor(.secondary)
+//                }
+//                if let warranty = receipt.endOfWarranty {
+//                    Text("Warranty to: \(warranty, style: .date)")
+//                        .font(.caption)
+//                        .foregroundColor(.secondary)
+//                }
+//            }
+//        }
     }
 }

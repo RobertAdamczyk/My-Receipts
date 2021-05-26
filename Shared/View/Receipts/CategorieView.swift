@@ -10,29 +10,33 @@ import SwiftUI
 struct CategorieView: View {
     var color: Color
     var body: some View {
-        VStack(alignment: .leading, spacing: 8){
+        VStack(alignment: .leading, spacing: 5){
             Image(systemName: "folder.fill")
                 .resizable()
-                .frame(width: 40, height: 40)
+                .frame(width: 42, height: 42)
                 .foregroundColor(color)
-                .padding(.bottom, 10)
-                .padding(.leading, 10)
-            Text("Moje urządzenia")
-                .bold()
+            Text("Devices")
+                .font(.custom("Roboto Medium", size: 14))
+                .fontWeight(.semibold)
                 .lineLimit(1)
-            Text("23 receipts")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
+            Text("7 receipts")
+                .font(.custom("Roboto Medium", size: 10))
+                .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
+                .lineLimit(1)
         }
-        .frame(width: 150, height: 150)
-        .background(RoundedRectangle(cornerRadius: 25)
-                        .foregroundColor(.white)
-                        .shadow(radius: 5))
+        .padding(.leading, 15)
+        .frame(width: 100, height: 100, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 13)
+                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                .frame(width: 100, height: 100)
+                .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2)), radius:8, x:0, y:0)
+        )
         .overlay(Image(systemName: "ellipsis")
                     .font(.title2)
                     .rotationEffect(.init(degrees: 90))
                     .foregroundColor(.secondary)
-                    .padding(.top, 25)
+                    .padding(.top, 20)
                     .padding(.trailing, 5), alignment: .topTrailing)
     }
 }
