@@ -13,57 +13,34 @@ struct ReceiptsList: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
-        List{
-            if !coreData.categories.isEmpty {
-                Section(header: Text("Categories")){
-                    ForEach(coreData.categories, id: \.self) { categorie in
-                        NavigationLink(destination: ReceiptsCategorieList(categorie: categorie)
-                                        .environmentObject(coreData)
-                                        .environmentObject(homeViewModel)) {
-                            VStack{
-                                Text(categorie.title ?? "")
-                                    .font(.title3)
-                                    .fontWeight(.medium)
-                            }
-                            .padding(.vertical, 7)
-                        }
-                    }
-                    
-                }
-            }
-            
-            Section(header: Text("Receipts")) {
-                ForEach(coreData.filteredReceipts, id: \.self) { receipt in
-                    ReceiptRow(receipt: receipt)
-                        .onAppear(){
-                            settingsViewModel.checkNotifications(array: coreData.receipts)
-                        }
-                }
-                .onDelete(perform: coreData.removeReceipt)
-                if coreData.receipts.isEmpty {
-                    Text("You have no receipts.")
-                        .frame(maxWidth: .infinity)
-                }
-            }
-            
-            
-            
-           
+//        List{
+//
+//            Section(header: Text("Receipts")) {
+//                ForEach(coreData.filteredReceipts, id: \.self) { receipt in
+//                    ReceiptRow(receipt: receipt)
+//                        .onAppear(){
+//                            settingsViewModel.checkNotifications(array: coreData.receipts)
+//                        }
+//                }
+//                .onDelete(perform: coreData.removeReceipt)
+//                if coreData.receipts.isEmpty {
+//                    Text("You have no receipts.")
+//                        .frame(maxWidth: .infinity)
+//                }
+//            }
+//
+//
+//
+//
+//        }
+//        .listStyle(GroupedListStyle())
+        VStack{
+            NavigationTopBar(title: "Home")
+            Spacer()
         }
-        .listStyle(GroupedListStyle())
-        .navigationTitle("My Receipts")
-        .toolbar{
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action:{
-                    withAnimation{
-                        homeViewModel.showSortBy.toggle()
-                    }
-                    
-                }){
-                    Image(systemName: "ellipsis")
-                }
-            }
-        }
+        .background(Color("NewBackground"))
+        .ignoresSafeArea()
+        .navigationBarHidden(true)
         .onAppear(){
             settingsViewModel.notificationRequest()
             coreData.fetchCategories()

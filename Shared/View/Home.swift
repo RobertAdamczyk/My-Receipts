@@ -40,7 +40,7 @@ struct Home: View {
             }
         }
         .blur(radius: viewModel.showSortBy ? 5 : 0)
-        .accentColor(Color("Blue"))
+        .accentColor(.black)
         .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
         .overlay(
             ImagePreview(selectedImage: $viewModel.selectedImage)
