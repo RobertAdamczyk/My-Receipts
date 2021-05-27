@@ -13,5 +13,6 @@ struct ContentView: View {
         ZStack{
             Home()
         }
+        .preferredColorScheme(.light)
     }
 }

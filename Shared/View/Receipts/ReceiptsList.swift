@@ -13,60 +13,44 @@ struct ReceiptsList: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
-//        List{
-//
-//            Section(header: Text("Receipts")) {
-//                ForEach(coreData.filteredReceipts, id: \.self) { receipt in
-//                    ReceiptRow(receipt: receipt)
-//                        .onAppear(){
-//                            settingsViewModel.checkNotifications(array: coreData.receipts)
-//                        }
-//                }
-//                .onDelete(perform: coreData.removeReceipt)
-//                if coreData.receipts.isEmpty {
-//                    Text("You have no receipts.")
-//                        .frame(maxWidth: .infinity)
-//                }
-//            }
-//
-//
-//
-//
-//        }
-//        .listStyle(GroupedListStyle())
-        VStack(spacing: 20){
+        VStack(spacing: 0){
             NavigationTopBar(title: "Home")
-            VStack(spacing: 0){
-                Text("Your Categories")
-                    .font(.custom("Roboto Medium", size: 14))
-                    .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
-                ScrollView(.horizontal){
-                    HStack(spacing: 28){
-                        ForEach(coreData.categories, id: \.self) { categorie in
-                            CategorieView(color: .red)
+            ScrollView{
+                VStack(spacing: 0){
+                    Text("Your Categories")
+                        .font(.custom("Roboto Medium", size: 14))
+                        .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        .padding(.top, 20)
+                    ScrollView(.horizontal){
+                        HStack(spacing: 28){
+                            ForEach(coreData.categories, id: \.self) { categorie in
+                                CategorieView(color: .red)
+                            }
+                        }
+                        .padding()
+                    }
+                }
+                
+                VStack(spacing: 0){
+                    Text("Your Receipts")
+                        .font(.custom("Roboto Medium", size: 14))
+                        .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                    VStack(spacing: 28){
+                        ForEach(coreData.filteredReceipts, id: \.self) { receipt in
+                            ReceiptRow(receipt: receipt)
+                                .onAppear(){
+                                    settingsViewModel.checkNotifications(array: coreData.receipts)
+                                }
                         }
                     }
                     .padding()
                 }
             }
             
-            VStack(spacing: 0){
-                Text("Your Receipts")
-                    .font(.custom("Roboto Medium", size: 14))
-                    .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
-                ScrollView(.vertical){
-                    VStack(spacing: 28){
-                        ForEach(coreData.filteredReceipts, id: \.self) { receipt in
-                            ReceiptRow(receipt: receipt)
-                        }
-                    }
-                    .padding()
-                }
-            }
             
             Spacer()
         }

@@ -73,22 +73,24 @@ struct ReceiptRow: View {
                 .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2048044233)), radius:8, x:0, y:0)
         )
-        .overlay(
-            Button(action:{
-                
-            }){
-                Text("Show")
-                    .font(.custom("Roboto Medium", size: 14))
-                    .fontWeight(.semibold)
-                    .padding(6)
-                    .background(
-                        RoundedRectangle(cornerRadius: 9)
-                            .fill(Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)))
-                    )
-            }
-            .padding(10)
-            , alignment: .bottomTrailing
-        )
+//        .overlay(
+//            Button(action:{
+//                
+//            }){
+//                Text("Show")
+//                    .font(.custom("Roboto Medium", size: 14))
+//                    .fontWeight(.semibold)
+//                    .padding(5)
+//                    .padding(.horizontal, 5)
+//                    .background(
+//                        RoundedRectangle(cornerRadius: 9)
+//                            .fill(Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)))
+//                    )
+//            }
+//            .padding(10)
+//            .padding(.trailing, 10)
+//            , alignment: .bottomTrailing
+//        )
         .overlay(Image(systemName: "ellipsis")
                     .font(.title2)
                     .rotationEffect(.init(degrees: 90))
