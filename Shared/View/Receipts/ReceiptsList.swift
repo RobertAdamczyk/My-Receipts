@@ -23,7 +23,7 @@ struct ReceiptsList: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                         .padding(.top, 20)
-                    ScrollView(.horizontal){
+                    ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 28){
                             ForEach(coreData.categories, id: \.self) { categorie in
                                 CategorieView(categorie: categorie, color: .red)

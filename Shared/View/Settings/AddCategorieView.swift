@@ -21,6 +21,14 @@ struct AddCategorieView: View {
                 Section(header: Text("Symbol")){
                     TextField("Enter...", text: $symbol)
                 }
+                .onChange(of: symbol) { _ in
+                    if symbol.count > 2 {
+                        symbol = ""
+                    }
+                    if symbol.count == 2 {
+                        symbol.removeLast()
+                    }
+                }
                 
             }
             .navigationTitle("New Categorie")
