@@ -10,6 +10,7 @@ import SwiftUI
 struct AddCategorieView: View {
     @Binding var showSheet: Bool
     @State var txt: String = ""
+    @State var symbol: String = ""
     @EnvironmentObject var coreDataViewModel: CoreDataViewModel
     var body: some View {
         NavigationView{
@@ -17,13 +18,16 @@ struct AddCategorieView: View {
                 Section(header: Text("Title")){
                     TextField("Enter...", text: $txt)
                 }
+                Section(header: Text("Symbol")){
+                    TextField("Enter...", text: $symbol)
+                }
                 
             }
             .navigationTitle("New Categorie")
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button("Done") {
-                        coreDataViewModel.addCategorie(title: txt)
+                        coreDataViewModel.addCategorie(title: txt, symbol: symbol)
                         showSheet.toggle()
                     }
                     .disabled(txt.count < 3)

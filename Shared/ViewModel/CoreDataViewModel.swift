@@ -106,9 +106,10 @@ class CoreDataViewModel: ObservableObject {
         }
     }
     
-    func addCategorie(title: String){
+    func addCategorie(title: String, symbol: String){
         let newCategorie = Categorie(context: CoreDataMenager.instance.context)
         newCategorie.title = title
+        newCategorie.symbol = symbol
         
         save()
     }

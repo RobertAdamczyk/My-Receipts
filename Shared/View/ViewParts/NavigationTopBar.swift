@@ -23,7 +23,6 @@ struct NavigationTopBar: View {
             .overlay(
                 Text("\(title)")
                     .font(.title2)
-                    .fontWeight(.semibold)
                     .padding(.vertical, 20)
                 , alignment: .bottom
             )
@@ -35,7 +34,6 @@ struct NavigationTopBar: View {
                 }){
                     Text(Image(systemName: "line.horizontal.3"))
                         .font(.title)
-                        .fontWeight(.semibold)
                         .padding(20)
                 }
                 .disabled(homeViewModel.showMenuBar)
