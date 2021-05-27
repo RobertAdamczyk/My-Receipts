@@ -53,12 +53,18 @@ struct MenuBar: View {
             .padding(.top, 100)
             .padding(.horizontal)
             .frame(width: viewModel.widthMenu)
-            .background(Color("Light"))
+            .background(Rectangle()
+                            .fill(LinearGradient(
+                                    gradient: Gradient(stops: [
+                                .init(color: Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)), location: 0),
+                                .init(color: Color(#colorLiteral(red: 0.9882352948188782, green: 0.8901960253715515, blue: 0.5411764979362488, alpha: 1)), location: 1)]),
+                                    startPoint: UnitPoint(x: 0.5760869012534805, y: 0.4304187364119937),
+                                    endPoint: UnitPoint(x: 1.5072464415835352, y: 0.03078817916915394))))
             .overlay(HStack{
                 Spacer()
                 Rectangle()
-                    .frame(width: 2)
-                    .foregroundColor(Color("Blue"))
+                    .frame(width: 1)
+                    .foregroundColor(.black)
             })
             if viewModel.showMenuBar {
                 Color.clear

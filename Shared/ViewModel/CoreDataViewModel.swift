@@ -13,7 +13,7 @@ class CoreDataViewModel: ObservableObject {
     @Published var receipts: [Receipt] = []
     @Published var categories: [Categorie] = []
     @Published var filteredReceipts: [Receipt] = []
-    @Published var filteredReceiptsInCategorie: [Receipt] = []
+    @Published var selectedCategorie: Categorie?
     
     @Published var sortBy: SortBy = SortBy.titleAscending
     

@@ -26,8 +26,14 @@ struct ReceiptsList: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 28){
                             CategorieView(count: coreData.receipts.count)
+                                .onTapGesture {
+                                    coreData.selectedCategorie = nil
+                                }
                             ForEach(coreData.categories, id: \.self) { categorie in
                                 CategorieView(categorie: categorie)
+                                    .onTapGesture {
+                                        coreData.selectedCategorie = categorie
+                                    }
                             }
                         }
                         .padding()
