@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct CategorieView: View {
-    var categorie: Categorie
-    var color: Color
+    var categorie: Categorie?
+    var count: Int?
     @State var title = "Categorie"
     @State var symbol = "C"
     @State var receipts = 0
     var body: some View {
         VStack(alignment: .leading, spacing: 5){
-            Text(symbol)
+            Text(categorie != nil ? symbol : "A")
                 .font(.largeTitle)
                 .fontWeight(.black)
-                .foregroundColor(color)
-            Text(title)
+            Text(categorie != nil ? title : "All")
                 .fontWeight(.bold)
                 .font(.custom("Roboto Medium", size: 14))
                 .lineLimit(1)
-            Text("\(receipts) receipts")
+            Text("\(count == nil ? receipts : count!) receipts")
                 .font(.custom("Roboto Medium", size: 10))
                 .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
                 .lineLimit(1)
@@ -43,13 +42,13 @@ struct CategorieView: View {
                     .padding(.top, 20)
                     .padding(.trailing, 5), alignment: .topTrailing)
         .onAppear(){
-            if let unwrappedTitle = categorie.title {
+            if let unwrappedTitle = categorie?.title {
                 title = unwrappedTitle
             }
-            if let unwrappedSymbol = categorie.symbol {
+            if let unwrappedSymbol = categorie?.symbol {
                 symbol = unwrappedSymbol
             }
-            if let unwrappedCount = categorie.receipts?.count {
+            if let unwrappedCount = categorie?.receipts?.count {
                 receipts = unwrappedCount
             }
             

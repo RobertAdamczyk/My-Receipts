@@ -13,7 +13,6 @@
 		E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorieView.swift */; };
 		E1617AE8265D9A5E00EC269D /* CategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1617AE7265D9A5E00EC269D /* CategorieView.swift */; };
 		E16719E6265ECAA4009870D6 /* NavigationTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16719E5265ECAA4009870D6 /* NavigationTopBar.swift */; };
-		E167BBD2264AD62100AA6CA2 /* ReceiptsCategorieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD1264AD62100AA6CA2 /* ReceiptsCategorieList.swift */; };
 		E167BBD4264AE85E00AA6CA2 /* ChooseCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD3264AE85E00AA6CA2 /* ChooseCategorieView.swift */; };
 		E167BBD7264F074100AA6CA2 /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD6264F074100AA6CA2 /* SortBy.swift */; };
 		E167BBD9264F0C5400AA6CA2 /* SortByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD8264F0C5400AA6CA2 /* SortByView.swift */; };
@@ -69,7 +68,6 @@
 		E124AA182649C3F3009CE167 /* AddCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategorieView.swift; sourceTree = "<group>"; };
 		E1617AE7265D9A5E00EC269D /* CategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieView.swift; sourceTree = "<group>"; };
 		E16719E5265ECAA4009870D6 /* NavigationTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTopBar.swift; sourceTree = "<group>"; };
-		E167BBD1264AD62100AA6CA2 /* ReceiptsCategorieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsCategorieList.swift; sourceTree = "<group>"; };
 		E167BBD3264AE85E00AA6CA2 /* ChooseCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategorieView.swift; sourceTree = "<group>"; };
 		E167BBD6264F074100AA6CA2 /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
 		E167BBD8264F0C5400AA6CA2 /* SortByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByView.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 			children = (
 				E17FC17C26345E5400082D55 /* ReceiptRow.swift */,
 				E180DF592633003A00CC5CC8 /* ReceiptsList.swift */,
-				E167BBD1264AD62100AA6CA2 /* ReceiptsCategorieList.swift */,
 				E1617AE7265D9A5E00EC269D /* CategorieView.swift */,
 			);
 			path = Receipts;
@@ -476,7 +473,6 @@
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
 				E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */,
 				E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */,
-				E167BBD2264AD62100AA6CA2 /* ReceiptsCategorieList.swift in Sources */,
 				E18F93892652DA5B00BC549F /* Localized.swift in Sources */,
 				E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */,
 				E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */,

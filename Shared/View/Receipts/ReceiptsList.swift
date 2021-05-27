@@ -25,8 +25,9 @@ struct ReceiptsList: View {
                         .padding(.top, 20)
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 28){
+                            CategorieView(count: coreData.receipts.count)
                             ForEach(coreData.categories, id: \.self) { categorie in
-                                CategorieView(categorie: categorie, color: .red)
+                                CategorieView(categorie: categorie)
                             }
                         }
                         .padding()
