@@ -10,6 +10,7 @@ import SwiftUI
 struct CategorieView: View {
     var categorie: Categorie?
     var count: Int?
+    @EnvironmentObject var coreData: CoreDataViewModel
     @State var title = "Categorie"
     @State var symbol = "C"
     @State var receipts = 0
@@ -31,7 +32,13 @@ struct CategorieView: View {
         .frame(width: 100, height: 100, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 13)
-                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                .fill(coreData.selectedCategorie == categorie ?
+                        LinearGradient(gradient: Gradient(stops: [
+                        .init(color: Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)), location: 0),
+                        .init(color: Color(#colorLiteral(red: 0.9882352948188782, green: 0.8901960253715515, blue: 0.5411764979362488, alpha: 1)), location: 1)]),
+                            startPoint: UnitPoint(x: 0.49999995812773845, y: 1.4901160139135783e-8),
+                            endPoint: UnitPoint(x: 0.9999999232795123, y: 1.4049999650314455)) :
+                        LinearGradient(gradient: Gradient(colors: [.white, .white]), startPoint: .top, endPoint: .bottom))
                 .frame(width: 100, height: 100)
                 .shadow(color: Color("ShadowColor"), radius:8, x:0, y:0)
         )

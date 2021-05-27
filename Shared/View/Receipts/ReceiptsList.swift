@@ -61,6 +61,9 @@ struct ReceiptsList: View {
             
             Spacer()
         }
+        .onChange(of: coreData.selectedCategorie, perform: { _ in
+            coreData.filterReceipts()
+        })
         .background(Color("NewBackground"))
         .ignoresSafeArea()
         .navigationBarHidden(true)

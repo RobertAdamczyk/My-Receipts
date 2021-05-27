@@ -34,7 +34,11 @@ class CoreDataViewModel: ObservableObject {
     }
     
     func filterReceipts(){
-        filteredReceipts = receipts.filter({ $0.categorie == nil })
+        if selectedCategorie == nil {
+            filteredReceipts = receipts
+            return
+        }
+        filteredReceipts = receipts.filter({ $0.categorie == selectedCategorie })
     }
     
     func fetchCategories(){
