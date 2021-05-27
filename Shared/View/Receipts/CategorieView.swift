@@ -30,7 +30,7 @@ struct CategorieView: View {
             RoundedRectangle(cornerRadius: 13)
                 .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .frame(width: 100, height: 100)
-                .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2)), radius:8, x:0, y:0)
+                .shadow(color: Color("ShadowColor"), radius:8, x:0, y:0)
         )
         .overlay(Image(systemName: "ellipsis")
                     .font(.title2)

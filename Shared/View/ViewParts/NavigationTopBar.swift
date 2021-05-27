@@ -19,7 +19,7 @@ struct NavigationTopBar: View {
                     startPoint: UnitPoint(x: 0.19333327563353553, y: 0.4042556636181329),
                     endPoint: UnitPoint(x: 1.0879999879773539, y: 3.260638766212674)))
             .frame(height: 54 + (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0))
-        .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.20000000298023224)), radius:20, x:0, y:0)
+        .shadow(color: Color("ShadowColor"), radius:8, x:0, y:0)
             .overlay(
                 Text("\(title)")
                     .font(.title2)

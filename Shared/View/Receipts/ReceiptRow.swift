@@ -71,7 +71,7 @@ struct ReceiptRow: View {
         .background(
             RoundedRectangle(cornerRadius: 14)
                 .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2048044233)), radius:8, x:0, y:0)
+                .shadow(color: Color("ShadowColor"), radius:8, x:0, y:0)
         )
 //        .overlay(
 //            Button(action:{
