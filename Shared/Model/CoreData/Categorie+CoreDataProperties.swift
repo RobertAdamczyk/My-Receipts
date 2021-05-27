@@ -2,7 +2,7 @@
 //  Categorie+CoreDataProperties.swift
 //  My Receipts
 //
-//  Created by Robert Adamczyk on 10.05.21.
+//  Created by Robert Adamczyk on 27.05.21.
 //
 //
 
@@ -17,6 +17,7 @@ extension Categorie {
     }
 
     @NSManaged public var title: String?
+    @NSManaged public var symbol: String?
     @NSManaged public var receipts: NSSet?
 
 }

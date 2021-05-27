@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct CategorieView: View {
+    var categorie: Categorie
     var color: Color
+    @State var title = "Categorie"
+    @State var symbol = "C"
+    @State var receipts = 0
     var body: some View {
         VStack(alignment: .leading, spacing: 5){
-            Image(systemName: "folder.fill")
-                .resizable()
-                .frame(width: 42, height: 42)
+            Text(symbol)
+                .font(.largeTitle)
+                .fontWeight(.black)
                 .foregroundColor(color)
-            Text("Devices")
+            Text(title)
                 .fontWeight(.bold)
                 .font(.custom("Roboto Medium", size: 14))
                 .lineLimit(1)
-            Text("7 receipts")
+            Text("\(receipts) receipts")
                 .font(.custom("Roboto Medium", size: 10))
                 .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
                 .lineLimit(1)
@@ -38,11 +42,17 @@ struct CategorieView: View {
                     .foregroundColor(.secondary)
                     .padding(.top, 20)
                     .padding(.trailing, 5), alignment: .topTrailing)
-    }
-}
-
-struct CategorieView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategorieView(color: .red)
+        .onAppear(){
+            if let unwrappedTitle = categorie.title {
+                title = unwrappedTitle
+            }
+            if let unwrappedSymbol = categorie.symbol {
+                symbol = unwrappedSymbol
+            }
+            if let unwrappedCount = categorie.receipts?.count {
+                receipts = unwrappedCount
+            }
+            
+        }
     }
 }
