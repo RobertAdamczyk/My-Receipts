@@ -62,20 +62,28 @@ struct AddReceipt: View {
         }
         .padding(.top, 30)
         .navigationBarHidden(true)
-        .overlay(NavigationTopBar(title: "New Receipt", backButton: false).ignoresSafeArea(), alignment: .top)
+        .overlay(
+            NavigationTopBar(title: "New Receipt", backButton: false)
+                .overlay(
+                    Button(action:{
+                        if viewModel.checkTitleAndImage() {
+                            viewModel.save()
+                            homeViewModel.view = .list
+                        }
+                    }){
+                        Text("Done")
+                            .font(.title3)
+                            .padding(20)
+                    }
+                    ,alignment: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                
+            
+            , alignment: .top)
         .environmentObject(viewModel)
         .onAppear(){
             coreData.fetchCategories()
-        }
-        .toolbar {
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button("Done") {
-                    if viewModel.checkTitleAndImage() {
-                        viewModel.save()
-                        homeViewModel.view = .list
-                    }
-                }
-            }
         }
         .onChange(of: takedPhotoData){ _ in
             if let taked = takedPhotoData {
@@ -83,7 +91,6 @@ struct AddReceipt: View {
                 viewModel.loadImage()
             }
         }
-        .navigationTitle("New Receipt")
         .sheet(isPresented: $showPicker, onDismiss: viewModel.loadImage) {
             ImagePicker(image: $viewModel.inputImage)
         }
