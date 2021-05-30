@@ -14,8 +14,8 @@ struct ReceiptsList: View {
     
     var body: some View {
         VStack(spacing: 0){
-            NavigationTopBar(title: "Home", backButton: false)
-            ScrollView{
+            Spacer().frame(height: 50)
+            ScrollView(showsIndicators: false){
                 VStack(spacing: 0){
                     Text("Your Categories")
                         .font(.custom("Roboto Medium", size: 14))
@@ -57,15 +57,15 @@ struct ReceiptsList: View {
                     .padding()
                 }
             }
-            
-            
             Spacer()
         }
+        .overlay(
+            NavigationTopBar(title: "Home", backButton: false).ignoresSafeArea(), alignment: .top
+        )
         .onChange(of: coreData.selectedCategorie, perform: { _ in
             coreData.filterReceipts()
         })
         .background(Color("NewBackground"))
-        .ignoresSafeArea()
         .navigationBarHidden(true)
         .onAppear(){
             settingsViewModel.notificationRequest()
