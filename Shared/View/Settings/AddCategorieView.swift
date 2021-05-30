@@ -42,7 +42,8 @@ struct AddCategorieView: View {
                 }
             }
         }
-        .accentColor(Color("Blue"))
+        .accentColor(.black)
+        .preferredColorScheme(.light)
     }
 }
 

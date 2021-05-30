@@ -25,6 +25,7 @@ struct NavigationTopBar: View {
             .overlay(
                 Text("\(title)")
                     .font(.title2)
+                    .fontWeight(.semibold)
                     .padding(.vertical, 20)
                 , alignment: .bottom
             )
@@ -40,8 +41,8 @@ struct NavigationTopBar: View {
                     
                 }){
                     Text(Image(systemName: backButton ? "chevron.backward" : "line.horizontal.3"))
-                        .font(.title)
-                        .padding(20)
+                        .font(.title2)
+                        .padding(23)
                 }
                 .disabled(homeViewModel.showMenuBar)
                 ,alignment: .bottomLeading

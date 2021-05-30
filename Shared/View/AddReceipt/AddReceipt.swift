@@ -72,7 +72,7 @@ struct AddReceipt: View {
                         }
                     }){
                         Text("Done")
-                            .font(.title3)
+                            .font(.title2)
                             .padding(20)
                     }
                     ,alignment: .bottomTrailing
