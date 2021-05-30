@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ReceiptRow: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
+    @EnvironmentObject var coreData: CoreDataViewModel
     @State var image : Image?
     @State var uiimage: UIImage?
     var receipt: Receipt
@@ -97,6 +98,14 @@ struct ReceiptRow: View {
                     .foregroundColor(.secondary)
                     .padding(.top, 20)
                     .padding(.trailing, 5), alignment: .topTrailing)
+        .contentShape(RoundedRectangle(cornerRadius: 14))
+        .contextMenu{
+            Button(action:{
+                coreData.removeReceipt(receipt: receipt)
+            }){
+                Text("Delete").foregroundColor(.red)
+            }
+        }
 //        HStack(spacing: 10){
 //            ZStack{
 //                if let unwarppedImage = image {
