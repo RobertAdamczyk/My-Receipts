@@ -30,6 +30,7 @@ struct AddReceipt: View {
                     NavigationLink(destination:
                                     ChooseCategorieView(categories: coreData.categories)
                                         .environmentObject(viewModel)
+                                        .environmentObject(homeViewModel)
                     ){
                         HStack{
                             Text("Categorie")
@@ -41,7 +42,9 @@ struct AddReceipt: View {
                     
                 }
                 NavigationLink(destination: WarrantyView()
-                                .environmentObject(viewModel)){
+                                .environmentObject(viewModel)
+                                .environmentObject(homeViewModel)
+                ){
                     HStack{
                         Text("Warranty")
                         Spacer()
@@ -57,6 +60,9 @@ struct AddReceipt: View {
             
                         
         }
+        .padding(.top, 30)
+        .navigationBarHidden(true)
+        .overlay(NavigationTopBar(title: "New Receipt", backButton: false).ignoresSafeArea(), alignment: .top)
         .environmentObject(viewModel)
         .onAppear(){
             coreData.fetchCategories()

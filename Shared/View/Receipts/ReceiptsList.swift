@@ -14,7 +14,7 @@ struct ReceiptsList: View {
     
     var body: some View {
         VStack(spacing: 0){
-            NavigationTopBar(title: "Home")
+            NavigationTopBar(title: "Home", backButton: false)
             ScrollView{
                 VStack(spacing: 0){
                     Text("Your Categories")

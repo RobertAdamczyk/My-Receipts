@@ -9,7 +9,9 @@ import SwiftUI
 
 struct NavigationTopBar: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
+    @Environment(\.presentationMode) var presentation
     var title: String
+    var backButton: Bool
     var body: some View {
         RoundedCorner(radius: 25)
             .fill(LinearGradient(
@@ -28,11 +30,16 @@ struct NavigationTopBar: View {
             )
             .overlay(
                 Button(action:{
-                    withAnimation{
-                        homeViewModel.showMenuBar.toggle()
+                    if !backButton{
+                        withAnimation{
+                            homeViewModel.showMenuBar.toggle()
+                        }
+                    }else{
+                        presentation.wrappedValue.dismiss()
                     }
+                    
                 }){
-                    Text(Image(systemName: "line.horizontal.3"))
+                    Text(Image(systemName: backButton ? "chevron.backward" : "line.horizontal.3"))
                         .font(.title)
                         .padding(20)
                 }
@@ -44,7 +51,7 @@ struct NavigationTopBar: View {
 
 struct NavigationTopBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationTopBar(title: "Home")
+        NavigationTopBar(title: "Home", backButton: false)
     }
 }
 
