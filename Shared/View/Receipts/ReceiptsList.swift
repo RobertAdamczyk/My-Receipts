@@ -57,15 +57,16 @@ struct ReceiptsList: View {
                     .padding()
                 }
             }
-            Spacer()
+            Spacer(minLength: 0)
         }
+        .background(Color("NewBackground"))
+        .ignoresSafeArea(edges: .bottom)
         .overlay(
             NavigationTopBar(title: "Home", backButton: false).ignoresSafeArea(), alignment: .top
         )
         .onChange(of: coreData.selectedCategorie, perform: { _ in
             coreData.filterReceipts()
         })
-        .background(Color("NewBackground"))
         .navigationBarHidden(true)
         .onAppear(){
             settingsViewModel.notificationRequest()
