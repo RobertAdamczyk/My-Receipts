@@ -40,7 +40,7 @@ struct NavigationTopBar: View {
                     }
                     
                 }){
-                    Text(Image(systemName: backButton ? "chevron.backward" : "line.horizontal.3"))
+                    Image(systemName: backButton ? "chevron.backward" : "line.horizontal.3")
                         .font(.title2)
                         .padding(23)
                 }

@@ -62,7 +62,21 @@ struct ReceiptsList: View {
         .background(Color("NewBackground"))
         .ignoresSafeArea(edges: .bottom)
         .overlay(
-            NavigationTopBar(title: "Home", backButton: false).ignoresSafeArea(), alignment: .top
+            NavigationTopBar(title: "Home", backButton: false)
+                .overlay(
+                    Button(action:{
+                        withAnimation{
+                            homeViewModel.showSortBy.toggle()
+                        }
+                    }){
+                        Image(systemName: "arrow.down")
+                            .font(.title2)
+                            .padding(20)
+                    }
+                    ,alignment: .bottomTrailing
+                )
+                .ignoresSafeArea()
+            , alignment: .top
         )
         .onChange(of: coreData.selectedCategorie, perform: { _ in
             coreData.filterReceipts()
