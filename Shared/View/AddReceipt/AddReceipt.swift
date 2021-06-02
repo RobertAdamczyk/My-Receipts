@@ -60,7 +60,7 @@ struct AddReceipt: View {
             
                         
         }
-        .padding(.top, 30)
+        .padding(.top, 50)
         .navigationBarHidden(true)
         .overlay(
             NavigationTopBar(title: "New Receipt", backButton: false)

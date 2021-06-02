@@ -16,8 +16,8 @@ struct NavigationTopBar: View {
         RoundedCorner(radius: 25)
             .fill(LinearGradient(
                     gradient: Gradient(stops: [
-                .init(color: Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)), location: 0),
-                .init(color: Color(#colorLiteral(red: 0.9882352948188782, green: 0.8901960849761963, blue: 0.5411764979362488, alpha: 1)), location: 1)]),
+                                        .init(color: Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)), location: 0),
+                                        .init(color: Color(#colorLiteral(red: 0.9882352948188782, green: 0.8901960849761963, blue: 0.5411764979362488, alpha: 1)), location: 1)]),
                     startPoint: UnitPoint(x: 0.19333327563353553, y: 0.4042556636181329),
                     endPoint: UnitPoint(x: 1.0879999879773539, y: 3.260638766212674)))
             .frame(height: 54 + (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0))
