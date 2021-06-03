@@ -39,6 +39,7 @@ struct Home: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .blur(radius: viewModel.showSortBy ? 5 : 0)
         .accentColor(.black)
         .offset(x: viewModel.showMenuBar ? viewModel.widthMenu : 0)
