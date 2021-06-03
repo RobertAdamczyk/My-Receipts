@@ -25,10 +25,6 @@ struct Settings: View {
                     }
                     
                 }
-                
-            }
-            
-            Section(header: Text("Receipts")){
                 NavigationLink(destination: CategoriesSettings()
                                                 .environmentObject(viewModel)) {
                     HStack(spacing: 15){
@@ -36,8 +32,24 @@ struct Settings: View {
                             .foregroundColor(.white)
                             .font(.title3)
                             .padding(5)
-                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(Color("Blue")))
+                            .padding(.horizontal, 1)
+                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.green))
                         Text("Categories")
+                    }
+                    
+                }
+                
+            }
+            
+            Section(header: Text("App")){
+                NavigationLink(destination: AboutView()) {
+                    HStack(spacing: 15){
+                        Image(systemName: "info.circle.fill")
+                            .foregroundColor(.white)
+                            .font(.title3)
+                            .padding(5)
+                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.blue))
+                        Text("About")
                     }
                     
                 }
