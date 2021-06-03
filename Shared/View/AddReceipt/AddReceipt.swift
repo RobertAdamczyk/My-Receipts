@@ -56,6 +56,7 @@ struct AddReceipt: View {
             
             Section(header: Text("Purchase")){
                 DatePicker("Date of Purchase", selection: $viewModel.newReceipt.dateOfPurchase, displayedComponents: .date)
+                    .accentColor(.blue)
             }
             
                         
@@ -63,7 +64,7 @@ struct AddReceipt: View {
         .padding(.top, 50)
         .navigationBarHidden(true)
         .overlay(
-            NavigationTopBar(title: "New Receipt", backButton: false)
+            NavigationTopBar(title: "New Receipt".localized(), backButton: false)
                 .overlay(
                     Button(action:{
                         if viewModel.checkTitleAndImage() {

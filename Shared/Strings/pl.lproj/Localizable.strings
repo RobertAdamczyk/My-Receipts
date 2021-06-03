@@ -9,12 +9,17 @@
 // File: ReceiptList
 "My Receipts" = "Moje Paragony";
 "You have no receipts." = "Nie masz paragonów. Dodaj nowy paragon w menu.";
+"Your Categories" = "Twoje Kategorie";
 "Categories" = "Kategorie";
+"Your Receipts" = "Twoje Paragony";
 "Receipts" = "Paragony";
+"Home" = "Home";
+"All" = "Wszystkie";
+"%lld receipts" = "%lld paragony";
 
 // File: ReceiptRow
 "Purchase: %@" = "Kupiono: %@";
-"Warranty to: %@" = "Gwarancja do: %@";
+"Guarantee to: %@" = "Gwarancja do: %@";
 
 // File: ReceiptCategorieList
 "You have no receipts here." = "Nie masz tutaj paragonów.";
@@ -46,6 +51,8 @@
 //File: Settings
 "Notifications" = "Powiadomienia";
 "General" = "Ogólne";
+"About" = "O Aplikacji";
+"App" = "Aplikacja";
 
 //File: NotificationSettings
 "You haven't allowed this app to show notifications." = "Nie zezwolieś aplikacji do pokazywania powiadomień.";
@@ -60,6 +67,12 @@
 //File: CategorieSettings
 "You have no categories." = "Nie masz kategorii.";
 "Add" = "Dodaj";
+
+//File: AboutView
+"Version:" = "Wersja:";
+"Created by:" = "Stworzył:";
+"Thanks for using my application. \n❤️❤️❤️" = "Dziękuję za pobranie mojej aplikacji. \n❤️❤️❤️";
+"If you like it, leave a review on the AppStore." = "Jeśli Ci się podoba to zostaw ocenę w AppStore.";
 
 //File: AddCategorieView
 "Enter..." = "Wprowadź...";

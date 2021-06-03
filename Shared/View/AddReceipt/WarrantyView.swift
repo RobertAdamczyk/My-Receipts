@@ -18,6 +18,7 @@ struct WarrantyView: View {
             if viewModel.warranty {
                 Section{
                     DatePicker("End of Warranty", selection: $viewModel.newReceipt.endOfWarranty, displayedComponents: .date)
+                        .accentColor(.blue)
                 }
             }
             

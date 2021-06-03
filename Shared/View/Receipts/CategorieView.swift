@@ -19,7 +19,7 @@ struct CategorieView: View {
             Text(categorie != nil ? symbol : "A")
                 .font(.largeTitle)
                 .fontWeight(.black)
-            Text(categorie != nil ? title : "All")
+            Text(categorie != nil ? title : "All".localized())
                 .fontWeight(.bold)
                 .font(.custom("Roboto Medium", size: 14))
                 .lineLimit(1)

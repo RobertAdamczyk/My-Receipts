@@ -59,7 +59,7 @@ struct ReceiptRow: View {
                         .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
                 }
                 if let warranty = receipt.endOfWarranty {
-                    Text("Guarantee: \(warranty, style: .date)")
+                    Text("Guarantee to: \(warranty, style: .date)")
                         .font(.custom("Roboto Medium", size: 12))
                         .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
                 }
