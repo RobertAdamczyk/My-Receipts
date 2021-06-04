@@ -90,9 +90,9 @@
 		E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ReceiptsApp.swift; sourceTree = "<group>"; };
 		E180DF282632F9C400CC5CC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E180DF2F2632F9C500CC5CC8 /* My Receipts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Receipts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E180DF2F2632F9C500CC5CC8 /* Receipts Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Receipts Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E180DF322632F9C600CC5CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E180DF372632F9C600CC5CC8 /* My Receipts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Receipts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E180DF372632F9C600CC5CC8 /* Receipts Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Receipts Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E180DF392632F9C600CC5CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E180DF3A2632F9C600CC5CC8 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E180DF532632FBD800CC5CC8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -210,8 +210,8 @@
 		E180DF302632F9C500CC5CC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E180DF2F2632F9C500CC5CC8 /* My Receipts.app */,
-				E180DF372632F9C600CC5CC8 /* My Receipts.app */,
+				E180DF2F2632F9C500CC5CC8 /* Receipts Store.app */,
+				E180DF372632F9C600CC5CC8 /* Receipts Store.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,9 +347,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E180DF2E2632F9C500CC5CC8 /* My Receipts (iOS) */ = {
+		E180DF2E2632F9C500CC5CC8 /* Receipts Store (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E180DF472632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "My Receipts (iOS)" */;
+			buildConfigurationList = E180DF472632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "Receipts Store (iOS)" */;
 			buildPhases = (
 				E180DF2B2632F9C500CC5CC8 /* Sources */,
 				E180DF2C2632F9C500CC5CC8 /* Frameworks */,
@@ -359,16 +359,16 @@
 			);
 			dependencies = (
 			);
-			name = "My Receipts (iOS)";
+			name = "Receipts Store (iOS)";
 			packageProductDependencies = (
 			);
 			productName = "My Receipts (iOS)";
-			productReference = E180DF2F2632F9C500CC5CC8 /* My Receipts.app */;
+			productReference = E180DF2F2632F9C500CC5CC8 /* Receipts Store.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E180DF362632F9C600CC5CC8 /* My Receipts (macOS) */ = {
+		E180DF362632F9C600CC5CC8 /* Receipts Store (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E180DF4A2632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "My Receipts (macOS)" */;
+			buildConfigurationList = E180DF4A2632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "Receipts Store (macOS)" */;
 			buildPhases = (
 				E180DF332632F9C600CC5CC8 /* Sources */,
 				E180DF342632F9C600CC5CC8 /* Frameworks */,
@@ -378,9 +378,9 @@
 			);
 			dependencies = (
 			);
-			name = "My Receipts (macOS)";
+			name = "Receipts Store (macOS)";
 			productName = "My Receipts (macOS)";
-			productReference = E180DF372632F9C600CC5CC8 /* My Receipts.app */;
+			productReference = E180DF372632F9C600CC5CC8 /* Receipts Store.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -400,7 +400,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E180DF232632F9C400CC5CC8 /* Build configuration list for PBXProject "My Receipts" */;
+			buildConfigurationList = E180DF232632F9C400CC5CC8 /* Build configuration list for PBXProject "Receipts Store" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -416,8 +416,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E180DF2E2632F9C500CC5CC8 /* My Receipts (iOS) */,
-				E180DF362632F9C600CC5CC8 /* My Receipts (macOS) */,
+				E180DF2E2632F9C500CC5CC8 /* Receipts Store (iOS) */,
+				E180DF362632F9C600CC5CC8 /* Receipts Store (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -657,7 +657,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "You.My-Receipts";
-				PRODUCT_NAME = "My Receipts";
+				PRODUCT_NAME = "Receipts Store";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -680,7 +680,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "You.My-Receipts";
-				PRODUCT_NAME = "My Receipts";
+				PRODUCT_NAME = "Receipts Store";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -707,7 +707,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "You.My-Receipts";
-				PRODUCT_NAME = "My Receipts";
+				PRODUCT_NAME = "Receipts Store";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -732,7 +732,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "You.My-Receipts";
-				PRODUCT_NAME = "My Receipts";
+				PRODUCT_NAME = "Receipts Store";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -741,7 +741,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E180DF232632F9C400CC5CC8 /* Build configuration list for PBXProject "My Receipts" */ = {
+		E180DF232632F9C400CC5CC8 /* Build configuration list for PBXProject "Receipts Store" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E180DF452632F9C600CC5CC8 /* Debug */,
@@ -750,7 +750,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E180DF472632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "My Receipts (iOS)" */ = {
+		E180DF472632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "Receipts Store (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E180DF482632F9C600CC5CC8 /* Debug */,
@@ -759,7 +759,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E180DF4A2632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "My Receipts (macOS)" */ = {
+		E180DF4A2632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "Receipts Store (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E180DF4B2632F9C600CC5CC8 /* Debug */,
