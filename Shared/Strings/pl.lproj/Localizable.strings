@@ -27,7 +27,7 @@
 // File: AddReceipt
 "Title" = "Tytuł";
 "Categorie" = "Kategoria";
-"Warranty" = "Gwarancja";
+"Guarantee" = "Gwarancja";
 "Purchase" = "Zakup";
 "Date of Purchase" = "Data zakupu";
 "Done" = "Zapisz";
@@ -38,7 +38,7 @@
 
 // File: WarrantyView
 "Is there a guarantee for the receipt?" = "Czy jest gwarancja do paragonu?";
-"End of Warranty" = "Koniec gwarancji";
+"End of Guarantee" = "Koniec gwarancji";
 
 //File: Home
 "Take a photo" = "Zrób zdjęcie";
@@ -61,8 +61,9 @@
 "Enable Notifications" = "Aktywuj powiadomienia";
 "Allow Notifications" = "Zezwól na powiadomienia";
 "Notification Options" = "Opcje Powiadomień";
-"The alert will come %lld days before the warranty expires." = "Powiadomienie przyjdzie %lld dni przed końcem gwarancji.";
+"The alert will come %lld days before the guarantee expires." = "Powiadomienie przyjdzie %lld dni przed końcem gwarancji.";
 "Notify me before" = "Powiadom mnie przed";
+"The guarantee will expire in %lld days." = "Gwarancja wygaśnie za %lld dni.";
 
 //File: CategorieSettings
 "You have no categories." = "Nie masz kategorii.";

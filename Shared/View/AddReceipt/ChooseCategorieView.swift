@@ -34,7 +34,7 @@ struct ChooseCategorieView: View {
         }
         .listStyle(GroupedListStyle())
         .navigationBarHidden(true)
-        .overlay(NavigationTopBar(title: "Categorie", backButton: true).ignoresSafeArea(), alignment: .top)
+        .overlay(NavigationTopBar(title: "Categorie".localized(), backButton: true).ignoresSafeArea(), alignment: .top)
         .navigationBarTitle("Categorie", displayMode: .inline)
     }
 }

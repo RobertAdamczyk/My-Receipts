@@ -46,7 +46,7 @@ struct AddReceipt: View {
                                 .environmentObject(homeViewModel)
                 ){
                     HStack{
-                        Text("Warranty")
+                        Text("Guarantee")
                         Spacer()
                         Text(viewModel.warranty ? "\(viewModel.newReceipt.endOfWarranty, style: .date)" : "")
                             .foregroundColor(Color(UIColor.systemGray))

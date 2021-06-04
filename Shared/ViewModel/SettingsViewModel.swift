@@ -41,7 +41,7 @@ class SettingsViewModel: ObservableObject {
                 print("Notifications OK !!!")
                 return
             }else {
-                print("NOTIFICATION NOT OK")
+                print("NOTIFICATION NOT OK \(notifications.count) != \(receiptsWithWarranty.count)")
                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                 for receipt in array {
                     self.addNotification(receipt: receipt)
@@ -59,7 +59,7 @@ class SettingsViewModel: ObservableObject {
             return
         }
         content.title = title
-        content.subtitle = "Za X dni skończy się gwaracja."
+        content.subtitle = "The guarantee will expire in \(daysNotification) days.".localized()
         content.sound = UNNotificationSound.default
 
         // show this notification five seconds from now
@@ -67,7 +67,7 @@ class SettingsViewModel: ObservableObject {
         dateComponents.calendar = Calendar.current
         
         guard let endOfWarranty = receipt.endOfWarranty else {
-            print("EndOfWarranty error")
+            print("EndOfWarranty error \(title)")
             return
         }
         let dateNotification = endOfWarranty.addingTimeInterval(TimeInterval(daysNotification * 3600 * -24))
@@ -75,7 +75,7 @@ class SettingsViewModel: ObservableObject {
         dateComponents.day = Calendar.current.component(.day, from: dateNotification)
         dateComponents.month = Calendar.current.component(.month, from: dateNotification)
         dateComponents.year = Calendar.current.component(.year, from: dateNotification)
-        dateComponents.hour = 22
+        dateComponents.hour = 20
         dateComponents.minute = 0
         // Create the trigger as a repeating event.
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
