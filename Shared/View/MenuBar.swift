@@ -26,7 +26,11 @@ struct MenuBar: View {
                 
                 Button(action:{
                     viewModel.editReceipt = nil
-                    viewModel.changeView(newView: .add)
+                    viewModel.changeView(newView: .list)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                        viewModel.changeView(newView: .add)
+                    }
+                    
                     viewModel.offMenu()
                     viewModel.showActionSheet.toggle()
                 }){

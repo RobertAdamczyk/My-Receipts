@@ -65,7 +65,7 @@ struct AddReceipt: View {
         .padding(.top, 50)
         .navigationBarHidden(true)
         .overlay(
-            NavigationTopBar(title: "New Receipt".localized(), backButton: false)
+            NavigationTopBar(title: homeViewModel.editReceipt == nil ? "New Receipt".localized() : "Edit Receipt".localized(), backButton: false)
                 .overlay(
                     Button(action:{
                         if viewModel.checkTitleAndImage() {
