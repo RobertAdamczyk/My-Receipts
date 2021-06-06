@@ -24,7 +24,7 @@ struct AboutView: View {
                 VStack(spacing: 5){
                     HStack{
                         Text("Version:")
-                        Text("1.0.0").bold()
+                        Text("1.0.1").bold()
                     }
                     HStack{
                         Text("Created by:")
