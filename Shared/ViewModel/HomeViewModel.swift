@@ -23,6 +23,8 @@ class HomeViewModel: ObservableObject {
     
     @Published var showSortBy = false
     
+    @Published var editReceipt: Receipt?
+    
     func changeView(newView: Views) {
         view = newView
     }

@@ -13,6 +13,7 @@ struct AddReceipt: View {
     @StateObject var coreData = CoreDataViewModel()
     @Binding var showPicker: Bool
     @Binding var takedPhotoData: Data?
+    
     var body: some View {
         
         Form{
@@ -68,7 +69,12 @@ struct AddReceipt: View {
                 .overlay(
                     Button(action:{
                         if viewModel.checkTitleAndImage() {
-                            viewModel.save()
+                            if homeViewModel.editReceipt == nil {
+                                viewModel.save()
+                            }else {
+                                viewModel.edit(editReceipt: homeViewModel.editReceipt)
+                            }
+                            
                             homeViewModel.view = .list
                         }
                     }){
@@ -85,6 +91,7 @@ struct AddReceipt: View {
         .environmentObject(viewModel)
         .onAppear(){
             coreData.fetchCategories()
+            viewModel.loadReceipt(editReceipt: homeViewModel.editReceipt)
         }
         .onChange(of: takedPhotoData){ _ in
             if let taked = takedPhotoData {

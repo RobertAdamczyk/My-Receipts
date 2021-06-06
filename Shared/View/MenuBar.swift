@@ -25,6 +25,7 @@ struct MenuBar: View {
                 }
                 
                 Button(action:{
+                    viewModel.editReceipt = nil
                     viewModel.changeView(newView: .add)
                     viewModel.offMenu()
                     viewModel.showActionSheet.toggle()

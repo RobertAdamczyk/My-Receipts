@@ -88,10 +88,14 @@ struct ReceiptRow: View {
                         coreData.removeReceipt(receipt: receipt)
                     }
                 }
-                
-                
             }){
                 Text("Delete").foregroundColor(.red)
+            }
+            Button(action:{
+                homeViewModel.editReceipt = receipt
+                homeViewModel.view = .add
+            }){
+                Text("Edit").foregroundColor(.red)
             }
         }
     }
