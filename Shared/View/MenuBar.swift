@@ -13,7 +13,7 @@ struct MenuBar: View {
         HStack{
             VStack(alignment: .leading ,spacing: 40){
                 Button(action:{
-                    viewModel.changeView(newView: .list)
+                    viewModel.coordinator.showTabView(.list)
                     viewModel.offMenu()
                 }){
                     HStack{
@@ -26,9 +26,9 @@ struct MenuBar: View {
                 
                 Button(action:{
                     viewModel.editReceipt = nil
-                    viewModel.changeView(newView: .list)
+                    viewModel.coordinator.showTabView(.list)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                        viewModel.changeView(newView: .add)
+                        viewModel.coordinator.showTabView(.add)
                     }
                     
                     viewModel.offMenu()
@@ -42,7 +42,7 @@ struct MenuBar: View {
                     }
                 }
                 Button(action:{
-                    viewModel.changeView(newView: .settings)
+                    viewModel.coordinator.showTabView(.settings)
                     viewModel.offMenu()
                 }){
                     HStack{
@@ -92,6 +92,6 @@ struct MenuBar_Previews: PreviewProvider {
     static var previews: some View {
         MenuBar()
             .preferredColorScheme(.light)
-            .environmentObject(HomeViewModel())
+            .environmentObject(HomeViewModel(coordinator: .init()))
     }
 }

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct My_ReceiptsApp: App {
+
+    @StateObject private var coordinator: Coordinator = .init()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Home(coordinator: coordinator)
+                .preferredColorScheme(.light)
         }
     }
 }

@@ -24,9 +24,11 @@ class HomeViewModel: ObservableObject {
     @Published var showSortBy = false
     
     @Published var editReceipt: Receipt?
-    
-    func changeView(newView: Views) {
-        view = newView
+
+    let coordinator: Coordinator
+
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
     }
     
     func offMenu(){

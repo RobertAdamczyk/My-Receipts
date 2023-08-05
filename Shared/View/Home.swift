@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct Home: View {
-    @StateObject var viewModel = HomeViewModel()
+    @StateObject var viewModel: HomeViewModel
     @StateObject var settingsViewModel = SettingsViewModel()
     @StateObject var coreDataViewModel = CoreDataViewModel()
+
+    init(coordinator: Coordinator) {
+        self._viewModel = .init(wrappedValue: .init(coordinator: coordinator))
+    }
     
     var body: some View {
         NavigationView {
             ZStack{
-                if viewModel.view == .list {
-                    ReceiptsList()
-                }else if viewModel.view == .settings {
-                    Settings()
-                }else if viewModel.view == .add {
-                    AddReceipt(showPicker: $viewModel.showImagePicker, takedPhotoData: $viewModel.takedPhotoData)
+                switch viewModel.coordinator.tabView {
+                case .add: AddReceipt(showPicker: $viewModel.showImagePicker, takedPhotoData: $viewModel.takedPhotoData)
+                case .list: ReceiptsList()
+                case .settings: Settings()
                 }
-                
             }
             .environmentObject(viewModel)
             .environmentObject(settingsViewModel)
@@ -99,6 +100,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home(coordinator: .init())
     }
 }

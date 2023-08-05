@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BA264467570017BD29 /* CoreDataMenager.swift */; };
 		E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */; };
+		E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
+		E116C62D2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
 		E124AA1226498FB6009CE167 /* CategoriesSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */; };
 		E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorieView.swift */; };
 		E15EF00C2668F5570091CE71 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EF00B2668F5570091CE71 /* AboutView.swift */; };
@@ -31,8 +33,6 @@
 		E180DF3C2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */; };
 		E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */; };
 		E180DF3E2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */; };
-		E180DF3F2632F9C600CC5CC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF282632F9C400CC5CC8 /* ContentView.swift */; };
-		E180DF402632F9C600CC5CC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF282632F9C400CC5CC8 /* ContentView.swift */; };
 		E180DF432632F9C600CC5CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */; };
 		E180DF442632F9C600CC5CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */; };
 		E180DF542632FBD800CC5CC8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF532632FBD800CC5CC8 /* Home.swift */; };
@@ -65,6 +65,7 @@
 /* Begin PBXFileReference section */
 		E112D2BA264467570017BD29 /* CoreDataMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMenager.swift; sourceTree = "<group>"; };
 		E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		E116C62B2A7AF82500A5783F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSettingsViewModel.swift; sourceTree = "<group>"; };
 		E124AA182649C3F3009CE167 /* AddCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategorieView.swift; sourceTree = "<group>"; };
 		E15EF00B2668F5570091CE71 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		E17FC17C26345E5400082D55 /* ReceiptRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRow.swift; sourceTree = "<group>"; };
 		E180DF262632F9C400CC5CC8 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ReceiptsApp.swift; sourceTree = "<group>"; };
-		E180DF282632F9C400CC5CC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E180DF2F2632F9C500CC5CC8 /* Receipts Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Receipts Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E180DF322632F9C600CC5CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 				E180DF502632FBB400CC5CC8 /* ViewModel */,
 				E180DF4F2632FBAE00CC5CC8 /* View */,
 				E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */,
-				E180DF282632F9C400CC5CC8 /* ContentView.swift */,
+				E116C62B2A7AF82500A5783F /* Coordinator.swift */,
 				E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */,
 				E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */,
 			);
@@ -390,7 +390,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					E180DF2E2632F9C500CC5CC8 = {
 						CreatedOnToolsVersion = 12.4;
@@ -470,6 +470,7 @@
 				E180DF652633010500CC5CC8 /* HomeViewModel.swift in Sources */,
 				E167BBD7264F074100AA6CA2 /* SortBy.swift in Sources */,
 				E180DF762633582C00CC5CC8 /* Settings.swift in Sources */,
+				E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
 				E16719E6265ECAA4009870D6 /* NavigationTopBar.swift in Sources */,
 				E15EF00C2668F5570091CE71 /* AboutView.swift in Sources */,
@@ -489,7 +490,6 @@
 				E1BB5961263EE10D00D3D2DB /* CameraModifiers.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E124AA1226498FB6009CE167 /* CategoriesSettingsViewModel.swift in Sources */,
-				E180DF3F2632F9C600CC5CC8 /* ContentView.swift in Sources */,
 				E19A09F326389A710079FB93 /* SettingsViewModel.swift in Sources */,
 				E167BBD9264F0C5400AA6CA2 /* SortByView.swift in Sources */,
 			);
@@ -499,10 +499,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E116C62D2A7AF82500A5783F /* Coordinator.swift in Sources */,
 				E180DF3E2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
 				E18F938A2652DA5B00BC549F /* Localized.swift in Sources */,
 				E180DF3C2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
-				E180DF402632F9C600CC5CC8 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -593,6 +594,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
