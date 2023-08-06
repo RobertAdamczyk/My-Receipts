@@ -7,33 +7,69 @@
 
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
-    @Published var view: Views = .list
-    @Published var showMenuBar = false
-    @Published var showingMenu = false
-    @Published var widthMenu: CGFloat = 180
-    @Published var showActionSheet = false
-    
-    @Published var selectedImage: UIImage?
-    
-    @Published var takedPhotoData : Data?
-    
-    @Published var showImagePicker = false
-    @Published var showCamera = false
-    
-    @Published var showSortBy = false
-    
-    @Published var editReceipt: Receipt?
+final class HomeViewModel: ObservableObject {
 
-    let coordinator: Coordinator
+    @Published var receipts: [Receipt] = []
+    @Published var categories: [Categorie] = []
+    @Published var selectedCategorie: Categorie?
+
+    @Published var sortBy: SortBy = SortBy.titleAscending
+
+    var allReceiptsCount: Int {
+        coordinator.dependencies.coreDataService.fetchReceipts(sortBy: .titleAscending).count
+    }
+
+    private let coordinator: Coordinator
 
     init(coordinator: Coordinator) {
         self.coordinator = coordinator
     }
-    
-    func offMenu(){
-        withAnimation{
-            showMenuBar = false
+
+    func onViewAppear() {
+        getReceipts()
+        getCategories()
+    }
+
+    func onSortByTapped() {
+        coordinator.presentStandardSheet(.sort({ [weak self] sortBy in
+            self?.sortBy = sortBy
+            self?.getReceipts()
+        }))
+    }
+
+    func onCategorieTapped(categorie: Categorie?) {
+        self.selectedCategorie = categorie
+        getReceipts()
+    }
+
+    func onImageTapped(image: UIImage?) {
+        guard let image else { return }
+        coordinator.presentFullCoverSheet(.imagePreview(image))
+    }
+
+    func onReceiptTapped(_ receipt: Receipt) {
+        coordinator.presentFullCoverSheet(.addReceipt(.edit(receipt)))
+    }
+
+    func onRemoveReceiptTapped(receipt: Receipt) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
+            withAnimation {
+                self?.coordinator.dependencies.coreDataService.removeReceipt(receipt: receipt)
+                self?.getReceipts()
+            }
         }
+    }
+
+    private func getReceipts() {
+        let allReceipts = coordinator.dependencies.coreDataService.fetchReceipts(sortBy: sortBy)
+        guard let selectedCategorie else {
+            self.receipts = allReceipts
+            return
+        }
+        self.receipts = allReceipts.filter({ $0.categorie == selectedCategorie })
+    }
+
+    private func getCategories() {
+        self.categories = coordinator.dependencies.coreDataService.fetchCategories()
     }
 }

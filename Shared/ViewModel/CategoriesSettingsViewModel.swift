@@ -8,5 +8,30 @@
 import Foundation
 
 class CategoriesSettingsViewModel: ObservableObject {
-    @Published var addingCategorie = false
+
+    @Published private(set) var categories: [Categorie] = []
+
+    private let coordinator: Coordinator
+
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+        getCategories()
+    }
+
+    func onAddCategorieTapped() {
+        coordinator.presentStandardSheet(.addCategorie({ [weak self] title, symbol in
+            self?.coordinator.dependencies.coreDataService.addCategorie(title: title, symbol: symbol)
+            self?.getCategories()
+            self?.coordinator.dismiss()
+        }))
+    }
+
+    func onRemoveCategorie(at offsets: IndexSet) {
+        coordinator.dependencies.coreDataService.removeCategorie(at: offsets, from: categories)
+        getCategories()
+    }
+
+    private func getCategories() {
+        categories = coordinator.dependencies.coreDataService.fetchCategories()
+    }
 }

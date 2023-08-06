@@ -9,13 +9,12 @@ import SwiftUI
 
 struct CameraLiveUI: View {
     @EnvironmentObject var cameraViewModel: CameraViewModel
-    @Binding var showCamera: Bool
     
     var body: some View {
         VStack{
             HStack{
                 Button(action:{
-                    showCamera.toggle()
+                    cameraViewModel.dismiss()
                 }){
                     Image(systemName: "arrowshape.turn.up.left.fill")
                         .circleBackground
@@ -40,11 +39,5 @@ struct CameraLiveUI: View {
                     )
             }
         }
-    }
-}
-
-struct CameraLiveUI_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraLiveUI(showCamera: .constant(true))
     }
 }

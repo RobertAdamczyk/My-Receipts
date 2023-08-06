@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct CameraFullView: View {
-    @ObservedObject var cameraViewModel = CameraViewModel()
-    @Binding var showCamera: Bool
+
+    @StateObject var cameraViewModel: CameraViewModel
+
+    init(parentCoordinator: Coordinator, completion: @escaping (Data) -> Void) {
+        self._cameraViewModel = .init(wrappedValue: .init(parentCoordinator: parentCoordinator,
+                                                          completion: completion))
+    }
     
     var body: some View {
         ZStack{
@@ -18,9 +23,9 @@ struct CameraFullView: View {
             VStack{
                 if !cameraViewModel.showAlert && !cameraViewModel.isDetermining {
                     if cameraViewModel.isTaken{
-                        CameraPhotoUI(showCamera: $showCamera)
+                        CameraPhotoUI()
                     }else{
-                        CameraLiveUI(showCamera: $showCamera)
+                        CameraLiveUI()
                     }
                 }
                 
@@ -33,14 +38,8 @@ struct CameraFullView: View {
         }
         .alert(isPresented: $cameraViewModel.showAlert) {
             Alert(title: Text("You haven't allowed this app to use camera."), message: Text("You can enable this functionality in phone Settings."), dismissButton: .default(Text("OK"), action: {
-                showCamera = false
+                cameraViewModel.dismiss()
             }))
-                }
-    }
-}
-
-struct CameraFullView_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraFullView(showCamera: .constant(true))
+        }
     }
 }

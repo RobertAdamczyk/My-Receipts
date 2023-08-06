@@ -16,6 +16,15 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
     @Published var output = AVCapturePhotoOutput()
     @Published var preview: AVCaptureVideoPreviewLayer!
     @Published var picData = Data(count: 0)
+
+    let completion: (Data) -> Void
+
+    private let parentCoordinator: Coordinator
+
+    init(parentCoordinator: Coordinator, completion: @escaping (Data) -> Void) {
+        self.parentCoordinator = parentCoordinator
+        self.completion = completion
+    }
     
     func check() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
@@ -107,5 +116,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
         }
     }
     
-    
+    func dismiss() {
+        parentCoordinator.dismiss()
+    }
 }

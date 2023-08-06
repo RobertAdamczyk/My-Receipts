@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct CategorieView: View {
+    @EnvironmentObject var viewModel: HomeViewModel
     var categorie: Categorie?
     var count: Int?
-    @EnvironmentObject var coreData: CoreDataViewModel
     @State var title = "Categorie"
     @State var symbol = "C"
-    @State var receipts = 0
     var body: some View {
         VStack(alignment: .leading, spacing: 5){
             Text(categorie != nil ? symbol : "A")
@@ -23,7 +22,7 @@ struct CategorieView: View {
                 .fontWeight(.bold)
                 .font(.custom("Roboto Medium", size: 14))
                 .lineLimit(1)
-            Text("\(count == nil ? receipts : count!) receipts")
+            Text("\(count == nil ? categorie?.receipts?.count ?? 0 : count!) receipts")
                 .font(.custom("Roboto Medium", size: 10))
                 .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
                 .lineLimit(1)
@@ -32,7 +31,7 @@ struct CategorieView: View {
         .frame(width: 100, height: 100, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 13)
-                .fill(coreData.selectedCategorie == categorie ?
+                .fill(viewModel.selectedCategorie == categorie ?
                         LinearGradient(gradient: Gradient(stops: [
                         .init(color: Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)), location: 0),
                         .init(color: Color(#colorLiteral(red: 0.9882352948188782, green: 0.8901960253715515, blue: 0.5411764979362488, alpha: 1)), location: 1)]),
@@ -48,17 +47,13 @@ struct CategorieView: View {
                     .foregroundColor(.secondary)
                     .padding(.top, 20)
                     .padding(.trailing, 5), alignment: .topTrailing)
-        .onAppear(){
+        .onAppear() {
             if let unwrappedTitle = categorie?.title {
                 title = unwrappedTitle
             }
             if let unwrappedSymbol = categorie?.symbol {
                 symbol = unwrappedSymbol
             }
-            if let unwrappedCount = categorie?.receipts?.count {
-                receipts = unwrappedCount
-            }
-            
         }
     }
 }

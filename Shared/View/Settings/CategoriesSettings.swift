@@ -8,41 +8,34 @@
 import SwiftUI
 
 struct CategoriesSettings: View {
-    @ObservedObject var coreDataViewModel = CoreDataViewModel()
-    @ObservedObject var viewModel = CategoriesSettingsViewModel()
+
+    @StateObject var viewModel: CategoriesSettingsViewModel
+
+    init(coordinator: Coordinator) {
+        self._viewModel = .init(wrappedValue: .init(coordinator: coordinator))
+    }
+
     var body: some View {
         List{
-            if coreDataViewModel.categories.isEmpty {
+            if viewModel.categories.isEmpty {
                 Text("You have no categories.")
                     .frame(maxWidth: .infinity, alignment: .center)
             }else {
                 Section(header: Text("Categories")) {
-                    ForEach(coreDataViewModel.categories) { categorie in
+                    ForEach(viewModel.categories) { categorie in
                         Text(categorie.title ?? "###")
                     }
-                    .onDelete(perform: coreDataViewModel.removeCategorie)
+                    .onDelete(perform: viewModel.onRemoveCategorie)
                 }
             }
            
         }
-        .listStyle(GroupedListStyle())
-        .navigationBarTitle("Categories", displayMode: .inline)
+        .listStyle(.grouped)
+        .navigationTitle("Categories")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button("Add") { viewModel.addingCategorie.toggle() }
+                Button("Add") { viewModel.onAddCategorieTapped() }
             }
-        }
-        .sheet(isPresented: $viewModel.addingCategorie){
-            AddCategorieView(showSheet: $viewModel.addingCategorie)
-                .environmentObject(coreDataViewModel)
-        }
-    }
-}
-
-struct CategoriesSettings_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            CategoriesSettings()
         }
     }
 }

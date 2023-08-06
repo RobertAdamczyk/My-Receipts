@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct AddCategorieView: View {
-    @Binding var showSheet: Bool
-    @State var txt: String = ""
+
+    let completion: (String, String) -> Void
+
+    @State var title: String = ""
     @State var symbol: String = ""
-    @EnvironmentObject var coreDataViewModel: CoreDataViewModel
+
     var body: some View {
         NavigationView{
             Form{
                 Section(header: Text("Title")){
-                    TextField("Enter...", text: $txt)
+                    TextField("Enter...", text: $title)
                 }
                 Section(header: Text("Symbol")){
                     TextField("Enter...", text: $symbol)
@@ -35,20 +37,13 @@ struct AddCategorieView: View {
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button("Done") {
-                        coreDataViewModel.addCategorie(title: txt, symbol: symbol)
-                        showSheet.toggle()
+                        completion(title, symbol)
                     }
-                    .disabled(txt.count < 3)
+                    .disabled(title.count < 3)
                 }
             }
         }
         .accentColor(.black)
         .preferredColorScheme(.light)
-    }
-}
-
-struct AddCategorieView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddCategorieView(showSheet: .constant(true))
     }
 }

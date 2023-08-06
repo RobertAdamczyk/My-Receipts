@@ -45,15 +45,6 @@ struct AboutView: View {
                 .multilineTextAlignment(.center)
             }
         }
-        .navigationBarTitle("About", displayMode: .inline)
-    }
-}
-
-struct AboutView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            AboutView()
-                .navigationBarTitle("About", displayMode: .inline)
-        }
+        .navigationTitle("About")
     }
 }

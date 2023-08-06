@@ -9,106 +9,119 @@ import SwiftUI
 import CoreData
 
 class AddReceiptViewModel: ObservableObject {
-    @Published var inputImage: UIImage?
+
     @Published var newReceipt = NewReceipt()
-    @AppStorage("daysNotification") var daysNotification = 7
     @Published var warranty = false
-    @Published var loadedReceipt = false
-    
-    func save() {
-        let pickedImage = inputImage?.jpegData(compressionQuality: 1.0)
-        
-        let newData = Receipt(context: CoreDataMenager.instance.context)
-        newData.image = pickedImage
-        newData.title = newReceipt.title
-        newData.dateOfPurchase = newReceipt.dateOfPurchase
-        newData.endOfWarranty = warranty ? newReceipt.endOfWarranty : nil
-        newData.id = UUID()
-        newData.categorie = newReceipt.categorie
-        
-        if let id = newData.id {
-            createNotification(id: id)
+
+    @AppStorage("daysNotification") var daysNotification = 7
+
+    @Published private(set) var categories: [Categorie] = []
+
+    var navigationTitle: String {
+        switch context {
+        case .new: return "New Receipt".localized()
+        case .edit: return "Edit Receipt".localized()
         }
-        CoreDataMenager.instance.save()
+    }
+
+    var meetsRequirementsToCreateReceipt: Bool {
+        newReceipt.title.count > 2 && newReceipt.uiImage != nil
+    }
+
+    let context: AddReceipt.Context
+
+    /// Data of image to save in core data
+    private var imageData: Data? {
+        return newReceipt.uiImage?.jpegData(compressionQuality: 1.0)
+    }
+
+    /// Indicate first open of add receipt view
+    private var initialViewAppear: Bool = true
+
+    private let coordinator: Coordinator
+    private let parentCoordinator: Coordinator
+
+    init(coordinator: Coordinator, parentCoordinator: Coordinator, context: AddReceipt.Context) {
+        self.coordinator = coordinator
+        self.parentCoordinator = parentCoordinator
+        self.context = context
+        self.categories = coordinator.dependencies.coreDataService.fetchCategories()
+        if case .edit(let receipt) = context {
+            newReceipt = .init(receipt: receipt)
+            warranty = receipt.endOfWarranty != nil
+        }
+    }
+
+    func onViewAppear() {
+        if initialViewAppear {
+            coordinator.presentDialogApp(.loadPhoto({ [weak self] in
+                self?.showCamera()
+            }, { [weak self] in
+                self?.showImagePicker()
+            }))
+        }
+        initialViewAppear = false
+    }
+
+    func onCloseButtonTapped() {
+        parentCoordinator.dismiss()
+    }
+
+    func onImageTapped() {
+        coordinator.presentDialogApp(.loadPhoto({ [weak self] in
+            self?.showCamera()
+        }, { [weak self] in
+            self?.showImagePicker()
+        }))
+    }
+
+    func onSaveButtonTapped() {
+        if meetsRequirementsToCreateReceipt {
+            switch context {
+            case .new: addReceipt()
+            case .edit(let receipt): saveReceipt(receipt: receipt)
+            }
+            parentCoordinator.dismiss()
+        }
+    }
+
+    private func showCamera() {
+        coordinator.presentFullCoverSheet(.cameraView( { [weak self] data in
+            self?.newReceipt.uiImage = UIImage(data: data)
+        }))
+    }
+
+    private func showImagePicker() {
+        coordinator.presentStandardSheet(.imagePicker( { [weak self] uiimage in
+            self?.newReceipt.uiImage = uiimage
+        }))
     }
     
-    func edit(editReceipt: Receipt?) {
-        let pickedImage = inputImage?.jpegData(compressionQuality: 1.0)
-        
-        editReceipt?.image = pickedImage
-        editReceipt?.title = newReceipt.title
-        editReceipt?.dateOfPurchase = newReceipt.dateOfPurchase
-        editReceipt?.endOfWarranty = warranty ? newReceipt.endOfWarranty : nil
-        editReceipt?.categorie = newReceipt.categorie
-        
-        if let id = editReceipt?.id {
+    private func addReceipt() {
+        let receipt = coordinator.dependencies.coreDataService.addReceipt(title: newReceipt.title,
+                                                                          dateOfPurchase: newReceipt.dateOfPurchase,
+                                                                          endOfWarranty: warranty ? newReceipt.endOfWarranty : nil,
+                                                                          categorie: newReceipt.categorie,
+                                                                          imageData: imageData)
+        coordinator.dependencies.notificationsRepository.createNotification(for: receipt)
+    }
+    
+    private func saveReceipt(receipt: Receipt) {
+        coordinator.dependencies.coreDataService.editReceipt(editReceipt: receipt,
+                                                             title: newReceipt.title,
+                                                             dateOfPurchase: newReceipt.dateOfPurchase,
+                                                             endOfWarranty: warranty ? newReceipt.endOfWarranty : nil,
+                                                             categorie: newReceipt.categorie,
+                                                             imageData: imageData)
+        if let id = receipt.id {
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id.uuidString])
             if warranty {
-                createNotification(id: id)
+                coordinator.dependencies.notificationsRepository.createNotification(for: receipt)
             }
             
-            if let inputImage = inputImage {
-                CacheImage.shared.set(forKey: id.uuidString, image: inputImage)
+            if let uiimage = newReceipt.uiImage {
+                CacheImage.shared.set(forKey: id.uuidString, image: uiimage)
             }
         }
-        
-        
-        
-        CoreDataMenager.instance.save()
-    }
-    
-    func loadReceipt(editReceipt: Receipt?){
-        if let editReceipt = editReceipt{
-            if loadedReceipt { return }
-            newReceipt.categorie = editReceipt.categorie
-            if let endOfWarranty = editReceipt.endOfWarranty {
-                newReceipt.endOfWarranty = endOfWarranty
-                warranty = true
-            }
-            
-            guard let dateOfPurchase = editReceipt.dateOfPurchase else { return }
-            newReceipt.dateOfPurchase = dateOfPurchase
-            guard let title = editReceipt.title else { return }
-            newReceipt.title = title
-            
-            guard let dataImage = editReceipt.image else { return }
-            guard let unwrappedUIImage = UIImage(data: dataImage) else { return }
-            newReceipt.image = Image(uiImage: unwrappedUIImage)
-            inputImage = unwrappedUIImage
-            loadedReceipt = true
-        }
-    }
-    
-    func createNotification(id: UUID){
-        let content = UNMutableNotificationContent()
-        content.title = newReceipt.title
-        content.subtitle = "The guarantee will expire in \(daysNotification) days.".localized()
-        content.sound = UNNotificationSound.default
-
-        // show this notification five seconds from now
-        var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.current
-        
-        let dateNotification = newReceipt.endOfWarranty.addingTimeInterval(TimeInterval(daysNotification * 3600 * -24))
-
-        dateComponents.day = Calendar.current.component(.day, from: dateNotification)
-        dateComponents.month = Calendar.current.component(.month, from: dateNotification)
-        dateComponents.year = Calendar.current.component(.year, from: dateNotification)
-        dateComponents.hour = 20
-        dateComponents.minute = 0
-        // Create the trigger as a repeating event.
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-
-        let request = UNNotificationRequest(identifier: id.uuidString, content: content, trigger: trigger)
-
-        // add our notification request
-        UNUserNotificationCenter.current().add(request)
-    }
-    
-    func checkTitleAndImage() -> Bool { return newReceipt.title.count > 2 && newReceipt.image != nil }
-    
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-        newReceipt.image = Image(uiImage: inputImage)
     }
 }

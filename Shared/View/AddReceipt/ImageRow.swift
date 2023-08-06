@@ -12,8 +12,8 @@ struct ImageRow: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     var body: some View {
         ZStack{
-            if viewModel.newReceipt.image != nil {
-                viewModel.newReceipt.image!
+            if let uiimage = viewModel.newReceipt.uiImage {
+                Image(uiImage: uiimage)
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: UIScreen.main.bounds.width*0.6)
@@ -31,9 +31,7 @@ struct ImageRow: View {
             }
         }
         .roundedBackgroundWithBorder
-        .onTapGesture {
-            homeViewModel.showActionSheet.toggle()
-        }
+        .onTapGesture(perform: viewModel.onImageTapped)
     }
 }
 

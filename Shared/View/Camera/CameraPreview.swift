@@ -11,6 +11,7 @@ import AVFoundation
 struct CameraPreview: UIViewRepresentable {
     
     @ObservedObject var camera: CameraViewModel
+
     func makeUIView(context: Context) -> UIView {
         let view = UIView(frame: UIScreen.main.bounds)
         camera.preview = AVCaptureVideoPreviewLayer(session: camera.session)

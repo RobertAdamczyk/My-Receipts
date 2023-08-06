@@ -8,30 +8,38 @@
 import SwiftUI
 
 struct AddReceipt: View {
-    @StateObject var viewModel = AddReceiptViewModel()
-    @EnvironmentObject var homeViewModel: HomeViewModel
-    @StateObject var coreData = CoreDataViewModel()
-    @Binding var showPicker: Bool
-    @Binding var takedPhotoData: Data?
+
+    enum Context {
+        case new
+        case edit(Receipt)
+    }
+
+    @StateObject var viewModel: AddReceiptViewModel
+
+    init(coordinator: Coordinator, parentCoordinator: Coordinator, context: Context) {
+        self._viewModel = .init(wrappedValue: .init(coordinator: coordinator,
+                                                    parentCoordinator: parentCoordinator,
+                                                    context: context))
+    }
     
     var body: some View {
         
-        Form{
-            Section{
-                ZStack{
+        Form {
+            Section {
+                ZStack {
                     Color(UIColor.systemGroupedBackground)
                         
                     ImageRow()
                         .padding(5)
-                }.listRowInsets(EdgeInsets())
+                }
+                .listRowInsets(EdgeInsets())
             }
-            Section(header: Text("Info")){
+            Section(header: Text("Info")) {
                 TextField("Title", text: $viewModel.newReceipt.title)
-                if !coreData.categories.isEmpty {
+                if !viewModel.categories.isEmpty {
                     NavigationLink(destination:
-                                    ChooseCategorieView(categories: coreData.categories)
+                                    ChooseCategorieView(categories: viewModel.categories)
                                         .environmentObject(viewModel)
-                                        .environmentObject(homeViewModel)
                     ){
                         HStack{
                             Text("Categorie")
@@ -44,7 +52,6 @@ struct AddReceipt: View {
                 }
                 NavigationLink(destination: WarrantyView()
                                 .environmentObject(viewModel)
-                                .environmentObject(homeViewModel)
                 ){
                     HStack{
                         Text("Guarantee")
@@ -59,55 +66,26 @@ struct AddReceipt: View {
                 DatePicker("Date of Purchase", selection: $viewModel.newReceipt.dateOfPurchase, displayedComponents: .date)
                     .accentColor(.blue)
             }
-            
-                        
         }
-        .padding(.top, 50)
-        .navigationBarHidden(true)
-        .overlay(
-            NavigationTopBar(title: homeViewModel.editReceipt == nil ? "New Receipt".localized() : "Edit Receipt".localized(), backButton: false)
-                .overlay(
-                    Button(action:{
-                        if viewModel.checkTitleAndImage() {
-                            if homeViewModel.editReceipt == nil {
-                                viewModel.save()
-                            }else {
-                                viewModel.edit(editReceipt: homeViewModel.editReceipt)
-                            }
-                            
-                            homeViewModel.view = .list
-                        }
-                    }){
-                        Text("Done")
-                            .font(.title2)
-                            .padding(20)
-                    }
-                    ,alignment: .bottomTrailing
-                )
-                .ignoresSafeArea()
-                
-            
-            , alignment: .top)
-        .environmentObject(viewModel)
-        .onAppear(){
-            coreData.fetchCategories()
-            viewModel.loadReceipt(editReceipt: homeViewModel.editReceipt)
-        }
-        .onChange(of: takedPhotoData){ _ in
-            if let taked = takedPhotoData {
-                viewModel.inputImage = UIImage(data: taked)
-                viewModel.loadImage()
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                Button(action:{
+                    viewModel.onSaveButtonTapped()
+                }){
+                    Text("Done")
+                }
+                .disabled(!viewModel.meetsRequirementsToCreateReceipt)
+            }
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button(action:{
+                    viewModel.onCloseButtonTapped()
+                }){
+                    Image(systemName: "xmark")
+                }
             }
         }
-        .sheet(isPresented: $showPicker, onDismiss: viewModel.loadImage) {
-            ImagePicker(image: $viewModel.inputImage)
-        }
-        
-    }
-}
-
-struct AddReceipt_Previews: PreviewProvider {
-    static var previews: some View {
-        AddReceipt(showPicker: .constant(false), takedPhotoData: .constant(Data(count: 0)))
+        .navigationTitle(viewModel.navigationTitle)
+        .environmentObject(viewModel)
+        .onAppear(perform: viewModel.onViewAppear)
     }
 }

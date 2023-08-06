@@ -9,14 +9,12 @@ import SwiftUI
 
 struct CameraPhotoUI: View {
     @EnvironmentObject var cameraViewModel: CameraViewModel
-    @EnvironmentObject var homeViewModel: HomeViewModel
-    @Binding var showCamera: Bool
     
     var body: some View {
         VStack{
             HStack{
                 Button(action:{
-                    showCamera.toggle()
+                    cameraViewModel.dismiss()
                 }){
                     Image(systemName: "arrowshape.turn.up.left.fill")
                         .circleBackground
@@ -35,8 +33,8 @@ struct CameraPhotoUI: View {
             Spacer()
             HStack{
                 Button(action:{
-                    homeViewModel.takedPhotoData = cameraViewModel.picData
-                    showCamera.toggle()
+                    cameraViewModel.completion(cameraViewModel.picData)
+                    cameraViewModel.dismiss()
                 }){
                     Text("USE THIS PHOTO")
                         .bold()
@@ -49,11 +47,5 @@ struct CameraPhotoUI: View {
                 Spacer()
             }
         }
-    }
-}
-
-struct CameraPhotoUI_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraPhotoUI(showCamera: .constant(true))
     }
 }

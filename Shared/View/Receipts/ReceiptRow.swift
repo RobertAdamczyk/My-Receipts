@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ReceiptRow: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
-    @EnvironmentObject var coreData: CoreDataViewModel
     @State var image : Image?
     @State var uiimage: UIImage?
     var receipt: Receipt
@@ -23,9 +22,7 @@ struct ReceiptRow: View {
                         .frame(maxWidth: 75, maxHeight: 75)
                         .cornerRadius(5)
                         .onTapGesture{
-                            withAnimation{
-                                homeViewModel.selectedImage = uiimage
-                            }
+                            homeViewModel.onImageTapped(image: uiimage)
                         }
                 }else {
                     Color("Light")
@@ -82,18 +79,11 @@ struct ReceiptRow: View {
                     .padding(.trailing, 5), alignment: .topTrailing)
         .contentShape(RoundedRectangle(cornerRadius: 14))
         .contextMenu{
-            Button(action:{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-                    withAnimation{
-                        coreData.removeReceipt(receipt: receipt)
-                    }
-                }
-            }){
+            Button(action: { homeViewModel.onRemoveReceiptTapped(receipt: receipt) }){
                 Text("Delete").foregroundColor(.red)
             }
             Button(action:{
-                homeViewModel.editReceipt = receipt
-                homeViewModel.view = .add
+                homeViewModel.onReceiptTapped(receipt)
             }){
                 Text("Edit").foregroundColor(.red)
             }

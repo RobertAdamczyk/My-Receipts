@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BA264467570017BD29 /* CoreDataMenager.swift */; };
-		E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */; };
 		E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
 		E116C62D2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
 		E124AA1226498FB6009CE167 /* CategoriesSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */; };
 		E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorieView.swift */; };
+		E125A87B2A7FB10F0035B34D /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125A87A2A7FB10F0035B34D /* ViewFactory.swift */; };
+		E125A87C2A7FB10F0035B34D /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125A87A2A7FB10F0035B34D /* ViewFactory.swift */; };
 		E15EF00C2668F5570091CE71 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EF00B2668F5570091CE71 /* AboutView.swift */; };
 		E1617AE8265D9A5E00EC269D /* CategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1617AE7265D9A5E00EC269D /* CategorieView.swift */; };
-		E16719E6265ECAA4009870D6 /* NavigationTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16719E5265ECAA4009870D6 /* NavigationTopBar.swift */; };
 		E167BBD4264AE85E00AA6CA2 /* ChooseCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD3264AE85E00AA6CA2 /* ChooseCategorieView.swift */; };
 		E167BBD7264F074100AA6CA2 /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD6264F074100AA6CA2 /* SortBy.swift */; };
 		E167BBD9264F0C5400AA6CA2 /* SortByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD8264F0C5400AA6CA2 /* SortByView.swift */; };
@@ -24,6 +23,9 @@
 		E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */; };
 		E16B7C30264074BD0099BB15 /* CameraPhotoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */; };
 		E16B7C342640755F0099BB15 /* CameraLiveUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C332640755F0099BB15 /* CameraLiveUI.swift */; };
+		E176B3D02A7FFE890053C06E /* NotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176B3CF2A7FFE890053C06E /* NotificationsRepository.swift */; };
+		E176B3D22A8001E20053C06E /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176B3D12A8001E20053C06E /* Dependencies.swift */; };
+		E176B3D42A80033E0053C06E /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176B3D32A80033E0053C06E /* CoreDataService.swift */; };
 		E17836FC265113530016A12D /* WarrantyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17836FB265113530016A12D /* WarrantyView.swift */; };
 		E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C6A83263ECC710023B2EC /* CameraViewModel.swift */; };
 		E17C6A88263ECCC70023B2EC /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C6A87263ECCC70023B2EC /* CameraPreview.swift */; };
@@ -58,19 +60,18 @@
 		E19A09F326389A710079FB93 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A09F226389A710079FB93 /* SettingsViewModel.swift */; };
 		E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F926339904006EC2E5 /* ImageRow.swift */; };
 		E19D91892639B73A0091D9E1 /* NotificationsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */; };
+		E1A59D5A2A7FD6DB00CD1317 /* DialogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A59D592A7FD6DB00CD1317 /* DialogApp.swift */; };
 		E1BB595D263ED22100D3D2DB /* CameraFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB595C263ED22100D3D2DB /* CameraFullView.swift */; };
 		E1BB5961263EE10D00D3D2DB /* CameraModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB5960263EE10D00D3D2DB /* CameraModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E112D2BA264467570017BD29 /* CoreDataMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMenager.swift; sourceTree = "<group>"; };
-		E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		E116C62B2A7AF82500A5783F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSettingsViewModel.swift; sourceTree = "<group>"; };
 		E124AA182649C3F3009CE167 /* AddCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategorieView.swift; sourceTree = "<group>"; };
+		E125A87A2A7FB10F0035B34D /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		E15EF00B2668F5570091CE71 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		E1617AE7265D9A5E00EC269D /* CategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieView.swift; sourceTree = "<group>"; };
-		E16719E5265ECAA4009870D6 /* NavigationTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTopBar.swift; sourceTree = "<group>"; };
 		E167BBD3264AE85E00AA6CA2 /* ChooseCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategorieView.swift; sourceTree = "<group>"; };
 		E167BBD6264F074100AA6CA2 /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
 		E167BBD8264F0C5400AA6CA2 /* SortByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByView.swift; sourceTree = "<group>"; };
@@ -81,6 +82,9 @@
 		E16B7C332640755F0099BB15 /* CameraLiveUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLiveUI.swift; sourceTree = "<group>"; };
 		E172DA8126498BB200023FDC /* Categorie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categorie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E172DA8226498BB200023FDC /* Categorie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categorie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E176B3CF2A7FFE890053C06E /* NotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepository.swift; sourceTree = "<group>"; };
+		E176B3D12A8001E20053C06E /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		E176B3D32A80033E0053C06E /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		E17836FB265113530016A12D /* WarrantyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarrantyView.swift; sourceTree = "<group>"; };
 		E17C6A83263ECC710023B2EC /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		E17C6A87263ECCC70023B2EC /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		E19A09F226389A710079FB93 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E19CA3F926339904006EC2E5 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
 		E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettings.swift; sourceTree = "<group>"; };
+		E1A59D592A7FD6DB00CD1317 /* DialogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogApp.swift; sourceTree = "<group>"; };
 		E1BB595C263ED22100D3D2DB /* CameraFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFullView.swift; sourceTree = "<group>"; };
 		E1BB5960263EE10D00D3D2DB /* CameraModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,12 +156,14 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
-		E16719E4265ECA74009870D6 /* ViewParts */ = {
+		E176B3CE2A7FFE750053C06E /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				E16719E5265ECAA4009870D6 /* NavigationTopBar.swift */,
+				E176B3CF2A7FFE890053C06E /* NotificationsRepository.swift */,
+				E176B3D32A80033E0053C06E /* CoreDataService.swift */,
+				E176B3D12A8001E20053C06E /* Dependencies.swift */,
 			);
-			path = ViewParts;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		E17FC17726341ADA00082D55 /* Frameworks */ = {
@@ -192,6 +199,7 @@
 		E180DF242632F9C400CC5CC8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E176B3CE2A7FFE750053C06E /* Repositories */,
 				E18F93932652E03B00BC549F /* Strings */,
 				E18F93872652DA3800BC549F /* Extensions */,
 				E180DF8F263383FB00CC5CC8 /* ViewModifier */,
@@ -200,7 +208,9 @@
 				E180DF502632FBB400CC5CC8 /* ViewModel */,
 				E180DF4F2632FBAE00CC5CC8 /* View */,
 				E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */,
+				E125A87A2A7FB10F0035B34D /* ViewFactory.swift */,
 				E116C62B2A7AF82500A5783F /* Coordinator.swift */,
+				E1A59D592A7FD6DB00CD1317 /* DialogApp.swift */,
 				E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */,
 				E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */,
 			);
@@ -236,7 +246,6 @@
 		E180DF4F2632FBAE00CC5CC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E16719E4265ECA74009870D6 /* ViewParts */,
 				E105C8D0263ED18D00D3190F /* Camera */,
 				E1FAF80A2639B58300891744 /* Settings */,
 				E17FC1842635733500082D55 /* Receipts */,
@@ -257,7 +266,6 @@
 				E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */,
 				E19A09F226389A710079FB93 /* SettingsViewModel.swift */,
 				E17C6A83263ECC710023B2EC /* CameraViewModel.swift */,
-				E112D2BC26446A7F0017BD29 /* CoreDataViewModel.swift */,
 				E18430782646902300026A43 /* ImagePreviewViewModel.swift */,
 				E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */,
 			);
@@ -269,7 +277,6 @@
 			children = (
 				E180DF522632FBBF00CC5CC8 /* CoreData */,
 				E180DF8B2633799600CC5CC8 /* NewReceipt.swift */,
-				E112D2BA264467570017BD29 /* CoreDataMenager.swift */,
 				E18430762645F8B900026A43 /* CacheImage.swift */,
 			);
 			path = Model;
@@ -452,11 +459,11 @@
 			files = (
 				E180DF5A2633003A00CC5CC8 /* ReceiptsList.swift in Sources */,
 				E1617AE8265D9A5E00EC269D /* CategorieView.swift in Sources */,
-				E112D2BD26446A7F0017BD29 /* CoreDataViewModel.swift in Sources */,
+				E176B3D22A8001E20053C06E /* Dependencies.swift in Sources */,
 				E180DF8C2633799600CC5CC8 /* NewReceipt.swift in Sources */,
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
-				E112D2BB264467570017BD29 /* CoreDataMenager.swift in Sources */,
 				E17836FC265113530016A12D /* WarrantyView.swift in Sources */,
+				E1A59D5A2A7FD6DB00CD1317 /* DialogApp.swift in Sources */,
 				E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */,
 				E1BB595D263ED22100D3D2DB /* CameraFullView.swift in Sources */,
 				E18430772645F8B900026A43 /* CacheImage.swift in Sources */,
@@ -472,12 +479,12 @@
 				E180DF762633582C00CC5CC8 /* Settings.swift in Sources */,
 				E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
-				E16719E6265ECAA4009870D6 /* NavigationTopBar.swift in Sources */,
 				E15EF00C2668F5570091CE71 /* AboutView.swift in Sources */,
 				E17C6A88263ECCC70023B2EC /* CameraPreview.swift in Sources */,
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
 				E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */,
 				E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */,
+				E125A87B2A7FB10F0035B34D /* ViewFactory.swift in Sources */,
 				E18F93892652DA5B00BC549F /* Localized.swift in Sources */,
 				E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */,
 				E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */,
@@ -491,6 +498,8 @@
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E124AA1226498FB6009CE167 /* CategoriesSettingsViewModel.swift in Sources */,
 				E19A09F326389A710079FB93 /* SettingsViewModel.swift in Sources */,
+				E176B3D02A7FFE890053C06E /* NotificationsRepository.swift in Sources */,
+				E176B3D42A80033E0053C06E /* CoreDataService.swift in Sources */,
 				E167BBD9264F0C5400AA6CA2 /* SortByView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +510,7 @@
 			files = (
 				E116C62D2A7AF82500A5783F /* Coordinator.swift in Sources */,
 				E180DF3E2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
+				E125A87C2A7FB10F0035B34D /* ViewFactory.swift in Sources */,
 				E18F938A2652DA5B00BC549F /* Localized.swift in Sources */,
 				E180DF3C2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 			);
@@ -654,7 +664,7 @@
 				DEVELOPMENT_TEAM = 38Q6TG2KG3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -679,7 +689,7 @@
 				DEVELOPMENT_TEAM = 38Q6TG2KG3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

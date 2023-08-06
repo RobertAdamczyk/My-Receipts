@@ -7,26 +7,45 @@
 
 import SwiftUI
 
-class ImagePreviewViewModel: NSObject, ObservableObject {
-    @Published var offset = CGSize.zero
+final class ImagePreviewViewModel: NSObject, ObservableObject {
+
     @Published var showAlert = false
-    @Published var saved = false
-    
-    func writeToPhotoAlbum(image: UIImage) {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
+    @Published var shouldShowSaveInPhotos = true
+    @Published var shouldShowSaveCheckmark = false
+
+    let uiImage: UIImage
+
+    private let parentCoordinator: Coordinator
+
+    init(uiImage: UIImage, parentCoordinator: Coordinator) {
+        self.uiImage = uiImage
+        self.parentCoordinator = parentCoordinator
     }
 
-    @objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    func onSaveTapped() {
+        writeToPhotoAlbum(uiImage: uiImage)
+    }
+
+    func onCloseTapped() {
+        parentCoordinator.dismiss()
+    }
+    
+    private func writeToPhotoAlbum(uiImage: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(uiImage, self, #selector(saveError), nil)
+    }
+
+    @objc private func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             print("Error saving image. \(error)")
             showAlert.toggle()
             return
         }
         
-        saved = true
+        shouldShowSaveCheckmark = true
+        shouldShowSaveInPhotos = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.saved = false
+            self?.shouldShowSaveCheckmark = false
         }
     }
 }

@@ -7,15 +7,61 @@
 
 import SwiftUI
 
+final class MenuViewModel: ObservableObject {
+
+    @Published var shouldShowMenu: Bool = false
+
+    private let coordinator: Coordinator
+
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+        setupShowMenuObserver()
+    }
+
+    func setupShowMenuObserver() {
+        Task {
+            for await newValue in coordinator.$shouldShowMenu.values {
+                await MainActor.run {
+                    shouldShowMenu = newValue
+                }
+            }
+        }
+    }
+
+    func onReceiptsTapped() {
+        coordinator.hideMenu()
+        coordinator.showTabView(.list)
+    }
+
+    func onAddReceiptTapped() {
+        coordinator.hideMenu()
+        coordinator.presentFullCoverSheet(.addReceipt(.new))
+    }
+
+    func onSettingsTapped() {
+        coordinator.hideMenu()
+        coordinator.showTabView(.settings)
+    }
+
+    func hideMenu() {
+        coordinator.hideMenu()
+    }
+}
+
 struct MenuBar: View {
-    @EnvironmentObject var viewModel: HomeViewModel
+
+    @StateObject var viewModel: MenuViewModel
+
+    static let widthMenu: CGFloat = 180
+
+    init(coordinator: Coordinator) {
+        self._viewModel = .init(wrappedValue: .init(coordinator: coordinator))
+    }
+
     var body: some View {
         HStack{
-            VStack(alignment: .leading ,spacing: 40){
-                Button(action:{
-                    viewModel.coordinator.showTabView(.list)
-                    viewModel.offMenu()
-                }){
+            VStack(alignment: .leading ,spacing: 40) {
+                Button(action: viewModel.onReceiptsTapped){
                     HStack{
                         Image(systemName: "scroll.fill")
                             .foregroundColor(Color("Blue"))
@@ -24,16 +70,7 @@ struct MenuBar: View {
                     }
                 }
                 
-                Button(action:{
-                    viewModel.editReceipt = nil
-                    viewModel.coordinator.showTabView(.list)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                        viewModel.coordinator.showTabView(.add)
-                    }
-                    
-                    viewModel.offMenu()
-                    viewModel.showActionSheet.toggle()
-                }){
+                Button(action: viewModel.onAddReceiptTapped){
                     HStack{
                         Image(systemName: "plus.app.fill")
                             .foregroundColor(Color("Blue"))
@@ -41,10 +78,7 @@ struct MenuBar: View {
                             .foregroundColor(Color("Grey"))
                     }
                 }
-                Button(action:{
-                    viewModel.coordinator.showTabView(.settings)
-                    viewModel.offMenu()
-                }){
+                Button(action: viewModel.onSettingsTapped){
                     HStack{
                         Image(systemName: "gearshape.fill")
                             .foregroundColor(Color("Blue"))
@@ -57,7 +91,7 @@ struct MenuBar: View {
             .font(.title3)
             .padding(.top, 100)
             .padding(.horizontal)
-            .frame(width: viewModel.widthMenu)
+            .frame(width: MenuBar.widthMenu)
             .background(Rectangle()
                             .fill(LinearGradient(
                                     gradient: Gradient(stops: [
@@ -65,33 +99,24 @@ struct MenuBar: View {
                                 .init(color: Color(#colorLiteral(red: 0.9882352948188782, green: 0.8901960253715515, blue: 0.5411764979362488, alpha: 1)), location: 1)]),
                                     startPoint: UnitPoint(x: 0.5760869012534805, y: 0.4304187364119937),
                                     endPoint: UnitPoint(x: 1.5072464415835352, y: 0.03078817916915394))))
-            .overlay(HStack{
-                Spacer()
-                Rectangle()
-                    .frame(width: 1)
-                    .foregroundColor(.black)
-            })
-            if viewModel.showMenuBar {
+            .overlay(
+                HStack {
+                    Spacer()
+                    Rectangle()
+                        .frame(width: 1)
+                        .foregroundColor(.black)
+                })
+            if viewModel.shouldShowMenu {
                 Color.clear
                     .contentShape(Rectangle())
-                    .onTapGesture {
-                        if viewModel.showMenuBar {
-                            viewModel.offMenu()
-                        }
-                    }
+                    .onTapGesture(perform: viewModel.hideMenu)
             }else {
                 Color.clear
             }
             
         }
         .ignoresSafeArea()
-    }
-}
-
-struct MenuBar_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuBar()
-            .preferredColorScheme(.light)
-            .environmentObject(HomeViewModel(coordinator: .init()))
+        .offset(x: viewModel.shouldShowMenu ? 0 : -MenuBar.widthMenu)
+        .animation(.easeInOut, value: viewModel.shouldShowMenu)
     }
 }

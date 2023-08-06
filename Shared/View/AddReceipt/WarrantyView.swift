@@ -10,8 +10,8 @@ import SwiftUI
 struct WarrantyView: View {
     @EnvironmentObject var viewModel: AddReceiptViewModel
     var body: some View {
-        List{
-            Section(header: Text("Is there a guarantee for the receipt?").padding(.top, 70)){
+        List {
+            Section(header: Text("Is there a guarantee for the receipt?")){
                 Toggle("Guarantee", isOn: $viewModel.warranty.animation())
             }
             
@@ -21,13 +21,8 @@ struct WarrantyView: View {
                         .accentColor(.blue)
                 }
             }
-            
-            
         }
-        .listStyle(GroupedListStyle())
-        .navigationBarHidden(true)
-        .overlay(NavigationTopBar(title: "Guarantee".localized(), backButton: true).ignoresSafeArea(), alignment: .top)
-        .navigationBarTitle("Guarantee", displayMode: .inline)
+        .navigationTitle("Guarantee".localized())
     }
 }
 

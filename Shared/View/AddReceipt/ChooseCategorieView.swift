@@ -12,7 +12,7 @@ struct ChooseCategorieView: View {
     var categories: [Categorie]
     var body: some View {
         List{
-            Section(header: Text("Choose categorie for the receipt.").padding(.top, 70)){
+            Section(header: Text("Choose categorie for the receipt.")){
                 ForEach(categories, id: \.self) { categorie in
                     Button(action: {
                         viewModel.newReceipt.categorie = viewModel.newReceipt.categorie != categorie ? categorie : nil
@@ -32,9 +32,6 @@ struct ChooseCategorieView: View {
             }
             
         }
-        .listStyle(GroupedListStyle())
-        .navigationBarHidden(true)
-        .overlay(NavigationTopBar(title: "Categorie".localized(), backButton: true).ignoresSafeArea(), alignment: .top)
-        .navigationBarTitle("Categorie", displayMode: .inline)
+        .navigationTitle("Categorie".localized())
     }
 }
