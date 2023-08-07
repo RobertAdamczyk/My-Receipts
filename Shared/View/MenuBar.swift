@@ -116,7 +116,6 @@ struct MenuBar: View {
             
         }
         .ignoresSafeArea()
-        .offset(x: viewModel.shouldShowMenu ? 0 : -MenuBar.widthMenu)
-        .animation(.easeInOut, value: viewModel.shouldShowMenu)
+        .offset(x: -MenuBar.widthMenu)
     }
 }

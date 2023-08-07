@@ -32,6 +32,7 @@ class CategoriesSettingsViewModel: ObservableObject {
     }
 
     private func getCategories() {
-        categories = coordinator.dependencies.coreDataService.fetchCategories()
+        coordinator.dependencies.coreDataService.updateCategories()
+        categories = coordinator.dependencies.coreDataService.categories
     }
 }

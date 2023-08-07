@@ -13,33 +13,41 @@ final class HomeViewModel: ObservableObject {
     @Published var categories: [Categorie] = []
     @Published var selectedCategorie: Categorie?
 
-    @Published var sortBy: SortBy = SortBy.titleAscending
-
-    var allReceiptsCount: Int {
-        coordinator.dependencies.coreDataService.fetchReceipts(sortBy: .titleAscending).count
-    }
-
     private let coordinator: Coordinator
+
+    private var receiptsTask: Task<(), Never>?
+    private var categoriesTask: Task<(), Never>?
 
     init(coordinator: Coordinator) {
         self.coordinator = coordinator
+        receipts = coordinator.dependencies.coreDataService.receipts
+        categories = coordinator.dependencies.coreDataService.categories
     }
 
     func onViewAppear() {
-        getReceipts()
-        getCategories()
+        updateReceipts()
+        updateCategories()
+        setupReceiptsObserver()
+        setupCategoriesObserver()
+    }
+
+    func onViewDisappear() {
+        receiptsTask?.cancel()
+        receiptsTask = nil
+        categoriesTask?.cancel()
+        categoriesTask = nil
     }
 
     func onSortByTapped() {
         coordinator.presentStandardSheet(.sort({ [weak self] sortBy in
-            self?.sortBy = sortBy
-            self?.getReceipts()
+            self?.coordinator.dependencies.coreDataService.setSortBy(sortBy)
+            self?.updateReceipts()
         }))
     }
 
     func onCategorieTapped(categorie: Categorie?) {
         self.selectedCategorie = categorie
-        getReceipts()
+        updateReceipts()
     }
 
     func onImageTapped(image: UIImage?) {
@@ -52,24 +60,41 @@ final class HomeViewModel: ObservableObject {
     }
 
     func onRemoveReceiptTapped(receipt: Receipt) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
-            withAnimation {
-                self?.coordinator.dependencies.coreDataService.removeReceipt(receipt: receipt)
-                self?.getReceipts()
+        coordinator.dependencies.coreDataService.removeReceipt(receipt: receipt)
+        updateReceipts()
+    }
+
+    private func setupReceiptsObserver() {
+        receiptsTask?.cancel()
+        receiptsTask = Task {
+            for await receipts in coordinator.dependencies.coreDataService.$receipts.values {
+                await MainActor.run {
+                    if let selectedCategorie {
+                        self.receipts = receipts.filter({ $0.categorie == selectedCategorie })
+                    } else {
+                        self.receipts = receipts
+                    }
+                }
             }
         }
     }
 
-    private func getReceipts() {
-        let allReceipts = coordinator.dependencies.coreDataService.fetchReceipts(sortBy: sortBy)
-        guard let selectedCategorie else {
-            self.receipts = allReceipts
-            return
+    private func setupCategoriesObserver() {
+        categoriesTask?.cancel()
+        categoriesTask = Task {
+            for await categories in coordinator.dependencies.coreDataService.$categories.values {
+                await MainActor.run {
+                    self.categories = categories
+                }
+            }
         }
-        self.receipts = allReceipts.filter({ $0.categorie == selectedCategorie })
     }
 
-    private func getCategories() {
-        self.categories = coordinator.dependencies.coreDataService.fetchCategories()
+    private func updateReceipts() {
+        coordinator.dependencies.coreDataService.updateReceipts()
+    }
+
+    private func updateCategories() {
+        coordinator.dependencies.coreDataService.updateCategories()
     }
 }

@@ -9,6 +9,11 @@ import CoreData
 
 final class CoreDataService {
 
+    @Published private(set) var receipts: [Receipt] = []
+    @Published private(set) var categories: [Categorie] = []
+
+    private(set) var sortBy: SortBy = .titleDescending
+
     private let container: NSPersistentCloudKitContainer
     private let context: NSManagedObjectContext
 
@@ -23,30 +28,32 @@ final class CoreDataService {
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         context = container.viewContext
+        updateReceipts()
+        updateCategories()
     }
 
-    func fetchReceipts(sortBy: SortBy) -> [Receipt] {
+    func updateReceipts() {
         let request = NSFetchRequest<Receipt>(entityName: "Receipt")
         request.sortDescriptors = [NSSortDescriptor(key: sortBy.info.coreDataName, ascending: sortBy.info.ascending)]
         do {
-            let receipts = try context.fetch(request)
-            return receipts
+            self.receipts = try context.fetch(request)
         } catch let error {
             print("Error fetching Core Data. \(error)")
         }
-        return []
     }
 
-    func fetchCategories() -> [Categorie] {
+    func updateCategories() {
         let request = NSFetchRequest<Categorie>(entityName: "Categorie")
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         do {
-            let categories = try context.fetch(request)
-            return categories
+            self.categories = try context.fetch(request)
         } catch let error {
             print("Error fetching Core Data. \(error)")
         }
-        return []
+    }
+
+    func setSortBy(_ sortBy: SortBy) {
+        self.sortBy = sortBy
     }
 
     func addReceipt(title: String, dateOfPurchase: Date, endOfWarranty: Date?, categorie: Categorie?, imageData: Data?) -> Receipt {

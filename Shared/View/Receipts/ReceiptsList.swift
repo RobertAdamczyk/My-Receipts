@@ -27,7 +27,7 @@ struct ReceiptsList: View {
                         .padding(.top, 20)
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 28){
-                            CategorieView(count: homeViewModel.allReceiptsCount)
+                            CategorieView(count: homeViewModel.receipts.count)
                                 .onTapGesture {
                                     homeViewModel.onCategorieTapped(categorie: nil)
                                 }
@@ -64,6 +64,7 @@ struct ReceiptsList: View {
         .background(Color("NewBackground"))
         .ignoresSafeArea(edges: .bottom)
         .onAppear(perform: homeViewModel.onViewAppear)
+        .onDisappear(perform: homeViewModel.onViewDisappear)
         //{
             // settingsViewModel.notificationRequest() // TODO: X
             //coreData.fetchCategories()

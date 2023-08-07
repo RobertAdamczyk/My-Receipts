@@ -45,7 +45,7 @@ class AddReceiptViewModel: ObservableObject {
         self.coordinator = coordinator
         self.parentCoordinator = parentCoordinator
         self.context = context
-        self.categories = coordinator.dependencies.coreDataService.fetchCategories()
+        self.categories = coordinator.dependencies.coreDataService.categories
         if case .edit(let receipt) = context {
             newReceipt = .init(receipt: receipt)
             warranty = receipt.endOfWarranty != nil
@@ -81,6 +81,7 @@ class AddReceiptViewModel: ObservableObject {
             case .new: addReceipt()
             case .edit(let receipt): saveReceipt(receipt: receipt)
             }
+            parentCoordinator.dependencies.coreDataService.updateReceipts()
             parentCoordinator.dismiss()
         }
     }

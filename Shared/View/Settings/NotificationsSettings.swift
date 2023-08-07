@@ -20,7 +20,7 @@ final class NotificationsSettingsViewModel: ObservableObject {
     }
 
     func checkNotifications() {
-        let receipts = coordinator.dependencies.coreDataService.fetchReceipts(sortBy: .titleAscending)
+        let receipts = coordinator.dependencies.coreDataService.receipts
         coordinator.dependencies.notificationsRepository.checkNotifications(array: receipts)
     }
 }

@@ -8,22 +8,6 @@
 import SwiftUI
 
 extension View {
-    var formLook: some View {
-        self
-            .padding(.horizontal)
-            .padding(.vertical, 5)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(lineWidth: 0.7)
-                    .foregroundColor(Color("BorderColor"))
-            )
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color("Light"))
-            )
-            .padding(.horizontal)
-    }
-    
     var roundedBackgroundWithBorder : some View {
         self
             .background(
