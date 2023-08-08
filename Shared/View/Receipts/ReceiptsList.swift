@@ -27,7 +27,7 @@ struct ReceiptsList: View {
                         .padding(.top, 20)
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 28){
-                            CategorieView(count: homeViewModel.receipts.count)
+                            CategorieView(count: homeViewModel.allReceiptsCount)
                                 .onTapGesture {
                                     homeViewModel.onCategorieTapped(categorie: nil)
                                 }

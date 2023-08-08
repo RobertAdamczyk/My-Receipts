@@ -21,9 +21,25 @@ enum Views: Equatable {
     case settings
 }
 
-enum StackView {
-    case categorie
-    case gwaranty
+enum StackView: Hashable {
+
+    static func == (lhs: StackView, rhs: StackView) -> Bool {
+        switch (lhs, rhs) {
+        case (.selectCategorie, .selectCategorie): return true
+        case (.warranty, .warranty): return true
+        case (.categorieSettings, .categorieSettings): return true
+        case (.notificationSettings, .notificationSettings): return true
+        case (.infoSettings, .infoSettings): return true
+        default: return false
+        }
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(hashValue)
+    }
+
+    case selectCategorie(AddReceiptViewModel)
+    case warranty(AddReceiptViewModel)
     case categorieSettings
     case notificationSettings
     case infoSettings

@@ -37,10 +37,7 @@ struct AddReceipt: View {
             Section(header: Text("Info")) {
                 TextField("Title", text: $viewModel.newReceipt.title)
                 if !viewModel.categories.isEmpty {
-                    NavigationLink(destination:
-                                    ChooseCategorieView(categories: viewModel.categories)
-                                        .environmentObject(viewModel)
-                    ){
+                    Button(action: viewModel.onCategoriesTapped) {
                         HStack{
                             Text("Categorie")
                             Spacer()
@@ -50,9 +47,7 @@ struct AddReceipt: View {
                     }
                     
                 }
-                NavigationLink(destination: WarrantyView()
-                                .environmentObject(viewModel)
-                ){
+                Button(action: viewModel.onWarrantyTapped) {
                     HStack{
                         Text("Guarantee")
                         Spacer()

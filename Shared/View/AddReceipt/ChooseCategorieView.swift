@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ChooseCategorieView: View {
-    @EnvironmentObject var viewModel: AddReceiptViewModel
-    var categories: [Categorie]
+    @ObservedObject var viewModel: AddReceiptViewModel
     var body: some View {
         List{
             Section(header: Text("Choose categorie for the receipt.")){
-                ForEach(categories, id: \.self) { categorie in
+                ForEach(viewModel.categories, id: \.self) { categorie in
                     Button(action: {
                         viewModel.newReceipt.categorie = viewModel.newReceipt.categorie != categorie ? categorie : nil
                     }){

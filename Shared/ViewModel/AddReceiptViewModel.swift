@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-class AddReceiptViewModel: ObservableObject {
+final class AddReceiptViewModel: ObservableObject {
 
     @Published var newReceipt = NewReceipt()
     @Published var warranty = false
@@ -84,6 +84,14 @@ class AddReceiptViewModel: ObservableObject {
             parentCoordinator.dependencies.coreDataService.updateReceipts()
             parentCoordinator.dismiss()
         }
+    }
+
+    func onCategoriesTapped() {
+        coordinator.pushView(.selectCategorie(self))
+    }
+
+    func onWarrantyTapped() {
+        coordinator.pushView(.warranty(self))
     }
 
     private func showCamera() {

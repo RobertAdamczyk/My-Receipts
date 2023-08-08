@@ -11,14 +11,14 @@ final class NotificationsRepository {
 
     @Published var notificationAllowed = false
     @AppStorage("daysNotification") var daysNotification = 7
-    @AppStorage("notificationAllowedInApp") var notificationAllowedInApp = true
+
+    init() {
+        setupDidBecomeActiveObserver()
+    }
 
     func notificationRequest() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-
-            DispatchQueue.main.async {
-                self.notificationAllowed = success
-            }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            self.notificationAllowed = granted
 
             if let error = error {
                 self.notificationAllowed = false
@@ -28,12 +28,11 @@ final class NotificationsRepository {
     }
 
     func checkNotifications(array: [Receipt]) {
-        if !notificationAllowedInApp{
+        if !notificationAllowed {
+            print("DELETED NOTIFICATIONS")
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             return
         }
-
-        if !notificationAllowed { return }
 
         let receiptsWithWarranty = array.filter({ $0.endOfWarranty != nil })
 
@@ -52,7 +51,7 @@ final class NotificationsRepository {
     }
 
     func createNotification(for receipt: Receipt){
-        guard let endOfWarranty = receipt.endOfWarranty, notificationAllowedInApp else { return }
+        guard let endOfWarranty = receipt.endOfWarranty else { return }
 
         let content = UNMutableNotificationContent()
         guard let title = receipt.title else {
@@ -86,5 +85,13 @@ final class NotificationsRepository {
 
         // add our notification request
         UNUserNotificationCenter.current().add(request)
+    }
+
+    private func setupDidBecomeActiveObserver() {
+        Task {
+            for await _ in await NotificationCenter.default.notifications(named: UIApplication.didBecomeActiveNotification) {
+                notificationRequest()
+            }
+        }
     }
 }

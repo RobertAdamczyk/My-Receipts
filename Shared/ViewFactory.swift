@@ -78,8 +78,8 @@ struct DestinationView: View {
     @ViewBuilder
     private func makeDestination(_ view: StackView) -> some View {
         switch view {
-        case .categorie: Text("CAT")
-        case .gwaranty: Text("gwa")
+        case .selectCategorie(let viewModel): ChooseCategorieView(viewModel: viewModel)
+        case .warranty(let viewModel): WarrantyView(viewModel: viewModel)
         case .categorieSettings: CategoriesSettings(coordinator: coordinator)
         case .notificationSettings: NotificationsSettings(coordinator: coordinator)
         case .infoSettings: AboutView()

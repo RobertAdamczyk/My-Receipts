@@ -52,7 +52,7 @@ struct MenuBar: View {
 
     @StateObject var viewModel: MenuViewModel
 
-    static let widthMenu: CGFloat = 180
+    static let widthMenu: CGFloat = 200
 
     init(coordinator: Coordinator) {
         self._viewModel = .init(wrappedValue: .init(coordinator: coordinator))

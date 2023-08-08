@@ -13,10 +13,15 @@ final class HomeViewModel: ObservableObject {
     @Published var categories: [Categorie] = []
     @Published var selectedCategorie: Categorie?
 
+    var allReceiptsCount: Int {
+        coordinator.dependencies.coreDataService.receipts.count
+    }
+
     private let coordinator: Coordinator
 
     private var receiptsTask: Task<(), Never>?
     private var categoriesTask: Task<(), Never>?
+    private var permissionTask: Task<(), Never>?
 
     init(coordinator: Coordinator) {
         self.coordinator = coordinator
@@ -29,6 +34,7 @@ final class HomeViewModel: ObservableObject {
         updateCategories()
         setupReceiptsObserver()
         setupCategoriesObserver()
+        setupNotificationsPermissionObserver()
     }
 
     func onViewDisappear() {
@@ -36,6 +42,8 @@ final class HomeViewModel: ObservableObject {
         receiptsTask = nil
         categoriesTask?.cancel()
         categoriesTask = nil
+        permissionTask?.cancel()
+        permissionTask = nil
     }
 
     func onSortByTapped() {
@@ -86,6 +94,14 @@ final class HomeViewModel: ObservableObject {
                 await MainActor.run {
                     self.categories = categories
                 }
+            }
+        }
+    }
+
+    private func setupNotificationsPermissionObserver() {
+        permissionTask = Task {
+            for await _ in coordinator.dependencies.notificationsRepository.$notificationAllowed.values {
+                coordinator.dependencies.notificationsRepository.checkNotifications(array: receipts)
             }
         }
     }

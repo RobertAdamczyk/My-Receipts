@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WarrantyView: View {
-    @EnvironmentObject var viewModel: AddReceiptViewModel
+    @ObservedObject var viewModel: AddReceiptViewModel
     var body: some View {
         List {
             Section(header: Text("Is there a guarantee for the receipt?")){
@@ -23,11 +23,5 @@ struct WarrantyView: View {
             }
         }
         .navigationTitle("Guarantee".localized())
-    }
-}
-
-struct WarrantyView_Previews: PreviewProvider {
-    static var previews: some View {
-        WarrantyView()
     }
 }
