@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ImagePreview: View {
+struct ImagePreviewView: View {
+
     @StateObject var viewModel: ImagePreviewViewModel
 
     init(uiImage: UIImage, parentCoordinator: Coordinator) {

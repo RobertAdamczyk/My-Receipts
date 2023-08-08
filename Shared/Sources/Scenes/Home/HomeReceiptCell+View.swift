@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReceiptRow: View {
+struct HomeReceiptCell: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     @State var image : Image?
     @State var uiimage: UIImage?

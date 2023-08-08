@@ -29,7 +29,7 @@ struct AddReceipt: View {
                 ZStack {
                     Color(UIColor.systemGroupedBackground)
                         
-                    ImageRow()
+                    AddReceiptImageView()
                         .padding(5)
                 }
                 .listRowInsets(EdgeInsets())

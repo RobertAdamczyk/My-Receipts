@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WarrantyView: View {
+struct AddReceiptWarrantyView: View {
     @ObservedObject var viewModel: AddReceiptViewModel
     var body: some View {
         List {

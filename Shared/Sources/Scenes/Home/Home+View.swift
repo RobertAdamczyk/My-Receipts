@@ -27,12 +27,12 @@ struct HomeView: View {
                         .padding(.top, 20)
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 28){
-                            CategorieView(count: homeViewModel.allReceiptsCount)
+                            HomeCategorieCell(count: homeViewModel.allReceiptsCount)
                                 .onTapGesture {
                                     homeViewModel.onCategorieTapped(categorie: nil)
                                 }
                             ForEach(homeViewModel.categories, id: \.self) { categorie in
-                                CategorieView(categorie: categorie)
+                                HomeCategorieCell(categorie: categorie)
                                     .onTapGesture {
                                         homeViewModel.onCategorieTapped(categorie: categorie)
                                     }
@@ -50,7 +50,7 @@ struct HomeView: View {
                         .padding(.horizontal)
                     VStack(spacing: 28){
                         ForEach(homeViewModel.receipts, id: \.self) { receipt in
-                            ReceiptRow(receipt: receipt)
+                            HomeReceiptCell(receipt: receipt)
                                 .onAppear(){
                                     //settingsViewModel.checkNotifications(array: coreData.receipts)
                                 }

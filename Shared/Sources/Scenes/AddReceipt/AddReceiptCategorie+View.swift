@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChooseCategorieView: View {
+struct AddReceiptCategorie: View {
     @ObservedObject var viewModel: AddReceiptViewModel
     var body: some View {
         List{

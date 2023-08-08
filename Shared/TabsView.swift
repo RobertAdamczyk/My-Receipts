@@ -18,7 +18,7 @@ struct TabsView: View {
         ZStack{
             switch coordinator.tabView {
             case .list: HomeView(coordinator: coordinator)
-            case .settings: Settings(coordinator: coordinator)
+            case .settings: SettingsView(coordinator: coordinator)
             }
         }
         .toolbar {

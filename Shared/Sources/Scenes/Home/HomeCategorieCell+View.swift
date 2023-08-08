@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CategorieView: View {
+struct HomeCategorieCell: View {
     @EnvironmentObject var viewModel: HomeViewModel
     var categorie: Categorie?
     var count: Int?

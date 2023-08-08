@@ -7,48 +7,7 @@
 
 import SwiftUI
 
-final class MenuViewModel: ObservableObject {
-
-    @Published var shouldShowMenu: Bool = false
-
-    private let coordinator: Coordinator
-
-    init(coordinator: Coordinator) {
-        self.coordinator = coordinator
-        setupShowMenuObserver()
-    }
-
-    func setupShowMenuObserver() {
-        Task {
-            for await newValue in coordinator.$shouldShowMenu.values {
-                await MainActor.run {
-                    shouldShowMenu = newValue
-                }
-            }
-        }
-    }
-
-    func onReceiptsTapped() {
-        coordinator.hideMenu()
-        coordinator.showTabView(.list)
-    }
-
-    func onAddReceiptTapped() {
-        coordinator.hideMenu()
-        coordinator.presentFullCoverSheet(.addReceipt(.new))
-    }
-
-    func onSettingsTapped() {
-        coordinator.hideMenu()
-        coordinator.showTabView(.settings)
-    }
-
-    func hideMenu() {
-        coordinator.hideMenu()
-    }
-}
-
-struct MenuBar: View {
+struct MenuView: View {
 
     @StateObject var viewModel: MenuViewModel
 
@@ -91,7 +50,7 @@ struct MenuBar: View {
             .font(.title3)
             .padding(.top, 100)
             .padding(.horizontal)
-            .frame(width: MenuBar.widthMenu)
+            .frame(width: MenuView.widthMenu)
             .background(Rectangle()
                             .fill(LinearGradient(
                                     gradient: Gradient(stops: [
@@ -116,6 +75,6 @@ struct MenuBar: View {
             
         }
         .ignoresSafeArea()
-        .offset(x: -MenuBar.widthMenu)
+        .offset(x: -MenuView.widthMenu)
     }
 }

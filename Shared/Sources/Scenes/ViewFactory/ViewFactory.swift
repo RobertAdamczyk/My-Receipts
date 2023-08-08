@@ -39,7 +39,7 @@ struct FullCoverSheetView: View {
     @ViewBuilder
     private func makeFullCoverSheet(_ fullCoverSheet: FullCoverSheet) -> some View {
         switch fullCoverSheet {
-        case .imagePreview(let image): ImagePreview(uiImage: image, parentCoordinator: parentCoordinator)
+        case .imagePreview(let image): ImagePreviewView(uiImage: image, parentCoordinator: parentCoordinator)
         case .cameraView(let completion): ImagePickerView(parentCoordinator: parentCoordinator,
                                                           sourceType: .camera, completion: completion)
         case .addReceipt(let context): AddReceipt(coordinator: coordinator, parentCoordinator: parentCoordinator, context: context)
@@ -80,10 +80,10 @@ struct DestinationView: View {
     @ViewBuilder
     private func makeDestination(_ view: StackView) -> some View {
         switch view {
-        case .selectCategorie(let viewModel): ChooseCategorieView(viewModel: viewModel)
-        case .warranty(let viewModel): WarrantyView(viewModel: viewModel)
-        case .categorieSettings: CategoriesSettings(coordinator: coordinator)
-        case .notificationSettings: NotificationsSettings(coordinator: coordinator)
+        case .selectCategorie(let viewModel): AddReceiptCategorie(viewModel: viewModel)
+        case .warranty(let viewModel): AddReceiptWarrantyView(viewModel: viewModel)
+        case .categorieSettings: CategoriesSettingsView(coordinator: coordinator)
+        case .notificationSettings: NotificationsSettingsView(coordinator: coordinator)
         case .infoSettings: AboutView()
         }
     }

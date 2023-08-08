@@ -35,8 +35,8 @@ struct My_ReceiptsApp: App {
                 FullCoverSheetView(fullCoverSheet: $0, parentCoordinator: coordinator)
             }
             .dialogApp(item: $coordinator.presentedDialogApp)
-            .overlay(MenuBar(coordinator: coordinator))
-            .offset(x: coordinator.shouldShowMenu ? MenuBar.widthMenu : 0)
+            .overlay(MenuView(coordinator: coordinator))
+            .offset(x: coordinator.shouldShowMenu ? MenuView.widthMenu : 0)
             .animation(.easeInOut, value: coordinator.shouldShowMenu)
             .tint(.black)
             .preferredColorScheme(.light)
