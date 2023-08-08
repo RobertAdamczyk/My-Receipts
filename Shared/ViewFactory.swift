@@ -40,7 +40,8 @@ struct FullCoverSheetView: View {
     private func makeFullCoverSheet(_ fullCoverSheet: FullCoverSheet) -> some View {
         switch fullCoverSheet {
         case .imagePreview(let image): ImagePreview(uiImage: image, parentCoordinator: parentCoordinator)
-        case .cameraView(let completion): CameraFullView(parentCoordinator: parentCoordinator, completion: completion)
+        case .cameraView(let completion): ImagePickerView(parentCoordinator: parentCoordinator,
+                                                          sourceType: .camera, completion: completion)
         case .addReceipt(let context): AddReceipt(coordinator: coordinator, parentCoordinator: parentCoordinator, context: context)
         }
     }
@@ -60,7 +61,8 @@ struct StandardSheetView: View {
         switch standardSheet {
         case .sort(let completion): SortByView(completion: completion)
                 .presentationDetents([.fraction(0.35)])
-        case .imagePicker(let completion): ImagePicker(parentCoordinator: parentCoordinator, completion: completion)
+        case .imagePicker(let completion): ImagePickerView(parentCoordinator: parentCoordinator,
+                                                           sourceType: .photoLibrary, completion: completion)
         case .addCategorie(let completion): AddCategorieView(completion: completion)
         }
     }

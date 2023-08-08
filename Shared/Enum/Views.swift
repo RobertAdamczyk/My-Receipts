@@ -47,7 +47,7 @@ enum StackView: Hashable {
 
 enum FullCoverSheet: Identifiable {
     case imagePreview(UIImage)
-    case cameraView((Data) -> Void)
+    case cameraView((UIImage) -> Void)
     case addReceipt(AddReceipt.Context)
 
     var id: String {

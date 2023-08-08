@@ -21,14 +21,10 @@
 		E1690B172649846300A964E0 /* CategoriesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B162649846300A964E0 /* CategoriesSettings.swift */; };
 		E1690B1A2649865000A964E0 /* Receipt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */; };
 		E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */; };
-		E16B7C30264074BD0099BB15 /* CameraPhotoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */; };
-		E16B7C342640755F0099BB15 /* CameraLiveUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B7C332640755F0099BB15 /* CameraLiveUI.swift */; };
 		E176B3D02A7FFE890053C06E /* NotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176B3CF2A7FFE890053C06E /* NotificationsRepository.swift */; };
 		E176B3D22A8001E20053C06E /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176B3D12A8001E20053C06E /* Dependencies.swift */; };
 		E176B3D42A80033E0053C06E /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E176B3D32A80033E0053C06E /* CoreDataService.swift */; };
 		E17836FC265113530016A12D /* WarrantyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17836FB265113530016A12D /* WarrantyView.swift */; };
-		E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C6A83263ECC710023B2EC /* CameraViewModel.swift */; };
-		E17C6A88263ECCC70023B2EC /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C6A87263ECCC70023B2EC /* CameraPreview.swift */; };
 		E17FC17926341ADA00082D55 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17FC17826341ADA00082D55 /* CloudKit.framework */; };
 		E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17FC17C26345E5400082D55 /* ReceiptRow.swift */; };
 		E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */; };
@@ -61,8 +57,6 @@
 		E19CA3FA26339904006EC2E5 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F926339904006EC2E5 /* ImageRow.swift */; };
 		E19D91892639B73A0091D9E1 /* NotificationsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */; };
 		E1A59D5A2A7FD6DB00CD1317 /* DialogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A59D592A7FD6DB00CD1317 /* DialogApp.swift */; };
-		E1BB595D263ED22100D3D2DB /* CameraFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB595C263ED22100D3D2DB /* CameraFullView.swift */; };
-		E1BB5961263EE10D00D3D2DB /* CameraModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB5960263EE10D00D3D2DB /* CameraModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,16 +72,12 @@
 		E1690B162649846300A964E0 /* CategoriesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSettings.swift; sourceTree = "<group>"; };
 		E1690B182649865000A964E0 /* Receipt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E1690B192649865000A964E0 /* Receipt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPhotoUI.swift; sourceTree = "<group>"; };
-		E16B7C332640755F0099BB15 /* CameraLiveUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLiveUI.swift; sourceTree = "<group>"; };
 		E172DA8126498BB200023FDC /* Categorie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categorie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E172DA8226498BB200023FDC /* Categorie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Categorie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E176B3CF2A7FFE890053C06E /* NotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepository.swift; sourceTree = "<group>"; };
 		E176B3D12A8001E20053C06E /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		E176B3D32A80033E0053C06E /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		E17836FB265113530016A12D /* WarrantyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarrantyView.swift; sourceTree = "<group>"; };
-		E17C6A83263ECC710023B2EC /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
-		E17C6A87263ECCC70023B2EC /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		E17FC17426341AD400082D55 /* My Receipts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Receipts.entitlements"; sourceTree = "<group>"; };
 		E17FC17826341ADA00082D55 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		E17FC17C26345E5400082D55 /* ReceiptRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRow.swift; sourceTree = "<group>"; };
@@ -122,8 +112,6 @@
 		E19CA3F926339904006EC2E5 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
 		E19D91882639B73A0091D9E1 /* NotificationsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettings.swift; sourceTree = "<group>"; };
 		E1A59D592A7FD6DB00CD1317 /* DialogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogApp.swift; sourceTree = "<group>"; };
-		E1BB595C263ED22100D3D2DB /* CameraFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFullView.swift; sourceTree = "<group>"; };
-		E1BB5960263EE10D00D3D2DB /* CameraModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,17 +133,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E105C8D0263ED18D00D3190F /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				E17C6A87263ECCC70023B2EC /* CameraPreview.swift */,
-				E1BB595C263ED22100D3D2DB /* CameraFullView.swift */,
-				E16B7C2F264074BD0099BB15 /* CameraPhotoUI.swift */,
-				E16B7C332640755F0099BB15 /* CameraLiveUI.swift */,
-			);
-			path = Camera;
-			sourceTree = "<group>";
-		};
 		E176B3CE2A7FFE750053C06E /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +223,6 @@
 		E180DF4F2632FBAE00CC5CC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E105C8D0263ED18D00D3190F /* Camera */,
 				E1FAF80A2639B58300891744 /* Settings */,
 				E17FC1842635733500082D55 /* Receipts */,
 				E19CA3F2263397CF006EC2E5 /* AddReceipt */,
@@ -265,7 +241,6 @@
 				E180DF642633010500CC5CC8 /* HomeViewModel.swift */,
 				E180DF7F26335BA100CC5CC8 /* AddReceiptViewModel.swift */,
 				E19A09F226389A710079FB93 /* SettingsViewModel.swift */,
-				E17C6A83263ECC710023B2EC /* CameraViewModel.swift */,
 				E18430782646902300026A43 /* ImagePreviewViewModel.swift */,
 				E124AA1126498FB6009CE167 /* CategoriesSettingsViewModel.swift */,
 			);
@@ -306,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				E180DF902633844900CC5CC8 /* FormFrame.swift */,
-				E1BB5960263EE10D00D3D2DB /* CameraModifiers.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -465,10 +439,8 @@
 				E17836FC265113530016A12D /* WarrantyView.swift in Sources */,
 				E1A59D5A2A7FD6DB00CD1317 /* DialogApp.swift in Sources */,
 				E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */,
-				E1BB595D263ED22100D3D2DB /* CameraFullView.swift in Sources */,
 				E18430772645F8B900026A43 /* CacheImage.swift in Sources */,
 				E167BBD4264AE85E00AA6CA2 /* ChooseCategorieView.swift in Sources */,
-				E16B7C30264074BD0099BB15 /* CameraPhotoUI.swift in Sources */,
 				E180DF84263361F100CC5CC8 /* ImagePicker.swift in Sources */,
 				E180DF882633622300CC5CC8 /* AddReceipt.swift in Sources */,
 				E1690B1A2649865000A964E0 /* Receipt+CoreDataClass.swift in Sources */,
@@ -480,7 +452,6 @@
 				E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,
 				E15EF00C2668F5570091CE71 /* AboutView.swift in Sources */,
-				E17C6A88263ECCC70023B2EC /* CameraPreview.swift in Sources */,
 				E180DF69263302D700CC5CC8 /* MenuBar.swift in Sources */,
 				E17FC17D26345E5400082D55 /* ReceiptRow.swift in Sources */,
 				E124AA192649C3F3009CE167 /* AddCategorieView.swift in Sources */,
@@ -491,10 +462,7 @@
 				E180DF8026335BA100CC5CC8 /* AddReceiptViewModel.swift in Sources */,
 				E19D91892639B73A0091D9E1 /* NotificationsSettings.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* Home.swift in Sources */,
-				E16B7C342640755F0099BB15 /* CameraLiveUI.swift in Sources */,
-				E17C6A84263ECC710023B2EC /* CameraViewModel.swift in Sources */,
 				E1690B172649846300A964E0 /* CategoriesSettings.swift in Sources */,
-				E1BB5961263EE10D00D3D2DB /* CameraModifiers.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
 				E124AA1226498FB6009CE167 /* CategoriesSettingsViewModel.swift in Sources */,
 				E19A09F326389A710079FB93 /* SettingsViewModel.swift in Sources */,

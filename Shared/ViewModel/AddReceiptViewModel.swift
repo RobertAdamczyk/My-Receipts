@@ -95,8 +95,8 @@ final class AddReceiptViewModel: ObservableObject {
     }
 
     private func showCamera() {
-        coordinator.presentFullCoverSheet(.cameraView( { [weak self] data in
-            self?.newReceipt.uiImage = UIImage(data: data)
+        coordinator.presentFullCoverSheet(.cameraView( { [weak self] uiimage in
+            self?.newReceipt.uiImage = uiimage
         }))
     }
 

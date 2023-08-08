@@ -7,10 +7,22 @@
 
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct ImagePickerView: View {
 
-    // MARK: - Environment Object
     let parentCoordinator: Receipts_Store.Coordinator
+    let sourceType: UIImagePickerController.SourceType
+    let completion: (UIImage) -> Void
+
+    var body: some View {
+        ImagePicker(parentCoordinator: parentCoordinator, sourceType: sourceType, completion: completion)
+            .ignoresSafeArea()
+    }
+}
+
+private struct ImagePicker: UIViewControllerRepresentable {
+
+    let parentCoordinator: Receipts_Store.Coordinator
+    let sourceType: UIImagePickerController.SourceType
     let completion: (UIImage) -> Void
 
     // MARK: - Coordinator Class
@@ -21,7 +33,8 @@ struct ImagePicker: UIViewControllerRepresentable {
             self.parent = parent
         }
 
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        func imagePickerController(_ picker: UIImagePickerController,
+                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.completion(uiImage)
             }
@@ -37,6 +50,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
+        picker.sourceType = sourceType
         return picker
     }
 
