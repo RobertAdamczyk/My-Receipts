@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReceiptsList: View {
+struct HomeView: View {
 
     @StateObject var homeViewModel: HomeViewModel
 

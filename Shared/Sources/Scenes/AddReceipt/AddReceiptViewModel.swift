@@ -129,7 +129,7 @@ final class AddReceiptViewModel: ObservableObject {
             }
             
             if let uiimage = newReceipt.uiImage {
-                CacheImage.shared.set(forKey: id.uuidString, image: uiimage)
+                CacheRepository.shared.set(forKey: id.uuidString, image: uiimage)
             }
         }
     }

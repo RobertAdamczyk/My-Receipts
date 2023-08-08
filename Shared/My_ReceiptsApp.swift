@@ -23,7 +23,7 @@ struct My_ReceiptsApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $coordinator.stackedViews) {
-                TabViews(coordinator: coordinator)
+                TabsView(coordinator: coordinator)
                     .navigationDestination(for: StackView.self) {
                         DestinationView(stackView: $0, coordinator: coordinator)
                     }

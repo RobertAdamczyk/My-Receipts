@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TabViews: View {
+struct TabsView: View {
     @ObservedObject var coordinator: Coordinator
 
     init(coordinator: Coordinator) {
@@ -17,7 +17,7 @@ struct TabViews: View {
     var body: some View {
         ZStack{
             switch coordinator.tabView {
-            case .list: ReceiptsList(coordinator: coordinator)
+            case .list: HomeView(coordinator: coordinator)
             case .settings: Settings(coordinator: coordinator)
             }
         }

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class CacheImage {
-    static let shared = CacheImage()
+final class CacheRepository {
+    static let shared = CacheRepository()
     var cache = NSCache<NSString, UIImage>()
     
     func get(forKey: String) -> UIImage? {
