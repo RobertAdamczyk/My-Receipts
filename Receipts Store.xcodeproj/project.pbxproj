@@ -153,6 +153,7 @@
 		E10FE33F2A82F39800EB88C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */,
 				E18F93932652E03B00BC549F /* Localizable */,
 			);
 			path = Resources;
@@ -344,7 +345,6 @@
 				E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */,
 				E180DF532632FBD800CC5CC8 /* TabsView.swift */,
 				E116C62B2A7AF82500A5783F /* Coordinator.swift */,
-				E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */,
 				E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */,
 			);
 			path = Shared;
