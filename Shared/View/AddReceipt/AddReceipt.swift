@@ -38,21 +38,23 @@ struct AddReceipt: View {
                 TextField("Title", text: $viewModel.newReceipt.title)
                 if !viewModel.categories.isEmpty {
                     Button(action: viewModel.onCategoriesTapped) {
-                        HStack{
+                        HStack(spacing: 8) {
                             Text("Categorie")
                             Spacer()
                             Text(viewModel.newReceipt.categorie?.title ?? "")
                                 .foregroundColor(Color(UIColor.systemGray))
+                            Image(systemName: "chevron.right")
                         }
                     }
                     
                 }
                 Button(action: viewModel.onWarrantyTapped) {
-                    HStack{
+                    HStack(spacing: 8) {
                         Text("Guarantee")
                         Spacer()
                         Text(viewModel.warranty ? "\(viewModel.newReceipt.endOfWarranty, style: .date)" : "")
                             .foregroundColor(Color(UIColor.systemGray))
+                        Image(systemName: "chevron.right")
                     }
                 }
             }
