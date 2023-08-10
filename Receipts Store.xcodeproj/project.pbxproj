@@ -20,6 +20,9 @@
 		E12DFE8A2A84211D00688DD7 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DFE892A84211D00688DD7 /* FontStyle.swift */; };
 		E12DFE8E2A84223800688DD7 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E12DFE8C2A84223800688DD7 /* Roboto-Medium.ttf */; };
 		E12DFE8F2A84223800688DD7 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E12DFE8D2A84223800688DD7 /* Roboto-Regular.ttf */; };
+		E12DFE912A856C6F00688DD7 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DFE902A856C6F00688DD7 /* AppImage.swift */; };
+		E12DFE932A856EFD00688DD7 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DFE922A856EFD00688DD7 /* AppButton.swift */; };
+		E12DFE952A8575C300688DD7 /* StickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DFE942A8575C300688DD7 /* StickyButton.swift */; };
 		E15EF00C2668F5570091CE71 /* About+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EF00B2668F5570091CE71 /* About+View.swift */; };
 		E1617AE8265D9A5E00EC269D /* HomeCategorieCell+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1617AE7265D9A5E00EC269D /* HomeCategorieCell+View.swift */; };
 		E167BBD4264AE85E00AA6CA2 /* AddReceiptCategorie+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD3264AE85E00AA6CA2 /* AddReceiptCategorie+View.swift */; };
@@ -77,6 +80,9 @@
 		E12DFE892A84211D00688DD7 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		E12DFE8C2A84223800688DD7 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		E12DFE8D2A84223800688DD7 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		E12DFE902A856C6F00688DD7 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		E12DFE922A856EFD00688DD7 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		E12DFE942A8575C300688DD7 /* StickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButton.swift; sourceTree = "<group>"; };
 		E15EF00B2668F5570091CE71 /* About+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "About+View.swift"; sourceTree = "<group>"; };
 		E1617AE7265D9A5E00EC269D /* HomeCategorieCell+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeCategorieCell+View.swift"; sourceTree = "<group>"; };
 		E167BBD3264AE85E00AA6CA2 /* AddReceiptCategorie+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReceiptCategorie+View.swift"; sourceTree = "<group>"; };
@@ -244,6 +250,7 @@
 			children = (
 				E180DF902633844900CC5CC8 /* FormFrame.swift */,
 				E18F93882652DA5B00BC549F /* Localized.swift */,
+				E12DFE942A8575C300688DD7 /* StickyButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,6 +261,8 @@
 				E1A59D592A7FD6DB00CD1317 /* DialogApp.swift */,
 				E12DFE872A841AA000688DD7 /* AppColor.swift */,
 				E12DFE892A84211D00688DD7 /* FontStyle.swift */,
+				E12DFE902A856C6F00688DD7 /* AppImage.swift */,
+				E12DFE922A856EFD00688DD7 /* AppButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -527,6 +536,7 @@
 				E180DF5A2633003A00CC5CC8 /* Home+View.swift in Sources */,
 				E1617AE8265D9A5E00EC269D /* HomeCategorieCell+View.swift in Sources */,
 				E176B3D22A8001E20053C06E /* Dependencies.swift in Sources */,
+				E12DFE952A8575C300688DD7 /* StickyButton.swift in Sources */,
 				E180DF8C2633799600CC5CC8 /* NewReceipt.swift in Sources */,
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
 				E17836FC265113530016A12D /* AddReceiptWarranty+View.swift in Sources */,
@@ -535,6 +545,7 @@
 				E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */,
 				E18430772645F8B900026A43 /* CacheRepository.swift in Sources */,
 				E167BBD4264AE85E00AA6CA2 /* AddReceiptCategorie+View.swift in Sources */,
+				E12DFE932A856EFD00688DD7 /* AppButton.swift in Sources */,
 				E10FE3532A82F70800EB88C4 /* Menu+ViewModel.swift in Sources */,
 				E180DF84263361F100CC5CC8 /* ImagePicker+View.swift in Sources */,
 				E180DF882633622300CC5CC8 /* AddReceipt+View.swift in Sources */,
@@ -553,6 +564,7 @@
 				E17FC17D26345E5400082D55 /* HomeReceiptCell+View.swift in Sources */,
 				E124AA192649C3F3009CE167 /* AddCategorie+View.swift in Sources */,
 				E125A87B2A7FB10F0035B34D /* ViewFactory.swift in Sources */,
+				E12DFE912A856C6F00688DD7 /* AppImage.swift in Sources */,
 				E18F93892652DA5B00BC549F /* Localized.swift in Sources */,
 				E19CA3FA26339904006EC2E5 /* AddReceiptImage+View.swift in Sources */,
 				E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */,

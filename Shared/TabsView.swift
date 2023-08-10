@@ -23,9 +23,7 @@ struct TabsView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
-                Button(action: coordinator.showMenu) {
-                    Image(systemName: "line.horizontal.3")
-                }
+                AppButton(.appImage(.lineHorizontal), action: coordinator.showMenu)
             }
         }
         .animation(.none, value: coordinator.tabView)

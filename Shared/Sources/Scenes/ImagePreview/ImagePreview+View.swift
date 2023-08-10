@@ -25,7 +25,7 @@ struct ImagePreviewView: View {
         }
         .overlay {
             VStack(spacing: 20) {
-                Image(systemName: "checkmark")
+                appImage(.checkmark)
                     .resizable()
                     .frame(width: 80, height: 80)
                 Text("Saved")
@@ -40,17 +40,11 @@ struct ImagePreviewView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
-                Button(action: viewModel.onSaveTapped) {
-                    Text("Save in Photos")
-                        .apply(.medium, size: .M, color: .gray)
-                }
-                .opacity(viewModel.shouldShowSaveInPhotos ? 1 : 0)
+                AppButton(.appImage(.squareArrowDown), action: viewModel.onSaveTapped)
+                    .opacity(viewModel.shouldShowSaveInPhotos ? 1 : 0)
             }
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action: viewModel.onCloseTapped) {
-                    Image(systemName: "xmark")
-                        .apply(.medium, size: .M, color: .gray)
-                }
+                AppButton(.appImage(.xmark), action: viewModel.onCloseTapped)
             }
         }
         .alert(isPresented: $viewModel.showAlert) {

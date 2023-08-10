@@ -75,9 +75,7 @@ struct HomeView: View {
 //        }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action: homeViewModel.onSortByTapped) {
-                    Image(systemName: "arrow.down")
-                }
+                AppButton(.appImage(.arrowDown), action: homeViewModel.onSortByTapped)
             }
         }
         .environmentObject(homeViewModel)

@@ -24,65 +24,44 @@ struct AddReceipt: View {
     
     var body: some View {
         
-        Form {
-            Section {
-                ZStack {
-                    Color(UIColor.systemGroupedBackground)
-                        
-                    AddReceiptImageView()
-                        .padding(5)
-                }
-                .listRowInsets(EdgeInsets())
-            }
-            Section(header: Text("Info")) {
-                TextField("Title", text: $viewModel.newReceipt.title)
-                    .apply(.regular, size: .M, color: .gray)
-                if !viewModel.categories.isEmpty {
-                    Button(action: viewModel.onCategoriesTapped) {
-                        HStack(spacing: 8) {
-                            Text("Categorie")
-                            Spacer()
-                            Text(viewModel.newReceipt.categorie?.title ?? "")
-                            Image(systemName: "chevron.right")
-                        }
-                        .apply(.regular, size: .M, color: .gray)
+        VStack(spacing: 0) {
+            Form {
+                Section {
+                    ZStack {
+                        Color(UIColor.systemGroupedBackground)
+
+                        AddReceiptImageView()
+                            .padding(5)
                     }
-                    
+                    .listRowInsets(EdgeInsets())
                 }
-                Button(action: viewModel.onWarrantyTapped) {
-                    HStack(spacing: 8) {
-                        Text("Guarantee")
-                        Spacer()
-                        Text(viewModel.warranty ? "\(viewModel.newReceipt.endOfWarranty, style: .date)" : "")
-                        Image(systemName: "chevron.right")
-                    }
-                    .apply(.regular, size: .M, color: .gray)
-                }
-            }
-            
-            Section(header: Text("Purchase")) {
-                DatePicker(selection: $viewModel.newReceipt.dateOfPurchase,
-                           displayedComponents: .date) {
-                    Text("Date of Purchase")
+                Section(header: Text("Info")) {
+                    TextField("Title", text: $viewModel.newReceipt.title)
                         .apply(.regular, size: .M, color: .gray)
+                    if !viewModel.categories.isEmpty {
+                        AppButton(.form(.navigation("Categorie", viewModel.newReceipt.categorie?.title)),
+                                  action: viewModel.onCategoriesTapped)
+
+                    }
+                    AppButton(.form(.navigation("Guarantee",
+                                                viewModel.endOfWarrantyText)), action: viewModel.onWarrantyTapped)
+                }
+
+                Section(header: Text("Purchase")) {
+                    DatePicker(selection: $viewModel.newReceipt.dateOfPurchase,
+                               displayedComponents: .date) {
+                        Text("Date of Purchase")
+                            .apply(.regular, size: .M, color: .gray)
+                    }
                 }
             }
+            AppButton(.fill("Done".localized()), action: viewModel.onSaveButtonTapped)
+                .disabled(!viewModel.meetsRequirementsToCreateReceipt)
+                .stickyButton
         }
         .toolbar {
-            ToolbarItemGroup(placement: .navigationBarLeading) {
-                Button(action:{
-                    viewModel.onSaveButtonTapped()
-                }){
-                    Text("Done")
-                }
-                .disabled(!viewModel.meetsRequirementsToCreateReceipt)
-            }
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action:{
-                    viewModel.onCloseButtonTapped()
-                }){
-                    Image(systemName: "xmark")
-                }
+                AppButton(.appImage(.xmark), action: viewModel.onCloseButtonTapped)
             }
         }
         .navigationTitle(viewModel.navigationTitle)

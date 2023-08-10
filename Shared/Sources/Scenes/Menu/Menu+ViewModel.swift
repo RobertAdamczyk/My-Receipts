@@ -13,9 +13,9 @@ final class MenuViewModel: ObservableObject {
 
     var dataSource: [Model] {
         return [
-            .init(imageName: "scroll.fill", text: "Receipts", action: onReceiptsTapped),
-            .init(imageName: "plus.app.fill", text: "Add Receipt", action: onAddReceiptTapped),
-            .init(imageName: "gearshape.fill", text: "Settings", action: onSettingsTapped)
+            .init(image: .scrollFill, text: "Receipts", action: onReceiptsTapped),
+            .init(image: .plusAppFill, text: "Add Receipt", action: onAddReceiptTapped),
+            .init(image: .gearshapeFill, text: "Settings", action: onSettingsTapped)
         ]
     }
 
@@ -59,7 +59,7 @@ final class MenuViewModel: ObservableObject {
 extension MenuViewModel {
 
     struct Model: Identifiable {
-        let imageName: String
+        let image: AppImage
         let text: String
         let action: () -> Void
 

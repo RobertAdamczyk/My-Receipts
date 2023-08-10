@@ -15,40 +15,34 @@ struct AddCategorieView: View {
     @State var symbol: String = ""
 
     var body: some View {
-        NavigationView{
-            Form{
-                Section(header: Text("Title")){
-                    TextField("Enter...", text: $title)
-                        .apply(.regular, size: .M, color: .gray)
-                }
-                Section(header: Text("Symbol")){
-                    TextField("Enter...", text: $symbol)
-                        .apply(.regular, size: .M, color: .gray)
-                }
-                .onChange(of: symbol) { _ in
-                    if symbol.count > 2 {
-                        symbol = ""
+        NavigationView {
+            VStack(spacing: 0) {
+                Form {
+                    Section(header: Text("Title")){
+                        TextField("Enter...", text: $title)
+                            .apply(.regular, size: .M, color: .gray)
                     }
-                    if symbol.count == 2 {
-                        symbol.removeLast()
+                    Section(header: Text("Symbol")){
+                        TextField("Enter...", text: $symbol)
+                            .apply(.regular, size: .M, color: .gray)
                     }
+                    .onChange(of: symbol) { _ in
+                        if symbol.count > 2 {
+                            symbol = ""
+                        }
+                        if symbol.count == 2 {
+                            symbol.removeLast()
+                        }
+                    }
+
                 }
-                
+                AppButton(.fill("Done".localized())) {
+                    completion(title, symbol)
+                }
+                .disabled(title.count < 3)
+                .stickyButton
             }
             .navigationTitle("New Categorie")
-            .toolbar{
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        completion(title, symbol)
-                    }, label: {
-                        Text("Done")
-                            .apply(.medium, size: .M, color: .gray)
-                    })
-                    .disabled(title.count < 3)
-                }
-            }
         }
-        .accentColor(.black)
-        .preferredColorScheme(.light)
     }
 }

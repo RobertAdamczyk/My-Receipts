@@ -10,27 +10,22 @@ import SwiftUI
 struct AddReceiptCategorie: View {
     @ObservedObject var viewModel: AddReceiptViewModel
     var body: some View {
-        List{
+        List {
             Section(header: Text("Choose categorie for the receipt.")){
                 ForEach(viewModel.categories, id: \.self) { categorie in
-                    Button(action: {
-                        viewModel.newReceipt.categorie = viewModel.newReceipt.categorie != categorie ? categorie : nil
-                    }){
-                        HStack{
-                            Text(categorie.title ?? "")
-                                .apply(.regular, size: .M, color: .gray)
-                                .lineLimit(1)
-                            Spacer()
-                            if viewModel.newReceipt.categorie == categorie {
-                                Image(systemName: "checkmark")
-                            }
-                        }
+                    AppButton(.form(.checkmark(categorie.title ?? "",
+                                               viewModel.newReceipt.categorie == categorie))) {
+                        onCategorieTapped(categorie)
                     }
                 }
             }
             
         }
         .navigationTitle("Categorie".localized())
+    }
+
+    func onCategorieTapped(_ categorie: Categorie) {
+        viewModel.newReceipt.categorie = viewModel.newReceipt.categorie != categorie ? categorie : nil
     }
 }
 

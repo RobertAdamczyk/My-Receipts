@@ -68,20 +68,18 @@ struct HomeReceiptCell: View {
                 .fill(appColor(.white))
                 .shadow(color: appColor(.shadow), radius:8, x:0, y:0)
         )
-        .overlay(Image(systemName: "ellipsis")
-                    .font(.title2)
-                    .rotationEffect(.init(degrees: 90))
-                    .foregroundColor(.secondary)
-                    .padding(.top, 20)
-                    .padding(.trailing, 5), alignment: .topTrailing)
+        .overlay(alignment: .topTrailing) {
+            appImage(.ellipsis)
+                .rotationEffect(.init(degrees: 90))
+                .padding(.top, 20)
+                .padding(.trailing, 5)
+        }
         .contentShape(RoundedRectangle(cornerRadius: 14))
         .contextMenu{
             Button(action: { homeViewModel.onRemoveReceiptTapped(receipt: receipt) }){
                 Text("Delete")
             }
-            Button(action:{
-                homeViewModel.onReceiptTapped(receipt)
-            }){
+            Button(action: { homeViewModel.onReceiptTapped(receipt) }){
                 Text("Edit")
             }
         }

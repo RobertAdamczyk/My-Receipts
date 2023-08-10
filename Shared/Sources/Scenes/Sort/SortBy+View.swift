@@ -12,7 +12,7 @@ struct SortByView: View {
     let completion: (SortBy) -> Void
 
     var body: some View {
-        ZStack(alignment: .bottom){
+        ZStack(alignment: .bottom) {
             VStack(spacing: -0.5){
                 Text("Sort by:")
                     .apply(.medium, size: .L, color: .black)
@@ -38,7 +38,7 @@ struct SortByView: View {
                 }
             }
             .background {
-                appGradient(.primary)
+                appGradient(.primary).ignoresSafeArea()
             }
         }
     }

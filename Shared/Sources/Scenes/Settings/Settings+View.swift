@@ -33,13 +33,6 @@ struct SettingsView: View {
     }
 
     private func makeButton(text: String, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            HStack(spacing: 16) {
-                Text(text)
-                Spacer()
-                Image(systemName: "chevron.right")
-            }
-            .apply(.regular, size: .M, color: .gray)
-        }
+        AppButton(.form(.navigation(text, nil)), action: action)
     }
 }

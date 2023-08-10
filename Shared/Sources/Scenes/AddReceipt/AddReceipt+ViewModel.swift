@@ -24,6 +24,10 @@ final class AddReceiptViewModel: ObservableObject {
         }
     }
 
+    var endOfWarrantyText: String {
+        warranty ? "\(newReceipt.endOfWarranty.formatted(date: .long, time: .omitted))" : ""
+    }
+
     var meetsRequirementsToCreateReceipt: Bool {
         newReceipt.title.count > 2 && newReceipt.uiImage != nil
     }

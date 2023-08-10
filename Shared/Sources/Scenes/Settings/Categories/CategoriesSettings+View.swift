@@ -36,9 +36,7 @@ struct CategoriesSettingsView: View {
         .navigationTitle("Categories")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button(action: viewModel.onAddCategorieTapped) {
-                    Text("Add")
-                }
+                AppButton(.appImage(.plus), action: viewModel.onAddCategorieTapped)
             }
         }
     }

@@ -34,10 +34,12 @@ struct HomeCategorieCell: View {
                 .frame(width: 100, height: 100)
                 .shadow(color: appColor(.shadow), radius: 8, x: 0, y: 0)
         )
-        .overlay(Image(systemName: "ellipsis")
-            .rotationEffect(.init(degrees: 90))
-            .padding(.top, 20)
-            .padding(.trailing, 5), alignment: .topTrailing)
+        .overlay(alignment: .topTrailing) {
+            appImage(.ellipsis)
+                .rotationEffect(.init(degrees: 90))
+                .padding(.top, 20)
+                .padding(.trailing, 5)
+        }
         .onAppear() {
             if let unwrappedTitle = categorie?.title {
                 title = unwrappedTitle

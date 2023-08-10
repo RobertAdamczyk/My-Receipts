@@ -21,7 +21,7 @@ struct AddReceiptImageView: View {
                     
             }else{
                 VStack(spacing: 20){
-                    Image(systemName: "photo.fill")
+                    appImage(.photoFill)
                         .resizable()
                         .frame(width: 40, height: 30)
                         .padding(.horizontal, 60)

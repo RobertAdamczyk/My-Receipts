@@ -24,7 +24,7 @@ struct MenuView: View {
                 ForEach(viewModel.dataSource) { source in
                     Button(action: source.action) {
                         HStack {
-                            Image(systemName: source.imageName)
+                            appImage(source.image)
                                 .apply(.regular, size: .L, color: .darkBlue)
                             Text(source.text)
                                 .apply(.regular, size: .L, color: .gray)
