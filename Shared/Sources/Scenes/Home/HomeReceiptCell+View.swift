@@ -25,7 +25,7 @@ struct HomeReceiptCell: View {
                             homeViewModel.onImageTapped(image: uiimage)
                         }
                 }else {
-                    Color("Light")
+                    Color("grey")
                         .frame(width: 50, height: 67)
                         .cornerRadius(5)
                 }
@@ -47,18 +47,15 @@ struct HomeReceiptCell: View {
             VStack(alignment: .leading, spacing: 8){
                 if let title = receipt.title {
                     Text(title)
-                        .font(.custom("Roboto Medium", size: 16))
-                        .fontWeight(.semibold)
+                        .apply(.medium, size: .M, color: .gray)
                 }
                 if let purchase = receipt.dateOfPurchase {
                     Text("Purchase: \(purchase, style: .date)")
-                        .font(.custom("Roboto Medium", size: 12))
-                        .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
+                        .apply(.regular, size: .S, color: .gray)
                 }
                 if let warranty = receipt.endOfWarranty {
                     Text("Guarantee to: \(warranty, style: .date)")
-                        .font(.custom("Roboto Medium", size: 12))
-                        .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
+                        .apply(.regular, size: .S, color: .gray)
                 }
                 
             }
@@ -68,8 +65,8 @@ struct HomeReceiptCell: View {
         .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 14)
-                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                .shadow(color: Color("ShadowColor"), radius:8, x:0, y:0)
+                .fill(appColor(.white))
+                .shadow(color: appColor(.shadow), radius:8, x:0, y:0)
         )
         .overlay(Image(systemName: "ellipsis")
                     .font(.title2)
@@ -80,12 +77,12 @@ struct HomeReceiptCell: View {
         .contentShape(RoundedRectangle(cornerRadius: 14))
         .contextMenu{
             Button(action: { homeViewModel.onRemoveReceiptTapped(receipt: receipt) }){
-                Text("Delete").foregroundColor(.red)
+                Text("Delete")
             }
             Button(action:{
                 homeViewModel.onReceiptTapped(receipt)
             }){
-                Text("Edit").foregroundColor(.red)
+                Text("Edit")
             }
         }
     }

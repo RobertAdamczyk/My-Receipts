@@ -13,11 +13,11 @@ extension View {
             .background(
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(lineWidth: 0.7)
-                            .foregroundColor(Color("BorderColor"))
+                    .foregroundColor(appColor(.gray))
             )
             .background(
                 RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(Color("Light"))
+                    .foregroundColor(appColor(.shadow))
             )
     }
 }

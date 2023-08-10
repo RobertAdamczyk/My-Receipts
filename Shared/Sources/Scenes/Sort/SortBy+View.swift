@@ -15,13 +15,10 @@ struct SortByView: View {
         ZStack(alignment: .bottom){
             VStack(spacing: -0.5){
                 Text("Sort by:")
-                    .font(.title3)
-                    .fontWeight(.semibold)
+                    .apply(.medium, size: .L, color: .black)
                     .frame(maxWidth: .infinity)
-                    .padding()
-                Rectangle()
-                    .frame(height: 0.8)
-                    .foregroundColor(.secondary)
+                    .padding(16)
+                Divider()
                 ScrollView{
                     VStack(spacing: 8) {
                         ForEach(SortBy.allCases, id: \.self) { item in
@@ -29,21 +26,20 @@ struct SortByView: View {
                                 completion(item)
                             }) {
                                 Text("\(item.info.name)")
+                                    .apply(.regular, size: .M, color: .black)
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.vertical, 8)
-                                    .padding(.horizontal)
+                                    .padding(8)
                             }
+                            Divider()
+                                .padding(.horizontal, 8)
                         }
                     }
                     .padding(.vertical, 8)
                 }
             }
-            .background(LinearGradient(
-                gradient: Gradient(stops: [
-                                    .init(color: Color(#colorLiteral(red: 0.5843137502670288, green: 0.8823529481887817, blue: 0.8274509906768799, alpha: 1)), location: 0),
-                                    .init(color: Color(#colorLiteral(red: 0.9882352948188782, green: 0.8901960253715515, blue: 0.5411764979362488, alpha: 1)), location: 1)]),
-                startPoint: UnitPoint(x: 0.22533334834366808, y: 0.20467034102585646),
-                endPoint: UnitPoint(x: 1.05466673063715, y: 1.1854396050452791)))
+            .background {
+                appGradient(.primary)
+            }
         }
     }
 }

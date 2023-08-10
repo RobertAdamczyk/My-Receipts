@@ -36,15 +36,16 @@ struct AddReceipt: View {
             }
             Section(header: Text("Info")) {
                 TextField("Title", text: $viewModel.newReceipt.title)
+                    .apply(.regular, size: .M, color: .gray)
                 if !viewModel.categories.isEmpty {
                     Button(action: viewModel.onCategoriesTapped) {
                         HStack(spacing: 8) {
                             Text("Categorie")
                             Spacer()
                             Text(viewModel.newReceipt.categorie?.title ?? "")
-                                .foregroundColor(Color(UIColor.systemGray))
                             Image(systemName: "chevron.right")
                         }
+                        .apply(.regular, size: .M, color: .gray)
                     }
                     
                 }
@@ -53,15 +54,18 @@ struct AddReceipt: View {
                         Text("Guarantee")
                         Spacer()
                         Text(viewModel.warranty ? "\(viewModel.newReceipt.endOfWarranty, style: .date)" : "")
-                            .foregroundColor(Color(UIColor.systemGray))
                         Image(systemName: "chevron.right")
                     }
+                    .apply(.regular, size: .M, color: .gray)
                 }
             }
             
-            Section(header: Text("Purchase")){
-                DatePicker("Date of Purchase", selection: $viewModel.newReceipt.dateOfPurchase, displayedComponents: .date)
-                    .accentColor(.blue)
+            Section(header: Text("Purchase")) {
+                DatePicker(selection: $viewModel.newReceipt.dateOfPurchase,
+                           displayedComponents: .date) {
+                    Text("Date of Purchase")
+                        .apply(.regular, size: .M, color: .gray)
+                }
             }
         }
         .toolbar {

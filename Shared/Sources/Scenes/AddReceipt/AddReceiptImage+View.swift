@@ -26,6 +26,7 @@ struct AddReceiptImageView: View {
                         .frame(width: 40, height: 30)
                         .padding(.horizontal, 60)
                     Text("Load Image")
+                        .apply(.regular, size: .M, color: .gray)
                 }
                 .padding(.vertical, 100)
             }

@@ -16,6 +16,10 @@
 		E124AA1226498FB6009CE167 /* CategoriesSettings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA1126498FB6009CE167 /* CategoriesSettings+ViewModel.swift */; };
 		E124AA192649C3F3009CE167 /* AddCategorie+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorie+View.swift */; };
 		E125A87B2A7FB10F0035B34D /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125A87A2A7FB10F0035B34D /* ViewFactory.swift */; };
+		E12DFE882A841AA000688DD7 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DFE872A841AA000688DD7 /* AppColor.swift */; };
+		E12DFE8A2A84211D00688DD7 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DFE892A84211D00688DD7 /* FontStyle.swift */; };
+		E12DFE8E2A84223800688DD7 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E12DFE8C2A84223800688DD7 /* Roboto-Medium.ttf */; };
+		E12DFE8F2A84223800688DD7 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E12DFE8D2A84223800688DD7 /* Roboto-Regular.ttf */; };
 		E15EF00C2668F5570091CE71 /* About+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15EF00B2668F5570091CE71 /* About+View.swift */; };
 		E1617AE8265D9A5E00EC269D /* HomeCategorieCell+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1617AE7265D9A5E00EC269D /* HomeCategorieCell+View.swift */; };
 		E167BBD4264AE85E00AA6CA2 /* AddReceiptCategorie+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167BBD3264AE85E00AA6CA2 /* AddReceiptCategorie+View.swift */; };
@@ -69,6 +73,10 @@
 		E124AA1126498FB6009CE167 /* CategoriesSettings+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesSettings+ViewModel.swift"; sourceTree = "<group>"; };
 		E124AA182649C3F3009CE167 /* AddCategorie+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCategorie+View.swift"; sourceTree = "<group>"; };
 		E125A87A2A7FB10F0035B34D /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		E12DFE872A841AA000688DD7 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		E12DFE892A84211D00688DD7 /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
+		E12DFE8C2A84223800688DD7 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		E12DFE8D2A84223800688DD7 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E15EF00B2668F5570091CE71 /* About+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "About+View.swift"; sourceTree = "<group>"; };
 		E1617AE7265D9A5E00EC269D /* HomeCategorieCell+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeCategorieCell+View.swift"; sourceTree = "<group>"; };
 		E167BBD3264AE85E00AA6CA2 /* AddReceiptCategorie+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddReceiptCategorie+View.swift"; sourceTree = "<group>"; };
@@ -153,6 +161,7 @@
 		E10FE33F2A82F39800EB88C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E12DFE8B2A84220400688DD7 /* Fonts */,
 				E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */,
 				E18F93932652E03B00BC549F /* Localizable */,
 			);
@@ -243,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				E1A59D592A7FD6DB00CD1317 /* DialogApp.swift */,
+				E12DFE872A841AA000688DD7 /* AppColor.swift */,
+				E12DFE892A84211D00688DD7 /* FontStyle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -315,6 +326,15 @@
 				E10FE3522A82F70800EB88C4 /* Menu+ViewModel.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		E12DFE8B2A84220400688DD7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E12DFE8C2A84223800688DD7 /* Roboto-Medium.ttf */,
+				E12DFE8D2A84223800688DD7 /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		E17FC17726341ADA00082D55 /* Frameworks */ = {
@@ -479,7 +499,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12DFE8E2A84223800688DD7 /* Roboto-Medium.ttf in Resources */,
 				E180DF432632F9C600CC5CC8 /* Assets.xcassets in Resources */,
+				E12DFE8F2A84223800688DD7 /* Roboto-Regular.ttf in Resources */,
 				E18F938E2652DEB000BC549F /* InfoPlist.strings in Resources */,
 				E18F93822652B49800BC549F /* Localizable.strings in Resources */,
 			);
@@ -508,6 +530,7 @@
 				E180DF8C2633799600CC5CC8 /* NewReceipt.swift in Sources */,
 				E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
 				E17836FC265113530016A12D /* AddReceiptWarranty+View.swift in Sources */,
+				E12DFE882A841AA000688DD7 /* AppColor.swift in Sources */,
 				E1A59D5A2A7FD6DB00CD1317 /* DialogApp.swift in Sources */,
 				E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */,
 				E18430772645F8B900026A43 /* CacheRepository.swift in Sources */,
@@ -521,6 +544,7 @@
 				E180DF652633010500CC5CC8 /* Home+ViewModel.swift in Sources */,
 				E167BBD7264F074100AA6CA2 /* SortBy.swift in Sources */,
 				E10FE3552A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift in Sources */,
+				E12DFE8A2A84211D00688DD7 /* FontStyle.swift in Sources */,
 				E180DF762633582C00CC5CC8 /* Settings+View.swift in Sources */,
 				E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */,
 				E180DF5F2633005300CC5CC8 /* Views.swift in Sources */,

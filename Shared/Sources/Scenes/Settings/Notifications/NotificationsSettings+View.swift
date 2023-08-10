@@ -16,7 +16,7 @@ struct NotificationsSettingsView: View {
         let goToSettings = "Go to settings"
         var attributedString = AttributedString("You haven't allowed this app to show notifications. You can enable this functionality in settings." + " " + goToSettings)
         guard let range = attributedString.range(of: goToSettings) else { return .init("") }
-        attributedString[range].foregroundColor = .blue
+        attributedString[range].foregroundColor = appColor(.darkBlue)
         attributedString[range].underlineStyle = .single
         return attributedString
     }
@@ -29,24 +29,26 @@ struct NotificationsSettingsView: View {
         List {
             Section(header: Text("Enable Notifications"),
                     footer: Text(goToSettingsAttributedString)
-                .font(.footnote)
                 .onTapGesture(perform: viewModel.onGoToSettingsTapped)) {
                 Toggle("Allow Notifications", isOn: $viewModel.notificationAllowedToggle)
+                        .apply(.regular, size: .M, color: .gray)
                         .disabled(true)
                         .onTapGesture(perform: viewModel.onToggleTapped)
             }
             
-            Section(header: Text("Notification Options"), footer: Text("The alert will come \(viewModel.daysNotification) days before the guarantee expires.")){
-                Picker("Notify me before", selection: $viewModel.daysNotification) {
+            Section(header: Text("Notification Options"),
+                    footer: Text("The alert will come \(viewModel.daysNotification) days before the guarantee expires.")){
+                Picker(selection: $viewModel.daysNotification) {
                     ForEach(0..<51) { i in
                         Text("\(i)")
                     }
+                } label: {
+                    Text("Notify me before")
+                        .apply(.regular, size: .M, color: .gray)
                 }
+
             }
-        
-            
         }
-        .listStyle(GroupedListStyle())
         .navigationTitle("Notifications")
         .onChange(of: viewModel.daysNotification) { _ in
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()

@@ -11,6 +11,14 @@ final class MenuViewModel: ObservableObject {
 
     @Published var shouldShowMenu: Bool = false
 
+    var dataSource: [Model] {
+        return [
+            .init(imageName: "scroll.fill", text: "Receipts", action: onReceiptsTapped),
+            .init(imageName: "plus.app.fill", text: "Add Receipt", action: onAddReceiptTapped),
+            .init(imageName: "gearshape.fill", text: "Settings", action: onSettingsTapped)
+        ]
+    }
+
     private let coordinator: Coordinator
 
     init(coordinator: Coordinator) {
@@ -45,5 +53,18 @@ final class MenuViewModel: ObservableObject {
 
     func hideMenu() {
         coordinator.hideMenu()
+    }
+}
+
+extension MenuViewModel {
+
+    struct Model: Identifiable {
+        let imageName: String
+        let text: String
+        let action: () -> Void
+
+        var id: String {
+            text
+        }
     }
 }

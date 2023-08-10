@@ -20,8 +20,7 @@ struct HomeView: View {
             ScrollView(showsIndicators: false){
                 VStack(spacing: 0){
                     Text("Your Categories")
-                        .font(.custom("Roboto Medium", size: 14))
-                        .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
+                        .apply(.regular, size: .S, color: .gray)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                         .padding(.top, 20)
@@ -44,8 +43,7 @@ struct HomeView: View {
                 
                 VStack(spacing: 0){
                     Text("Your Receipts")
-                        .font(.custom("Roboto Medium", size: 14))
-                        .foregroundColor(Color(#colorLiteral(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)))
+                        .apply(.regular, size: .S, color: .gray)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                     VStack(spacing: 28){
@@ -61,7 +59,7 @@ struct HomeView: View {
             }
             Spacer(minLength: 0)
         }
-        .background(Color("NewBackground"))
+        .background(Color("background"))
         .ignoresSafeArea(edges: .bottom)
         .onAppear(perform: homeViewModel.onViewAppear)
         .onDisappear(perform: homeViewModel.onViewDisappear)

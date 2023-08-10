@@ -12,13 +12,17 @@ struct AddReceiptWarrantyView: View {
     var body: some View {
         List {
             Section(header: Text("Is there a guarantee for the receipt?")){
-                Toggle("Guarantee", isOn: $viewModel.warranty.animation())
+                Toggle(isOn: $viewModel.warranty.animation()) {
+                    Text("Guarantee")
+                        .apply(.regular, size: .M, color: .gray)
+                }
             }
-            
             if viewModel.warranty {
                 Section{
-                    DatePicker("End of Guarantee", selection: $viewModel.newReceipt.endOfWarranty, displayedComponents: .date)
-                        .accentColor(.blue)
+                    DatePicker(selection: $viewModel.newReceipt.endOfWarranty, displayedComponents: .date) {
+                        Text("End of Guarantee")
+                            .apply(.regular, size: .M, color: .gray)
+                    }
                 }
             }
         }

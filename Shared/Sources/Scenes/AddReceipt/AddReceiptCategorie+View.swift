@@ -18,12 +18,11 @@ struct AddReceiptCategorie: View {
                     }){
                         HStack{
                             Text(categorie.title ?? "")
-                                .foregroundColor(.primary)
+                                .apply(.regular, size: .M, color: .gray)
                                 .lineLimit(1)
                             Spacer()
                             if viewModel.newReceipt.categorie == categorie {
-                                Text(Image(systemName: "checkmark"))
-                                    .fontWeight(.bold)
+                                Image(systemName: "checkmark")
                             }
                         }
                     }
@@ -34,3 +33,4 @@ struct AddReceiptCategorie: View {
         .navigationTitle("Categorie".localized())
     }
 }
+

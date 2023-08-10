@@ -10,7 +10,7 @@ import SwiftUI
 struct AboutView: View {
     var body: some View {
         Form{
-            Section{
+            Section {
                 Image("logo")
                     .resizable()
                     .scaledToFit()
@@ -20,27 +20,21 @@ struct AboutView: View {
                     .background(Color(UIColor.systemGroupedBackground))
                     .listRowInsets(EdgeInsets())
             }
-            Section{
+            Section {
                 VStack(spacing: 5){
-                    HStack{
-                        Text("Version:")
-                        Text("1.0.1").bold()
-                    }
-                    HStack{
-                        Text("Created by:")
-                        Text("Robert Adamczyk").bold()
-                    }
-                    
+                    Text("Version: 1.0.1")
+                    Text("Created by: Robert Adamczyk")
                 }
+                .apply(.regular, size: .M, color: .gray)
                 .frame(maxWidth: .infinity)
-                .font(.subheadline)
             }
-            Section{
-                VStack(spacing: 20){
-                    Text("Thanks for using my application. \n❤️❤️❤️")
-                        
+            Section {
+                VStack(spacing: 16) {
+                    Text("Thanks for using my application.")
+                    Text("❤️❤️❤️")
                     Text("If you like it, leave a review on the AppStore.")
                 }
+                .apply(.regular, size: .M, color: .gray)
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
             }

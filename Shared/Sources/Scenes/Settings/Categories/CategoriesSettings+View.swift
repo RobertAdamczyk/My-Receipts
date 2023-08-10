@@ -19,11 +19,13 @@ struct CategoriesSettingsView: View {
         List{
             if viewModel.categories.isEmpty {
                 Text("You have no categories.")
+                    .apply(.regular, size: .M, color: .gray)
                     .frame(maxWidth: .infinity, alignment: .center)
             }else {
                 Section(header: Text("Categories")) {
                     ForEach(viewModel.categories) { categorie in
                         Text(categorie.title ?? "###")
+                            .apply(.regular, size: .M, color: .gray)
                     }
                     .onDelete(perform: viewModel.onRemoveCategorie)
                 }
@@ -34,7 +36,9 @@ struct CategoriesSettingsView: View {
         .navigationTitle("Categories")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button("Add") { viewModel.onAddCategorieTapped() }
+                Button(action: viewModel.onAddCategorieTapped) {
+                    Text("Add")
+                }
             }
         }
     }
