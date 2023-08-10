@@ -38,7 +38,7 @@ struct My_ReceiptsApp: App {
             .overlay(MenuView(coordinator: coordinator))
             .offset(x: coordinator.shouldShowMenu ? MenuView.widthMenu : 0)
             .animation(.easeInOut, value: coordinator.shouldShowMenu)
-            .tint(.black)
+            .tint(appColor(.gray))
             .preferredColorScheme(.light)
         }
     }

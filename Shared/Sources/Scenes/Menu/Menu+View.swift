@@ -25,9 +25,9 @@ struct MenuView: View {
                     Button(action: source.action) {
                         HStack {
                             appImage(source.image)
-                                .apply(.regular, size: .L, color: .darkBlue)
+                                .apply(.regular, size: .M, color: .darkBlue)
                             Text(source.text)
-                                .apply(.regular, size: .L, color: .gray)
+                                .apply(.regular, size: .M, color: .gray)
                             Spacer(minLength: 0)
                         }
                     }
