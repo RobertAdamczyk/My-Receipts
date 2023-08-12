@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E10FE34E2A82F5E700EB88C4 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF532632FBD800CC5CC8 /* TabsView.swift */; };
-		E10FE3512A82F68A00EB88C4 /* FormFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF902633844900CC5CC8 /* FormFrame.swift */; };
 		E10FE3532A82F70800EB88C4 /* Menu+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FE3522A82F70800EB88C4 /* Menu+ViewModel.swift */; };
 		E10FE3552A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FE3542A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift */; };
 		E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
-		E116C62D2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
 		E124AA1226498FB6009CE167 /* CategoriesSettings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA1126498FB6009CE167 /* CategoriesSettings+ViewModel.swift */; };
 		E124AA192649C3F3009CE167 /* AddCategorie+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorie+View.swift */; };
 		E125A87B2A7FB10F0035B34D /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125A87A2A7FB10F0035B34D /* ViewFactory.swift */; };
@@ -39,11 +36,8 @@
 		E17FC17926341ADA00082D55 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17FC17826341ADA00082D55 /* CloudKit.framework */; };
 		E17FC17D26345E5400082D55 /* HomeReceiptCell+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17FC17C26345E5400082D55 /* HomeReceiptCell+View.swift */; };
 		E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */; };
-		E180DF3C2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */; };
 		E180DF3D2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */; };
-		E180DF3E2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */; };
 		E180DF432632F9C600CC5CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */; };
-		E180DF442632F9C600CC5CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */; };
 		E180DF542632FBD800CC5CC8 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF532632FBD800CC5CC8 /* TabsView.swift */; };
 		E180DF5A2633003A00CC5CC8 /* Home+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF592633003A00CC5CC8 /* Home+View.swift */; };
 		E180DF5F2633005300CC5CC8 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF5E2633005300CC5CC8 /* Views.swift */; };
@@ -58,9 +52,7 @@
 		E18430772645F8B900026A43 /* CacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18430762645F8B900026A43 /* CacheRepository.swift */; };
 		E18430792646902300026A43 /* ImagePreview+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18430782646902300026A43 /* ImagePreview+ViewModel.swift */; };
 		E18F93822652B49800BC549F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18F93852652B49800BC549F /* Localizable.strings */; };
-		E18F93832652B49800BC549F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18F93852652B49800BC549F /* Localizable.strings */; };
 		E18F938E2652DEB000BC549F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18F93912652DEB000BC549F /* InfoPlist.strings */; };
-		E18F938F2652DEB000BC549F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18F93912652DEB000BC549F /* InfoPlist.strings */; };
 		E190CDA12635B0C1002E4343 /* ImagePreview+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E190CDA02635B0C1002E4343 /* ImagePreview+View.swift */; };
 		E19A09F326389A710079FB93 /* Settings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A09F226389A710079FB93 /* Settings+ViewModel.swift */; };
 		E19CA3FA26339904006EC2E5 /* AddReceiptImage+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA3F926339904006EC2E5 /* AddReceiptImage+View.swift */; };
@@ -105,7 +97,6 @@
 		E180DF2A2632F9C500CC5CC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E180DF2F2632F9C500CC5CC8 /* Receipts Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Receipts Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E180DF322632F9C600CC5CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E180DF372632F9C600CC5CC8 /* Receipts Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Receipts Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E180DF392632F9C600CC5CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E180DF3A2632F9C600CC5CC8 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E180DF532632FBD800CC5CC8 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
@@ -138,13 +129,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E17FC17926341ADA00082D55 /* CloudKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E180DF342632F9C600CC5CC8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				E180DF2F2632F9C500CC5CC8 /* Receipts Store.app */,
-				E180DF372632F9C600CC5CC8 /* Receipts Store.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -446,23 +429,6 @@
 			productReference = E180DF2F2632F9C500CC5CC8 /* Receipts Store.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E180DF362632F9C600CC5CC8 /* Receipts Store (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E180DF4A2632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "Receipts Store (macOS)" */;
-			buildPhases = (
-				E180DF332632F9C600CC5CC8 /* Sources */,
-				E180DF342632F9C600CC5CC8 /* Frameworks */,
-				E180DF352632F9C600CC5CC8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Receipts Store (macOS)";
-			productName = "My Receipts (macOS)";
-			productReference = E180DF372632F9C600CC5CC8 /* Receipts Store.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -473,9 +439,6 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					E180DF2E2632F9C500CC5CC8 = {
-						CreatedOnToolsVersion = 12.4;
-					};
-					E180DF362632F9C600CC5CC8 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -497,7 +460,6 @@
 			projectRoot = "";
 			targets = (
 				E180DF2E2632F9C500CC5CC8 /* Receipts Store (iOS) */,
-				E180DF362632F9C600CC5CC8 /* Receipts Store (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -512,16 +474,6 @@
 				E12DFE8F2A84223800688DD7 /* Roboto-Regular.ttf in Resources */,
 				E18F938E2652DEB000BC549F /* InfoPlist.strings in Resources */,
 				E18F93822652B49800BC549F /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E180DF352632F9C600CC5CC8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E180DF442632F9C600CC5CC8 /* Assets.xcassets in Resources */,
-				E18F938F2652DEB000BC549F /* InfoPlist.strings in Resources */,
-				E18F93832652B49800BC549F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,18 +529,6 @@
 				E176B3D02A7FFE890053C06E /* NotificationsRepository.swift in Sources */,
 				E176B3D42A80033E0053C06E /* CoreDataService.swift in Sources */,
 				E167BBD9264F0C5400AA6CA2 /* SortBy+View.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E180DF332632F9C600CC5CC8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E116C62D2A7AF82500A5783F /* Coordinator.swift in Sources */,
-				E180DF3E2632F9C600CC5CC8 /* My_ReceiptsApp.swift in Sources */,
-				E180DF3C2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
-				E10FE34E2A82F5E700EB88C4 /* TabsView.swift in Sources */,
-				E10FE3512A82F68A00EB88C4 /* FormFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,56 +720,6 @@
 			};
 			name = Release;
 		};
-		E180DF4B2632F9C600CC5CC8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 38Q6TG2KG3;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "You.My-Receipts";
-				PRODUCT_NAME = "Receipts Store";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		E180DF4C2632F9C600CC5CC8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 38Q6TG2KG3;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "You.My-Receipts";
-				PRODUCT_NAME = "Receipts Store";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -847,15 +737,6 @@
 			buildConfigurations = (
 				E180DF482632F9C600CC5CC8 /* Debug */,
 				E180DF492632F9C600CC5CC8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E180DF4A2632F9C600CC5CC8 /* Build configuration list for PBXNativeTarget "Receipts Store (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E180DF4B2632F9C600CC5CC8 /* Debug */,
-				E180DF4C2632F9C600CC5CC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
