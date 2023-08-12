@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  My Receipts
+
+  Created by Robert Adamczyk on 17.05.21.
+  
+*/
+
+"generic_categories" = "Catégories";
+"generic_warranty" = "Garantie";
+"generic_save" = "Enregistrer";
+"generic_receipts" = "Reçus";
+"generic_purchase_date" = "Date d'achat";
+"generic_title" = "Titre";
+"generic_informations" = "Informations";
+"generic_edit" = "Modifier";
+"generic_delete" = "Supprimer";
+"generic_cancel" = "Annuler";
+"generic_new_category" = "Nouvelle Catégorie";
+"generic_symbol" = "Symbole";
+"generic_enter" = "Entrer";
+"generic_version" = "Version";
+"generic_notification_body" = "La garantie expire dans %s jours.";
+
+"home_default_category" = "Tous";
+"home_default_first_letter_category" = "A";
+
+"add_receipt_purchase" = "Achat";
+"add_receipt_title" = "Ajouter un Reçu";
+"edit_receipt_title" = "Modifier le Reçu";
+"add_receipt_load_image" = "Charger une image";
+"add_receipt_category_hint" = "Choisissez la catégorie du reçu";
+"add_receipt_warranty_hint" = "Y a-t-il une garantie pour cet achat ?";
+"add_receipt_end_warranty" = "Date de fin de garantie";
+
+"dialog_app_image" = "Image";
+"dialog_app_use_existing" = "Utiliser depuis la galerie";
+"dialog_app_take_photo" = "Prendre une photo";
+
+"sort_title" = "Trier par";
+"sort_title_ascending" = "Titre A-Z";
+"sort_title_descending" = "Titre Z-A";
+"sort_purchase_ascending" = "Date d'Achat Croissante";
+"sort_purchase_descending" = "Date d'Achat Décroissante";
+"sort_warranty_descending" = "Fin de Garantie Décroissante";
+"sort_warranty_ascending" = "Fin de Garantie Croissante";
+
+"settings_title" = "Paramètres";
+"settings_general" = "Général";
+"settings_app" = "Application";
+"settings_notifications" = "Notifications";
+"settings_notifications_hint" = "Vous n'avez pas encore autorisé l'application à afficher des notifications. Vous pouvez activer cette fonctionnalité dans les paramètres.";
+"settings_go_to" = "Accéder aux paramètres";
+"settings_notifications_enable" = "Activer les notifications";
+"settings_notifications_options" = "Options de Notifications";
+"settings_notifications_notify_me" = "Me prévenir avant";
+"settings_notifications_days_hint" = "La notification sera envoyée %s jours avant l'expiration de la garantie.";
+"settings_empty_categories" = "Vous n'avez pas encore de catégories.";
+"settings_created_by" = "Application créée par \nRobert Adamczyk";
+"settings_thank_you" = "Merci d'utiliser l'application.\nSi vous l'appréciez, veuillez laisser un avis positif sur l'AppStore.";

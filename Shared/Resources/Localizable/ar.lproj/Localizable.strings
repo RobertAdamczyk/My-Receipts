@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  My Receipts
+
+  Created by Robert Adamczyk on 17.05.21.
+  
+*/
+
+"generic_categories" = "الفئات";
+"generic_warranty" = "الضمان";
+"generic_save" = "حفظ";
+"generic_receipts" = "الإيصالات";
+"generic_purchase_date" = "تاريخ الشراء";
+"generic_title" = "العنوان";
+"generic_informations" = "المعلومات";
+"generic_edit" = "تحرير";
+"generic_delete" = "حذف";
+"generic_cancel" = "إلغاء";
+"generic_new_category" = "فئة جديدة";
+"generic_symbol" = "الرمز";
+"generic_enter" = "إدخال";
+"generic_version" = "الإصدار";
+"generic_notification_body" = "سينتهي الضمان في خلال %s أيام.";
+
+"home_default_category" = "الكل";
+"home_default_first_letter_category" = "أ";
+
+"add_receipt_purchase" = "شراء";
+"add_receipt_title" = "إضافة إيصال";
+"edit_receipt_title" = "تحرير إيصال";
+"add_receipt_load_image" = "تحميل صورة";
+"add_receipt_category_hint" = "اختر فئة الإيصال";
+"add_receipt_warranty_hint" = "هل هناك ضمان لهذا الشراء؟";
+"add_receipt_end_warranty" = "تاريخ انتهاء الضمان";
+
+"dialog_app_image" = "الصورة";
+"dialog_app_use_existing" = "استخدام موجود في المعرض";
+"dialog_app_take_photo" = "التقط صورة";
+
+"sort_title" = "ترتيب حسب";
+"sort_title_ascending" = "العنوان من أ-ي";
+"sort_title_descending" = "العنوان من ي-أ";
+"sort_purchase_ascending" = "تاريخ الشراء تصاعديًا";
+"sort_purchase_descending" = "تاريخ الشراء تنازليًا";
+"sort_warranty_descending" = "انتهاء الضمان تنازليًا";
+"sort_warranty_ascending" = "انتهاء الضمان تصاعديًا";
+
+"settings_title" = "الإعدادات";
+"settings_general" = "عامة";
+"settings_app" = "التطبيق";
+"settings_notifications" = "الإشعارات";
+"settings_notifications_hint" = "لم تسمح للتطبيق بعرض الإشعارات بعد. يمكنك تفعيل هذه الوظيفة في الإعدادات.";
+"settings_go_to" = "الذهاب إلى الإعدادات";
+"settings_notifications_enable" = "تفعيل الإشعارات";
+"settings_notifications_options" = "خيارات الإشعارات";
+"settings_notifications_notify_me" = "إعلامي قبل";
+"settings_notifications_days_hint" = "الإشعار سيصل %s أيام قبل انتهاء الضمان.";
+"settings_empty_categories" = "ليس لديك أي فئات حتى الآن.";
+"settings_created_by" = "التطبيق من صنع\nروبرت آدمشيك";
+"settings_thank_you" = "شكرًا لاستخدام التطبيق.\nإذا أعجبك التطبيق، الرجاء ترك تقييم إيجابي في متجر التطبيقات.";

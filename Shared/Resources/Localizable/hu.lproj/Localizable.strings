@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  My Receipts
+
+  Created by Robert Adamczyk on 17.05.21.
+  
+*/
+
+"generic_categories" = "Kategóriák";
+"generic_warranty" = "Garancia";
+"generic_save" = "Mentés";
+"generic_receipts" = "Nyugták";
+"generic_purchase_date" = "Vásárlás dátuma";
+"generic_title" = "Cím";
+"generic_informations" = "Információk";
+"generic_edit" = "Szerkesztés";
+"generic_delete" = "Törlés";
+"generic_cancel" = "Mégse";
+"generic_new_category" = "Új kategória";
+"generic_symbol" = "Szimbólum";
+"generic_enter" = "Beírás";
+"generic_version" = "Verzió";
+"generic_notification_body" = "A garancia %s nap múlva lejár.";
+
+"home_default_category" = "Összes";
+"home_default_first_letter_category" = "A";
+
+"add_receipt_purchase" = "Vásárlás";
+"add_receipt_title" = "Nyugta Hozzáadása";
+"edit_receipt_title" = "Nyugta Szerkesztése";
+"add_receipt_load_image" = "Kép Betöltése";
+"add_receipt_category_hint" = "Válasszon nyugta kategóriát";
+"add_receipt_warranty_hint" = "Van garancia a vásárláshoz?";
+"add_receipt_end_warranty" = "Garancia lejárati dátuma";
+
+"dialog_app_image" = "Kép";
+"dialog_app_use_existing" = "Meglévő kép használata";
+"dialog_app_take_photo" = "Fénykép készítése";
+
+"sort_title" = "Rendezés";
+"sort_title_ascending" = "Cím A-Z";
+"sort_title_descending" = "Cím Z-A";
+"sort_purchase_ascending" = "Vásárlás Dátuma Növekvő";
+"sort_purchase_descending" = "Vásárlás Dátuma Csökkenő";
+"sort_warranty_descending" = "Garancia Vége Csökkenő";
+"sort_warranty_ascending" = "Garancia Vége Növekvő";
+
+"settings_title" = "Beállítások";
+"settings_general" = "Általános";
+"settings_app" = "Alkalmazás";
+"settings_notifications" = "Értesítések";
+"settings_notifications_hint" = "Nem engedélyezte az alkalmazás értesítéseinek megjelenítését. Ezt a funkciót bekapcsolhatja a beállításokban.";
+"settings_go_to" = "Ugrás a beállításokhoz";
+"settings_notifications_enable" = "Értesítések engedélyezése";
+"settings_notifications_options" = "Értesítési beállítások";
+"settings_notifications_notify_me" = "Értesítés előtt";
+"settings_notifications_days_hint" = "Az értesítés %s nappal a garancia lejárata előtt érkezik.";
+"settings_empty_categories" = "Még nincsenek kategóriái.";
+"settings_created_by" = "Az alkalmazást készítette: \nRobert Adamczyk";
+"settings_thank_you" = "Köszönjük, hogy használja az alkalmazást.\nHa tetszik, kérjük, hagyjon pozitív értékelést az AppStore-ban.";
+

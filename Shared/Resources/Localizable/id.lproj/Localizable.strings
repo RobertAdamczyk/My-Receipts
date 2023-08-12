@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  My Receipts
+
+  Created by Robert Adamczyk on 17.05.21.
+  
+*/
+
+"generic_categories" = "Kategori";
+"generic_warranty" = "Garansi";
+"generic_save" = "Simpan";
+"generic_receipts" = "Tanda Terima";
+"generic_purchase_date" = "Tanggal Pembelian";
+"generic_title" = "Judul";
+"generic_informations" = "Informasi";
+"generic_edit" = "Edit";
+"generic_delete" = "Hapus";
+"generic_cancel" = "Batal";
+"generic_new_category" = "Kategori Baru";
+"generic_symbol" = "Simbol";
+"generic_enter" = "Masukkan";
+"generic_version" = "Versi";
+"generic_notification_body" = "Garansi akan berakhir dalam %s hari.";
+
+"home_default_category" = "Semua";
+"home_default_first_letter_category" = "A";
+
+"add_receipt_purchase" = "Pembelian";
+"add_receipt_title" = "Tambah Tanda Terima";
+"edit_receipt_title" = "Edit Tanda Terima";
+"add_receipt_load_image" = "Muat Gambar";
+"add_receipt_category_hint" = "Pilih kategori tanda terima";
+"add_receipt_warranty_hint" = "Apakah ada garansi untuk pembelian ini?";
+"add_receipt_end_warranty" = "Tanggal berakhirnya garansi";
+
+"dialog_app_image" = "Gambar";
+"dialog_app_use_existing" = "Gunakan dari galeri";
+"dialog_app_take_photo" = "Ambil foto";
+
+"sort_title" = "Urutkan Berdasarkan";
+"sort_title_ascending" = "Judul A-Z";
+"sort_title_descending" = "Judul Z-A";
+"sort_purchase_ascending" = "Tanggal Pembelian Meningkat";
+"sort_purchase_descending" = "Tanggal Pembelian Menurun";
+"sort_warranty_descending" = "Akhir Garansi Menurun";
+"sort_warranty_ascending" = "Akhir Garansi Meningkat";
+
+"settings_title" = "Pengaturan";
+"settings_general" = "Umum";
+"settings_app" = "Aplikasi";
+"settings_notifications" = "Notifikasi";
+"settings_notifications_hint" = "Anda belum mengizinkan aplikasi untuk menampilkan notifikasi. Anda dapat mengaktifkan fitur ini dalam pengaturan.";
+"settings_go_to" = "Buka pengaturan";
+"settings_notifications_enable" = "Aktifkan notifikasi";
+"settings_notifications_options" = "Opsi Notifikasi";
+"settings_notifications_notify_me" = "Beritahu saya sebelumnya";
+"settings_notifications_days_hint" = "Notifikasi akan dikirim %s hari sebelum garansi berakhir.";
+"settings_empty_categories" = "Anda belum memiliki kategori.";
+"settings_created_by" = "Aplikasi dibuat oleh \nRobert Adamczyk";
+"settings_thank_you" = "Terima kasih telah menggunakan aplikasi ini.\nJika Anda menyukainya, mohon tinggalkan ulasan positif di AppStore.";

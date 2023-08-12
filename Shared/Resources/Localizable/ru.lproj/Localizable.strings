@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  My Receipts
+
+  Created by Robert Adamczyk on 17.05.21.
+  
+*/
+
+"generic_categories" = "Категории";
+"generic_warranty" = "Гарантия";
+"generic_save" = "Сохранить";
+"generic_receipts" = "Чеки";
+"generic_purchase_date" = "Дата покупки";
+"generic_title" = "Заголовок";
+"generic_informations" = "Информация";
+"generic_edit" = "Редактировать";
+"generic_delete" = "Удалить";
+"generic_cancel" = "Отмена";
+"generic_new_category" = "Новая категория";
+"generic_symbol" = "Символ";
+"generic_enter" = "Ввести";
+"generic_version" = "Версия";
+"generic_notification_body" = "Гарантия истекает через %s дней.";
+
+"home_default_category" = "Все";
+"home_default_first_letter_category" = "А";
+
+"add_receipt_purchase" = "Покупка";
+"add_receipt_title" = "Добавить чек";
+"edit_receipt_title" = "Редактировать чек";
+"add_receipt_load_image" = "Загрузить изображение";
+"add_receipt_category_hint" = "Выберите категорию чека";
+"add_receipt_warranty_hint" = "Есть гарантия на покупку?";
+"add_receipt_end_warranty" = "Дата окончания гарантии";
+
+"dialog_app_image" = "Изображение";
+"dialog_app_use_existing" = "Выбрать из галереи";
+"dialog_app_take_photo" = "Сделать фото";
+
+"sort_title" = "Сортировать по";
+"sort_title_ascending" = "Заголовок А-Я";
+"sort_title_descending" = "Заголовок Я-А";
+"sort_purchase_ascending" = "Дата покупки по возрастанию";
+"sort_purchase_descending" = "Дата покупки по убыванию";
+"sort_warranty_descending" = "Окончание гарантии по убыванию";
+"sort_warranty_ascending" = "Окончание гарантии по возрастанию";
+
+"settings_title" = "Настройки";
+"settings_general" = "Общие";
+"settings_app" = "Приложение";
+"settings_notifications" = "Уведомления";
+"settings_notifications_hint" = "Вы еще не разрешили приложению показывать уведомления. Вы можете включить эту функцию в настройках.";
+"settings_go_to" = "Перейти к настройкам";
+"settings_notifications_enable" = "Включить уведомления";
+"settings_notifications_options" = "Опции уведомлений";
+"settings_notifications_notify_me" = "Уведомить меня за";
+"settings_notifications_days_hint" = "Уведомление придет за %s дней до истечения гарантии.";
+"settings_empty_categories" = "У вас пока нет категорий.";
+"settings_created_by" = "Приложение создано\nРобертом Адамчиком";
+"settings_thank_you" = "Спасибо за использование приложения.\nЕсли вам нравится, пожалуйста, оставьте положительный отзыв в AppStore.";
+

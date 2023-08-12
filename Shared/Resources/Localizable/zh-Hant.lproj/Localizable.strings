@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  My Receipts
+
+  Created by Robert Adamczyk on 17.05.21.
+  
+*/
+
+"generic_categories" = "类别";
+"generic_warranty" = "保固";
+"generic_save" = "儲存";
+"generic_receipts" = "收據";
+"generic_purchase_date" = "購買日期";
+"generic_title" = "標題";
+"generic_informations" = "信息";
+"generic_edit" = "編輯";
+"generic_delete" = "刪除";
+"generic_cancel" = "取消";
+"generic_new_category" = "新增分類";
+"generic_symbol" = "符號";
+"generic_enter" = "輸入";
+"generic_version" = "版本";
+"generic_notification_body" = "保固將於 %s 天後到期。";
+
+"home_default_category" = "全部";
+"home_default_first_letter_category" = "A";
+
+"add_receipt_purchase" = "購買";
+"add_receipt_title" = "新增收據";
+"edit_receipt_title" = "編輯收據";
+"add_receipt_load_image" = "載入圖片";
+"add_receipt_category_hint" = "選擇收據類別";
+"add_receipt_warranty_hint" = "是否有購買保固？";
+"add_receipt_end_warranty" = "保固到期日期";
+
+"dialog_app_image" = "圖片";
+"dialog_app_use_existing" = "使用現有圖片";
+"dialog_app_take_photo" = "拍照";
+
+"sort_title" = "按標題排序";
+"sort_title_ascending" = "標題 A-Z";
+"sort_title_descending" = "標題 Z-A";
+"sort_purchase_ascending" = "購買日期升序";
+"sort_purchase_descending" = "購買日期降序";
+"sort_warranty_descending" = "保固到期日期降序";
+"sort_warranty_ascending" = "保固到期日期升序";
+
+"settings_title" = "設定";
+"settings_general" = "一般";
+"settings_app" = "應用程式";
+"settings_notifications" = "通知";
+"settings_notifications_hint" = "您尚未允許應用程式顯示通知。您可以在設定中啟用此功能。";
+"settings_go_to" = "前往設定";
+"settings_notifications_enable" = "啟用通知";
+"settings_notifications_options" = "通知選項";
+"settings_notifications_notify_me" = "通知我在";
+"settings_notifications_days_hint" = "通知將在產品保固到期前 %s 天發送。";
+"settings_empty_categories" = "您尚未建立任何類別。";
+"settings_created_by" = "應用程式由\nRobert Adamczyk 開發";
+"settings_thank_you" = "感謝您使用本應用程式。\n如果您喜歡，請在AppStore中給予正面評價。";
+

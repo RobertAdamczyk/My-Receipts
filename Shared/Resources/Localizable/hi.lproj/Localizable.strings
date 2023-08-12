@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  My Receipts
+
+  Created by Robert Adamczyk on 17.05.21.
+  
+*/
+
+"generic_categories" = "श्रेणियाँ";
+"generic_warranty" = "वारंटी";
+"generic_save" = "सहेजें";
+"generic_receipts" = "रसीदें";
+"generic_purchase_date" = "खरीद तिथि";
+"generic_title" = "शीर्षक";
+"generic_informations" = "जानकारी";
+"generic_edit" = "संपादित करें";
+"generic_delete" = "हटाएं";
+"generic_cancel" = "रद्द करें";
+"generic_new_category" = "नई श्रेणी";
+"generic_symbol" = "प्रतीक";
+"generic_enter" = "दर्ज करें";
+"generic_version" = "संस्करण";
+"generic_notification_body" = "वारंटी %s दिनों में समाप्त हो जाएगी।";
+
+"home_default_category" = "सभी";
+"home_default_first_letter_category" = "ए";
+
+"add_receipt_purchase" = "खरीद";
+"add_receipt_title" = "रसीद जोड़ें";
+"edit_receipt_title" = "रसीद संपादित करें";
+"add_receipt_load_image" = "छवि लोड करें";
+"add_receipt_category_hint" = "रसीद की श्रेणी चुनें";
+"add_receipt_warranty_hint" = "खरीद के लिए वारंटी है?";
+"add_receipt_end_warranty" = "वारंटी समापन तिथि";
+
+"dialog_app_image" = "तस्वीर";
+"dialog_app_use_existing" = "गैलरी से चुनें";
+"dialog_app_take_photo" = "तस्वीर खींचें";
+
+"sort_title" = "इसके आधार पर क्रमबद्ध करें";
+"sort_title_ascending" = "शीर्षक A-Z";
+"sort_title_descending" = "शीर्षक Z-A";
+"sort_purchase_ascending" = "खरीद तिथि आरोही";
+"sort_purchase_descending" = "खरीद तिथि अवरोही";
+"sort_warranty_descending" = "वारंटी समापन तिथि अवरोही";
+"sort_warranty_ascending" = "वारंटी समापन तिथि आरोही";
+
+"settings_title" = "सेटिंग्स";
+"settings_general" = "सामान्य";
+"settings_app" = "ऐप";
+"settings_notifications" = "सूचनाएँ";
+"settings_notifications_hint" = "आपने अभी तक ऐप को सूचनाएँ दिखाने की अनुमति नहीं दी है। आप इस सुविधा को सेटिंग्स में सक्षम कर सकते हैं।";
+"settings_go_to" = "सेटिंग्स में जाएं";
+"settings_notifications_enable" = "सूचनाएँ सक्षम करें";
+"settings_notifications_options" = "सूचना विकल्प";
+"settings_notifications_notify_me" = "मुझे पहले सूचित करें";
+"settings_notifications_days_hint" = "सूचना %s दिन पहले प्राप्त होगी कि वारंटी समाप्त हो रही है।";
+"settings_empty_categories" = "आपके पास अभी तक कोई श्रेणियाँ नहीं हैं।";
+"settings_created_by" = "ऐप्लिकेशन द्वारा बनाई गई\nरोबर्ट आदमचिक";
+"settings_thank_you" = "ऐप्लिकेशन का उपयोग करने के लिए धन्यवाद।\nआपको यदि यह पसंद है तो कृपया AppStore में सकारात्मक समीक्षा दें।";
