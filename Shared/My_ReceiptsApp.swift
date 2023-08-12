@@ -15,8 +15,10 @@ struct My_ReceiptsApp: App {
     init() {
         let notificationsRepository: NotificationsRepository = .init()
         let coreDataService: CoreDataService = .init()
+        let skStoreReviewRepository: SKStoreReviewRepository = .init()
         let dependencies: Dependencies = .init(notificationsRepository: notificationsRepository,
-                                               coreDataService: coreDataService)
+                                               coreDataService: coreDataService,
+                                               skStoreReviewRepository: skStoreReviewRepository)
         self._coordinator = .init(wrappedValue: .init(dependencies: dependencies))
     }
 

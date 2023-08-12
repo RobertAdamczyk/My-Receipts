@@ -11,4 +11,14 @@ struct Dependencies {
 
     let notificationsRepository: NotificationsRepository
     let coreDataService: CoreDataService
+
+    private let skStoreReviewRepository: SKStoreReviewRepository
+
+    init(notificationsRepository: NotificationsRepository,
+         coreDataService: CoreDataService,
+         skStoreReviewRepository: SKStoreReviewRepository) {
+        self.notificationsRepository = notificationsRepository
+        self.coreDataService = coreDataService
+        self.skStoreReviewRepository = skStoreReviewRepository
+    }
 }

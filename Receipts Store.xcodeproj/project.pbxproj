@@ -10,6 +10,7 @@
 		E10FE3532A82F70800EB88C4 /* Menu+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FE3522A82F70800EB88C4 /* Menu+ViewModel.swift */; };
 		E10FE3552A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FE3542A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift */; };
 		E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
+		E11981322A882C45005FA7E1 /* SKStoreReviewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11981312A882C45005FA7E1 /* SKStoreReviewRepository.swift */; };
 		E124AA1226498FB6009CE167 /* CategoriesSettings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA1126498FB6009CE167 /* CategoriesSettings+ViewModel.swift */; };
 		E124AA192649C3F3009CE167 /* AddCategorie+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorie+View.swift */; };
 		E125A87B2A7FB10F0035B34D /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125A87A2A7FB10F0035B34D /* ViewFactory.swift */; };
@@ -64,6 +65,7 @@
 		E10FE3522A82F70800EB88C4 /* Menu+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menu+ViewModel.swift"; sourceTree = "<group>"; };
 		E10FE3542A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationsSettings+ViewModel.swift"; sourceTree = "<group>"; };
 		E116C62B2A7AF82500A5783F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E11981312A882C45005FA7E1 /* SKStoreReviewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreReviewRepository.swift; sourceTree = "<group>"; };
 		E124AA1126498FB6009CE167 /* CategoriesSettings+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesSettings+ViewModel.swift"; sourceTree = "<group>"; };
 		E124AA182649C3F3009CE167 /* AddCategorie+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCategorie+View.swift"; sourceTree = "<group>"; };
 		E125A87A2A7FB10F0035B34D /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				E176B3D12A8001E20053C06E /* Dependencies.swift */,
 				E176B3CF2A7FFE890053C06E /* NotificationsRepository.swift */,
 				E18430762645F8B900026A43 /* CacheRepository.swift */,
+				E11981312A882C45005FA7E1 /* SKStoreReviewRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				E1690B1B2649865000A964E0 /* Receipt+CoreDataProperties.swift in Sources */,
 				E180DF8026335BA100CC5CC8 /* AddReceipt+ViewModel.swift in Sources */,
 				E19D91892639B73A0091D9E1 /* NotificationsSettings+View.swift in Sources */,
+				E11981322A882C45005FA7E1 /* SKStoreReviewRepository.swift in Sources */,
 				E180DF542632FBD800CC5CC8 /* TabsView.swift in Sources */,
 				E1690B172649846300A964E0 /* CategoriesSettings+View.swift in Sources */,
 				E180DF3B2632F9C600CC5CC8 /* My_Receipts.xcdatamodeld in Sources */,
