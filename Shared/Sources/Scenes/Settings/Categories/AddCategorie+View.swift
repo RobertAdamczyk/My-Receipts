@@ -18,12 +18,12 @@ struct AddCategorieView: View {
         NavigationView {
             VStack(spacing: 0) {
                 Form {
-                    Section(header: Text("Title")){
-                        TextField("Enter...", text: $title)
+                    Section(header: Text(appText(.generic(.title)))){
+                        TextField(appText(.generic(.enter)), text: $title)
                             .apply(.regular, size: .M, color: .gray)
                     }
-                    Section(header: Text("Symbol")){
-                        TextField("Enter...", text: $symbol)
+                    Section(header: Text(appText(.generic(.symbol)))){
+                        TextField(appText(.generic(.enter)), text: $symbol)
                             .apply(.regular, size: .M, color: .gray)
                     }
                     .onChange(of: symbol) { _ in
@@ -36,13 +36,13 @@ struct AddCategorieView: View {
                     }
 
                 }
-                AppButton(.fill("Done".localized())) {
+                AppButton(.fill(appText(.generic(.saveButton)))) {
                     completion(title, symbol)
                 }
                 .disabled(title.count < 3)
                 .stickyButton
             }
-            .navigationTitle("New Categorie")
+            .navigationTitle(appText(.generic(.newCategory)))
         }
     }
 }

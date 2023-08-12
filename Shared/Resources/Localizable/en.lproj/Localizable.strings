@@ -6,4 +6,55 @@
   
 */
 
+"generic_categories" = "Categories";
+"generic_warranty" = "Warranty";
+"generic_save" = "Save";
+"generic_receipts" = "Receipts";
+"generic_purchase_date" = "Purchase Date";
+"generic_title" = "Title";
+"generic_informations" = "Information";
+"generic_edit" = "Edit";
+"generic_delete" = "Delete";
+"generic_cancel" = "Cancel";
+"generic_new_category" = "New Category";
+"generic_symbol" = "Symbol";
+"generic_enter" = "Enter";
+"generic_version" = "Version";
+"generic_notification_body" = "Warranty will expire in %s days.";
 
+"home_default_category" = "All";
+"home_default_first_letter_category" = "A";
+
+"add_receipt_purchase" = "Purchase";
+"add_receipt_title" = "Add Receipt";
+"edit_receipt_title" = "Edit Receipt";
+"add_receipt_load_image" = "Load Image";
+"add_receipt_category_hint" = "Select receipt category";
+"add_receipt_warranty_hint" = "Is there a warranty for this purchase?";
+"add_receipt_end_warranty" = "End of Warranty Date";
+
+"dialog_app_image" = "Image";
+"dialog_app_use_existing" = "Use Existing";
+"dialog_app_take_photo" = "Take Photo";
+
+"sort_title" = "Sort By";
+"sort_title_ascending" = "Title A-Z";
+"sort_title_descending" = "Title Z-A";
+"sort_purchase_ascending" = "Purchase Date Ascending";
+"sort_purchase_descending" = "Purchase Date Descending";
+"sort_warranty_descending" = "Warranty End Descending";
+"sort_warranty_ascending" = "Warranty End Ascending";
+
+"settings_title" = "Settings";
+"settings_general" = "General";
+"settings_app" = "App";
+"settings_notifications" = "Notifications";
+"settings_notifications_hint" = "You haven't allowed the app to display notifications. You can enable this functionality in settings.";
+"settings_go_to" = "Go to Settings";
+"settings_notifications_enable" = "Enable Notifications";
+"settings_notifications_options" = "Notification Options";
+"settings_notifications_notify_me" = "Notify me before";
+"settings_notifications_days_hint" = "Notification will come %s days before the end of warranty.";
+"settings_empty_categories" = "You don't have any categories yet.";
+"settings_created_by" = "App created by\nRobert Adamczyk";
+"settings_thank_you" = "Thank you for using the app.\nIf you like it, please leave a positive review on the App Store.";

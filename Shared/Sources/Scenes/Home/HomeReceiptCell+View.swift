@@ -25,7 +25,7 @@ struct HomeReceiptCell: View {
                             homeViewModel.onImageTapped(image: uiimage)
                         }
                 }else {
-                    Color("grey")
+                    appColor(.gray)
                         .frame(width: 50, height: 67)
                         .cornerRadius(5)
                 }
@@ -50,11 +50,11 @@ struct HomeReceiptCell: View {
                         .apply(.medium, size: .M, color: .gray)
                 }
                 if let purchase = receipt.dateOfPurchase {
-                    Text("Purchase: \(purchase, style: .date)")
+                    Text(appText(.generic(.purchaseDate)) + ": \(purchase.formatted(date: .long, time: .omitted))")
                         .apply(.regular, size: .S, color: .gray)
                 }
                 if let warranty = receipt.endOfWarranty {
-                    Text("Guarantee to: \(warranty, style: .date)")
+                    Text(appText(.generic(.warranty)) + ": \(warranty.formatted(date: .long, time: .omitted))")
                         .apply(.regular, size: .S, color: .gray)
                 }
                 
@@ -77,10 +77,10 @@ struct HomeReceiptCell: View {
         .contentShape(RoundedRectangle(cornerRadius: 14))
         .contextMenu{
             Button(action: { homeViewModel.onRemoveReceiptTapped(receipt: receipt) }){
-                Text("Delete")
+                Text(appText(.generic(.delete)))
             }
             Button(action: { homeViewModel.onReceiptTapped(receipt) }){
-                Text("Edit")
+                Text(appText(.generic(.edit)))
             }
         }
     }

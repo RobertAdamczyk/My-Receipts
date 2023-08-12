@@ -10,17 +10,21 @@ import SwiftUI
 struct HomeCategorieCell: View {
     @EnvironmentObject var viewModel: HomeViewModel
     var categorie: Categorie?
-    var count: Int?
-    @State var title = "Categorie"
-    @State var symbol = "C"
+    var count: Int
+
+    init(categorie: Categorie? = nil, count: Int = 0) {
+        self.categorie = categorie
+        self.count = count
+    }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 5){
-            Text(categorie != nil ? symbol : "A")
+        VStack(alignment: .leading, spacing: 4) {
+            Text(categorie?.symbol ?? appText(.home(.firstLetterDefaultCategory)))
                 .apply(.medium, size: .H1, color: .black)
-            Text(categorie != nil ? title : "All".localized())
+            Text(categorie?.title ?? appText(.home(.defaultCategory)))
                 .apply(.regular, size: .S, color: .gray)
                 .lineLimit(1)
-            Text("\(count == nil ? categorie?.receipts?.count ?? 0 : count!) receipts")
+            Text("\(categorie?.receipts?.count ?? count) \(appText(.generic(.receipts)).lowercased())")
                 .apply(.regular, size: .XS, color: .gray)
                 .lineLimit(1)
         }
@@ -39,14 +43,6 @@ struct HomeCategorieCell: View {
                 .rotationEffect(.init(degrees: 90))
                 .padding(.top, 20)
                 .padding(.trailing, 5)
-        }
-        .onAppear() {
-            if let unwrappedTitle = categorie?.title {
-                title = unwrappedTitle
-            }
-            if let unwrappedSymbol = categorie?.symbol {
-                symbol = unwrappedSymbol
-            }
         }
     }
 }

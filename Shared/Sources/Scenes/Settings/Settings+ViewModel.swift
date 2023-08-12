@@ -10,12 +10,12 @@ import SwiftUI
 final class SettingsViewModel: ObservableObject {
 
     var generalDataSource: [Model] {
-        return [.init(text: "Notifications", action: onNotificationsSettingsTapped),
-                .init(text: "Categories", action: onCategoriesSettingsTapped)]
+        return [.init(text: appText(.settings(.notifications)), action: onNotificationsSettingsTapped),
+                .init(text: appText(.generic(.categories)), action: onCategoriesSettingsTapped)]
     }
 
     var appDataSource: [Model] {
-        return [.init(text: "About", action: onAboutTapped)]
+        return [.init(text: appText(.generic(.informations)), action: onAboutTapped)]
     }
 
     private let coordinator: Coordinator

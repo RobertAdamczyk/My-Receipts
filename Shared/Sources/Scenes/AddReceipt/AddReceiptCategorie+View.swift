@@ -11,7 +11,7 @@ struct AddReceiptCategorie: View {
     @ObservedObject var viewModel: AddReceiptViewModel
     var body: some View {
         List {
-            Section(header: Text("Choose categorie for the receipt.")){
+            Section(header: Text(appText(.addReceipt(.categoryHint)))){
                 ForEach(viewModel.categories, id: \.self) { categorie in
                     AppButton(.form(.checkmark(categorie.title ?? "",
                                                viewModel.newReceipt.categorie == categorie))) {
@@ -21,7 +21,7 @@ struct AddReceiptCategorie: View {
             }
             
         }
-        .navigationTitle("Categorie".localized())
+        .navigationTitle(appText(.generic(.categories)))
     }
 
     func onCategorieTapped(_ categorie: Categorie) {

@@ -18,11 +18,11 @@ struct CategoriesSettingsView: View {
     var body: some View {
         List{
             if viewModel.categories.isEmpty {
-                Text("You have no categories.")
+                Text(appText(.settings(.emptyCategories)))
                     .apply(.regular, size: .M, color: .gray)
                     .frame(maxWidth: .infinity, alignment: .center)
             }else {
-                Section(header: Text("Categories")) {
+                Section(header: Text(appText(.generic(.categories)))) {
                     ForEach(viewModel.categories) { categorie in
                         Text(categorie.title ?? "###")
                             .apply(.regular, size: .M, color: .gray)
@@ -33,7 +33,7 @@ struct CategoriesSettingsView: View {
            
         }
         .listStyle(.grouped)
-        .navigationTitle("Categories")
+        .navigationTitle(appText(.generic(.categories)))
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 AppButton(.appImage(.plus), action: viewModel.onAddCategorieTapped)

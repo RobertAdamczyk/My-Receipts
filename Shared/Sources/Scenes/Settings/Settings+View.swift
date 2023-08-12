@@ -17,19 +17,19 @@ struct SettingsView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("General")) {
+            Section(header: Text(appText(.settings(.generalSection)))) {
                 ForEach(viewModel.generalDataSource) { source in
                     makeButton(text: source.text, action: source.action)
                 }
             }
             
-            Section(header: Text("App")){
+            Section(header: Text(appText(.settings(.appSection)))){
                 ForEach(viewModel.appDataSource) { source in
                     makeButton(text: source.text, action: source.action)
                 }
             }
         }
-        .navigationTitle("Settings")
+        .navigationTitle(appText(.settings(.title)))
     }
 
     private func makeButton(text: String, action: @escaping () -> Void) -> some View {

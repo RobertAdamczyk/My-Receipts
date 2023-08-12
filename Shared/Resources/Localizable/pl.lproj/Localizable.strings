@@ -6,97 +6,55 @@
   
 */
 
-// File: ReceiptList
-"My Receipts" = "Moje Paragony";
-"You have no receipts." = "Nie masz paragonów. Dodaj nowy paragon w menu.";
-"Your Categories" = "Twoje Kategorie";
-"Categories" = "Kategorie";
-"Your Receipts" = "Twoje Paragony";
-"Receipts" = "Paragony";
-"Home" = "Home";
-"All" = "Wszystkie";
-"%lld receipts" = "%lld paragony";
+"generic_categories" = "Kategorie";
+"generic_warranty" = "Gwarancja";
+"generic_save" = "Zapisz";
+"generic_receipts" = "Paragony";
+"generic_purchase_date" = "Data zakupu";
+"generic_title" = "Tytuł";
+"generic_informations" = "Informacje";
+"generic_edit" = "Edytuj";
+"generic_delete" = "Usuń";
+"generic_cancel" = "Anuluj";
+"generic_new_category" = "Nowa Kategoria";
+"generic_symbol" = "Symbol";
+"generic_enter" = "Wprowadź";
+"generic_version" = "Wersja";
+"generic_notification_body" = "Gwarancja skończy się za %s dni.";
 
-// File: ReceiptRow
-"Purchase: %@" = "Kupiono: %@";
-"Guarantee to: %@" = "Gwarancja do: %@";
+"home_default_category" = "Wszystkie";
+"home_default_first_letter_category" = "A";
 
-// File: ReceiptCategorieList
-"You have no receipts here." = "Nie masz tutaj paragonów.";
+"add_receipt_purchase" = "Zakup";
+"add_receipt_title" = "Dodaj Paragon";
+"edit_receipt_title" = "Edytuj Paragon";
+"add_receipt_load_image" = "Wczytaj zdjęcie";
+"add_receipt_category_hint" = "Wybierz kategorie paragonu";
+"add_receipt_warranty_hint" = "Istnieje gwarancja do zakupu?";
+"add_receipt_end_warranty" = "Data zakończenia gwarancji";
 
-// File: AddReceipt
-"Title" = "Tytuł";
-"Categorie" = "Kategoria";
-"Guarantee" = "Gwarancja";
-"Purchase" = "Zakup";
-"Date of Purchase" = "Data zakupu";
-"Done" = "Zapisz";
-"New Receipt" = "Nowy Paragon";
-"Edit Receipt" = "Edycja Paragonu";
+"dialog_app_image" = "Zdjęcie";
+"dialog_app_use_existing" = "Wczytaj z galerii";
+"dialog_app_take_photo" = "Zrób zdjęcie";
 
-// File: ImageRow
-"Load Image" = "Wczytaj zdjęcie";
+"sort_title" = "Sortuj Według";
+"sort_title_ascending" = "Tytuł A-Z";
+"sort_title_descending" = "Tytuł Z-A";
+"sort_purchase_ascending" = "Data Zakupu Rosnąco";
+"sort_purchase_descending" = "Data Zakupu Malejąco";
+"sort_warranty_descending" = "Koniec Gwarancji Malejąco";
+"sort_warranty_ascending" = "Koniec Gwarancji Rosnąco";
 
-// File: WarrantyView
-"Is there a guarantee for the receipt?" = "Czy jest gwarancja do paragonu?";
-"End of Guarantee" = "Koniec gwarancji";
-
-//File: Home
-"Take a photo" = "Zrób zdjęcie";
-"Use existing" = "Wczytaj z galerii";
-
-//File: MenuBar
-"Add Receipt" = "Dodaj";
-"Settings" = "Ustawienia";
-
-//File: Settings
-"Notifications" = "Powiadomienia";
-"General" = "Ogólne";
-"About" = "O Aplikacji";
-"App" = "Aplikacja";
-
-//File: NotificationSettings
-"You haven't allowed this app to show notifications." = "Nie zezwolieś aplikacji do pokazywania powiadomień.";
-"You can enable this functionality in phone:" = "Możesz włączyć tą funkcję w telefonie:";
-"Settings → My Receipts → Notifications → Allow" = "Ustawienia → Moje Paragony → Powiadomienia → Zezwól";
-"Enable Notifications" = "Aktywuj powiadomienia";
-"Allow Notifications" = "Zezwól na powiadomienia";
-"Notification Options" = "Opcje Powiadomień";
-"The alert will come %lld days before the guarantee expires." = "Powiadomienie przyjdzie %lld dni przed końcem gwarancji.";
-"Notify me before" = "Powiadom mnie przed";
-"The guarantee will expire in %lld days." = "Gwarancja wygaśnie za %lld dni.";
-
-//File: CategorieSettings
-"You have no categories." = "Nie masz kategorii.";
-"Add" = "Dodaj";
-
-//File: AboutView
-"Version:" = "Wersja:";
-"Created by:" = "Stworzył:";
-"Thanks for using my application. \n❤️❤️❤️" = "Dziękuję za pobranie mojej aplikacji. \n❤️❤️❤️";
-"If you like it, leave a review on the AppStore." = "Jeśli Ci się podoba to zostaw ocenę w AppStore.";
-
-//File: AddCategorieView
-"Enter..." = "Wprowadź...";
-"New Categorie" = "Nowa Kategoria";
-
-//File: SortBy
-"Sort by:" = "Sortuj według:";
-
-// File: SortBy (enum)
-"Title (A-Z)" = "Tytuł (A-Z)";
-"Title (Z-A)" = "Tytuł (Z-A)";
-"Date of Purchase (Ascending)" = "Data zakupu (Od najstarszego)";
-"Date of Purchase (Descending)" = "Data zakupu (Od najnowszego)";
-"End of Warranty (Ascending)" = "Koniec gwarancji (Od najstarszego)";
-"End of Warranty (Descending)" = "Koniec gwarancji (Od najnowszego)";
-
-//Files: Camera
-"You haven't allowed this app to use camera." = "Nie zezwolieś aplikacji do korzystania z kamery.";
-"You can enable this functionality in phone Settings." = "Możesz włączyć tą funkcje w ustawieniach telefonu.";
-"USE THIS PHOTO" = "UŻYJ TO ZDJĘCIE";
-
-//File: ImagePreview
-"You haven't allowed this app to save photos." = "Nie zezwoliłeś aplikacji do zapisywania zdjęć.";
-"Save in Photos" = "Zapisz w galerii";
-"Saved" = "Zapisano";
+"settings_title" = "Ustawienia";
+"settings_general" = "Ogólne";
+"settings_app" = "Aplikacja";
+"settings_notifications" = "Powiadomienia";
+"settings_notifications_hint" = "Nie zezwoliłeś aplikacji na wyświetlanie powiadomień. Możesz włączyć tą funkcjonalność w ustawieniach.";
+"settings_go_to" = "Idź do ustawień";
+"settings_notifications_enable" = "Włącz powiadomienia";
+"settings_notifications_options" = "Opcje Powiadomień";
+"settings_notifications_notify_me" = "Powiadom mnie przed";
+"settings_notifications_days_hint" = "Powiadomienie będzie przychodzić %s dni przed upływem gwarancji.";
+"settings_empty_categories" = "Nie masz jeszcze kategorii.";
+"settings_created_by" = "Aplikacja stworzona przez \nRobert Adamczyk";
+"settings_thank_you" = "Dziękuje za używanie aplikacji.\nJeśli Ci się podoba to zostaw proszę pozytywną opinię w AppStore.";

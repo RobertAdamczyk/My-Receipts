@@ -36,7 +36,8 @@ struct DialogApp: ViewModifier {
             content
                 .alert(item?.alertTitle ?? "", isPresented: $showDialog, actions: {
                     makeBody()
-                    SwiftUI.Button("Abbrechen", role: .cancel) { }
+                    SwiftUI.Button(appText(.generic(.cancel)),
+                                   role: .cancel) { }
                 })
         } else {
             content
@@ -50,8 +51,10 @@ struct DialogApp: ViewModifier {
     private func makeBody() -> some View {
         switch item {
         case .loadPhoto(let takePhoto, let selectPhoto):
-            SwiftUI.Button("Take a photo", action: takePhoto)
-            SwiftUI.Button("Use existing", action: selectPhoto)
+            SwiftUI.Button(appText(.dialogApp(.takePhoto)),
+                           action: takePhoto)
+            SwiftUI.Button(appText(.dialogApp(.useExisting)),
+                           action: selectPhoto)
         default:
             EmptyView()
         }
@@ -66,7 +69,7 @@ extension DialogApp {
 
         var alertTitle: String {
             switch self {
-            case .loadPhoto: return "New Receipt"
+            case .loadPhoto: return appText(.dialogApp(.image))
             }
         }
 

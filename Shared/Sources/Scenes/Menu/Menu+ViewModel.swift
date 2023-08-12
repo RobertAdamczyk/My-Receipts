@@ -13,9 +13,9 @@ final class MenuViewModel: ObservableObject {
 
     var dataSource: [Model] {
         return [
-            .init(image: .scrollFill, text: "Receipts", action: onReceiptsTapped),
-            .init(image: .plusAppFill, text: "Add Receipt", action: onAddReceiptTapped),
-            .init(image: .gearshapeFill, text: "Settings", action: onSettingsTapped)
+            .init(image: .scrollFill, text: appText(.generic(.receipts)), action: onReceiptsTapped),
+            .init(image: .plusAppFill, text: appText(.addReceipt(.newReceiptTitle)), action: onAddReceiptTapped),
+            .init(image: .gearshapeFill, text: appText(.settings(.title)), action: onSettingsTapped)
         ]
     }
 

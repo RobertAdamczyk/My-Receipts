@@ -19,8 +19,8 @@ final class AddReceiptViewModel: ObservableObject {
 
     var navigationTitle: String {
         switch context {
-        case .new: return "New Receipt".localized()
-        case .edit: return "Edit Receipt".localized()
+        case .new: return appText(.addReceipt(.newReceiptTitle))
+        case .edit: return appText(.addReceipt(.editReceiptTitle))
         }
     }
 

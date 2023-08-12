@@ -14,7 +14,7 @@ struct SortByView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack(spacing: -0.5){
-                Text("Sort by:")
+                Text(appText(.sortBy(.title)))
                     .apply(.medium, size: .L, color: .black)
                     .frame(maxWidth: .infinity)
                     .padding(16)

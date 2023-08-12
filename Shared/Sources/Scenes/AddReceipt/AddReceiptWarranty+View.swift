@@ -11,21 +11,21 @@ struct AddReceiptWarrantyView: View {
     @ObservedObject var viewModel: AddReceiptViewModel
     var body: some View {
         List {
-            Section(header: Text("Is there a guarantee for the receipt?")){
+            Section(header: Text(appText(.addReceipt(.warrantyHint)))){
                 Toggle(isOn: $viewModel.warranty.animation()) {
-                    Text("Guarantee")
+                    Text(appText(.generic(.warranty)))
                         .apply(.regular, size: .M, color: .gray)
                 }
             }
             if viewModel.warranty {
                 Section{
                     DatePicker(selection: $viewModel.newReceipt.endOfWarranty, displayedComponents: .date) {
-                        Text("End of Guarantee")
+                        Text(appText(.addReceipt(.endWarranty)))
                             .apply(.regular, size: .M, color: .gray)
                     }
                 }
             }
         }
-        .navigationTitle("Guarantee".localized())
+        .navigationTitle(appText(.generic(.warranty)))
     }
 }

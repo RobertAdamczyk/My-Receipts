@@ -22,23 +22,22 @@ struct AboutView: View {
             }
             Section {
                 VStack(spacing: 5){
-                    Text("Version: 1.0.1")
-                    Text("Created by: Robert Adamczyk")
+                    Text("\(appText(.generic(.version))): 1.0.1")
+                    Text(appText(.settings(.aboutCreatedBy)))
                 }
                 .apply(.regular, size: .M, color: .gray)
                 .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.center)
             }
             Section {
                 VStack(spacing: 16) {
-                    Text("Thanks for using my application.")
-                    Text("❤️❤️❤️")
-                    Text("If you like it, leave a review on the AppStore.")
+                    Text(appText(.settings(.aboutThankYou)))
                 }
                 .apply(.regular, size: .M, color: .gray)
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.center)
             }
         }
-        .navigationTitle("About")
+        .navigationTitle(appText(.generic(.informations)))
     }
 }

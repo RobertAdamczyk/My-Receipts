@@ -59,7 +59,7 @@ final class NotificationsRepository {
             return
         }
         content.title = title
-        content.subtitle = "The guarantee will expire in \(daysNotification) days.".localized()
+        content.subtitle = appText(.generic(.notificationBody), args: daysNotification.formatted())
         content.sound = UNNotificationSound.default
 
         // show this notification five seconds from now

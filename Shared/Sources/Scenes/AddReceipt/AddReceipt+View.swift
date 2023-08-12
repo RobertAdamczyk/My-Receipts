@@ -35,27 +35,30 @@ struct AddReceipt: View {
                     }
                     .listRowInsets(EdgeInsets())
                 }
-                Section(header: Text("Info")) {
-                    TextField("Title", text: $viewModel.newReceipt.title)
+                Section(header: Text(appText(.generic(.informations)))) {
+                    TextField(appText(.generic(.title)),
+                              text: $viewModel.newReceipt.title)
                         .apply(.regular, size: .M, color: .gray)
                     if !viewModel.categories.isEmpty {
-                        AppButton(.form(.navigation("Categorie", viewModel.newReceipt.categorie?.title)),
+                        AppButton(.form(.navigation(appText(.generic(.categories)),
+                                                    viewModel.newReceipt.categorie?.title)),
                                   action: viewModel.onCategoriesTapped)
 
                     }
-                    AppButton(.form(.navigation("Guarantee",
+                    AppButton(.form(.navigation(appText(.generic(.warranty)),
                                                 viewModel.endOfWarrantyText)), action: viewModel.onWarrantyTapped)
                 }
 
-                Section(header: Text("Purchase")) {
+                Section(header: Text(appText(.addReceipt(.purchaseSection)))) {
                     DatePicker(selection: $viewModel.newReceipt.dateOfPurchase,
                                displayedComponents: .date) {
-                        Text("Date of Purchase")
+                        Text(appText(.generic(.purchaseDate)))
                             .apply(.regular, size: .M, color: .gray)
                     }
                 }
             }
-            AppButton(.fill("Done".localized()), action: viewModel.onSaveButtonTapped)
+            AppButton(.fill(appText(.generic(.saveButton))),
+                      action: viewModel.onSaveButtonTapped)
                 .disabled(!viewModel.meetsRequirementsToCreateReceipt)
                 .stickyButton
         }

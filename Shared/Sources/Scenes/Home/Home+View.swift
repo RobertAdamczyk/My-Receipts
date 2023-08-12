@@ -19,7 +19,7 @@ struct HomeView: View {
         VStack(spacing: 0){
             ScrollView(showsIndicators: false){
                 VStack(spacing: 0){
-                    Text("Your Categories")
+                    Text(appText(.generic(.categories)))
                         .apply(.regular, size: .S, color: .gray)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
@@ -42,16 +42,13 @@ struct HomeView: View {
                 }
                 
                 VStack(spacing: 0){
-                    Text("Your Receipts")
+                    Text(appText(.generic(.receipts)))
                         .apply(.regular, size: .S, color: .gray)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                     VStack(spacing: 28){
                         ForEach(homeViewModel.receipts, id: \.self) { receipt in
                             HomeReceiptCell(receipt: receipt)
-                                .onAppear(){
-                                    //settingsViewModel.checkNotifications(array: coreData.receipts)
-                                }
                         }
                     }
                     .padding()
@@ -59,20 +56,10 @@ struct HomeView: View {
             }
             Spacer(minLength: 0)
         }
-        .background(Color("background"))
+        .background(appColor(.background))
         .ignoresSafeArea(edges: .bottom)
         .onAppear(perform: homeViewModel.onViewAppear)
         .onDisappear(perform: homeViewModel.onViewDisappear)
-        //{
-            // settingsViewModel.notificationRequest() // TODO: X
-            //coreData.fetchCategories()
-            //coreData.fetchReceipts()
-        //}
-//        .onChange(of: settingsViewModel.notificationAllowed) { value in //
-//            if value {
-//                settingsViewModel.checkNotifications(array: coreData.receipts)
-//            }
-//        }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 AppButton(.appImage(.arrowDown), action: homeViewModel.onSortByTapped)

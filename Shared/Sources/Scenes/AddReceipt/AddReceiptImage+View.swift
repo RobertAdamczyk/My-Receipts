@@ -25,7 +25,7 @@ struct AddReceiptImageView: View {
                         .resizable()
                         .frame(width: 40, height: 30)
                         .padding(.horizontal, 60)
-                    Text("Load Image")
+                    Text(appText(.addReceipt(.loadImage)))
                         .apply(.regular, size: .M, color: .gray)
                 }
                 .padding(.vertical, 100)

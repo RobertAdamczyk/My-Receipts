@@ -13,9 +13,9 @@ struct NotificationsSettingsView: View {
 
     private var goToSettingsAttributedString: AttributedString {
         guard !viewModel.notificationAllowedToggle else { return .init("") }
-        let goToSettings = "Go to settings"
-        var attributedString = AttributedString("You haven't allowed this app to show notifications. You can enable this functionality in settings." + " " + goToSettings)
-        guard let range = attributedString.range(of: goToSettings) else { return .init("") }
+        let highlighted = appText(.settings(.notificationsHintHightlighted))
+        var attributedString = AttributedString(appText(.settings(.notificationsHint)) + " " + highlighted)
+        guard let range = attributedString.range(of: highlighted) else { return .init("") }
         attributedString[range].foregroundColor = appColor(.darkBlue)
         attributedString[range].underlineStyle = .single
         return attributedString
@@ -27,29 +27,33 @@ struct NotificationsSettingsView: View {
     
     var body: some View {
         List {
-            Section(header: Text("Enable Notifications"),
+            Section(header: Text(appText(.settings(.notificationsToggle))),
                     footer: Text(goToSettingsAttributedString)
                 .onTapGesture(perform: viewModel.onGoToSettingsTapped)) {
-                Toggle("Allow Notifications", isOn: $viewModel.notificationAllowedToggle)
-                        .apply(.regular, size: .M, color: .gray)
-                        .disabled(true)
-                        .onTapGesture(perform: viewModel.onToggleTapped)
-            }
+                    Toggle(isOn: $viewModel.notificationAllowedToggle, label: {
+                        Text(appText(.settings(.notificationsToggle)))
+                            .apply(.regular, size: .M, color: .gray)
+                    })
+                    .disabled(true)
+                    .onTapGesture(perform: viewModel.onToggleTapped)
+
+                }
             
-            Section(header: Text("Notification Options"),
-                    footer: Text("The alert will come \(viewModel.daysNotification) days before the guarantee expires.")){
+            Section(header: Text(appText(.settings(.notificationsOptions))),
+                    footer: Text(appText(.settings(.notificationsDaysHint),
+                                         args: viewModel.daysNotification.formatted()))){
                 Picker(selection: $viewModel.daysNotification) {
                     ForEach(0..<51) { i in
                         Text("\(i)")
                     }
                 } label: {
-                    Text("Notify me before")
+                    Text(appText(.settings(.notificationNotifyMe)))
                         .apply(.regular, size: .M, color: .gray)
                 }
 
             }
         }
-        .navigationTitle("Notifications")
+        .navigationTitle(appText(.settings(.notifications)))
         .onChange(of: viewModel.daysNotification) { _ in
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             viewModel.checkNotifications()
