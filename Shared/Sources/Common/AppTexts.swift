@@ -96,8 +96,6 @@ enum AppText {
         case notificationNotifyMe = "settings_notifications_notify_me"
         case notificationsDaysHint = "settings_notifications_days_hint"
         case emptyCategories = "settings_empty_categories"
-        case aboutCreatedBy = "settings_created_by"
-        case aboutThankYou = "settings_thank_you"
     }
 
     enum ImagePreview: String {

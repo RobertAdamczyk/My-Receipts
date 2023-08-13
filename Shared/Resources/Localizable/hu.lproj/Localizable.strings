@@ -56,8 +56,6 @@
 "settings_notifications_notify_me" = "Értesítés előtt";
 "settings_notifications_days_hint" = "Az értesítés %s nappal a garancia lejárata előtt érkezik.";
 "settings_empty_categories" = "Még nincsenek kategóriái.";
-"settings_created_by" = "Az alkalmazást készítette: \nRobert Adamczyk";
-"settings_thank_you" = "Köszönjük, hogy használja az alkalmazást.\nHa tetszik, kérjük, hagyjon pozitív értékelést az AppStore-ban.";
 
 "image_preview_permission_error_title" = "Nem engedélyezted ennek az alkalmazásnak a fényképek mentését.";
 "image_preview_permission_error_message" = "Ezt a funkciót engedélyezheted a telefon Beállításaiban.";

@@ -56,8 +56,6 @@
 "settings_notifications_notify_me" = "إعلامي قبل";
 "settings_notifications_days_hint" = "الإشعار سيصل %s أيام قبل انتهاء الضمان.";
 "settings_empty_categories" = "ليس لديك أي فئات حتى الآن.";
-"settings_created_by" = "التطبيق من صنع\nروبرت آدمشيك";
-"settings_thank_you" = "شكرًا لاستخدام التطبيق.\nإذا أعجبك التطبيق، الرجاء ترك تقييم إيجابي في متجر التطبيقات.";
 
 "image_preview_permission_error_title" = "لم تسمح لهذا التطبيق بحفظ الصور.";
 "image_preview_permission_error_message" = "يمكنك تمكين هذه الوظيفة في إعدادات الهاتف.";

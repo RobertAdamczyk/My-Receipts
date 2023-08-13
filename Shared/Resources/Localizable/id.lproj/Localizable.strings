@@ -56,8 +56,6 @@
 "settings_notifications_notify_me" = "Beritahu saya sebelumnya";
 "settings_notifications_days_hint" = "Notifikasi akan dikirim %s hari sebelum garansi berakhir.";
 "settings_empty_categories" = "Anda belum memiliki kategori.";
-"settings_created_by" = "Aplikasi dibuat oleh \nRobert Adamczyk";
-"settings_thank_you" = "Terima kasih telah menggunakan aplikasi ini.\nJika Anda menyukainya, mohon tinggalkan ulasan positif di AppStore.";
 
 "image_preview_permission_error_title" = "Anda belum mengizinkan aplikasi ini untuk menyimpan foto.";
 "image_preview_permission_error_message" = "Anda dapat mengaktifkan fungsi ini di Pengaturan ponsel.";

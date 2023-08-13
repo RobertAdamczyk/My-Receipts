@@ -56,8 +56,6 @@
 "settings_notifications_notify_me" = "Уведомить меня за";
 "settings_notifications_days_hint" = "Уведомление придет за %s дней до истечения гарантии.";
 "settings_empty_categories" = "У вас пока нет категорий.";
-"settings_created_by" = "Приложение создано\nРобертом Адамчиком";
-"settings_thank_you" = "Спасибо за использование приложения.\nЕсли вам нравится, пожалуйста, оставьте положительный отзыв в AppStore.";
 
 "image_preview_permission_error_title" = "Вы не разрешили этому приложению сохранять фотографии.";
 "image_preview_permission_error_message" = "Вы можете включить эту функцию в настройках телефона.";

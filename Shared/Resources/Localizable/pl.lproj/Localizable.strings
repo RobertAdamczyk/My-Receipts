@@ -56,8 +56,6 @@
 "settings_notifications_notify_me" = "Powiadom mnie przed";
 "settings_notifications_days_hint" = "Powiadomienie będzie przychodzić %s dni przed upływem gwarancji.";
 "settings_empty_categories" = "Nie masz jeszcze kategorii.";
-"settings_created_by" = "Aplikacja stworzona przez \nRobert Adamczyk";
-"settings_thank_you" = "Dziękuje za używanie aplikacji.\nJeśli Ci się podoba to zostaw proszę pozytywną opinię w AppStore.";
 
 "image_preview_permission_error_title" = "Nie zezwoliłeś tej aplikacji na zapisywanie zdjęć.";
 "image_preview_permission_error_message" = "Możesz włączyć tę funkcję w Ustawieniach telefonu.";
