@@ -14,7 +14,7 @@ final class SKStoreReviewRepository {
     @AppStorage("lastCounted") private var lastCounted: Double = Date.now.timeIntervalSince1970
 
     private let countToRequest: Int = 3
-    private let timeInSecToIncreaseCount: Double = 20 // 3600 * 24 TODO: Make this back !
+    private let timeInSecToIncreaseCount: Double = 3600 * 24
 
     private var requestReviewTask: Task<(), Never>?
 
@@ -26,9 +26,6 @@ final class SKStoreReviewRepository {
         Task {
             for await _ in await NotificationCenter.default.notifications(named: UIApplication.didBecomeActiveNotification) {
                 requestReviewIfNeeded()
-                #if DEBUG
-                print("REVIEW: currentCount:\(currentCount) lastCounted:\(lastCounted)")
-                #endif
             }
         }
     }
