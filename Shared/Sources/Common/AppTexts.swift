@@ -15,6 +15,7 @@ enum AppText {
     case dialogApp(DialogApp)
     case sortBy(SortBy)
     case settings(Settings)
+    case imagePreview(ImagePreview)
 
     var value: String {
         switch self {
@@ -24,6 +25,7 @@ enum AppText {
         case .dialogApp(let dialogApp): return dialogApp.rawValue
         case .sortBy(let sortBy): return sortBy.rawValue
         case .settings(let settings): return settings.rawValue
+        case .imagePreview(let imagePreview): return imagePreview.rawValue
         }
     }
 
@@ -43,6 +45,8 @@ enum AppText {
         case enter = "generic_enter"
         case version = "generic_version"
         case notificationBody = "generic_notification_body"
+        case ok = "Ok"
+        case saved = "Saved"
     }
 
     enum Home: String {
@@ -90,6 +94,11 @@ enum AppText {
         case emptyCategories = "settings_empty_categories"
         case aboutCreatedBy = "settings_created_by"
         case aboutThankYou = "settings_thank_you"
+    }
+
+    enum ImagePreview: String {
+        case permissionErrorTitle = "You haven't allowed this app to save photos."
+        case permissionErrorMessage = "You can enable this functionality in phone Settings."
     }
 }
 

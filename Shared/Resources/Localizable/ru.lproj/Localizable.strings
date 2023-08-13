@@ -59,3 +59,7 @@
 "settings_created_by" = "Приложение создано\nРобертом Адамчиком";
 "settings_thank_you" = "Спасибо за использование приложения.\nЕсли вам нравится, пожалуйста, оставьте положительный отзыв в AppStore.";
 
+"image_preview_permission_error_title" = "Вы не разрешили этому приложению сохранять фотографии.";
+"image_preview_permission_error_message" = "Вы можете включить эту функцию в настройках телефона.";
+"generic_ok" = "Ок";
+"generic_saved" = "Сохранено";

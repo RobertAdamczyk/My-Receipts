@@ -59,3 +59,7 @@
 "settings_created_by" = "Anwendung erstellt von\nRobert Adamczyk";
 "settings_thank_you" = "Vielen Dank, dass du die Anwendung verwendest.\nWenn dir die Anwendung gefällt, hinterlasse bitte eine positive Bewertung im AppStore.";
 
+"image_preview_permission_error_title" = "Du hast dieser App nicht erlaubt, Fotos zu speichern.";
+"image_preview_permission_error_message" = "Du kannst diese Funktion in den Telefon-Einstellungen aktivieren.";
+"generic_ok" = "Ok";
+"generic_saved" = "Gespeichert";

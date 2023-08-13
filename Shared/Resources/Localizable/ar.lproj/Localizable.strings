@@ -58,3 +58,8 @@
 "settings_empty_categories" = "ليس لديك أي فئات حتى الآن.";
 "settings_created_by" = "التطبيق من صنع\nروبرت آدمشيك";
 "settings_thank_you" = "شكرًا لاستخدام التطبيق.\nإذا أعجبك التطبيق، الرجاء ترك تقييم إيجابي في متجر التطبيقات.";
+
+"image_preview_permission_error_title" = "لم تسمح لهذا التطبيق بحفظ الصور.";
+"image_preview_permission_error_message" = "يمكنك تمكين هذه الوظيفة في إعدادات الهاتف.";
+"generic_ok" = "حسنًا";
+"generic_saved" = "تم الحفظ";

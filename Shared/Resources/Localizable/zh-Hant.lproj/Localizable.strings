@@ -59,3 +59,7 @@
 "settings_created_by" = "應用程式由\nRobert Adamczyk 開發";
 "settings_thank_you" = "感謝您使用本應用程式。\n如果您喜歡，請在AppStore中給予正面評價。";
 
+"image_preview_permission_error_title" = "您尚未允許此應用程式儲存照片。";
+"image_preview_permission_error_message" = "您可以在手機設定中啟用此功能。";
+"generic_ok" = "確定";
+"generic_saved" = "已儲存";

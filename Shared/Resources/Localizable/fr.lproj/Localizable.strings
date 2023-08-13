@@ -58,3 +58,8 @@
 "settings_empty_categories" = "Vous n'avez pas encore de catégories.";
 "settings_created_by" = "Application créée par \nRobert Adamczyk";
 "settings_thank_you" = "Merci d'utiliser l'application.\nSi vous l'appréciez, veuillez laisser un avis positif sur l'AppStore.";
+
+"image_preview_permission_error_title" = "Vous n'avez pas autorisé cette application à enregistrer des photos.";
+"image_preview_permission_error_message" = "Vous pouvez activer cette fonctionnalité dans les paramètres du téléphone.";
+"generic_ok" = "Ok";
+"generic_saved" = "Enregistré";

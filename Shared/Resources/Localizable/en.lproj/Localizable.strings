@@ -58,3 +58,8 @@
 "settings_empty_categories" = "You don't have any categories yet.";
 "settings_created_by" = "App created by\nRobert Adamczyk";
 "settings_thank_you" = "Thank you for using the app.\nIf you like it, please leave a positive review on the App Store.";
+
+"image_preview_permission_error_title" = "You haven't allowed this app to save photos.";
+"image_preview_permission_error_message" = "You can enable this functionality in phone Settings.";
+"generic_ok" = "Ok";
+"generic_saved" = "Saved";

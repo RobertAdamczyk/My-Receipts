@@ -59,3 +59,7 @@
 "settings_created_by" = "Az alkalmazást készítette: \nRobert Adamczyk";
 "settings_thank_you" = "Köszönjük, hogy használja az alkalmazást.\nHa tetszik, kérjük, hagyjon pozitív értékelést az AppStore-ban.";
 
+"image_preview_permission_error_title" = "Nem engedélyezted ennek az alkalmazásnak a fényképek mentését.";
+"image_preview_permission_error_message" = "Ezt a funkciót engedélyezheted a telefon Beállításaiban.";
+"generic_ok" = "Ok";
+"generic_saved" = "Mentve";

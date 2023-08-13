@@ -28,7 +28,7 @@ struct ImagePreviewView: View {
                 appImage(.checkmark)
                     .resizable()
                     .frame(width: 80, height: 80)
-                Text("Saved")
+                Text(appText(.generic(.saved)))
             }
             .apply(.medium, size: .L, color: .hellBlue)
             .frame(width: 170, height: 170)
@@ -48,9 +48,9 @@ struct ImagePreviewView: View {
             }
         }
         .alert(isPresented: $viewModel.showAlert) {
-            Alert(title: Text("You haven't allowed this app to save photos."),
-                  message: Text("You can enable this functionality in phone Settings."),
-                  dismissButton: .default(Text("OK")))
+            Alert(title: Text(appText(.imagePreview(.permissionErrorTitle))),
+                  message: Text(appText(.imagePreview(.permissionErrorMessage))),
+                  dismissButton: .default(Text(appText(.generic(.ok)))))
         }
     }
 }
