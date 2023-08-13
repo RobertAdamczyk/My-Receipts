@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct AboutView: View {
+
+    private var versionText: String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "#error"
+    }
+
     var body: some View {
         Form{
             Section {
-                Image("logo")
+                Image("AppIconImage")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 180)
@@ -22,7 +27,7 @@ struct AboutView: View {
             }
             Section {
                 VStack(spacing: 5){
-                    Text("\(appText(.generic(.version))): 1.0.1")
+                    Text("\(appText(.generic(.version))): \(versionText)")
                     Text(appText(.settings(.aboutCreatedBy)))
                 }
                 .apply(.regular, size: .M, color: .gray)
