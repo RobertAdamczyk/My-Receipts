@@ -63,3 +63,6 @@
 "image_preview_permission_error_message" = "يمكنك تمكين هذه الوظيفة في إعدادات الهاتف.";
 "generic_ok" = "حسنًا";
 "generic_saved" = "تم الحفظ";
+
+"generic_author" = "المؤلف";
+"generic_contact" = "اتصال";

@@ -63,3 +63,6 @@
 "image_preview_permission_error_message" = "Вы можете включить эту функцию в настройках телефона.";
 "generic_ok" = "Ок";
 "generic_saved" = "Сохранено";
+
+"generic_author" = "Автор";
+"generic_contact" = "Контакт";

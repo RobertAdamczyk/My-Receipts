@@ -63,3 +63,6 @@
 "image_preview_permission_error_message" = "您可以在手機設定中啟用此功能。";
 "generic_ok" = "確定";
 "generic_saved" = "已儲存";
+
+"generic_author" = "作者";
+"generic_contact" = "聯絡方式";

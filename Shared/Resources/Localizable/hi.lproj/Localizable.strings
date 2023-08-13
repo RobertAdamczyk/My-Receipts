@@ -63,3 +63,6 @@
 "image_preview_permission_error_message" = "आप फ़ोन सेटिंग्स में इस संवादाता को सक्षम कर सकते हैं।";
 "generic_ok" = "ठीक है";
 "generic_saved" = "सहेजा गया";
+
+"generic_author" = "लेखक";
+"generic_contact" = "संपर्क";

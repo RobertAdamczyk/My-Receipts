@@ -63,3 +63,6 @@
 "image_preview_permission_error_message" = "You can enable this functionality in phone Settings.";
 "generic_ok" = "Ok";
 "generic_saved" = "Saved";
+
+"generic_author" = "Author";
+"generic_contact" = "Contact";

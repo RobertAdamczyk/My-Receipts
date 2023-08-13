@@ -63,3 +63,6 @@
 "image_preview_permission_error_message" = "Du kannst diese Funktion in den Telefon-Einstellungen aktivieren.";
 "generic_ok" = "Ok";
 "generic_saved" = "Gespeichert";
+
+"generic_author" = "Autor";
+"generic_contact" = "Kontakt";

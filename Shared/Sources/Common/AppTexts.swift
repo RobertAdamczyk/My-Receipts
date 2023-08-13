@@ -45,8 +45,12 @@ enum AppText {
         case enter = "generic_enter"
         case version = "generic_version"
         case notificationBody = "generic_notification_body"
-        case ok = "Ok"
-        case saved = "Saved"
+        case ok = "generic_ok"
+        case saved = "generic_saved"
+        case author = "generic_author"
+        case contact = "generic_contact"
+        case appStore = "AppStore"
+        case github = "GitHub"
     }
 
     enum Home: String {
@@ -97,8 +101,8 @@ enum AppText {
     }
 
     enum ImagePreview: String {
-        case permissionErrorTitle = "You haven't allowed this app to save photos."
-        case permissionErrorMessage = "You can enable this functionality in phone Settings."
+        case permissionErrorTitle = "image_preview_permission_error_title"
+        case permissionErrorMessage = "image_preview_permission_error_message"
     }
 }
 
