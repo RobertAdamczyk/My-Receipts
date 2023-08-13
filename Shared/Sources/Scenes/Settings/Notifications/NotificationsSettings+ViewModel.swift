@@ -49,6 +49,7 @@ final class NotificationsSettingsViewModel: ObservableObject {
             for await newValue in coordinator.dependencies.notificationsRepository.$notificationAllowed.values {
                 await MainActor.run {
                     self.notificationAllowedToggle = newValue
+                    checkNotifications()
                 }
             }
         }

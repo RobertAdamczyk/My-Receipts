@@ -29,23 +29,27 @@ final class NotificationsRepository {
 
     func checkNotifications(array: [Receipt]) {
         if !notificationAllowed {
-            print("DELETED NOTIFICATIONS")
+            debugPrint("Notifications not allowed. Deleting all notifications...")
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             return
         }
 
-        let receiptsWithWarranty = array.filter({ $0.endOfWarranty != nil })
+        let receiptsWithWarranty = array.filter {
+            guard let endOfWarranty = $0.endOfWarranty else { return false }
+            return endOfWarranty > .now
+        }
 
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
             if notifications.count == receiptsWithWarranty.count {
-                print("Notifications OK !!!")
+                debugPrint("Notifications Count OK !")
                 return
             }else {
-                print("NOTIFICATION NOT OK \(notifications.count) != \(receiptsWithWarranty.count)")
+                debugPrint("Notifications Count \(notifications.count) NOT OK ! Creating notifications for \(receiptsWithWarranty.count) Receipts...")
                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-                for receipt in array {
+                for receipt in receiptsWithWarranty {
                     self.createNotification(for: receipt)
                 }
+                debugPrint("Notifications created.")
             }
         }
     }

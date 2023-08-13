@@ -11,6 +11,7 @@
 		E10FE3552A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FE3542A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift */; };
 		E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
 		E11981322A882C45005FA7E1 /* SKStoreReviewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11981312A882C45005FA7E1 /* SKStoreReviewRepository.swift */; };
+		E11981482A88D14A005FA7E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11981472A88D14A005FA7E1 /* AppDelegate.swift */; };
 		E124AA1226498FB6009CE167 /* CategoriesSettings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA1126498FB6009CE167 /* CategoriesSettings+ViewModel.swift */; };
 		E124AA192649C3F3009CE167 /* AddCategorie+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124AA182649C3F3009CE167 /* AddCategorie+View.swift */; };
 		E125A87B2A7FB10F0035B34D /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125A87A2A7FB10F0035B34D /* ViewFactory.swift */; };
@@ -86,6 +87,7 @@
 		E11981442A883CA7005FA7E1 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E11981452A883CAE005FA7E1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E11981462A883CAE005FA7E1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E11981472A88D14A005FA7E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E124AA1126498FB6009CE167 /* CategoriesSettings+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesSettings+ViewModel.swift"; sourceTree = "<group>"; };
 		E124AA182649C3F3009CE167 /* AddCategorie+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCategorie+View.swift"; sourceTree = "<group>"; };
 		E125A87A2A7FB10F0035B34D /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				E10FE33F2A82F39800EB88C4 /* Resources */,
 				E10FE33E2A82F39200EB88C4 /* Sources */,
 				E180DF272632F9C400CC5CC8 /* My_ReceiptsApp.swift */,
+				E11981472A88D14A005FA7E1 /* AppDelegate.swift */,
 				E180DF532632FBD800CC5CC8 /* TabsView.swift */,
 				E116C62B2A7AF82500A5783F /* Coordinator.swift */,
 				E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */,
@@ -529,6 +532,7 @@
 				E180DF912633844900CC5CC8 /* FormFrame.swift in Sources */,
 				E18430772645F8B900026A43 /* CacheRepository.swift in Sources */,
 				E167BBD4264AE85E00AA6CA2 /* AddReceiptCategorie+View.swift in Sources */,
+				E11981482A88D14A005FA7E1 /* AppDelegate.swift in Sources */,
 				E12DFE932A856EFD00688DD7 /* AppButton.swift in Sources */,
 				E10FE3532A82F70800EB88C4 /* Menu+ViewModel.swift in Sources */,
 				E180DF84263361F100CC5CC8 /* ImagePicker+View.swift in Sources */,

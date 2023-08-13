@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct My_ReceiptsApp: App {
 
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var coordinator: Coordinator
 
     init() {
