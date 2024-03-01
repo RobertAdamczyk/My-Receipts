@@ -58,6 +58,7 @@ final class AddReceiptViewModel: ObservableObject {
 
     func onViewAppear() {
         if initialViewAppear {
+            guard case .new = context else { return }
             coordinator.presentDialogApp(.loadPhoto({ [weak self] in
                 self?.showCamera()
             }, { [weak self] in

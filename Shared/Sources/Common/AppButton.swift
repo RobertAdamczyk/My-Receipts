@@ -33,7 +33,7 @@ struct AppButton: View {
                 .frame(maxWidth: .infinity)
                 .background {
                     RoundedRectangle(cornerRadius: 16)
-                        .foregroundColor(appColor(.darkBlue))
+                        .fill(appColor(.darkBlue).gradient)
                 }
         case .appImage(let image):
             appImage(image)

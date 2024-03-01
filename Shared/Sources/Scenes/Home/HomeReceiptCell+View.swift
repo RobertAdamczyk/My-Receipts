@@ -11,6 +11,9 @@ struct HomeReceiptCell: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     @State var image : Image?
     @State var uiimage: UIImage?
+
+    @State private var isConfirmationDialogPresented: Bool = false
+
     var receipt: Receipt
     var body: some View {
         HStack{
@@ -69,19 +72,39 @@ struct HomeReceiptCell: View {
                 .shadow(color: appColor(.shadow), radius:8, x:0, y:0)
         )
         .overlay(alignment: .topTrailing) {
-            appImage(.ellipsis)
-                .rotationEffect(.init(degrees: 90))
-                .padding(.top, 20)
-                .padding(.trailing, 5)
+            Button(action: {
+                isConfirmationDialogPresented = true
+            }, label: {
+                appImage(.ellipsis)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 24)
+                    .foregroundStyle(appColor(.darkBlue))
+                    .rotationEffect(.init(degrees: 90))
+                    .padding(.top, 20)
+                    .padding(.trailing, 5)
+            })
         }
         .contentShape(RoundedRectangle(cornerRadius: 14))
         .contextMenu{
-            Button(action: { homeViewModel.onRemoveReceiptTapped(receipt: receipt) }){
-                Text(appText(.generic(.delete)))
-            }
             Button(action: { homeViewModel.onReceiptTapped(receipt) }){
                 Text(appText(.generic(.edit)))
             }
+            Button(role: .destructive, action: { homeViewModel.onRemoveReceiptTapped(receipt: receipt) }){
+                Text(appText(.generic(.delete)))
+            }
+        }
+        .confirmationDialog("", isPresented: $isConfirmationDialogPresented, titleVisibility: .hidden) {
+            Button(action: {
+                homeViewModel.onReceiptTapped(receipt)
+            }, label: {
+                Text(appText(.generic(.edit)))
+            })
+            Button(role: .destructive, action: {
+                homeViewModel.onRemoveReceiptTapped(receipt: receipt)
+            }, label: {
+                Text(appText(.generic(.delete)))
+            })
         }
     }
 }
