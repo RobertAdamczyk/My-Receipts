@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552130F52B9276F700987B8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 552130F42B9276F700987B8C /* GoogleService-Info.plist */; };
+		552130F82B9278B300987B8C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 552130F72B9278B300987B8C /* FirebaseAnalytics */; };
 		E10FE3532A82F70800EB88C4 /* Menu+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FE3522A82F70800EB88C4 /* Menu+ViewModel.swift */; };
 		E10FE3552A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FE3542A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift */; };
 		E116C62C2A7AF82500A5783F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116C62B2A7AF82500A5783F /* Coordinator.swift */; };
@@ -63,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		552130F42B9276F700987B8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E10FE3522A82F70800EB88C4 /* Menu+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menu+ViewModel.swift"; sourceTree = "<group>"; };
 		E10FE3542A82F7BE00EB88C4 /* NotificationsSettings+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationsSettings+ViewModel.swift"; sourceTree = "<group>"; };
 		E116C62B2A7AF82500A5783F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552130F82B9278B300987B8C /* FirebaseAnalytics in Frameworks */,
 				E17FC17926341ADA00082D55 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +403,7 @@
 		E180DF312632F9C500CC5CC8 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				552130F42B9276F700987B8C /* GoogleService-Info.plist */,
 				E180DF322632F9C600CC5CC8 /* Info.plist */,
 			);
 			path = iOS;
@@ -450,6 +455,7 @@
 			);
 			name = "Receipts Store (iOS)";
 			packageProductDependencies = (
+				552130F72B9278B300987B8C /* FirebaseAnalytics */,
 			);
 			productName = "My Receipts (iOS)";
 			productReference = E180DF2F2632F9C500CC5CC8 /* Receipts Store.app */;
@@ -490,6 +496,7 @@
 			);
 			mainGroup = E180DF1F2632F9C400CC5CC8;
 			packageReferences = (
+				552130F62B9278B300987B8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E180DF302632F9C500CC5CC8 /* Products */;
 			projectDirPath = "";
@@ -510,6 +517,7 @@
 				E12DFE8F2A84223800688DD7 /* Roboto-Regular.ttf in Resources */,
 				E18F938E2652DEB000BC549F /* InfoPlist.strings in Resources */,
 				E18F93822652B49800BC549F /* Localizable.strings in Resources */,
+				552130F52B9276F700987B8C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,6 +808,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		552130F62B9278B300987B8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 10.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		552130F72B9278B300987B8C /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 552130F62B9278B300987B8C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E180DF252632F9C400CC5CC8 /* My_Receipts.xcdatamodeld */ = {
